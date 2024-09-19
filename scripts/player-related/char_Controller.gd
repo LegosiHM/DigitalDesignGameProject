@@ -1,28 +1,15 @@
 class_name PlatformerController
 extends CharacterBody2D
-## An extendable character for platforming games including features like coyote time,
-## jump buffering, jump cancelling, sprinting, and wall jumping.  
-##
-## Each mechanic and section
-## of logic is broken up into different functions, allowing you to easilly extend this class
-## and override the functions you want to change while keeping the remaining logic in place.[br][br]
-## 
-## All default values were found through tests and tweaking to find a solid default state, but they can all
-## be adjusted to fit your specific needs
 
-## The four possible character states and the character's current state
+## Character's state
 enum {IDLE, WALK, JUMP, FALL, WALL_SLIDE}
+
 ## The values for the jump direction, default is UP or -1
 enum JUMP_DIRECTIONS {UP = -1, DOWN = 1}
-
 
 ## The path to the character's [Sprite2D] node.  If no node path is provided the [param PLAYER_SPRITE] will be set to [param $Sprite2D] if it exists.
 @export_node_path("Sprite2D") var PLAYER_SPRITE_PATH: NodePath
 @onready var PLAYER_SPRITE: Sprite2D = get_node(PLAYER_SPRITE_PATH) if PLAYER_SPRITE_PATH else $Sprite2D ## The [Sprite2D] of the player character
-
-## The path to the character's [AnimationPlayer] node. If no node path is provided the [param ANIMATION_PLAYER] will be set to [param $AnimationPlayer] if it exists.
-@export_node_path("AnimationPlayer") var ANIMATION_PLAYER_PATH: NodePath
-@onready var ANIMATION_PLAYER: AnimationPlayer = get_node(ANIMATION_PLAYER_PATH) if ANIMATION_PLAYER_PATH else $AnimationPlayer ## The [AnimationPlayer] of the player character
 
 ## Enables/Disables hard movement when using a joystick.  When enabled, slightly moving the joystick
 ## will only move the character at a percentage of the maximum acceleration and speed instead of the maximum.
@@ -67,7 +54,6 @@ enum JUMP_DIRECTIONS {UP = -1, DOWN = 1}
 @export_range(0, 1, 0.01) var COYOTE_TIMER: float = 0.08
 ## How long in seconds before landing should the game still accept the jump command, set this to zero to disable it
 @export_range(0, 1, 0.01) var JUMP_BUFFER_TIMER: float = 0.1
-
 
 ## The players current state
 var state: int = IDLE
@@ -132,18 +118,6 @@ func manage_animations() -> void:
 		PLAYER_SPRITE.flip_h = false
 	elif velocity.x < 0:
 		PLAYER_SPRITE.flip_h = true
-	match state:
-		IDLE:
-			ANIMATION_PLAYER.play("Idle")
-		WALK:
-			ANIMATION_PLAYER.play("Walk")
-		JUMP:
-			ANIMATION_PLAYER.play("Jump")
-		FALL:
-			ANIMATION_PLAYER.play("Fall")
-		WALL_SLIDE:
-			ANIMATION_PLAYER.play("Fall") # 
-
 
 ## Gets the strength and status of the mapped actions
 func get_inputs() -> Dictionary:
