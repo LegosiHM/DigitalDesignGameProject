@@ -10,6 +10,7 @@
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0rf3k")
 script = ExtResource("2_ndqe8")
+return_speed = 500.0
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
