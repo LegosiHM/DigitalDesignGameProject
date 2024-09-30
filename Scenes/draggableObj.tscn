@@ -1,16 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://jx52ewwvvbd4"]
 
-[ext_resource type="Texture2D" uid="uid://cw2ug8gml3rx5" path="res://icon.svg" id="1_0rf3k"]
-[ext_resource type="Script" path="res://draggableObj.gd" id="2_ndqe8"]
+[ext_resource type="Texture2D" uid="uid://cw2ug8gml3rx5" path="res://sprites/icon.svg" id="1_fvaw4"]
+[ext_resource type="Script" path="res://scripts/Puzzles/draggableObj.gd" id="2_xr85n"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0rf3k")
-script = ExtResource("2_ndqe8")
+texture = ExtResource("1_fvaw4")
+script = ExtResource("2_xr85n")
 return_speed = 500.0
+return_multiplier = 5.0
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
