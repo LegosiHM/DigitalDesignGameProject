@@ -10,7 +10,7 @@
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fvaw4")
 script = ExtResource("2_xr85n")
-return_speed = 500.0
+return_speed = 100.0
 return_multiplier = 5.0
 
 [node name="Button" type="Button" parent="."]
