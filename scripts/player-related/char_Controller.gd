@@ -238,3 +238,7 @@ func buffer_jump() -> void:
 func coyote_time() -> void:
 	await get_tree().create_timer(COYOTE_TIMER).timeout
 	can_jump = false
+
+func _input(event : InputEvent):
+	if event.is_action_pressed("ui_down") and is_on_floor():
+		position.y += 1
