@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfg34u104tjbh"]
+[gd_scene load_steps=3 format=3 uid="uid://cfg34u104tjbh"]
 
+[ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://scripts/Puzzles/panel.tscn" id="1_5f8dw"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/player.tscn" id="1_kdkh7"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Panel" parent="." instance=ExtResource("1_5f8dw")]
+position = Vector2(1200, 900)
+
+[node name="Panel2" parent="." instance=ExtResource("1_5f8dw")]
+position = Vector2(300, 350)
+scale = Vector2(1.5, 1.25)
+
+[node name="Panel3" parent="." instance=ExtResource("1_5f8dw")]
+position = Vector2(1762, 302)
 
 [node name="Player" parent="." instance=ExtResource("1_kdkh7")]
 position = Vector2(1190, 818)
