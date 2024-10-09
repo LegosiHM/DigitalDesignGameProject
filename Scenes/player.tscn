@@ -1,20 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3ad0muthw2u2"]
 
 [ext_resource type="Script" path="res://scripts/player-related/char_Controller.gd" id="1_rajx7"]
-[ext_resource type="Texture2D" uid="uid://c763yfown7hgi" path="res://sprites/Player.png" id="2_134mn"]
+[ext_resource type="Texture2D" uid="uid://borh2hoal4d00" path="res://sprites/Char_MainCat_Sprite_Idle_v02.png" id="2_72qkg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruuvo"]
-size = Vector2(158, 20)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71kp2"]
+radius = 36.0
+height = 72.0
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 2
+scale = Vector2(2.5, 2.5)
+collision_mask = 2
 script = ExtResource("1_rajx7")
 PLAYER_SPRITE_PATH = NodePath("PlayerSprite")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_134mn")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_72qkg")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ruuvo")
-
-[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("CapsuleShape2D_71kp2")
