@@ -82,7 +82,7 @@ layer_0/tile_data = PackedInt32Array(131068, 65536, 1, 196604, 65536, 1, 196605,
 [node name="Button" type="Button" parent="Sprite2D"]
 offset_right = 8.0
 offset_bottom = 8.0
-scale = Vector2(0.999738, 1.11111)
+scale = Vector2(0.999738, 1.10857)
 
 [connection signal="button_down" from="Sprite2D/Button" to="Sprite2D" method="_on_button_button_down"]
 [connection signal="button_up" from="Sprite2D/Button" to="Sprite2D" method="_on_button_button_up"]
