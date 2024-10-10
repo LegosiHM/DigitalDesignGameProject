@@ -23,3 +23,5 @@ texture = ExtResource("2_72qkg")
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)
 shape = SubResource("CapsuleShape2D_71kp2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
