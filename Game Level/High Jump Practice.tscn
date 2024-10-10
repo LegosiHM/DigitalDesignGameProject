@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqpe4eubcjkh8"]
+
+[ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://scripts/Puzzles/Panel.tscn" id="1_gsp1b"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/player.tscn" id="2_3gk33"]
+
+[node name="HighJumpPractice" type="Node2D"]
+
+[node name="Panel" parent="." instance=ExtResource("1_gsp1b")]
+position = Vector2(202, 769)
+scale = Vector2(1.25, 2)
+
+[node name="Panel2" parent="." instance=ExtResource("1_gsp1b")]
+position = Vector2(1750, 763)
+scale = Vector2(3.75, 2)
+
+[node name="Player" parent="." instance=ExtResource("2_3gk33")]
+position = Vector2(178, 757)

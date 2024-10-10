@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dntl3c7y1qee4" path="res://sprites/Tileset.png" id="1_h1sfe"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/player.tscn" id="2_yua40"]
-[ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://scripts/Puzzles/panel.tscn" id="3_gbcl0"]
+[ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://scripts/Puzzles/draggablePanel.tscn" id="3_gbcl0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wm5g"]
 texture = ExtResource("1_h1sfe")

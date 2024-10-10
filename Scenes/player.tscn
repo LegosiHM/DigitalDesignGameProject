@@ -3,9 +3,8 @@
 [ext_resource type="Script" path="res://scripts/player-related/char_Controller.gd" id="1_rajx7"]
 [ext_resource type="Texture2D" uid="uid://borh2hoal4d00" path="res://sprites/Char_MainCat_Sprite_Idle_v02.png" id="2_72qkg"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71kp2"]
-radius = 36.0
-height = 72.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gb6rj"]
+size = Vector2(56.8963, 70.5004)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2.5, 2.5)
@@ -17,11 +16,14 @@ MAX_SPEED = 500.0
 JUMP_FORCE = 300.0
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.055, 0.055)
 texture = ExtResource("2_72qkg")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
-position = Vector2(1, -1)
-shape = SubResource("CapsuleShape2D_71kp2")
+position = Vector2(6.2, 1.2)
+rotation = -3.14159
+scale = Vector2(0.949095, -0.987228)
+shape = SubResource("RectangleShape2D_gb6rj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
