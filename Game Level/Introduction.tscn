@@ -19,3 +19,7 @@ scale = Vector2(3.75, 2)
 
 [node name="Player" parent="." instance=ExtResource("2_hrw36")]
 position = Vector2(260, 209)
+ACCELERATION = 600.0
+MAX_SPEED = 600.0
+SPRINT_MULTIPLIER = 0.0
+FRICTION = 0.0

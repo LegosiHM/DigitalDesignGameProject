@@ -39,15 +39,15 @@ enum JUMP_DIRECTIONS {UP = -1, DOWN = 1}
 ## Sprint multiplier, multiplies the [param MAX_SPEED] by this value when sprinting
 @export_range(0, 10, 0.1) var SPRINT_MULTIPLIER: float = 1.5
 ## How fast the character's speed goes back to zero when not moving on the ground
-@export_range(0, 1000, 0.1) var FRICTION: float = 500.0
+@export_range(0, 10000, 0.1) var FRICTION: float = 500.0
 ## How fast the character's speed goes back to zero when not moving in the air
 @export_range(0, 1000, 0.1) var AIR_RESISTENCE: float = 200.0
 ## The speed of gravity applied to the character
-@export_range(0, 1000, 0.1) var GRAVITY: float = 500.0
+@export_range(0, 10000, 0.1) var GRAVITY: float = 500.0
 ## The speed of the jump when leaving the ground
-@export_range(0, 1000, 0.1) var JUMP_FORCE: float = 200.0
+@export_range(0, 10000, 0.1) var JUMP_FORCE: float = 200.0
 ## How fast the character's vertical speed goes back to zero when cancelling a jump
-@export_range(0, 1000, 0.1) var JUMP_CANCEL_FORCE: float = 800.0
+@export_range(0, 10000, 0.1) var JUMP_CANCEL_FORCE: float = 800.0
 ## The speed the character falls while sliding on a wall. Currently this is only active if wall jumping is active as well.
 @export_range(0, 1000, 0.1) var WALL_SLIDE_SPEED: float = 50.0
 ## How long in seconds after walking off a platform the character can still jump, set this to zero to disable it

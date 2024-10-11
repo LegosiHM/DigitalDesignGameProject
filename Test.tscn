@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dis2cvgrjvawg"]
+
+[ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://scripts/Puzzles/Panel.tscn" id="1_klbq4"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/player.tscn" id="2_doe7n"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" parent="." instance=ExtResource("1_klbq4")]
+position = Vector2(957, 842)
+scale = Vector2(6, 1)
+
+[node name="Panel4" parent="." instance=ExtResource("1_klbq4")]
+position = Vector2(351, 536)
+scale = Vector2(1.32, 1)
+
+[node name="Panel5" parent="." instance=ExtResource("1_klbq4")]
+position = Vector2(1215, 524)
+scale = Vector2(1.32, 1)
+
+[node name="Panel2" parent="." instance=ExtResource("1_klbq4")]
+position = Vector2(1857, 817)
+rotation = 1.5708
+scale = Vector2(6, 1)
+
+[node name="Panel3" parent="." instance=ExtResource("1_klbq4")]
+position = Vector2(-118, 842)
+rotation = 4.71239
+scale = Vector2(6, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_doe7n")]
+position = Vector2(549, 763)
+ACCELERATION = 1000.0
+MAX_SPEED = 550.0
+SPRINT_MULTIPLIER = 3.0
+FRICTION = 1750.0
+AIR_RESISTENCE = 100.0
+GRAVITY = 2500.0
+JUMP_FORCE = 1500.0
+JUMP_CANCEL_FORCE = 3000.0
+COYOTE_TIMER = 0.07
+JUMP_BUFFER_TIMER = 0.15
+
+[node name="PlayerSprite" parent="Player" index="0"]
+texture = null
+
+[editable path="Player"]
