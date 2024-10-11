@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dg5lsu061cqxs"]
+[gd_scene load_steps=5 format=3 uid="uid://dg5lsu061cqxs"]
 
 [ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://scripts/Puzzles/Panel.tscn" id="1_yg15c"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/player.tscn" id="2_hrw36"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://scripts/Puzzles/change_scene_detector.tscn" id="3_hitbl"]
+[ext_resource type="PackedScene" uid="uid://cqpe4eubcjkh8" path="res://Game Level/High Jump Practice.tscn" id="4_1gmee"]
 
 [node name="Introduction" type="Node2D"]
 
@@ -19,7 +21,12 @@ scale = Vector2(3.75, 2)
 
 [node name="Player" parent="." instance=ExtResource("2_hrw36")]
 position = Vector2(260, 209)
-ACCELERATION = 600.0
-MAX_SPEED = 600.0
-SPRINT_MULTIPLIER = 0.0
-FRICTION = 0.0
+
+[node name="ChangeSceneDetector" parent="." instance=ExtResource("3_hitbl")]
+position = Vector2(1824, 778)
+my_scene = ExtResource("4_1gmee")
+
+[node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
+position = Vector2(55, -96.5)
+
+[editable path="ChangeSceneDetector"]

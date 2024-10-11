@@ -28,19 +28,4 @@ rotation = 4.71239
 scale = Vector2(6, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_doe7n")]
-position = Vector2(549, 763)
-ACCELERATION = 1000.0
-MAX_SPEED = 550.0
-SPRINT_MULTIPLIER = 3.0
-FRICTION = 1750.0
-AIR_RESISTENCE = 100.0
-GRAVITY = 2500.0
-JUMP_FORCE = 1500.0
-JUMP_CANCEL_FORCE = 3000.0
-COYOTE_TIMER = 0.07
-JUMP_BUFFER_TIMER = 0.15
-
-[node name="PlayerSprite" parent="Player" index="0"]
-texture = null
-
-[editable path="Player"]
+position = Vector2(783, 741)
