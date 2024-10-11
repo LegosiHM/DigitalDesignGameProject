@@ -7,7 +7,7 @@
 [node name="AbilityPractice" type="Node2D"]
 
 [node name="Panel" parent="." instance=ExtResource("1_bkk2o")]
-position = Vector2(202, 769)
+position = Vector2(199, 769)
 scale = Vector2(1.25, 2)
 
 [node name="Panel2" parent="." instance=ExtResource("1_bkk2o")]
