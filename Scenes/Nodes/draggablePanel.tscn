@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwct7nede7txs"]
 
 [ext_resource type="Texture2D" uid="uid://dntl3c7y1qee4" path="res://sprites/Tileset.png" id="1_45kxy"]
-[ext_resource type="Script" path="res://scripts/Puzzles/draggableObj.gd" id="1_cjqkg"]
+[ext_resource type="Script" path="res://scripts/Puzzles/Scripts/draggableObj.gd" id="1_cjqkg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_patmb"]
 texture = ExtResource("1_45kxy")
