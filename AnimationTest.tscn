@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxh2rg5t2ju4l"]
+
+[ext_resource type="Texture2D" uid="uid://borh2hoal4d00" path="res://sprites/Char_MainCat_Sprite_Idle_v02.png" id="1_pad5e"]
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_ug3ew"]
+modification_count = 1
+
+[sub_resource type="Animation" id="Animation_j84vg"]
+resource_name = "Cat Glowing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:light_mask")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2140, 219), Vector2(2217, 248)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.984006, 0.982524, 0.976521, 1), Color(0.114921, 0.107888, 0.0807217, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xic8h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2140, 219)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.114921, 0.107888, 0.0807217, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w3r0u"]
+_data = {
+"Cat Glowing": SubResource("Animation_j84vg"),
+"RESET": SubResource("Animation_xic8h")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2(2217, 233)
+modification_stack = SubResource("SkeletonModificationStack2D_ug3ew")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.114921, 0.107888, 0.0807217, 1)
+position = Vector2(-2140, 219)
+texture = ExtResource("1_pad5e")
+
+[node name="Bone2D" type="Bone2D" parent="Sprite2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w3r0u")
+}
