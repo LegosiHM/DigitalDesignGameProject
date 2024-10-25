@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm82hrowymhds"]
+[gd_scene load_steps=8 format=3 uid="uid://bm82hrowymhds"]
 
-[ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://Scenes/Nodes/Panel.tscn" id="2_d3r34"]
+[ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://Scenes/panel.tscn" id="2_d3r34"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="3_1y64x"]
 [ext_resource type="Texture2D" uid="uid://dntl3c7y1qee4" path="res://sprites/Tileset.png" id="3_s1llj"]
 [ext_resource type="PackedScene" uid="uid://drxl2bc3p0ofy" path="res://Scenes/Nodes/box.tscn" id="4_rlxsr"]
+[ext_resource type="PackedScene" uid="uid://wa65b7p5q55k" path="res://Scenes/pushPull.tscn" id="5_jibee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r51x4"]
 texture = ExtResource("3_s1llj")
@@ -81,3 +82,6 @@ layer_0/tile_data = PackedInt32Array(3407991, 65536, 1, 3342455, 65536, 1, 32769
 [node name="Box" parent="." instance=ExtResource("4_rlxsr")]
 position = Vector2(1418, 710)
 scale = Vector2(2, 2)
+
+[node name="Node2D" parent="." instance=ExtResource("5_jibee")]
+position = Vector2(322, 777)

@@ -1,8 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://we0xmiafwuua"]
 
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://Scenes/Nodes/Panel.tscn" id="1_yg15c"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_hrw36"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_hitbl"]
+=======
+[ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://Scenes/panel.tscn" id="1_yg15c"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/player.tscn" id="2_hrw36"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/change_scene_detector.tscn" id="3_hitbl"]
+>>>>>>> Stashed changes
 
 [node name="Introduction" type="Node2D"]
 
