@@ -1,27 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://we0xmiafwuua"]
+[gd_scene load_steps=8 format=3 uid="uid://we0xmiafwuua"]
 
+[ext_resource type="Texture2D" uid="uid://c3joqdiqvp1yn" path="res://sprites/IMG_9394.png" id="1_l46ev"]
 [ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://Scenes/Nodes/Panel.tscn" id="1_yg15c"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_hrw36"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_hitbl"]
+[ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://sprites/Panel_Platform_BrickRoad_v02.PNG" id="4_exbwu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2kryh"]
+texture = ExtResource("4_exbwu")
+texture_region_size = Vector2i(120, 120)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -30, 60, -28, 60, 60, -60, 60)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -29, 60, -28, 60, 60, -60, 60)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -29, 60, -30, 60, 60, -60, 60)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -27, 60, -27, 60, 60, -60, 60)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -29, 60, -28, 60, 60, -60, 60)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -28, 60, -27, 60, 60, -60, 60)
+
+[sub_resource type="TileSet" id="TileSet_3rsgy"]
+tile_size = Vector2i(120, 120)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_2kryh")
 
 [node name="Introduction" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_l46ev")
+
 [node name="Panel" parent="." instance=ExtResource("1_yg15c")]
-position = Vector2(242, 769)
-scale = Vector2(1.25, 2)
+position = Vector2(219, 767)
+scale = Vector2(1.13, 2)
 
 [node name="Panel2" parent="." instance=ExtResource("1_yg15c")]
-position = Vector2(240, 250)
-scale = Vector2(1.25, 1.5)
+position = Vector2(221, 250)
+scale = Vector2(1.09, 1.5)
 
 [node name="Panel3" parent="." instance=ExtResource("1_yg15c")]
-position = Vector2(1319, 763)
+position = Vector2(1361, 763)
 scale = Vector2(3.75, 2)
 
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("3_hitbl")]
-position = Vector2(1978, 675)
+position = Vector2(1978, 777)
 scale = Vector2(1.75, 1)
 my_scene = "res://Game Level/HighJumpPractice.tscn"
 
 [node name="Player" parent="." instance=ExtResource("2_hrw36")]
 position = Vector2(162, 215)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(40, 70)
+tile_set = SubResource("TileSet_3rsgy")
+format = 2
+layer_0/tile_data = PackedInt32Array(131072, 0, 2, 131073, 0, 2, 131074, 0, 2, 458752, 0, 2, 458753, 0, 2, 458754, 0, 2, 458758, 0, 2, 458759, 0, 2, 458760, 0, 2, 458761, 0, 2, 458762, 0, 2, 458763, 0, 2, 458764, 0, 2, 458765, 0, 2, 458766, 0, 2, 458767, 0, 2)

@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcsqinws3turf"]
+[gd_scene load_steps=8 format=3 uid="uid://dcsqinws3turf"]
 
+[ext_resource type="Texture2D" uid="uid://c3joqdiqvp1yn" path="res://sprites/IMG_9394.png" id="1_3a8j2"]
 [ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://Scenes/Nodes/Panel.tscn" id="1_y30rf"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_b2cvo"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_h4fuw"]
+[ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://sprites/Panel_Platform_BrickRoad_v02.PNG" id="4_5eyxk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jr2iq"]
+texture = ExtResource("4_5eyxk")
+texture_region_size = Vector2i(120, 120)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -30, 60, -28, 60, 60, -60, 60)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -29, 60, -28, 60, 60, -60, 60)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -29, 60, -30, 60, 60, -60, 60)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -27, 60, -27, 60, 60, -60, 60)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -29, 60, -28, 60, 60, -60, 60)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -28, 60, -27, 60, 60, -60, 60)
+
+[sub_resource type="TileSet" id="TileSet_lupqt"]
+tile_size = Vector2i(120, 120)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_jr2iq")
 
 [node name="HighJumpPractice" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_3a8j2")
 
 [node name="Panel" parent="." instance=ExtResource("1_y30rf")]
 position = Vector2(202, 769)
@@ -18,5 +45,11 @@ scale = Vector2(3.75, 2)
 position = Vector2(192, 749)
 
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("3_h4fuw")]
-position = Vector2(1948, 673)
+position = Vector2(1948, 777)
 my_scene = "res://Game Level/Ability Practice.tscn"
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(42, 70)
+tile_set = SubResource("TileSet_lupqt")
+format = 2
+layer_0/tile_data = PackedInt32Array(458752, 0, 2, 458753, 0, 2, 458754, 0, 2, 458761, 0, 2, 458762, 0, 2, 458763, 0, 2, 458764, 0, 2, 458765, 0, 2, 458766, 0, 2, 458767, 0, 2, 524287, 0, 2)

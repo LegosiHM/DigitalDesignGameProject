@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://csxm21t4vk04j"]
+[gd_scene load_steps=8 format=3 uid="uid://csxm21t4vk04j"]
 
 [ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://Scenes/Nodes/Panel.tscn" id="1_bkk2o"]
+[ext_resource type="Texture2D" uid="uid://c3joqdiqvp1yn" path="res://sprites/IMG_9394.png" id="1_sc4u8"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="2_4o2v0"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="3_xt85q"]
+[ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://sprites/Panel_Platform_BrickRoad_v02.PNG" id="4_uunya"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bouiu"]
+texture = ExtResource("4_uunya")
+texture_region_size = Vector2i(120, 120)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -30, 60, -28, 60, 60, -60, 60)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -29, 60, -28, 60, 60, -60, 60)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -29, 60, -30, 60, 60, -60, 60)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -27, 60, -27, 60, 60, -60, 60)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -29, 60, -28, 60, 60, -60, 60)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -28, 60, -27, 60, 60, -60, 60)
+
+[sub_resource type="TileSet" id="TileSet_h0lvg"]
+tile_size = Vector2i(120, 120)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_bouiu")
 
 [node name="AbilityPractice" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_sc4u8")
 
 [node name="Panel" parent="." instance=ExtResource("1_bkk2o")]
 position = Vector2(199, 769)
@@ -19,8 +46,21 @@ scale = Vector2(2.61, 0.84)
 position = Vector2(590, 139)
 
 [node name="Panel3" parent="." instance=ExtResource("1_bkk2o")]
-position = Vector2(1955, 763)
+position = Vector2(1961, 763)
 scale = Vector2(3.75, 2)
 
 [node name="Player" parent="." instance=ExtResource("3_xt85q")]
 position = Vector2(165, 757)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(40, 70)
+tile_set = SubResource("TileSet_h0lvg")
+format = 2
+layer_0/tile_data = PackedInt32Array(458752, 0, 2, 458753, 0, 2, 458754, 0, 2, 458763, 0, 2, 458764, 0, 2, 458765, 0, 2, 458766, 0, 2, 458767, 0, 2, 524287, 0, 2)
+
+[node name="TileMap2" type="TileMap" parent="."]
+position = Vector2(422, 172)
+rotation = 1.5708
+tile_set = SubResource("TileSet_h0lvg")
+format = 2
+layer_0/tile_data = PackedInt32Array(-262144, 0, 2, -262143, 0, 2, -262142, 0, 2, -262141, 0, 2, -262140, 0, 2, -262139, 0, 2, -262138, 0, 2)
