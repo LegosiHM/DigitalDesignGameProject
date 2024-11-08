@@ -8,9 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://drxl2bc3p0ofy" path="res://Scenes/Nodes/box.tscn" id="4_rlxsr"]
 [ext_resource type="Texture2D" uid="uid://bvte8cvqysx63" path="res://sprites/Temporary/IMG_3960.png" id="7_6i2ps"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wfj8"]
-size = Vector2(128, 857.6)
-
 [sub_resource type="Gradient" id="Gradient_aj3vu"]
 offsets = PackedFloat32Array(0.551948)
 colors = PackedColorArray(0.61039, 0.61039, 0.61039, 1)
@@ -20,19 +17,26 @@ gradient = SubResource("Gradient_aj3vu")
 width = 1920
 height = 80
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wfj8"]
+size = Vector2(128, 857.6)
+
 [node name="PushAndLedgeGrabbingPractice" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("1_nij7c")
 
-[node name="TileMap2" parent="." instance=ExtResource("2_f27hv")]
-position = Vector2(105, 44)
-layer_0/tile_data = PackedInt32Array(524301, 1, 0, 589837, 1, 1, 655373, 1, 5, 655374, 65537, 5, 655375, 65537, 5, 655376, 327681, 5, 589840, 327681, 4, 524304, 327681, 0, 524303, 196609, 0, 524302, 196609, 0, 262161, 1, 5, 196625, 1, 4, 131089, 1, 0, 131090, 65537, 0, 131091, 65537, 0, 131092, 327681, 0, 262164, 327681, 5, 196628, 327681, 4, 262163, 196609, 5, 262162, 196609, 5)
+[node name="Img3960" type="Sprite2D" parent="."]
+position = Vector2(1337, 286)
+texture = ExtResource("7_6i2ps")
 
 [node name="Img3959" type="Sprite2D" parent="."]
 position = Vector2(1655, 628)
 texture = ExtResource("2_emd57")
+
+[node name="TileMap2" parent="." instance=ExtResource("2_f27hv")]
+position = Vector2(105, 44)
+layer_0/tile_data = PackedInt32Array(524301, 1, 0, 589837, 1, 1, 655373, 1, 5, 655374, 65537, 5, 655375, 65537, 5, 655376, 327681, 5, 589840, 327681, 4, 524304, 327681, 0, 524303, 196609, 0, 524302, 196609, 0, 262161, 1, 5, 196625, 1, 4, 131089, 1, 0, 131090, 65537, 0, 131091, 65537, 0, 131092, 327681, 0, 262164, 327681, 5, 196628, 327681, 4, 262163, 196609, 5, 262162, 196609, 5)
 
 [node name="TileMap" parent="." instance=ExtResource("2_f27hv")]
 position = Vector2(960, 540)
@@ -49,18 +53,14 @@ scale = Vector2(1.75, 1.5)
 position = Vector2(93.7144, -18.6667)
 scale = Vector2(0.714286, 0.833333)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="draggablePanel/Box"]
-position = Vector2(1149.6, 142.4)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_3wfj8")
-
 [node name="Player" parent="." instance=ExtResource("3_1y64x")]
 position = Vector2(1448, 795)
-
-[node name="Img3960" type="Sprite2D" parent="."]
-position = Vector2(1337, 286)
-texture = ExtResource("7_6i2ps")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 40)
 texture = SubResource("GradientTexture2D_pjouj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(2001, 537)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("RectangleShape2D_3wfj8")
