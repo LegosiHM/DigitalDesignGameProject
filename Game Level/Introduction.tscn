@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://Scenes/Nodes/RespawnManager.tscn" id="6_tbjh5"]
 [ext_resource type="PackedScene" uid="uid://b2v6nlwxxmvyt" path="res://Scenes/Nodes/singleton.tscn" id="7_ofcqf"]
 
-[sub_resource type="Gradient" id="Gradient_7e8na"]
+[sub_resource type="Gradient" id="Gradient_oehyg"]
 offsets = PackedFloat32Array(0.551948)
 colors = PackedColorArray(0.61039, 0.61039, 0.61039, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_yk5gu"]
-gradient = SubResource("Gradient_7e8na")
+gradient = SubResource("Gradient_oehyg")
 width = 1920
 height = 80
 
@@ -37,18 +37,6 @@ layer_0/tile_data = PackedInt32Array(65536, 1, 0, 65537, 65537, 0, 65538, 65537,
 
 [node name="Player" parent="." instance=ExtResource("2_hrw36")]
 position = Vector2(162, 215)
-JOYSTICK_MOVEMENT = null
-ENABLE_SPRINT = null
-ENABLE_WALL_JUMPING = null
-ACTION_UP = null
-ACTION_DOWN = null
-ACTION_LEFT = null
-ACTION_RIGHT = null
-ACTION_JUMP = null
-ACTION_SPRINT = null
-APEX_SPEED_BOOST = null
-APEX_GRAVITY_MODIFIER = null
-APEX_DURATION = null
 
 [node name="RespawnManager" parent="." instance=ExtResource("6_tbjh5")]
 
