@@ -54,6 +54,9 @@ enum JUMP_DIRECTIONS {UP = -1, DOWN = 1}
 @export_range(0, 1, 0.01) var COYOTE_TIMER: float = 0.08
 ## How long in seconds before landing should the game still accept the jump command, set this to zero to disable it
 @export_range(0, 1, 0.01) var JUMP_BUFFER_TIMER: float = 0.1
+@export var APEX_SPEED_BOOST: float = 1.2
+@export var APEX_GRAVITY_MODIFIER: float = 0.5
+@export var APEX_DURATION: float = 0.3
 
 ## The players current state
 var state: int = IDLE
@@ -67,6 +70,7 @@ var should_jump := false
 var wall_jump := false
 ## The player is jumping when [param jumping] is true
 var jumping := false
+var apex_active: bool = false
 
 ## The player can sprint when [param can_sprint] is true
 @onready var can_sprint: bool = ENABLE_SPRINT
@@ -89,7 +93,6 @@ func physics_tick(delta: float) -> void:
 	manage_animations()
 	manage_state()
 	
-	# We have to handle the gravity after the state
 	handle_gravity(delta) 
 
 	move_and_slide()
@@ -238,3 +241,16 @@ func buffer_jump() -> void:
 func coyote_time() -> void:
 	await get_tree().create_timer(COYOTE_TIMER).timeout
 	can_jump = false
+
+# Function to handle apex modifier
+func apply_apex_modifier(delta: float) -> void:
+	if not apex_active and abs(velocity.y) < 10:
+		apex_active = true
+		velocity.x *= APEX_SPEED_BOOST
+		GRAVITY *= APEX_GRAVITY_MODIFIER
+		await get_tree().create_timer(APEX_DURATION).timeout
+		reset_apex_modifier()
+
+func reset_apex_modifier() -> void:
+	apex_active = false
+	GRAVITY /= APEX_GRAVITY_MODIFIER
