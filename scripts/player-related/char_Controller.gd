@@ -77,8 +77,8 @@ var apex_active: bool = false
 ## The player can wall jump when [param can_wall_jump] is true
 @onready var can_wall_jump: bool = ENABLE_WALL_JUMPING
 
-func _ready():
-	singleton.get_respawn_position()
+#func _ready():
+	#singleton.get_respawกn_position()
 
 func _physics_process(delta: float) -> void:
 	physics_tick(delta)
