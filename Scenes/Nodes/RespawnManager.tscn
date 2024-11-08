@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://46f6uv7th1xg"]
+
+[ext_resource type="Script" path="res://scripts/player-related/respawn_manager.gd" id="1_h4yv4"]
+
+[node name="RespawnManager" type="Node2D"]
+script = ExtResource("1_h4yv4")

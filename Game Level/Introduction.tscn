@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://we0xmiafwuua"]
+[gd_scene load_steps=10 format=3 uid="uid://we0xmiafwuua"]
 
 [ext_resource type="Texture2D" uid="uid://c3joqdiqvp1yn" path="res://sprites/IMG_9394.png" id="1_l46ev"]
 [ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://Scenes/Nodes/Panel.tscn" id="1_yg15c"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_hrw36"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_hitbl"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://sprites/Panel_Platform_BrickRoad_v02.PNG" id="4_exbwu"]
+[ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://Scenes/Nodes/RespawnManager.tscn" id="6_tbjh5"]
+[ext_resource type="PackedScene" uid="uid://b2v6nlwxxmvyt" path="res://Scenes/Nodes/singleton.tscn" id="7_ofcqf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2kryh"]
 texture = ExtResource("4_exbwu")
@@ -52,9 +54,25 @@ my_scene = "res://Game Level/HighJumpPractice.tscn"
 
 [node name="Player" parent="." instance=ExtResource("2_hrw36")]
 position = Vector2(162, 215)
+JOYSTICK_MOVEMENT = null
+ENABLE_SPRINT = null
+ENABLE_WALL_JUMPING = null
+ACTION_UP = null
+ACTION_DOWN = null
+ACTION_LEFT = null
+ACTION_RIGHT = null
+ACTION_JUMP = null
+ACTION_SPRINT = null
+APEX_SPEED_BOOST = null
+APEX_GRAVITY_MODIFIER = null
+APEX_DURATION = null
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(40, 70)
 tile_set = SubResource("TileSet_3rsgy")
 format = 2
 layer_0/tile_data = PackedInt32Array(131072, 0, 2, 131073, 0, 2, 131074, 0, 2, 458752, 0, 2, 458753, 0, 2, 458754, 0, 2, 458758, 0, 2, 458759, 0, 2, 458760, 0, 2, 458761, 0, 2, 458762, 0, 2, 458763, 0, 2, 458764, 0, 2, 458765, 0, 2, 458766, 0, 2, 458767, 0, 2)
+
+[node name="RespawnManager" parent="." instance=ExtResource("6_tbjh5")]
+
+[node name="singleton" parent="." instance=ExtResource("7_ofcqf")]
