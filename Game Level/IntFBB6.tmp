@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://we0xmiafwuua"]
+
+[ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Background_SubUrban_v01.png" id="1_gyhlm"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_hrw36"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_hitbl"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="3_wqbpa"]
+[ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://Scenes/Nodes/RespawnManager.tscn" id="6_tbjh5"]
+[ext_resource type="PackedScene" uid="uid://b2v6nlwxxmvyt" path="res://Scenes/Nodes/singleton.tscn" id="7_ofcqf"]
+
+[node name="Introduction" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_gyhlm")
+
+[node name="ChangeSceneDetector" parent="." instance=ExtResource("3_hitbl")]
+position = Vector2(1978, 777)
+scale = Vector2(1.75, 1)
+my_scene = "res://Game Level/HighJumpPractice.tscn"
+
+[node name="Panel" parent="." instance=ExtResource("3_wqbpa")]
+layer_0/tile_data = PackedInt32Array(131075, 2, 0, 131074, 2, 0, 131073, 2, 0, 131076, 2, 0, 131077, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 262145, 3, 3, 262146, 65539, 3, 262147, 131075, 3, 262148, 196611, 3, 262149, 262147, 3)
+
+[node name="Background2" parent="." instance=ExtResource("3_wqbpa")]
+position = Vector2(42, 62)
+
+[node name="Player" parent="." instance=ExtResource("2_hrw36")]
+position = Vector2(162, 215)
+JOYSTICK_MOVEMENT = null
+ENABLE_SPRINT = null
+ENABLE_WALL_JUMPING = null
+ACTION_UP = null
+ACTION_DOWN = null
+ACTION_LEFT = null
+ACTION_RIGHT = null
+ACTION_JUMP = null
+ACTION_SPRINT = null
+APEX_SPEED_BOOST = null
+APEX_GRAVITY_MODIFIER = null
+APEX_DURATION = null
+
+[node name="RespawnManager" parent="." instance=ExtResource("6_tbjh5")]
+
+[node name="singleton" parent="." instance=ExtResource("7_ofcqf")]
