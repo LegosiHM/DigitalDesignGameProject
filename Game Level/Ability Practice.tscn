@@ -23,15 +23,6 @@ height = 80
 position = Vector2(960, 540)
 texture = ExtResource("1_qgdwg")
 
-[node name="Img3962" type="Sprite2D" parent="."]
-position = Vector2(1179, 654)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("5_t70d8")
-
-[node name="Img3961" type="Sprite2D" parent="."]
-position = Vector2(1636, 293)
-texture = ExtResource("6_epxqv")
-
 [node name="draggablePanel" parent="." instance=ExtResource("2_4o2v0")]
 position = Vector2(577, 231)
 
@@ -48,6 +39,15 @@ layer_0/tile_data = PackedInt32Array(-655356, 5, 3, -655355, 65541, 3, -655354, 
 
 [node name="Player" parent="." instance=ExtResource("3_xt85q")]
 position = Vector2(165, 757)
+
+[node name="Img3962" type="Sprite2D" parent="."]
+position = Vector2(1179, 654)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_t70d8")
+
+[node name="Img3961" type="Sprite2D" parent="."]
+position = Vector2(1636, 293)
+texture = ExtResource("6_epxqv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 40)

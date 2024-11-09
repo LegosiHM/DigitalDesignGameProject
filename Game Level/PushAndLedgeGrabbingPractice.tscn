@@ -22,7 +22,7 @@ position = Vector2(960, 540)
 texture = ExtResource("1_o33ot")
 
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("3_tikhb")]
-position = Vector2(1350, -43)
+position = Vector2(1350, 43)
 rotation = -1.5708
 scale = Vector2(1, 4.56001)
 my_scene = "res://Game Level/Combine.tscn"
@@ -36,6 +36,18 @@ layer_0/tile_data = PackedInt32Array(458751, 1, 0, 524287, 1, 1, 589823, 1, 1, 6
 
 [node name="Player" parent="." instance=ExtResource("3_1y64x")]
 position = Vector2(163, 696)
+JOYSTICK_MOVEMENT = null
+ENABLE_SPRINT = null
+ENABLE_WALL_JUMPING = null
+ACTION_UP = null
+ACTION_DOWN = null
+ACTION_LEFT = null
+ACTION_RIGHT = null
+ACTION_JUMP = null
+ACTION_SPRINT = null
+APEX_SPEED_BOOST = null
+APEX_GRAVITY_MODIFIER = null
+APEX_DURATION = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 40)

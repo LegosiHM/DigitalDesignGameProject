@@ -1,12 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dis2cvgrjvawg"]
 
-<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://Scenes/Nodes/Panel.tscn" id="1_qwnye"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_qqeyx"]
-=======
-[ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://Scenes/panel.tscn" id="1_klbq4"]
-[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/player.tscn" id="2_doe7n"]
->>>>>>> Stashed changes
 
 [node name="Node2D" type="Node2D"]
 
