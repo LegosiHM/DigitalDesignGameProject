@@ -35,4 +35,5 @@ scale = Vector2(0.949095, -0.987228)
 shape = SubResource("RectangleShape2D_gb6rj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 enabled = false
