@@ -43,3 +43,6 @@ texture = SubResource("GradientTexture2D_y8jxy")
 
 [node name="Node2D" parent="." instance=ExtResource("5_choof")]
 position = Vector2(713, 453)
+
+[node name="Node2D2" parent="." instance=ExtResource("5_choof")]
+position = Vector2(-200, 475)

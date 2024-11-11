@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3ad0muthw2u2"]
+[gd_scene load_steps=5 format=3 uid="uid://d3ad0muthw2u2"]
 
 [ext_resource type="Script" path="res://scripts/player-related/char_Controller.gd" id="1_rajx7"]
 [ext_resource type="Texture2D" uid="uid://borh2hoal4d00" path="res://sprites/Char_MainCat_Sprite_Idle_v02.png" id="2_72qkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xont5"]
 size = Vector2(74.1759, 55.1038)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvpb2"]
+size = Vector2(79.2, 74.8)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -3)
@@ -37,3 +40,12 @@ shape = SubResource("RectangleShape2D_xont5")
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 enabled = false
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(2, 0.999998)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hvpb2")
+debug_color = Color(0, 0.640583, 0.347699, 0.42)

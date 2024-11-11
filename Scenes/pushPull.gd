@@ -1,39 +1,39 @@
 extends Area2D
 
-@export var drag_range: float = 200.0  
-var player_in_range = false          
-var dragging = false                  
-var offset = Vector2.ZERO              
-
-var player 
+@export var drag_range = 200.0
+var player_in_range = false
+var dragging = false
+var player
+var original_position
+var offset = Vector2.ZERO
 
 func _ready():
-	player = get_tree().get_root().find_node("Player", true, false)
-	if player == null:
-		push_error("Player node not found in the scene tree.")
+	original_position = position
+	var shape = $CollisionShape2D.shape
+	if shape is RectangleShape2D:
+		shape.extents = Vector2(drag_range, drag_range)
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Player":  
+		player_in_range = true
+		player = body
+
+func _on_Area2D_body_exited(body):
+	if body.name == "Player":
+		player_in_range = false
 
 func _process(delta):
-	if player == null:
-		return
-
-	var distance_to_player = position.distance_to(player.global_position)
-
-	if distance_to_player <= drag_range:
-		if not player_in_range:
-			print("Player entered range")
-			player_in_range = true
-	else:
-		if player_in_range:
-			print("Player exited range")
-			player_in_range = false
-			dragging = false  
-
 	if player_in_range and Input.is_action_pressed("drag"):
-		if not dragging:
+		if not dragging: 
 			offset = position - player.global_position
-			dragging = true
-	elif not Input.is_action_pressed("drag"):
+		dragging = true
+	else:
 		dragging = false
 
 	if dragging:
 		position = player.global_position + offset
+
+	_keep_within_boundaries()
+
+func _keep_within_boundaries():
+	pass
