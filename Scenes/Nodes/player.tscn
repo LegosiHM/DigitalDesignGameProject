@@ -46,6 +46,5 @@ disable_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(2, 0.999998)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hvpb2")
 debug_color = Color(0, 0.640583, 0.347699, 0.42)
