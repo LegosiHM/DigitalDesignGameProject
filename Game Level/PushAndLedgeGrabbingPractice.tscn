@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="2_10kh2"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="3_1y64x"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_tikhb"]
-[ext_resource type="PackedScene" uid="uid://drxl2bc3p0ofy" path="res://Scenes/Nodes/box.tscn" id="4_rlxsr"]
+[ext_resource type="PackedScene" uid="uid://dh2b4f5nhjkuq" path="res://Scenes/pushPull.tscn" id="5_choof"]
 
 [sub_resource type="Gradient" id="Gradient_s70v2"]
 offsets = PackedFloat32Array(0.551948)
@@ -41,6 +41,5 @@ position = Vector2(163, 696)
 position = Vector2(960, 40)
 texture = SubResource("GradientTexture2D_y8jxy")
 
-[node name="Box" parent="." instance=ExtResource("4_rlxsr")]
-position = Vector2(1254, 663)
-scale = Vector2(2, 2)
+[node name="Node2D" parent="." instance=ExtResource("5_choof")]
+position = Vector2(713, 453)
