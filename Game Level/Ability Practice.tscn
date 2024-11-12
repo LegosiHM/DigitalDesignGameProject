@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://csxm21t4vk04j"]
+[gd_scene load_steps=11 format=3 uid="uid://csxm21t4vk04j"]
 
 [ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Background_SubUrban_v01.png" id="1_qgdwg"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="2_4o2v0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dhu7k720l5jve" path="res://sprites/Temporary/IMG_3961.png" id="6_epxqv"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="6_tjd7v"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="7_5ys1c"]
+[ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/Nodes/PanelCollision.tscn" id="8_v07aq"]
 
 [sub_resource type="Gradient" id="Gradient_5gibr"]
 offsets = PackedFloat32Array(0.551948)
@@ -56,3 +57,15 @@ texture = SubResource("GradientTexture2D_rhp7c")
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("7_5ys1c")]
 position = Vector2(1959, 819)
 my_scene = "res://Game Level/PushAndLedgeGrabbingPractice.tscn"
+
+[node name="StaticPanelCollision" parent="." instance=ExtResource("8_v07aq")]
+position = Vector2(174, 812)
+scale = Vector2(18.2816, 18.16)
+
+[node name="StaticPanelCollision2" parent="." instance=ExtResource("8_v07aq")]
+position = Vector2(903, 678)
+scale = Vector2(9.11666, 32.4)
+
+[node name="StaticPanelCollision3" parent="." instance=ExtResource("8_v07aq")]
+position = Vector2(1715, 854)
+scale = Vector2(27.2538, 13.788)

@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dis2cvgrjvawg"]
+[gd_scene load_steps=7 format=3 uid="uid://dis2cvgrjvawg"]
 
 [ext_resource type="PackedScene" uid="uid://sihm63be6b7t" path="res://Scenes/Nodes/Panel.tscn" id="1_qwnye"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_qqeyx"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="3_kn7qj"]
+[ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/Nodes/PanelCollision.tscn" id="4_3wxx7"]
+[ext_resource type="PackedScene" uid="uid://dh2b4f5nhjkuq" path="res://Scenes/pushPull.tscn" id="4_dp1l6"]
+[ext_resource type="PackedScene" uid="uid://drxl2bc3p0ofy" path="res://Scenes/Nodes/box.tscn" id="5_3k3qx"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -29,3 +33,16 @@ scale = Vector2(6, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_qqeyx")]
 position = Vector2(783, 741)
+
+[node name="TileMap" parent="." instance=ExtResource("3_kn7qj")]
+layer_0/tile_data = PackedInt32Array(655360, 4, 3, 655361, 4, 3, 655362, 4, 3, 655363, 4, 3, 655364, 4, 3, 655365, 4, 3, 655366, 4, 3, 655367, 4, 3, 655368, 4, 3, 655369, 4, 3, 655370, 4, 3, 655371, 4, 3, 655372, 4, 3, 655373, 4, 3, 655374, 4, 3, 655375, 4, 3, 655376, 4, 3, 655377, 4, 3, 655378, 4, 3, 655379, 4, 3, 524307, 4, 3, 589843, 4, 3, 524288, 4, 3, 589824, 4, 3)
+
+[node name="Node2D" parent="." instance=ExtResource("4_dp1l6")]
+position = Vector2(537, 481)
+
+[node name="Box" parent="." instance=ExtResource("5_3k3qx")]
+position = Vector2(1284, 744)
+
+[node name="StaticPanelCollision" parent="." instance=ExtResource("4_3wxx7")]
+position = Vector2(1187, 713)
+scale = Vector2(28.88, 16.52)

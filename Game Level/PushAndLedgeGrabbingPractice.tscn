@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bm82hrowymhds"]
+[gd_scene load_steps=9 format=3 uid="uid://bm82hrowymhds"]
 
 [ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Background_SubUrban_v01.png" id="1_o33ot"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="2_10kh2"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="3_1y64x"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_tikhb"]
 [ext_resource type="PackedScene" uid="uid://dh2b4f5nhjkuq" path="res://Scenes/pushPull.tscn" id="5_choof"]
+[ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/Nodes/PanelCollision.tscn" id="6_kftdb"]
 
 [sub_resource type="Gradient" id="Gradient_s70v2"]
 offsets = PackedFloat32Array(0.551948)
@@ -46,3 +47,11 @@ position = Vector2(713, 453)
 
 [node name="Node2D2" parent="." instance=ExtResource("5_choof")]
 position = Vector2(-200, 475)
+
+[node name="StaticPanelCollision" parent="." instance=ExtResource("6_kftdb")]
+position = Vector2(1170, 530)
+scale = Vector2(-64.3586, 36.2607)
+
+[node name="StaticPanelCollision2" parent="." instance=ExtResource("6_kftdb")]
+position = Vector2(183, 768)
+scale = Vector2(18.16, 13.64)

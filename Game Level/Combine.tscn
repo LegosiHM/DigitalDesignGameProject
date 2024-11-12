@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwtr65j7orcym"]
+[gd_scene load_steps=12 format=3 uid="uid://dwtr65j7orcym"]
 
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="1_6qrq0"]
 [ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Background_SubUrban_v01.png" id="1_nij7c"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="3_1y64x"]
 [ext_resource type="PackedScene" uid="uid://drxl2bc3p0ofy" path="res://Scenes/Nodes/box.tscn" id="4_rlxsr"]
 [ext_resource type="Texture2D" uid="uid://bvte8cvqysx63" path="res://sprites/Temporary/IMG_3960.png" id="7_6i2ps"]
+[ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/Nodes/PanelCollision.tscn" id="8_0qaxr"]
 
 [sub_resource type="Gradient" id="Gradient_aj3vu"]
 offsets = PackedFloat32Array(0.551948)
@@ -64,3 +65,11 @@ texture = SubResource("GradientTexture2D_pjouj")
 position = Vector2(2001, 537)
 scale = Vector2(1.25, 1.25)
 shape = SubResource("RectangleShape2D_3wfj8")
+
+[node name="StaticPanelCollision" parent="." instance=ExtResource("8_0qaxr")]
+position = Vector2(1455, 906)
+scale = Vector2(-14.3779, 10.5489)
+
+[node name="StaticPanelCollision2" parent="." instance=ExtResource("8_0qaxr")]
+position = Vector2(1815, 363)
+scale = Vector2(-13.81, 10.1615)
