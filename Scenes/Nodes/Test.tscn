@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_qqeyx"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="3_kn7qj"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/Nodes/PanelCollision.tscn" id="4_3wxx7"]
-[ext_resource type="PackedScene" uid="uid://dh2b4f5nhjkuq" path="res://Scenes/pushPull.tscn" id="4_dp1l6"]
+[ext_resource type="PackedScene" uid="uid://dh2b4f5nhjkuq" path="res://Scenes/Nodes/pushPull.tscn" id="4_dp1l6"]
 [ext_resource type="PackedScene" uid="uid://drxl2bc3p0ofy" path="res://Scenes/Nodes/box.tscn" id="5_3k3qx"]
 
 [node name="Node2D" type="Node2D"]

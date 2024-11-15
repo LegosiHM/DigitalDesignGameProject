@@ -77,12 +77,25 @@ var apex_active: bool = false
 ## The player can wall jump when [param can_wall_jump] is true
 @onready var can_wall_jump: bool = ENABLE_WALL_JUMPING
 
-#func _ready():
-	#singleton.get_respawกn_position()
+var platform: Node = null
+var is_on_platform:bool = false
+
+func _ready():
+	platform = PlatformManager.get_platform()
+	
+	# Check if the platform was found
+	if platform:
+		# Correct usage of connect with Callable to avoid the invalid argument error
+		platform.connect("player_on_platform", Callable(self, "on_player_on_platform"))
+		print("Platform found!")
+	else:
+		print("Platform not found!")
+
+func on_player_on_platform(on_platform: bool) -> void:
+	is_on_platform = on_platform
 
 func _physics_process(delta: float) -> void:
 	physics_tick(delta)
-
 
 ## Overrideable physics process used by the controller that calls whatever functions should be called
 ## and any logic that needs to be done on the [param _physics_process] tick
