@@ -41,6 +41,7 @@ position = Vector2(162, 215)
 [node name="RespawnManager" parent="." instance=ExtResource("6_tbjh5")]
 
 [node name="singleton" parent="." instance=ExtResource("7_ofcqf")]
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 40)
