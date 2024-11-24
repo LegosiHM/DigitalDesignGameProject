@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bm82hrowymhds"]
+[gd_scene load_steps=8 format=3 uid="uid://bm82hrowymhds"]
 
 [ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Background_SubUrban_v01.png" id="1_o33ot"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="2_10kh2"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="3_1y64x"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_tikhb"]
-[ext_resource type="PackedScene" uid="uid://dh2b4f5nhjkuq" path="res://Scenes/Nodes/pushPull.tscn" id="5_choof"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/Nodes/PanelCollision.tscn" id="6_kftdb"]
 
 [sub_resource type="Gradient" id="Gradient_s70v2"]
@@ -37,28 +36,10 @@ layer_0/tile_data = PackedInt32Array(458751, 1, 0, 524287, 1, 1, 589823, 1, 1, 6
 
 [node name="Player" parent="." instance=ExtResource("3_1y64x")]
 position = Vector2(163, 696)
-JOYSTICK_MOVEMENT = false
-ENABLE_SPRINT = false
-ENABLE_WALL_JUMPING = false
-ACTION_UP = "up"
-ACTION_DOWN = "down"
-ACTION_LEFT = "left"
-ACTION_RIGHT = "right"
-ACTION_JUMP = "jump"
-ACTION_SPRINT = "sprint"
-APEX_SPEED_BOOST = 1.2
-APEX_GRAVITY_MODIFIER = 0.5
-APEX_DURATION = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 40)
 texture = SubResource("GradientTexture2D_y8jxy")
-
-[node name="Node2D" parent="." instance=ExtResource("5_choof")]
-position = Vector2(713, 453)
-
-[node name="Node2D2" parent="." instance=ExtResource("5_choof")]
-position = Vector2(-200, 475)
 
 [node name="StaticPanelCollision" parent="." instance=ExtResource("6_kftdb")]
 position = Vector2(1170, 530)

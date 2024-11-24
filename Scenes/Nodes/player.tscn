@@ -41,7 +41,6 @@ shape = SubResource("RectangleShape2D_xont5")
 
 [node name="LedgeGrab" type="CollisionShape2D" parent="."]
 position = Vector2(36.4, -33.6)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7ya2j")
 
 [node name="WallCheck" type="ShapeCast2D" parent="."]
