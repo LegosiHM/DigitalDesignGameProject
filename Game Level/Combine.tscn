@@ -1,22 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwtr65j7orcym"]
+[gd_scene load_steps=11 format=3 uid="uid://dwtr65j7orcym"]
 
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="1_6qrq0"]
 [ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_nij7c"]
 [ext_resource type="Texture2D" uid="uid://cjj3grf52m33i" path="res://sprites/Temporary/IMG_3959.png" id="2_emd57"]
-[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="2_f27hv"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="2_f27hv"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="3_1y64x"]
 [ext_resource type="PackedScene" uid="uid://drxl2bc3p0ofy" path="res://Scenes/Nodes/box.tscn" id="4_rlxsr"]
 [ext_resource type="Texture2D" uid="uid://bvte8cvqysx63" path="res://sprites/Temporary/IMG_3960.png" id="7_6i2ps"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/Nodes/PanelCollision.tscn" id="8_0qaxr"]
-
-[sub_resource type="Gradient" id="Gradient_aj3vu"]
-offsets = PackedFloat32Array(0.551948)
-colors = PackedColorArray(0.61039, 0.61039, 0.61039, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_pjouj"]
-gradient = SubResource("Gradient_aj3vu")
-width = 1920
-height = 80
+[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/Nodes/Interface.tscn" id="9_yjml6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wfj8"]
 size = Vector2(128, 857.6)
@@ -57,10 +49,6 @@ scale = Vector2(0.714286, 0.833333)
 [node name="Player" parent="." instance=ExtResource("3_1y64x")]
 position = Vector2(1448, 795)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 40)
-texture = SubResource("GradientTexture2D_pjouj")
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(2001, 537)
 scale = Vector2(1.25, 1.25)
@@ -73,3 +61,5 @@ scale = Vector2(-14.3779, 10.5489)
 [node name="StaticPanelCollision2" parent="." instance=ExtResource("8_0qaxr")]
 position = Vector2(1815, 363)
 scale = Vector2(-13.81, 10.1615)
+
+[node name="Control" parent="." instance=ExtResource("9_yjml6")]

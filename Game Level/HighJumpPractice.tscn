@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcsqinws3turf"]
+[gd_scene load_steps=8 format=3 uid="uid://dcsqinws3turf"]
 
 [ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_626jb"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_b2cvo"]
-[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="2_htvhj"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="2_htvhj"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_h4fuw"]
+[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/Nodes/Interface.tscn" id="5_bfplf"]
 
 [sub_resource type="Gradient" id="Gradient_7e8na"]
 offsets = PackedFloat32Array(0.551948)
@@ -29,9 +30,6 @@ layer_0/tile_data = PackedInt32Array(589824, 0, 3, 589825, 65536, 3, 589826, 131
 position = Vector2(45, 44)
 layer_0/tile_data = PackedInt32Array(589824, 65537, 5, 589825, 65537, 5, 589826, 65537, 5, 589827, 327681, 5, 524291, 327681, 4, 458755, 327681, 0, 458752, 65537, 0, 458753, 65537, 0, 458754, 65537, 0, 327694, 1, 0, 327695, 65537, 0, 327696, 65537, 0, 327697, 65537, 0, 327698, 65537, 0, 327699, 65537, 0, 327700, 65537, 0, 589838, 1, 5, 589839, 65537, 5, 589840, 65537, 5, 589841, 65537, 5, 589842, 65537, 5, 589843, 65537, 5, 589844, 65537, 5, 524286, 1, 0, 655358, 1, 5, 589822, 1, 3, 655359, 65537, 5, 524287, 65537, 0, 393230, 1, 2, 458766, 1, 2, 524302, 1, 2, 327701, 196609, 0, 327702, 196609, 0, 327703, 196609, 0, 327704, 196609, 0, 327705, 196609, 0, 327706, 196609, 0, 327707, 327681, 0, 589845, 65537, 5, 589846, 65537, 5, 589847, 65537, 5, 589848, 65537, 5, 589849, 65537, 5, 589850, 65537, 5, 589851, 327681, 5, 524315, 327681, 4, 458779, 327681, 4, 393243, 327681, 4)
 
-[node name="Player" parent="." instance=ExtResource("2_b2cvo")]
-position = Vector2(168, 692)
-
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("3_h4fuw")]
 position = Vector2(1948, 777)
 my_scene = "res://Game Level/Ability Practice.tscn"
@@ -39,3 +37,8 @@ my_scene = "res://Game Level/Ability Practice.tscn"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 40)
 texture = SubResource("GradientTexture2D_y780s")
+
+[node name="Player" parent="." instance=ExtResource("2_b2cvo")]
+position = Vector2(168, 692)
+
+[node name="Control" parent="." instance=ExtResource("5_bfplf")]

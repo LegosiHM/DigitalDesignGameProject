@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwct7nede7txs"]
 
 [ext_resource type="Script" path="res://scripts/Puzzles/Scripts/draggableObj.gd" id="1_cjqkg"]
-[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="2_31eiq"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="2_31eiq"]
 
 [node name="draggablePanel" type="Node2D"]
 

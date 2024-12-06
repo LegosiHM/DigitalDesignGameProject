@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq3xys50xuc1j"
-path="res://.godot/imported/StoryPanel_Bazaar_PriestGlaring_v.03.png-10a5148f3cf4aa6eb164b7c79c964790.ctex"
+uid="uid://dr8siuoq0nn3m"
+path="res://.godot/imported/รูปถ่าย.png-4937889253d252dd1262b063222665b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Panel/Chapter 0/StoryPanel_Bazaar_PriestGlaring_v.03.png"
-dest_files=["res://.godot/imported/StoryPanel_Bazaar_PriestGlaring_v.03.png-10a5148f3cf4aa6eb164b7c79c964790.ctex"]
+source_file="res://sprites/Temporary/รูปถ่าย.png"
+dest_files=["res://.godot/imported/รูปถ่าย.png-4937889253d252dd1262b063222665b6.ctex"]
 
 [params]
 
