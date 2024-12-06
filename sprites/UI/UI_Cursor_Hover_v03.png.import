@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxygug1n3nab0"
-path="res://.godot/imported/cat.png-3f384cf1db7a29a7b32137a8a9a828b7.ctex"
+uid="uid://d101j4unbby24"
+path="res://.godot/imported/UI_Cursor_Hover_v03.png-f04b7369e90a59c9aed0d940fc5b4616.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Cat Animation/Walk Animation/cat.png"
-dest_files=["res://.godot/imported/cat.png-3f384cf1db7a29a7b32137a8a9a828b7.ctex"]
+source_file="res://sprites/UI/UI_Cursor_Hover_v03.png"
+dest_files=["res://.godot/imported/UI_Cursor_Hover_v03.png-f04b7369e90a59c9aed0d940fc5b4616.ctex"]
 
 [params]
 

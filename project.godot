@@ -18,13 +18,13 @@ config/icon="res://sprites/icon.svg"
 [autoload]
 
 PlatformManager="*res://scripts/Managers/PlatformManager.gd"
-Global="*res://scripts/Managers/global.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/initial_position=Vector2i(960, 540)
+mouse_cursor/custom_image="res://sprites/UI/UI_Cursor_Hover_v03.png"
 
 [file_customization]
 
