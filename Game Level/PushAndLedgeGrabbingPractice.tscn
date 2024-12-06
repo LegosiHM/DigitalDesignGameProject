@@ -30,6 +30,13 @@ layer_0/tile_data = PackedInt32Array(458751, 1, 0, 524287, 1, 1, 589823, 1, 1, 6
 position = Vector2(163, 696)
 
 [node name="Node2D" parent="." instance=ExtResource("6_we5d2")]
+<<<<<<< Updated upstream
 position = Vector2(1000, 693)
 
 [node name="Control" parent="." instance=ExtResource("6_w6cdo")]
+=======
+position = Vector2(1011, 738)
+
+[node name="Node2D2" parent="." instance=ExtResource("6_we5d2")]
+position = Vector2(703, 748)
+>>>>>>> Stashed changes

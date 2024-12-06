@@ -32,8 +32,10 @@ folder_colors={
 "res://Game Level/": "orange",
 "res://Scenes/": "yellow",
 "res://scripts/": "yellow",
-"res://scripts/UI-related/": "orange",
-"res://scripts/player-related/": "red",
+"res://scripts/Managers/": "red",
+"res://scripts/Puzzles/": "yellow",
+"res://scripts/UI-related/": "green",
+"res://scripts/player-related/": "orange",
 "res://sprites/": "green"
 }
 
