@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://lfdspicufthc"
+path="res://.godot/imported/cat.atlas-b234133c9cc716c587b96bb70c9b55c9.spatlas"
+
+[deps]
+
+source_file="res://sprites/Cat Animation/Walk Animation/cat.atlas"
+dest_files=["res://.godot/imported/cat.atlas-b234133c9cc716c587b96bb70c9b55c9.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

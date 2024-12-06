@@ -1,0 +1,13 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://dsg5xxsxn5iwu"
+valid=false
+
+[deps]
+
+source_file="res://sprites/Cat Animation/Walk Animation/cat.skel"
+
+[params]
+
