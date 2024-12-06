@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dcsqinws3turf"]
 
-[ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Background_SubUrban_v01.png" id="1_626jb"]
+[ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_626jb"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_b2cvo"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="2_htvhj"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_h4fuw"]

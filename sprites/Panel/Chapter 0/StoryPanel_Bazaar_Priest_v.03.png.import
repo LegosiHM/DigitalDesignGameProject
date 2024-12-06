@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct1wdos8o0uhe"
-path="res://.godot/imported/Background_SubUrban_v01.png-d22cc77dc409eee8cbcf6110b8c3ef9c.ctex"
+uid="uid://wfm1ss684p7i"
+path="res://.godot/imported/StoryPanel_Bazaar_Priest_v.03.png-a08f83d0b8d5591277f1b6e102a7fd28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Background_SubUrban_v01.png"
-dest_files=["res://.godot/imported/Background_SubUrban_v01.png-d22cc77dc409eee8cbcf6110b8c3ef9c.ctex"]
+source_file="res://sprites/Panel/Chapter 0/StoryPanel_Bazaar_Priest_v.03.png"
+dest_files=["res://.godot/imported/StoryPanel_Bazaar_Priest_v.03.png-a08f83d0b8d5591277f1b6e102a7fd28.ctex"]
 
 [params]
 

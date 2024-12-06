@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh2b4f5nhjkuq"]
 
-[ext_resource type="Script" path="res://scripts/Puzzles/pushPull.gd" id="1_3ho64"]
+[ext_resource type="Script" path="res://scripts/Puzzles/Scripts/pushPull.gd" id="1_3ho64"]
 [ext_resource type="Texture2D" uid="uid://cw2ug8gml3rx5" path="res://sprites/icon.svg" id="1_arnvo"]
-[ext_resource type="Script" path="res://scripts/Puzzles/PushPullObj.gd" id="1_f6pw5"]
+[ext_resource type="Script" path="res://scripts/Puzzles/Scripts/PushPullObj.gd" id="1_f6pw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrj3x"]
 size = Vector2(129, 129)

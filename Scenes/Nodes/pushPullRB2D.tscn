@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://giqd6rqhwspu"]
 
-[ext_resource type="Script" path="res://scripts/Puzzles/pushPull_RB2D.gd" id="1_ov4aq"]
+[ext_resource type="Script" path="res://scripts/Puzzles/Scripts/pushPull_RB2D.gd" id="1_ov4aq"]
 [ext_resource type="Texture2D" uid="uid://cw2ug8gml3rx5" path="res://sprites/icon.svg" id="2_gqdp7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5oag"]

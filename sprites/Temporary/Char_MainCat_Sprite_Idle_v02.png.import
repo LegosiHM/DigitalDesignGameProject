@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://borh2hoal4d00"
-path="res://.godot/imported/Char_MainCat_Sprite_Idle_v02.png-320a9721d566a00b21e9c683f827e4ac.ctex"
+path="res://.godot/imported/Char_MainCat_Sprite_Idle_v02.png-7a9e61420d91526b21693f8902e26265.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Char_MainCat_Sprite_Idle_v02.png"
-dest_files=["res://.godot/imported/Char_MainCat_Sprite_Idle_v02.png-320a9721d566a00b21e9c683f827e4ac.ctex"]
+source_file="res://sprites/Temporary/Char_MainCat_Sprite_Idle_v02.png"
+dest_files=["res://.godot/imported/Char_MainCat_Sprite_Idle_v02.png-7a9e61420d91526b21693f8902e26265.ctex"]
 
 [params]
 

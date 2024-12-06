@@ -29,8 +29,12 @@ window/size/initial_position=Vector2i(960, 540)
 [file_customization]
 
 folder_colors={
+"res://Game Level/": "orange",
+"res://Scenes/": "yellow",
+"res://scripts/": "yellow",
 "res://scripts/UI-related/": "orange",
-"res://scripts/player-related/": "red"
+"res://scripts/player-related/": "red",
+"res://sprites/": "green"
 }
 
 [input]

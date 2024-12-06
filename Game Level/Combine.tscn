@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dwtr65j7orcym"]
 
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="1_6qrq0"]
-[ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Background_SubUrban_v01.png" id="1_nij7c"]
+[ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_nij7c"]
 [ext_resource type="Texture2D" uid="uid://cjj3grf52m33i" path="res://sprites/Temporary/IMG_3959.png" id="2_emd57"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="2_f27hv"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="3_1y64x"]
