@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://giqd6rqhwspu"]
 
 [ext_resource type="Script" path="res://scripts/Puzzles/Scripts/pushPull_RB2D.gd" id="1_ov4aq"]
-[ext_resource type="Texture2D" uid="uid://cw2ug8gml3rx5" path="res://sprites/icon.svg" id="2_gqdp7"]
+[ext_resource type="Texture2D" uid="uid://ddqya5cr6o8" path="res://sprites/Object/Platform_Object_Box_v01.PNG" id="2_276gm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5oag"]
-size = Vector2(130, 129)
+size = Vector2(191, 187)
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,7 +14,8 @@ collision_mask = 3
 script = ExtResource("1_ov4aq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_s5oag")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("2_gqdp7")
+texture = ExtResource("2_276gm")
