@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_hitbl"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="3_wqbpa"]
 [ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://Scenes/Nodes/RespawnManager.tscn" id="6_tbjh5"]
-[ext_resource type="Texture2D" uid="uid://dxbly0klrh03i" path="res://IMG_4346.png" id="7_5sbh0"]
+[ext_resource type="Texture2D" uid="uid://dxbly0klrh03i" path="res://sprites/IMG_4346.png" id="7_5sbh0"]
 [ext_resource type="PackedScene" uid="uid://b2v6nlwxxmvyt" path="res://Scenes/Nodes/singleton.tscn" id="7_ofcqf"]
 
 [sub_resource type="Gradient" id="Gradient_oehyg"]

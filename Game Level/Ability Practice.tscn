@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Background_SubUrban_v01.png" id="1_qgdwg"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="2_4o2v0"]
-[ext_resource type="Texture2D" uid="uid://wfm1ss684p7i" path="res://IMG_4350.png" id="2_twya4"]
+[ext_resource type="Texture2D" uid="uid://wfm1ss684p7i" path="res://sprites/IMG_4350.png" id="2_twya4"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="3_xt85q"]
-[ext_resource type="Texture2D" uid="uid://cq3xys50xuc1j" path="res://IMG_4349.png" id="4_q0fmm"]
+[ext_resource type="Texture2D" uid="uid://cq3xys50xuc1j" path="res://sprites/IMG_4349.png" id="4_q0fmm"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="6_tjd7v"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="7_5ys1c"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/Nodes/PanelCollision.tscn" id="8_v07aq"]
