@@ -1,0 +1,13 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://ds8ys16eq10iv"
+valid=false
+
+[deps]
+
+source_file="res://sprites/Cat Animation/New folder/cat.skel"
+
+[params]
+

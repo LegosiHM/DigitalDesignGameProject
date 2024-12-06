@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://bwucrwu8i5utb"
+path="res://.godot/imported/cat.atlas-1f1e9ba582754cff130f5a0335166d1e.spatlas"
+
+[deps]
+
+source_file="res://sprites/Cat Animation/New folder/cat.atlas"
+dest_files=["res://.godot/imported/cat.atlas-1f1e9ba582754cff130f5a0335166d1e.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
