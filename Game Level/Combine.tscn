@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="1_6qrq0"]
 [ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_nij7c"]
-[ext_resource type="Texture2D" uid="uid://cjj3grf52m33i" path="res://sprites/Temporary/IMG_3959.png" id="2_emd57"]
+[ext_resource type="Texture2D" uid="uid://chet5uhwivnr5" path="res://sprites/Story Panel/Chapter 0/IMG_4348.png" id="2_afql3"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="2_f27hv"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="3_1y64x"]
-[ext_resource type="PackedScene" uid="uid://drxl2bc3p0ofy" path="res://Scenes/Nodes/box.tscn" id="4_rlxsr"]
-[ext_resource type="Texture2D" uid="uid://bvte8cvqysx63" path="res://sprites/Temporary/IMG_3960.png" id="7_6i2ps"]
+[ext_resource type="Texture2D" uid="uid://bnrso763vy7uw" path="res://sprites/Story Panel/Chapter 0/IMG_4347.png" id="3_sil8o"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/Nodes/PanelCollision.tscn" id="8_0qaxr"]
+[ext_resource type="PackedScene" uid="uid://dqpfcsjhcjory" path="res://Scenes/Nodes/pushPull_RB2D.tscn" id="9_ggqqs"]
 [ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/Nodes/Interface.tscn" id="9_yjml6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wfj8"]
@@ -19,17 +19,17 @@ size = Vector2(128, 857.6)
 position = Vector2(960, 540)
 texture = ExtResource("1_nij7c")
 
-[node name="Img3960" type="Sprite2D" parent="."]
-position = Vector2(1337, 286)
-texture = ExtResource("7_6i2ps")
+[node name="Img4348" type="Sprite2D" parent="."]
+position = Vector2(1365, 314)
+texture = ExtResource("2_afql3")
 
-[node name="Img3959" type="Sprite2D" parent="."]
-position = Vector2(1655, 628)
-texture = ExtResource("2_emd57")
+[node name="Img4347" type="Sprite2D" parent="."]
+position = Vector2(1636, 673)
+texture = ExtResource("3_sil8o")
 
 [node name="TileMap2" parent="." instance=ExtResource("2_f27hv")]
 position = Vector2(105, 44)
-layer_0/tile_data = PackedInt32Array(524301, 1, 0, 589837, 1, 1, 655373, 1, 5, 655374, 65537, 5, 655375, 65537, 5, 655376, 327681, 5, 589840, 327681, 4, 524304, 327681, 0, 524303, 196609, 0, 524302, 196609, 0, 262161, 1, 5, 196625, 1, 4, 131089, 1, 0, 131090, 65537, 0, 131091, 65537, 0, 131092, 327681, 0, 262164, 327681, 5, 196628, 327681, 4, 262163, 196609, 5, 262162, 196609, 5)
+layer_0/tile_data = PackedInt32Array(524301, 1, 0, 589837, 1, 1, 655373, 1, 5, 655374, 65537, 5, 655375, 65537, 5, 655376, 327681, 5, 589840, 327681, 4, 524304, 262145, 5, 524303, 262145, 5, 524302, 1, 5, 262161, 1, 5, 196625, 1, 4, 131089, 1, 0, 131090, 65537, 0, 131091, 65537, 0, 131092, 327681, 0, 262164, 327681, 5, 196628, 327681, 4, 262163, 196609, 5, 262162, 196609, 5, 65547, 1, 0, 65548, 65537, 0, 65549, 65537, 0, 65550, 65537, 0, 65551, 65537, 0, 65552, 327681, 0, 131083, 1, 1, 196619, 1, 2, 262155, 1, 5, 262156, 65537, 5, 262157, 65537, 5, 262158, 65537, 5, 262159, 65537, 5, 262160, 327681, 5, 131088, 327681, 4, 196624, 327681, 4, 327694, 1, 0, 327695, 65537, 0, 327696, 65537, 0, 327697, 65537, 0, 327698, 65537, 0, 327699, 327681, 0, 393235, 327681, 1, 458771, 327681, 4, 524307, 327681, 5, 524306, 262145, 5, 524305, 262145, 5, 458766, 1, 4, 393230, 1, 4)
 
 [node name="TileMap" parent="." instance=ExtResource("2_f27hv")]
 position = Vector2(960, 540)
@@ -41,10 +41,6 @@ layer_0/tile_data = PackedInt32Array(262148, 9, 3, 262149, 65545, 3, 262150, 131
 [node name="draggablePanel" parent="." instance=ExtResource("1_6qrq0")]
 position = Vector2(400, 387)
 scale = Vector2(1.75, 1.5)
-
-[node name="Box" parent="draggablePanel" instance=ExtResource("4_rlxsr")]
-position = Vector2(93.7144, -18.6667)
-scale = Vector2(0.714286, 0.833333)
 
 [node name="Player" parent="." instance=ExtResource("3_1y64x")]
 position = Vector2(1448, 795)
@@ -63,3 +59,6 @@ position = Vector2(1815, 363)
 scale = Vector2(-13.81, 10.1615)
 
 [node name="Control" parent="." instance=ExtResource("9_yjml6")]
+
+[node name="Node2D" parent="." instance=ExtResource("9_ggqqs")]
+position = Vector2(453, 395)

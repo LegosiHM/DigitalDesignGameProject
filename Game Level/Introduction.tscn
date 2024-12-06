@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_gyhlm"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_hrw36"]
+[ext_resource type="Script" path="res://Scenes/Nodes/change_scene_detector.gd" id="3_68yrn"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_hitbl"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="3_wqbpa"]
 [ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://Scenes/Nodes/RespawnManager.tscn" id="6_tbjh5"]
 [ext_resource type="Texture2D" uid="uid://dxbly0klrh03i" path="res://sprites/Story Panel/Chapter 0/StoryPanel_Bazaar_Merchants_v.03.png" id="7_5sbh0"]
 [ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/Nodes/Interface.tscn" id="8_5xtlx"]
-[ext_resource type="PackedScene" uid="uid://dqpfcsjhcjory" path="res://Scenes/Nodes/pushPull_RB2D.tscn" id="8_es43m"]
 
 [node name="Introduction" type="Node2D"]
 
@@ -18,6 +18,7 @@ texture = ExtResource("1_gyhlm")
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("3_hitbl")]
 position = Vector2(1978, 777)
 scale = Vector2(1.75, 1)
+script = ExtResource("3_68yrn")
 my_scene = "res://Game Level/HighJumpPractice.tscn"
 
 [node name="Panel" parent="." instance=ExtResource("3_wqbpa")]
@@ -44,6 +45,3 @@ layer_0/tile_data = PackedInt32Array(-65540, 1, 0, -65539, 65537, 0, -65538, 131
 position = Vector2(162, 215)
 
 [node name="Control" parent="." instance=ExtResource("8_5xtlx")]
-
-[node name="Node2D" parent="." instance=ExtResource("8_es43m")]
-position = Vector2(1058, 877)
