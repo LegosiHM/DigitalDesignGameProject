@@ -8,17 +8,17 @@
 [node name="Sprite2D" type="Sprite2D" parent="."]
 script = ExtResource("1_cjqkg")
 
-[node name="TileMap" parent="Sprite2D" instance=ExtResource("2_31eiq")]
-position = Vector2(0, 12)
-scale = Vector2(0.6, 0.6)
-layer_0/tile_data = PackedInt32Array(131069, 6, 3, 131070, 6, 3, 131071, 6, 3, 65536, 6, 3, 65537, 6, 3, 65538, 6, 3)
-
 [node name="Button" type="Button" parent="Sprite2D"]
 offset_left = -160.0
 offset_top = -121.0
 offset_right = 160.0
 offset_bottom = 96.0
 scale = Vector2(0.999738, 1.10857)
+
+[node name="TileMap" parent="Sprite2D" instance=ExtResource("2_31eiq")]
+position = Vector2(0, 12)
+scale = Vector2(0.6, 0.6)
+layer_0/tile_data = PackedInt32Array(131069, 6, 3, 131070, 6, 3, 131071, 6, 3, 65536, 6, 3, 65537, 6, 3, 65538, 6, 3)
 
 [connection signal="button_down" from="Sprite2D/Button" to="Sprite2D" method="_on_button_button_down"]
 [connection signal="button_up" from="Sprite2D/Button" to="Sprite2D" method="_on_button_button_up"]
