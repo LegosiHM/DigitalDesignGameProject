@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="3_wqbpa"]
 [ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://Scenes/Nodes/RespawnManager.tscn" id="6_tbjh5"]
 [ext_resource type="Texture2D" uid="uid://dxbly0klrh03i" path="res://sprites/Story Panel/Chapter 0/StoryPanel_Bazaar_Merchants_v.03.png" id="7_5sbh0"]
-[ext_resource type="PackedScene" uid="uid://b2v6nlwxxmvyt" path="res://Scenes/Nodes/singleton.tscn" id="7_ofcqf"]
 [ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/Nodes/Interface.tscn" id="8_5xtlx"]
+[ext_resource type="PackedScene" uid="uid://dqpfcsjhcjory" path="res://Scenes/Nodes/pushPull_RB2D.tscn" id="8_es43m"]
 
 [node name="Introduction" type="Node2D"]
 
@@ -31,9 +31,6 @@ layer_0/tile_data = PackedInt32Array(327680, 1, 0, 393216, 1, 1, 458752, 1, 1, 5
 
 [node name="RespawnManager" parent="." instance=ExtResource("6_tbjh5")]
 
-[node name="singleton" parent="." instance=ExtResource("7_ofcqf")]
-script = null
-
 [node name="StoryPanel_Merchants" type="Sprite2D" parent="."]
 position = Vector2(1544, 536)
 texture = ExtResource("7_5sbh0")
@@ -47,3 +44,6 @@ layer_0/tile_data = PackedInt32Array(-65540, 1, 0, -65539, 65537, 0, -65538, 131
 position = Vector2(162, 215)
 
 [node name="Control" parent="." instance=ExtResource("8_5xtlx")]
+
+[node name="Node2D" parent="." instance=ExtResource("8_es43m")]
+position = Vector2(1058, 877)
