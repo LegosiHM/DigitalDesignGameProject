@@ -18,6 +18,7 @@ config/icon="res://sprites/UI/UI_Logo_v01.png"
 [autoload]
 
 PlatformManager="*res://scripts/Managers/PlatformManager.gd"
+DialogManager="*res://scripts/singletons/DialogManager.gd"
 
 [display]
 

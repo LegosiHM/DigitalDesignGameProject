@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3rx64gynmwk4"]
+
+[ext_resource type="Script" path="res://Scenes/UI/text_box.gd" id="1_d8g1d"]
+[ext_resource type="Texture2D" uid="uid://r0v1ttdv6mlf" path="res://Scenes/UI/TextBoxTest.png" id="2_k1l3k"]
+
+[node name="TextBox" type="MarginContainer"]
+offset_right = 373.0
+offset_bottom = 257.0
+script = ExtResource("1_d8g1d")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_k1l3k")
+region_rect = Rect2(112, 280, 952, 624)
+patch_margin_left = 16
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 48
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Hello"
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
