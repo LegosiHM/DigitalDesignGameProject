@@ -40,6 +40,7 @@ func _on_button_button_down() -> void:
 func _on_button_button_up() -> void:
 	dragging = false
 	returning = true
+	
 
 func check_player_on_platform() -> bool:
 	var on_platform = false

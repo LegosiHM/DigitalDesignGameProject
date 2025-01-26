@@ -19,7 +19,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		player = null
 		print("Player left the detection range")
 
-func _process(delta):
+func _process(_delta):
 	if player:
 		if Input.is_action_pressed("drag"): 
 			if not dragging:
@@ -29,7 +29,7 @@ func _process(delta):
 			dragging = false
 		
 		if dragging:
-			rb2d.position = player.position + offset  
+			rb2d.position = player.position + offset
 			print("Box Position: ", rb2d.position)  
 		else:
 			pass

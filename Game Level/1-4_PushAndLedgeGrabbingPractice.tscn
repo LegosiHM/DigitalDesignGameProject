@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm82hrowymhds"]
+
+[ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_o211l"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="2_vxeen"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="3_430i8"]
+[ext_resource type="Texture2D" uid="uid://copkspfc5hsbi" path="res://sprites/Temporary/IMG_4379.png" id="4_3ldfk"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="5_gcp8p"]
+[ext_resource type="PackedScene" uid="uid://giqd6rqhwspu" path="res://Scenes/Nodes/pushPullRB2D.tscn" id="6_u3eec"]
+[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/Nodes/Interface.tscn" id="7_jbmis"]
+
+[node name="PushAndLedgeGrabbingPractice" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_o211l")
+
+[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_vxeen")]
+z_index = 5
+position = Vector2(1491, -167)
+rotation = -1.5708
+scale = Vector2(1.727, 2.67)
+my_scene = "res://Game Level/1-5_Combine.tscn"
+
+[node name="PlatformPanel" parent="." instance=ExtResource("3_430i8")]
+layer_0/tile_data = PackedInt32Array(131078, 2, 0, 196614, 2, 0, 262150, 2, 0, 327686, 2, 0, 393222, 2, 0, 458758, 2, 0, 524294, 2, 0, 589830, 0, 3, 589831, 0, 3, 589832, 0, 3, 589833, 0, 3, 589834, 0, 3, 589835, 0, 3, 589836, 0, 3, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 589839, 0, 3, 589840, 0, 3, 589841, 0, 3, 589842, 0, 3, 589843, 0, 3, 589838, 0, 3, 589837, 0, 3, 524306, 2, 0, 524307, 0, 3, 458771, 0, 3, 393235, 0, 3, 327699, 0, 3, 262163, 0, 3, 131085, 2, 0, 131084, 2, 0, 131083, 2, 0, 131082, 2, 0, 131081, 2, 0, 131080, 2, 0, 131079, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 262152, 2, 0, 262153, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 262156, 2, 0, 262155, 2, 0, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0, 262160, 2, 0, 262161, 2, 0, 262162, 2, 0, 327698, 2, 0, 393234, 2, 0, 393233, 2, 0, 458769, 2, 0, 458770, 2, 0, 524305, 2, 0, 524304, 2, 0, 458768, 2, 0, 393232, 2, 0, 327696, 2, 0, 327697, 2, 0, 458767, 2, 0, 458766, 2, 0, 393230, 2, 0, 327694, 2, 0, 458765, 2, 0, 393229, 2, 0, 393231, 2, 0, 327695, 2, 0, 327693, 2, 0, 393228, 2, 0, 458764, 2, 0, 327692, 2, 0, 393227, 2, 0, 458763, 2, 0, 327691, 2, 0, 458762, 2, 0, 524298, 2, 0, 393226, 2, 0, 327690, 2, 0, 262154, 2, 0, 327689, 2, 0, 393225, 2, 0, 458761, 2, 0, 524296, 2, 0, 458760, 2, 0, 393224, 2, 0, 327688, 2, 0, 524297, 2, 0, 327687, 2, 0, 262151, 2, 0, 393223, 2, 0, 458759, 2, 0, 524295, 2, 0, 589827, 196611, 3, 589826, 131075, 3, 589825, 65539, 3, 589824, 3, 3, 524288, 2, 0, 458752, 2, 0, 458753, 2, 0, 524289, 2, 0, 524290, 2, 0, 458754, 2, 0, 458755, 2, 0, 524291, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 458751, 2, 0, 524287, 2, 0, 589823, 2, 0, 655359, 131075, 3, 196627, 262144, 3, 131087, 262144, 3, 131088, 262144, 3, 131089, 262144, 3, 131090, 262144, 3, 131091, 262144, 3)
+
+[node name="Outline" parent="PlatformPanel" instance=ExtResource("3_430i8")]
+position = Vector2(45, 44)
+layer_0/tile_data = PackedInt32Array(589829, 1, 5, 524293, 1, 4, 458757, 1, 4, 393221, 1, 4, 327685, 1, 4, 262149, 1, 4, 196613, 1, 4, 131077, 1, 4, 65541, 1, 0, 65542, 65537, 0, 65543, 65537, 0, 65544, 65537, 0, 65545, 65537, 0, 65546, 65537, 0, 65547, 65537, 0, 65548, 65537, 0, 65549, 65537, 0, 65550, 65537, 0, 65551, 65537, 0, 65552, 65537, 0, 65553, 65537, 0, 65554, 65537, 0, 65555, 327681, 0, 131091, 327681, 1, 196627, 327681, 1, 262163, 327681, 1, 327699, 327681, 1, 393235, 327681, 1, 458771, 327681, 1, 524307, 327681, 1, 589843, 327681, 5, 589842, 262145, 5, 589841, 262145, 5, 589840, 262145, 5, 589839, 262145, 5, 589838, 262145, 5, 589837, 262145, 5, 589836, 262145, 5, 589835, 262145, 5, 589834, 262145, 5, 589833, 262145, 5, 589832, 262145, 5, 589831, 262145, 5, 589830, 262145, 5, 589824, 65537, 5, 589825, 65537, 5, 589826, 65537, 5, 458755, 327681, 3, 524291, 327681, 3, 589827, 327681, 5, 589822, 1, 3, 524286, 1, 3, 458750, 1, 3, 655358, 1, 5, 655359, 131073, 5, 393219, 327681, 2, 327683, 327681, 0, 327682, 65537, 0, 327681, 65537, 0, 327680, 65537, 0, 393215, 65537, 0, 393214, 1, 0)
+
+[node name="Img4379" type="Sprite2D" parent="."]
+position = Vector2(1168, 495)
+texture = ExtResource("4_3ldfk")
+
+[node name="Player" parent="." instance=ExtResource("5_gcp8p")]
+position = Vector2(77, 698)
+
+[node name="PushableObject" parent="." instance=ExtResource("6_u3eec")]
+position = Vector2(1504, 693)
+
+[node name="Control" parent="." instance=ExtResource("7_jbmis")]

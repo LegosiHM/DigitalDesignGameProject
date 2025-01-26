@@ -1,0 +1,273 @@
+[gd_scene load_steps=31 format=3 uid="uid://dwtr65j7orcym"]
+
+[ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_0lpcr"]
+[ext_resource type="Texture2D" uid="uid://chet5uhwivnr5" path="res://sprites/Story Panel/Chapter 0/IMG_4348.png" id="2_tmdrf"]
+[ext_resource type="Texture2D" uid="uid://bnrso763vy7uw" path="res://sprites/Story Panel/Chapter 0/IMG_4347.png" id="3_lg04s"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="4_m18fo"]
+[ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="5_5cp8k"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="6_6c63u"]
+[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/Nodes/Interface.tscn" id="8_p3j70"]
+[ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://sprites/Tileset/Panel_Platform_BrickRoad_v02.PNG" id="9_uhmil"]
+[ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://sprites/Tileset/Panel_Outline_v02.PNG" id="10_otcap"]
+[ext_resource type="Texture2D" uid="uid://d0ghbyaweujm2" path="res://sprites/Tileset/Panel_Background_v01.PNG" id="11_ubyxt"]
+[ext_resource type="Texture2D" uid="uid://x465pcsbne4k" path="res://sprites/Tileset/Panel_Platform_BrickRoad_v01.PNG" id="12_fcorf"]
+[ext_resource type="Texture2D" uid="uid://orvpm0ri6hum" path="res://sprites/Tileset/Panel_Platform_PalaceTiles_v01.PNG" id="13_rmv57"]
+[ext_resource type="Texture2D" uid="uid://dxkb0i8a7738a" path="res://sprites/Tileset/Panel_Platform_PalaceTiles_v02.PNG" id="14_u77oh"]
+[ext_resource type="Texture2D" uid="uid://c0rgci0dd5se2" path="res://sprites/Tileset/Panel_Platform_PalaceTiles_v03.PNG" id="15_k67fo"]
+[ext_resource type="Texture2D" uid="uid://cs024ords13eo" path="res://sprites/Tileset/Panel_Platform_PalaceTiles_v04.PNG" id="16_vhe0x"]
+[ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://sprites/Tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="17_al3ow"]
+[ext_resource type="PackedScene" uid="uid://dmce37xwpfbth" path="res://Scenes/Nodes/draggablePanel_withObject.tscn" id="18_7hise"]
+[ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://sprites/Tileset/Panel_Platform_Sand_v01.PNG" id="18_uxmih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wfj8"]
+size = Vector2(128, 857.6)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_506pf"]
+texture = ExtResource("9_uhmil")
+texture_region_size = Vector2i(90, 90)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ysd6"]
+texture = ExtResource("10_otcap")
+texture_region_size = Vector2i(90, 90)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rj75j"]
+texture = ExtResource("11_ubyxt")
+texture_region_size = Vector2i(90, 90)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bcoir"]
+texture = ExtResource("12_fcorf")
+texture_region_size = Vector2i(90, 90)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ng0x"]
+texture = ExtResource("13_rmv57")
+texture_region_size = Vector2i(90, 90)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2n64"]
+texture = ExtResource("14_u77oh")
+texture_region_size = Vector2i(90, 90)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w5oej"]
+texture = ExtResource("15_k67fo")
+texture_region_size = Vector2i(90, 90)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7v1op"]
+texture = ExtResource("16_vhe0x")
+texture_region_size = Vector2i(90, 90)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_joptc"]
+texture = ExtResource("17_al3ow")
+texture_region_size = Vector2i(90, 90)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_loui2"]
+texture = ExtResource("18_uxmih")
+texture_region_size = Vector2i(90, 90)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
+[sub_resource type="TileSet" id="TileSet_febrp"]
+tile_size = Vector2i(90, 90)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_506pf")
+sources/2 = SubResource("TileSetAtlasSource_rj75j")
+sources/3 = SubResource("TileSetAtlasSource_bcoir")
+sources/4 = SubResource("TileSetAtlasSource_5ng0x")
+sources/5 = SubResource("TileSetAtlasSource_c2n64")
+sources/6 = SubResource("TileSetAtlasSource_w5oej")
+sources/7 = SubResource("TileSetAtlasSource_7v1op")
+sources/8 = SubResource("TileSetAtlasSource_joptc")
+sources/9 = SubResource("TileSetAtlasSource_loui2")
+sources/1 = SubResource("TileSetAtlasSource_0ysd6")
+
+[node name="PushAndLedgeGrabbingPractice" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_0lpcr")
+
+[node name="Img4348" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1041, 407)
+scale = Vector2(1.05667, 1.02222)
+texture = ExtResource("2_tmdrf")
+
+[node name="Img4347" type="Sprite2D" parent="."]
+position = Vector2(1380.5, 305.5)
+scale = Vector2(0.913333, 1.01852)
+texture = ExtResource("3_lg04s")
+
+[node name="draggablePanel" parent="." instance=ExtResource("5_5cp8k")]
+z_index = 5
+position = Vector2(2172, 780)
+scale = Vector2(1.25, 1.25)
+
+[node name="Player" parent="." instance=ExtResource("6_6c63u")]
+position = Vector2(1537, 817)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(2001, 537)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("RectangleShape2D_3wfj8")
+
+[node name="Control" parent="." instance=ExtResource("8_p3j70")]
+
+[node name="Panel" parent="." instance=ExtResource("4_m18fo")]
+position = Vector2(30.25, 239)
+scale = Vector2(0.75, 0.75)
+tile_set = SubResource("TileSet_febrp")
+layer_0/tile_data = PackedInt32Array(655382, 65536, 3, 655383, 65536, 3, 655384, 65536, 3, 655385, 65536, 3, 655386, 65536, 3, 131098, 65536, 3, 131099, 65536, 3, 131100, 65536, 3, 131101, 65536, 3, 131097, 65536, 3, 65561, 2, 0, 25, 2, 0, -65511, 2, 0, -65510, 2, 0, -65509, 2, 0, -65508, 2, 0, 28, 2, 0, 29, 2, 0, 65565, 2, 0, 65564, 2, 0, 65563, 2, 0, 65562, 2, 0, 26, 2, 0, -65507, 2, 0, 27, 2, 0, 589846, 2, 0, 524310, 2, 0, 524311, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 524313, 2, 0, 524314, 2, 0, 589849, 2, 0, 589848, 2, 0, 524312, 2, 0, 458774, 2, 0, 458778, 2, 0, 589850, 2, 0, 589847, 2, 0, 131086, 196609, 0, 131087, 65537, 0, 131088, 131073, 0, 131096, 131072, 3, 65560, 2, 0, 24, 2, 0, -65512, 2, 0, 262155, 1, 5, 196619, 1, 4, 131083, 1, 4, 65547, 1, 4, 11, 1, 0, 12, 65537, 0, 13, 65537, 0, 14, 65537, 0, 15, 65537, 0, 16, 65537, 0, 17, 65537, 0, 18, 327681, 0, 65554, 327681, 1, 131090, 327681, 1, 196626, 327681, 1, 262162, 327681, 5, 262161, 262145, 5, 262160, 262145, 5, 262159, 262145, 5, 262158, 262145, 5, 262157, 262145, 5, 262156, 262145, 5)
+
+[node name="Outline" parent="Panel" instance=ExtResource("4_m18fo")]
+position = Vector2(45, 44)
+tile_set = SubResource("TileSet_febrp")
+layer_0/tile_data = PackedInt32Array(655381, 1, 5, 655382, 65537, 5, 655383, 65537, 5, 655384, 65537, 5, 655385, 65537, 5, 655386, 327681, 5, 589850, 327681, 4, 524314, 327681, 4, 458778, 327681, 4, 393242, 327681, 0, 393238, 262145, 0, 393239, 262145, 0, 393240, 262145, 0, 393241, 262145, 0, 393237, 1, 0, 458773, 1, 2, 524309, 1, 2, 589845, 1, 2, -131043, 327681, 0, -131047, 196609, 0, -131046, 196609, 0, -131045, 196609, 0, -131044, 196609, 0, -65507, 327681, 1, 29, 327681, 1, 65565, 327681, 1, 131097, 131073, 5, 131098, 131073, 5, 131099, 131073, 5, 131100, 131073, 5, 131101, 327681, 5, -131056, 1, 0, -65520, 1, 1, 16, 1, 2, 65552, 1, 3, 131088, 1, 5, 131089, 65537, 5, 131090, 131073, 5, 131091, 196609, 5, 65558, 327681, 4, 131094, 327681, 5, -65514, 327681, 2, 22, 327681, 3, -131052, 196609, 0, -131051, 262145, 0, -131050, 327681, 0, -131055, 131073, 0, -131054, 131073, 0, -131053, 196609, 0, 131092, 196609, 5, 131093, 196609, 5, 131096, 131073, 5, 131095, 1, 5, 65559, 1, 4, 23, 1, 4, -65513, 1, 4, -131049, 1, 0, -131048, 65537, 0)
+
+[node name="draggablePanel2" parent="." instance=ExtResource("18_7hise")]
+position = Vector2(457, 417)
+scale = Vector2(1.3, 1.3)
