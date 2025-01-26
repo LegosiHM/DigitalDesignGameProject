@@ -43,5 +43,17 @@ layer_0/tile_data = PackedInt32Array(-65540, 1, 0, -65539, 65537, 0, -65538, 131
 
 [node name="Player" parent="." instance=ExtResource("2_hrw36")]
 position = Vector2(162, 215)
+JOYSTICK_MOVEMENT = null
+ENABLE_SPRINT = null
+ENABLE_WALL_JUMPING = null
+ACTION_UP = null
+ACTION_DOWN = null
+ACTION_LEFT = null
+ACTION_RIGHT = null
+ACTION_JUMP = null
+ACTION_SPRINT = null
+APEX_SPEED_BOOST = null
+APEX_GRAVITY_MODIFIER = null
+APEX_DURATION = null
 
 [node name="Control" parent="." instance=ExtResource("8_5xtlx")]

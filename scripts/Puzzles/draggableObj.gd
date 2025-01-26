@@ -10,7 +10,8 @@ var return_speed = 200.0
 var velocity = Vector2.ZERO
 var is_player_on_platform = false
 
-signal player_on_platform(on_platform: bool)  
+signal player_on_platform(on_platform: bool)
+signal lock_player_movement(lock: bool)
 
 func _ready() -> void:
 	original_position = global_position
@@ -21,10 +22,13 @@ func _process(delta: float) -> void:
 		velocity = new_position - global_position
 		global_position = new_position
 
-		if check_player_on_platform(): 
-			player.global_position += velocity 
+		if check_player_on_platform():
+			emit_signal("lock_player_movement", true)  # Lock player movement
+			player.global_position += velocity
+	else:
+		emit_signal("lock_player_movement", false)  # Unlock movement
 
-	elif returning:
+	if returning:
 		global_position = global_position.move_toward(original_position, return_speed * delta)
 		if global_position.distance_to(original_position) < 1.0:
 			returning = false
@@ -42,12 +46,14 @@ func _on_button_button_up() -> void:
 	returning = true
 
 func check_player_on_platform() -> bool:
+	emit_signal("lock_player_movement", true) 
 	var on_platform = false
 	if player and player.is_on_floor():
 		var floor_normal = player.get_floor_normal()
-		if floor_normal == Vector2.UP:  
+		if floor_normal == Vector2.UP:
 			var platform_rect = get_rect()
 			if platform_rect.has_point(player.global_position):
 				on_platform = true
+	emit_signal("lock_player_movement", false)
 	emit_signal("player_on_platform", on_platform)
 	return on_platform
