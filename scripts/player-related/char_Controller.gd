@@ -169,6 +169,7 @@ func apply_jump(move_direction: Vector2, jump_force: float = JUMP_FORCE, jump_di
 		velocity.y = 0
 
 	velocity.y += jump_force * jump_direction
+
 func get_inputs() -> Dictionary:
 	return {
 		input_direction = get_input_direction(),
@@ -189,7 +190,7 @@ func apply_velocity(delta: float, move_direction: Vector2) -> void:
 	velocity.x += move_direction.x * ACCELERATION * delta * (sprint_strength if is_on_floor() else 1.0)
 	velocity.x = clamp(velocity.x, -MAX_SPEED * abs(move_direction.x) * sprint_strength, MAX_SPEED * abs(move_direction.x) * sprint_strength)
 
-<<<<<<< Updated upstream
+
 ## If jump is pressed before hitting the ground, it's buffered using the [param JUMP_BUFFER_TIMER] value and the jump is applied
 ## if the character lands before the timer ends
 func buffer_jump() -> void:
@@ -215,11 +216,10 @@ func apply_apex_modifier(_delta: float) -> void:
 func reset_apex_modifier() -> void:
 	apex_active = false
 	GRAVITY /= APEX_GRAVITY_MODIFIER
-=======
+
 func apply_friction(delta: float) -> void:
 	var fric: float = FRICTION * delta * sign(velocity.x) * -1 if is_on_floor() else AIR_RESISTENCE * delta * sign(velocity.x) * -1
 	if abs(velocity.x) <= abs(fric):
 		velocity.x = 0
 	else:
 		velocity.x += fric
->>>>>>> Stashed changes
