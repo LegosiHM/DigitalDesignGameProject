@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="1_6qrq0"]
 [ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_nij7c"]
-[ext_resource type="Texture2D" uid="uid://chet5uhwivnr5" path="res://sprites/Story Panel/Chapter 0/IMG_4348.png" id="2_afql3"]
+[ext_resource type="Texture2D" uid="uid://chet5uhwivnr5" path="res://sprites/Chapter 1/Story Panel/StoryPanel_Bazaar_Gatekeeper01_v.02.png" id="2_afql3"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="2_f27hv"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="3_1y64x"]
-[ext_resource type="Texture2D" uid="uid://bnrso763vy7uw" path="res://sprites/Story Panel/Chapter 0/IMG_4347.png" id="3_sil8o"]
+[ext_resource type="Texture2D" uid="uid://bnrso763vy7uw" path="res://sprites/Chapter 1/Story Panel/StoryPanel_Bazaar_Gatekeeper02_v.02.png" id="3_sil8o"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/Nodes/PanelCollision.tscn" id="8_0qaxr"]
 [ext_resource type="PackedScene" uid="uid://dqpfcsjhcjory" path="res://Scenes/Nodes/pushPull_RB2D.tscn" id="9_ggqqs"]
-[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/Nodes/Interface.tscn" id="9_yjml6"]
+[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/UI/Interface.tscn" id="9_yjml6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wfj8"]
 size = Vector2(128, 857.6)

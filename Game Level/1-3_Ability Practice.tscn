@@ -1,28 +1,32 @@
-[gd_scene load_steps=11 format=3 uid="uid://csxm21t4vk04j"]
+[gd_scene load_steps=14 format=3 uid="uid://csxm21t4vk04j"]
 
-[ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_rllrn"]
-[ext_resource type="Texture2D" uid="uid://wfm1ss684p7i" path="res://sprites/Story Panel/Chapter 0/StoryPanel_Bazaar_Priest_v.03.png" id="2_78xko"]
+[ext_resource type="Texture2D" uid="uid://s6ijtbtnvx4k" path="res://sprites/Chapter 1/Background/BG_Suburb_Night_v02.PNG" id="1_mylrh"]
+[ext_resource type="Texture2D" uid="uid://wfm1ss684p7i" path="res://sprites/Chapter 1/Story Panel/StoryPanel_Bazaar_Priest_v.03.png" id="2_78xko"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="3_tsvq6"]
-[ext_resource type="Texture2D" uid="uid://cq3xys50xuc1j" path="res://sprites/Story Panel/Chapter 0/StoryPanel_Bazaar_PriestGlaring_v.03.png" id="4_ms833"]
+[ext_resource type="Texture2D" uid="uid://cq3xys50xuc1j" path="res://sprites/Chapter 1/Story Panel/StoryPanel_Bazaar_PriestGlaring_v.03.png" id="4_ms833"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="5_l2758"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="6_53m7t"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="8_6q4d5"]
-[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/Nodes/Interface.tscn" id="9_j6gmk"]
+[ext_resource type="Script" path="res://Scenes/Nodes/respawn_detector.gd" id="9_6uuhn"]
+[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/UI/Interface.tscn" id="9_j6gmk"]
 
-[sub_resource type="Gradient" id="Gradient_5gibr"]
-offsets = PackedFloat32Array(0.551948)
-colors = PackedColorArray(0.61039, 0.61039, 0.61039, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npypg"]
+size = Vector2(2762.5, 154)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rhp7c"]
-gradient = SubResource("Gradient_5gibr")
-width = 1920
-height = 80
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27b4b"]
+size = Vector2(183, 1393.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdbxn"]
+size = Vector2(2292, 116.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctvnn"]
+size = Vector2(178, 1060.5)
 
 [node name="AbilityPractice" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("1_rllrn")
+texture = ExtResource("1_mylrh")
 
 [node name="StoryPanel_Priest" type="Sprite2D" parent="."]
 z_index = 1
@@ -71,14 +75,35 @@ rotation = -1.5708
 layer_0/tile_data = PackedInt32Array(131080, 1, 0, 131082, 327681, 0, 131081, 131073, 0, 524298, 327681, 1, 458762, 327681, 1, 393226, 327681, 1, 327690, 327681, 1, 262154, 327681, 1, 196618, 327681, 1, 196616, 1, 1, 262152, 1, 1, 327688, 1, 1, 393224, 1, 1, 458760, 1, 1, 524296, 1, 1, 589832, 1, 5, 589834, 327681, 5, 589833, 196609, 5)
 
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("6_53m7t")]
-position = Vector2(1949, 746)
+position = Vector2(2001, 656)
+scale = Vector2(2, 2)
 my_scene = "res://Game Level/1-4_PushAndLedgeGrabbingPractice.tscn"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 40)
-texture = SubResource("GradientTexture2D_rhp7c")
+[node name="UI" parent="." instance=ExtResource("9_j6gmk")]
 
 [node name="Player" parent="." instance=ExtResource("8_6q4d5")]
 position = Vector2(165, 757)
 
-[node name="Control" parent="." instance=ExtResource("9_j6gmk")]
+[node name="RespawnDetector" type="Area2D" parent="."]
+position = Vector2(675, 1082)
+script = ExtResource("9_6uuhn")
+respawn_position = Vector2(165, 757)
+
+[node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
+position = Vector2(646.75, 47)
+shape = SubResource("RectangleShape2D_npypg")
+
+[node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
+position = Vector2(-789, -579.25)
+shape = SubResource("RectangleShape2D_27b4b")
+
+[node name="Detector03" type="CollisionShape2D" parent="RespawnDetector"]
+position = Vector2(277, -1323)
+shape = SubResource("RectangleShape2D_xdbxn")
+
+[node name="Detector04" type="CollisionShape2D" parent="RespawnDetector"]
+position = Vector2(1531, -822.25)
+shape = SubResource("RectangleShape2D_ctvnn")
+
+[connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
+[connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

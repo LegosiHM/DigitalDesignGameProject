@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chet5uhwivnr5"
-path="res://.godot/imported/IMG_4348.png-c434a61d8b58f516b923b04a21a6d69a.ctex"
+uid="uid://s6ijtbtnvx4k"
+path="res://.godot/imported/BG_Suburb_Night_v02.PNG-6805a207c1dc2877ddabc0af20ea2b7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Story Panel/Chapter 0/IMG_4348.png"
-dest_files=["res://.godot/imported/IMG_4348.png-c434a61d8b58f516b923b04a21a6d69a.ctex"]
+source_file="res://sprites/Chapter 1/Background/BG_Suburb_Night_v02.PNG"
+dest_files=["res://.godot/imported/BG_Suburb_Night_v02.PNG-6805a207c1dc2877ddabc0af20ea2b7e.ctex"]
 
 [params]
 

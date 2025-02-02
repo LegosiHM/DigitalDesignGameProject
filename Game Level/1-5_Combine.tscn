@@ -1,12 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://dwtr65j7orcym"]
+[gd_scene load_steps=34 format=3 uid="uid://dwtr65j7orcym"]
 
-[ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_0lpcr"]
-[ext_resource type="Texture2D" uid="uid://chet5uhwivnr5" path="res://sprites/Story Panel/Chapter 0/IMG_4348.png" id="2_tmdrf"]
-[ext_resource type="Texture2D" uid="uid://bnrso763vy7uw" path="res://sprites/Story Panel/Chapter 0/IMG_4347.png" id="3_lg04s"]
+[ext_resource type="Texture2D" uid="uid://d11pmosyoyoot" path="res://sprites/Chapter 1/Background/BG_Temple_Evening_v01.PNG" id="1_ut00u"]
+[ext_resource type="Texture2D" uid="uid://chet5uhwivnr5" path="res://sprites/Chapter 1/Story Panel/StoryPanel_Bazaar_Gatekeeper01_v.02.png" id="2_tmdrf"]
+[ext_resource type="Texture2D" uid="uid://bnrso763vy7uw" path="res://sprites/Chapter 1/Story Panel/StoryPanel_Bazaar_Gatekeeper02_v.02.png" id="3_lg04s"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="4_m18fo"]
-[ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="5_5cp8k"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="6_6c63u"]
-[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/Nodes/Interface.tscn" id="8_p3j70"]
+[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/UI/Interface.tscn" id="8_p3j70"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://sprites/Tileset/Panel_Platform_BrickRoad_v02.PNG" id="9_uhmil"]
 [ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://sprites/Tileset/Panel_Outline_v02.PNG" id="10_otcap"]
 [ext_resource type="Texture2D" uid="uid://d0ghbyaweujm2" path="res://sprites/Tileset/Panel_Background_v01.PNG" id="11_ubyxt"]
@@ -18,9 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://sprites/Tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="17_al3ow"]
 [ext_resource type="PackedScene" uid="uid://dmce37xwpfbth" path="res://Scenes/Nodes/draggablePanel_withObject.tscn" id="18_7hise"]
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://sprites/Tileset/Panel_Platform_Sand_v01.PNG" id="18_uxmih"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wfj8"]
-size = Vector2(128, 857.6)
+[ext_resource type="Script" path="res://Scenes/Nodes/respawn_detector.gd" id="19_t3o7x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_506pf"]
 texture = ExtResource("9_uhmil")
@@ -225,37 +222,39 @@ sources/8 = SubResource("TileSetAtlasSource_joptc")
 sources/9 = SubResource("TileSetAtlasSource_loui2")
 sources/1 = SubResource("TileSetAtlasSource_0ysd6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlp3"]
+size = Vector2(2762.5, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8uvc"]
+size = Vector2(183, 1767.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmmmy"]
+size = Vector2(2533, 116.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtlif"]
+size = Vector2(178, 1443.5)
+
 [node name="PushAndLedgeGrabbingPractice" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("1_0lpcr")
+texture = ExtResource("1_ut00u")
 
-[node name="Img4348" type="Sprite2D" parent="."]
+[node name="Gatekeeper01" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(1041, 407)
 scale = Vector2(1.05667, 1.02222)
 texture = ExtResource("2_tmdrf")
 
-[node name="Img4347" type="Sprite2D" parent="."]
+[node name="Gatekeeper02" type="Sprite2D" parent="."]
 position = Vector2(1380.5, 305.5)
 scale = Vector2(0.913333, 1.01852)
 texture = ExtResource("3_lg04s")
 
-[node name="draggablePanel" parent="." instance=ExtResource("5_5cp8k")]
-z_index = 5
-position = Vector2(2172, 780)
-scale = Vector2(1.25, 1.25)
+[node name="UI" parent="." instance=ExtResource("8_p3j70")]
 
 [node name="Player" parent="." instance=ExtResource("6_6c63u")]
-position = Vector2(1537, 817)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(2001, 537)
-scale = Vector2(1.25, 1.25)
-shape = SubResource("RectangleShape2D_3wfj8")
-
-[node name="Control" parent="." instance=ExtResource("8_p3j70")]
+position = Vector2(1555, 821)
 
 [node name="Panel" parent="." instance=ExtResource("4_m18fo")]
 position = Vector2(30.25, 239)
@@ -268,6 +267,30 @@ position = Vector2(45, 44)
 tile_set = SubResource("TileSet_febrp")
 layer_0/tile_data = PackedInt32Array(655381, 1, 5, 655382, 65537, 5, 655383, 65537, 5, 655384, 65537, 5, 655385, 65537, 5, 655386, 327681, 5, 589850, 327681, 4, 524314, 327681, 4, 458778, 327681, 4, 393242, 327681, 0, 393238, 262145, 0, 393239, 262145, 0, 393240, 262145, 0, 393241, 262145, 0, 393237, 1, 0, 458773, 1, 2, 524309, 1, 2, 589845, 1, 2, -131043, 327681, 0, -131047, 196609, 0, -131046, 196609, 0, -131045, 196609, 0, -131044, 196609, 0, -65507, 327681, 1, 29, 327681, 1, 65565, 327681, 1, 131097, 131073, 5, 131098, 131073, 5, 131099, 131073, 5, 131100, 131073, 5, 131101, 327681, 5, -131056, 1, 0, -65520, 1, 1, 16, 1, 2, 65552, 1, 3, 131088, 1, 5, 131089, 65537, 5, 131090, 131073, 5, 131091, 196609, 5, 65558, 327681, 4, 131094, 327681, 5, -65514, 327681, 2, 22, 327681, 3, -131052, 196609, 0, -131051, 262145, 0, -131050, 327681, 0, -131055, 131073, 0, -131054, 131073, 0, -131053, 196609, 0, 131092, 196609, 5, 131093, 196609, 5, 131096, 131073, 5, 131095, 1, 5, 65559, 1, 4, 23, 1, 4, -65513, 1, 4, -131049, 1, 0, -131048, 65537, 0)
 
-[node name="draggablePanel2" parent="." instance=ExtResource("18_7hise")]
+[node name="DraggablePanel" parent="." instance=ExtResource("18_7hise")]
 position = Vector2(457, 417)
 scale = Vector2(1.3, 1.3)
+
+[node name="RespawnDetector" type="Area2D" parent="."]
+position = Vector2(675, 1082)
+script = ExtResource("19_t3o7x")
+respawn_position = Vector2(1555, 821)
+
+[node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
+position = Vector2(646.75, 47)
+shape = SubResource("RectangleShape2D_gnlp3")
+
+[node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
+position = Vector2(-789, -766.25)
+shape = SubResource("RectangleShape2D_d8uvc")
+
+[node name="Detector03" type="CollisionShape2D" parent="RespawnDetector"]
+position = Vector2(366, -1282)
+shape = SubResource("RectangleShape2D_bmmmy")
+
+[node name="Detector04" type="CollisionShape2D" parent="RespawnDetector"]
+position = Vector2(1338, -635)
+shape = SubResource("RectangleShape2D_jtlif")
+
+[connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
+[connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

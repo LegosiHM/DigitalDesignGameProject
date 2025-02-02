@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxbly0klrh03i"
-path="res://.godot/imported/StoryPanel_Bazaar_Merchants_v.03.png-aaf302578d8197f7132134a461331aad.ctex"
+uid="uid://dy3juqpq2g1h5"
+path="res://.godot/imported/BG_Suburb_Evening_v02.PNG-ba6380af63fd948352749e0962bd2298.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Story Panel/Chapter 0/StoryPanel_Bazaar_Merchants_v.03.png"
-dest_files=["res://.godot/imported/StoryPanel_Bazaar_Merchants_v.03.png-aaf302578d8197f7132134a461331aad.ctex"]
+source_file="res://sprites/Chapter 1/Background/BG_Suburb_Evening_v02.PNG"
+dest_files=["res://.godot/imported/BG_Suburb_Evening_v02.PNG-ba6380af63fd948352749e0962bd2298.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnrso763vy7uw"
-path="res://.godot/imported/IMG_4347.png-55be29a264a7e1532bcdb5c6b7f740ef.ctex"
+uid="uid://dcsbgglf7cj7v"
+path="res://.godot/imported/StoryPanel_Bazaar_TempleWall_v.02.png-4431abb9ab16dbf000b7ed83b21881e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Story Panel/Chapter 0/IMG_4347.png"
-dest_files=["res://.godot/imported/IMG_4347.png-55be29a264a7e1532bcdb5c6b7f740ef.ctex"]
+source_file="res://sprites/Chapter 1/Story Panel/StoryPanel_Bazaar_TempleWall_v.02.png"
+dest_files=["res://.godot/imported/StoryPanel_Bazaar_TempleWall_v.02.png-4431abb9ab16dbf000b7ed83b21881e8.ctex"]
 
 [params]
 

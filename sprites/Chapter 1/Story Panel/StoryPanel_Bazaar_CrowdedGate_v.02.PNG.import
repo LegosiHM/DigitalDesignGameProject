@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq3xys50xuc1j"
-path="res://.godot/imported/StoryPanel_Bazaar_PriestGlaring_v.03.png-a8792118de6987959addcf0531f6efa5.ctex"
+uid="uid://dlqr73td56cy5"
+path="res://.godot/imported/StoryPanel_Bazaar_CrowdedGate_v.02.PNG-1b9f00af2b410fbd0816278fd5310bf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Story Panel/Chapter 0/StoryPanel_Bazaar_PriestGlaring_v.03.png"
-dest_files=["res://.godot/imported/StoryPanel_Bazaar_PriestGlaring_v.03.png-a8792118de6987959addcf0531f6efa5.ctex"]
+source_file="res://sprites/Chapter 1/Story Panel/StoryPanel_Bazaar_CrowdedGate_v.02.PNG"
+dest_files=["res://.godot/imported/StoryPanel_Bazaar_CrowdedGate_v.02.PNG-1b9f00af2b410fbd0816278fd5310bf7.ctex"]
 
 [params]
 
