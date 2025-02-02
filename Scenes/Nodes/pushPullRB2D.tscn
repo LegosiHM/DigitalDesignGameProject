@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://giqd6rqhwspu"]
+
+[ext_resource type="Script" path="res://Scenes/Nodes/push_pull_rb_2d.gd" id="1_s867y"]
+[ext_resource type="Texture2D" uid="uid://ddqya5cr6o8" path="res://sprites/Object/Platform_Object_Box_v01.PNG" id="2_276gm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnmui"]
+size = Vector2(280, 149)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5oag"]
+size = Vector2(191, 228)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_s867y")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
+position = Vector2(-2, 19.5)
+shape = SubResource("RectangleShape2D_vnmui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-0.5, -21)
+shape = SubResource("RectangleShape2D_s5oag")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, -21)
+scale = Vector2(1, 1.2234)
+texture = ExtResource("2_276gm")
+
+[connection signal="body_entered" from="RigidBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="RigidBody2D/Area2D" to="." method="_on_area_2d_body_exited"]

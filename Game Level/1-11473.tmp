@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://we0xmiafwuua"]
+
+[ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Temporary/Background_SubUrban_v01.png" id="1_vy7eo"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="2_73pak"]
+[ext_resource type="Script" path="res://Scenes/Nodes/change_scene_detector.gd" id="3_wvh3a"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="4_4m0yf"]
+[ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://Scenes/Nodes/RespawnManager.tscn" id="5_52xq6"]
+[ext_resource type="Texture2D" uid="uid://dxbly0klrh03i" path="res://sprites/Story Panel/Chapter 0/StoryPanel_Bazaar_Merchants_v.03.png" id="6_6530k"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="7_6is70"]
+[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/Nodes/Interface.tscn" id="8_suklt"]
+
+[node name="Introduction" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_vy7eo")
+
+[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_73pak")]
+z_index = 10
+position = Vector2(1978, 720)
+scale = Vector2(1.80741, 1.50943)
+script = ExtResource("3_wvh3a")
+my_scene = "res://Game Level/1-2_HighJumpPractice.tscn"
+
+[node name="Panel" parent="." instance=ExtResource("4_4m0yf")]
+position = Vector2(-1, 339)
+scale = Vector2(0.75, 0.75)
+layer_0/tile_data = PackedInt32Array(524317, 196608, 3, 524316, 196608, 3, 524315, 196608, 3, 524314, 196608, 3, 524313, 196608, 3, 524312, 196608, 3, 524311, 196608, 3, 524310, 196608, 3, 524309, 196608, 3, 524308, 196608, 3, 524307, 196608, 3, 524306, 196608, 3, 524305, 196608, 3, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 458772, 2, 0, 458773, 2, 0, 458774, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 458778, 2, 0, 458779, 2, 0, 458780, 2, 0, 458781, 2, 0, 393245, 2, 0, 393244, 2, 0, 393243, 2, 0, 393242, 2, 0, 393241, 2, 0, 393240, 2, 0, 393239, 2, 0, 393238, 2, 0, 393237, 2, 0, 393236, 2, 0, 393235, 2, 0, 393234, 2, 0, 393233, 2, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 327700, 2, 0, 327701, 2, 0, 327702, 2, 0, 327703, 2, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 65540, 196608, 3, 65541, 196608, 3, 65542, 196608, 3, 65543, 196608, 3, 65544, 196608, 3, 4, 2, 0, -65532, 2, 0, -131068, 2, 0, -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -131064, 2, 0, -65528, 2, 0, 8, 2, 0, 7, 2, 0, 6, 2, 0, 5, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, 524302, 131072, 3, 458766, 131072, 3, 393230, 131072, 3, 393229, 131072, 3, 393228, 131072, 3, 393227, 131072, 3, 393226, 131072, 3, 393225, 131072, 3, 393224, 131072, 3, 393223, 131072, 3, 458759, 131072, 3, 524295, 131072, 3, 524296, 131072, 3, 524297, 131072, 3, 524298, 131072, 3, 524299, 131072, 3, 524300, 131072, 3, 524301, 131072, 3, 458765, 131072, 3, 458764, 131072, 3, 458763, 131072, 3, 458762, 131072, 3, 458761, 131072, 3, 458760, 131072, 3, 327694, 65536, 3, 327693, 65536, 3, 327692, 65536, 3, 327691, 65536, 3, 327690, 65536, 3)
+
+[node name="Outline" parent="Panel" instance=ExtResource("4_4m0yf")]
+position = Vector2(45, 44)
+layer_0/tile_data = PackedInt32Array(524304, 1, 5, 524317, 327681, 5, 262173, 327681, 0, 262160, 1, 0, 262161, 65537, 0, 262162, 65537, 0, 262163, 65537, 0, 262164, 65537, 0, 262165, 65537, 0, 262166, 65537, 0, 262167, 65537, 0, 262168, 65537, 0, 262169, 65537, 0, 262170, 65537, 0, 262171, 65537, 0, 262172, 65537, 0, 327696, 1, 1, 393232, 1, 1, 458768, 1, 1, 327709, 327681, 1, 393245, 327681, 1, 458781, 327681, 1, 524305, 131073, 5, 524306, 131073, 5, 524307, 131073, 5, 524308, 131073, 5, 524309, 131073, 5, 524310, 131073, 5, 524311, 131073, 5, 524312, 131073, 5, 524313, 131073, 5, 524316, 131073, 5, 524315, 131073, 5, 524314, 131073, 5, 65539, 1, 5, 3, 1, 4, -65533, 1, 4, -131069, 1, 4, -196605, 1, 0, -196601, 131073, 0, -196600, 327681, 0, 65544, 327681, 5, 65540, 131073, 5, 65541, 131073, 5, 65542, 131073, 5, 65543, 131073, 5, 8, 327681, 3, -65528, 327681, 3, -131064, 327681, 3, -196604, 131073, 0, -196603, 131073, 0, -196602, 131073, 0)
+
+[node name="RespawnManager" parent="." instance=ExtResource("5_52xq6")]
+
+[node name="StoryPanel_Merchants" type="Sprite2D" parent="."]
+position = Vector2(1430, 390)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("6_6530k")
+
+[node name="Outline" parent="StoryPanel_Merchants" instance=ExtResource("4_4m0yf")]
+position = Vector2(-72, -72)
+scale = Vector2(0.8, 0.8)
+layer_0/tile_data = PackedInt32Array(-65540, 1, 0, -65539, 65537, 0, -65538, 131073, 0, -65537, 131073, 0, -131072, 131073, 0, -131071, 131073, 0, -131070, 131073, 0, -131069, 262145, 0, -131068, 262145, 0, -131067, 327681, 0, -65531, 327681, 1, 5, 327681, 1, 65541, 327681, 1, 131077, 327681, 1, 196613, 327681, 5, 196612, 196609, 5, 196611, 196609, 5, 196610, 196609, 5, 196609, 196609, 5, 196608, 196609, 5, 262143, 196609, 5, 262142, 196609, 5, 262141, 196609, 5, 262140, 1, 5, 196604, 1, 3, 131068, 1, 3, 65532, 1, 3, -4, 1, 3)
+
+[node name="Player" parent="." instance=ExtResource("7_6is70")]
+position = Vector2(392, 313)
+
+[node name="Control" parent="." instance=ExtResource("8_suklt")]
+
+[node name="StoryPanel_Merchants2" type="Sprite2D" parent="."]
+position = Vector2(566, 747)
+scale = Vector2(1.13853, 1.10532)
+texture = ExtResource("6_6530k")
+
+[node name="Outline" parent="StoryPanel_Merchants2" instance=ExtResource("4_4m0yf")]
+position = Vector2(-72, -72)
+scale = Vector2(0.8, 0.8)
+layer_0/tile_data = PackedInt32Array(-65540, 1, 0, -65539, 65537, 0, -65538, 131073, 0, -65537, 131073, 0, -131072, 131073, 0, -131071, 131073, 0, -131070, 131073, 0, -131069, 262145, 0, -131068, 262145, 0, -131067, 327681, 0, -65531, 327681, 1, 5, 327681, 1, 65541, 327681, 1, 131077, 327681, 1, 196613, 327681, 5, 196612, 196609, 5, 196611, 196609, 5, 196610, 196609, 5, 196609, 196609, 5, 196608, 196609, 5, 262143, 196609, 5, 262142, 196609, 5, 262141, 196609, 5, 262140, 1, 5, 196604, 1, 3, 131068, 1, 3, 65532, 1, 3, -4, 1, 3)

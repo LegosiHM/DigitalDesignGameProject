@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmce37xwpfbth"]
+
+[ext_resource type="Script" path="res://Scenes/Nodes/draggable_panel.gd" id="1_ukca8"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="2_mwjtn"]
+
+[node name="draggablePanel" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+script = ExtResource("1_ukca8")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = -160.0
+offset_top = -121.0
+offset_right = 160.0
+offset_bottom = 96.0
+scale = Vector2(0.999738, 1.10857)
+focus_mode = 0
+
+[node name="TileMap" parent="Sprite2D" instance=ExtResource("2_mwjtn")]
+position = Vector2(0, 12)
+scale = Vector2(0.6, 0.6)
+layer_0/tile_data = PackedInt32Array(131069, 6, 3, 131070, 6, 3, 131071, 6, 3, 65536, 6, 3, 65537, 6, 3, 65538, 6, 3, 0, 8, 3, -65536, 65544, 3, -65535, 131080, 3, 1, 262152, 3)
+
+[connection signal="button_down" from="Sprite2D/Button" to="Sprite2D" method="_on_button_button_down"]
+[connection signal="button_up" from="Sprite2D/Button" to="Sprite2D" method="_on_button_button_up"]

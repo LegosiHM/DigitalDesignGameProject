@@ -1,26 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3ad0muthw2u2"]
 
 [ext_resource type="Script" path="res://scripts/player-related/char_Controller.gd" id="1_rajx7"]
-[ext_resource type="Texture2D" uid="uid://borh2hoal4d00" path="res://sprites/Char_MainCat_Sprite_Idle_v02.png" id="2_72qkg"]
+[ext_resource type="Texture2D" uid="uid://borh2hoal4d00" path="res://sprites/Temporary/Char_MainCat_Sprite_Idle_v02.png" id="2_72qkg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gb6rj"]
-size = Vector2(56.8963, 70.5004)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xont5"]
+size = Vector2(74.1759, 55.1038)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 10
 position = Vector2(0, -3)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 collision_mask = 2
 script = ExtResource("1_rajx7")
 PLAYER_SPRITE_PATH = NodePath("PlayerSprite")
-ACCELERATION = 1000.0
-MAX_SPEED = 550.0
-SPRINT_MULTIPLIER = 3.0
-FRICTION = 1750.0
-AIR_RESISTENCE = 100.0
-GRAVITY = 2500.0
-JUMP_FORCE = 1500.0
-JUMP_CANCEL_FORCE = 3000.0
-WALL_SLIDE_SPEED = 0.0
+ACCELERATION = 700.0
+MAX_SPEED = 600.0
+FRICTION = 5000.0
+GRAVITY = 5000.0
+JUMP_FORCE = 1700.0
+JUMP_CANCEL_FORCE = 5000.0
 COYOTE_TIMER = 0.07
 JUMP_BUFFER_TIMER = 0.15
 
@@ -29,10 +27,19 @@ scale = Vector2(0.055, 0.055)
 texture = ExtResource("2_72qkg")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
-position = Vector2(6.2, 1.2)
-rotation = -3.14159
+position = Vector2(6, 1.6)
+rotation = 1.5708
 scale = Vector2(0.949095, -0.987228)
-shape = SubResource("RectangleShape2D_gb6rj")
+shape = SubResource("RectangleShape2D_xont5")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
+[node name="CollisionHolder" type="Node2D" parent="."]
+
+[node name="GrabHandRayCast" type="RayCast2D" parent="CollisionHolder"]
+position = Vector2(0, -29.5)
+target_position = Vector2(50, 0)
+collision_mask = 6
+
+[node name="GrabCheckRayCast" type="RayCast2D" parent="CollisionHolder"]
+position = Vector2(0, -19)
+target_position = Vector2(50, 0)
+collision_mask = 6

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsm1jl5axqvgh"]
 
-[ext_resource type="Script" path="res://scripts/Puzzles/Scripts/change_scene_detector.gd" id="1_nln5k"]
+[ext_resource type="Script" path="res://scripts/Puzzles/change_scene_detector.gd" id="1_nln5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vftbj"]
 size = Vector2(84, 323)

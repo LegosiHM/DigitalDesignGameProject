@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c28falcim1erc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd627"]
+
+[node name="StaticPanelCollision" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qd627")
+debug_color = Color(0.737513, 0.396101, 0.655013, 0.42)
