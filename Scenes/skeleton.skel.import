@@ -1,0 +1,13 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://no7d5ibvb1ft"
+valid=false
+
+[deps]
+
+source_file="res://Scenes/skeleton.skel"
+
+[params]
+
