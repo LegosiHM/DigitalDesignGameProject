@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://scenes/managers/change_scene_detector.tscn" id="2_nqvr0"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://scenes/environments/PlatformPanel.tscn" id="4_vr1sa"]
 [ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://scenes/managers/RespawnManager.tscn" id="5_mfxfo"]
-[ext_resource type="Script" path="res://scripts/NPCs/chapter01/merchants.gd" id="6_d6l33"]
+[ext_resource type="Script" path="res://scripts/NPCs/merchants.gd" id="6_d6l33"]
 [ext_resource type="Texture2D" uid="uid://dxbly0klrh03i" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Merchants_v.03.png" id="7_4iy3a"]
 [ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://scenes/UI/Interface.tscn" id="8_vgbrw"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://scenes/characters/player.tscn" id="9_vv3vy"]

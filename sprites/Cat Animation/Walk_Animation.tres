@@ -1,0 +1,6 @@
+[gd_resource type="SpineSkeletonDataResource" load_steps=2 format=3 uid="uid://flqxhy5fc51r"]
+
+[ext_resource type="SpineAtlasResource" uid="uid://wh66p8bn3yfk" path="res://sprites/Cat Animation/New folder (1)/cat.atlas" id="1_3x2u7"]
+
+[resource]
+atlas_res = ExtResource("1_3x2u7")

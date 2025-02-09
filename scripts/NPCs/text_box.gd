@@ -16,31 +16,24 @@ signal finished_displaying()
 
 func display_text(text_to_display: String):
 	text = text_to_display
-	label.text = ""  # ✅ Ensure previous text is cleared
-	letter_index = 0  # ✅ Reset letter index
-	DialogManager.can_advance_line = false
+	label.text = ""  # Clear previous text
+	letter_index = 0  # Reset letter index
 	
-	label.autowrap_mode = TextServer.AUTOWRAP_WORD  # ✅ Enable word wrapping
-	label.custom_minimum_size.x = MAX_WIDTH  # ✅ Limit max width
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD  # ✅ Ensure text wraps properly
+	label.custom_minimum_size.x = min(size.x, MAX_WIDTH)  # ✅ Set max width constraint
 	
-	_display_letter()  # Start displaying text letter-by-letter
+	_display_letter()  # Start displaying text one letter at a time
 
 
 func _display_letter():
 	if letter_index >= text.length():
-		finished_displaying.emit()  # ✅ Ensure text animation completes properly
+		finished_displaying.emit()  # Notify that the text is done displaying
 		return
-	
-	# ✅ Fix: Instead of appending, slice the text to display only correct part
-	label.text = text.substr(0, letter_index + 1)
-	
+
+	label.text += text[letter_index]  # Add the next letter
 	letter_index += 1
-	
-	if label.text == text:
-		timer.stop()
-		finished_displaying.emit()
-		return 
-	
+
+	# Adjust timing based on character type
 	match text[letter_index - 1]:
 		"!", ".", ",", "?":
 			timer.start(punctuation_time)
@@ -48,7 +41,6 @@ func _display_letter():
 			timer.start(space_time)
 		_:
 			timer.start(letter_time)
-
 
 func _on_letter_display_timer_timeout():
 	_display_letter()  # Continue showing the next letter

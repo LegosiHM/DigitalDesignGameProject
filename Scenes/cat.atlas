@@ -1,0 +1,145 @@
+
+cat.png
+size: 2026,1486
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Folder 10
+  rotate: true
+  xy: 2, 1410
+  size: 74, 146
+  orig: 76, 150
+  offset: 1, 1
+  index: -1
+Folder 11
+  rotate: false
+  xy: 2, 2
+  size: 895, 661
+  orig: 895, 661
+  offset: 0, 0
+  index: -1
+Folder 12
+  rotate: true
+  xy: 1319, 1313
+  size: 171, 293
+  orig: 171, 293
+  offset: 0, 0
+  index: -1
+Folder 13
+  rotate: true
+  xy: 1164, 1083
+  size: 214, 483
+  orig: 222, 487
+  offset: 4, 0
+  index: -1
+Folder 2
+  rotate: true
+  xy: 849, 1130
+  size: 217, 313
+  orig: 218, 313
+  offset: 0, 0
+  index: -1
+Folder 3
+  rotate: true
+  xy: 2, 861
+  size: 290, 556
+  orig: 290, 556
+  offset: 0, 0
+  index: -1
+Folder 4
+  rotate: true
+  xy: 1649, 944
+  size: 353, 375
+  orig: 353, 375
+  offset: 0, 0
+  index: -1
+Folder 5
+  rotate: false
+  xy: 1123, 352
+  size: 682, 590
+  orig: 682, 590
+  offset: 0, 0
+  index: -1
+Folder 6
+  rotate: true
+  xy: 1614, 1299
+  size: 185, 322
+  orig: 185, 322
+  offset: 0, 0
+  index: -1
+Folder 7
+  rotate: true
+  xy: 2, 1200
+  size: 192, 312
+  orig: 192, 312
+  offset: 0, 0
+  index: -1
+Folder 8
+  rotate: false
+  xy: 939, 1363
+  size: 205, 121
+  orig: 205, 121
+  offset: 0, 0
+  index: -1
+Folder 9
+  rotate: true
+  xy: 1146, 1349
+  size: 135, 171
+  orig: 139, 173
+  offset: 1, 1
+  index: -1
+Layer 6
+  rotate: false
+  xy: 150, 1394
+  size: 413, 90
+  orig: 413, 90
+  offset: 0, 0
+  index: -1
+Layer 65 Copy
+  rotate: true
+  xy: 565, 1366
+  size: 118, 184
+  orig: 119, 187
+  offset: 0, 2
+  index: -1
+Layer 65 Copy 2
+  rotate: false
+  xy: 557, 1153
+  size: 290, 211
+  orig: 459, 211
+  offset: 0, 0
+  index: -1
+Layer 75 Copy
+  rotate: false
+  xy: 560, 665
+  size: 561, 463
+  orig: 561, 463
+  offset: 0, 0
+  index: -1
+Layer 86 Copy
+  rotate: false
+  xy: 316, 1189
+  size: 239, 203
+  orig: 239, 203
+  offset: 0, 0
+  index: -1
+Layer 86 Copy 2
+  rotate: true
+  xy: 751, 1366
+  size: 118, 186
+  orig: 118, 186
+  offset: 0, 0
+  index: -1
+
+cat2.png
+size: 1804,1804
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Paper
+  rotate: false
+  xy: 2, 2
+  size: 1800, 1800
+  orig: 1802, 1802
+  offset: 1, 1
+  index: -1

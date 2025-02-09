@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://we0xmiafwuua"]
+
+[ext_resource type="Texture2D" uid="uid://ct1wdos8o0uhe" path="res://sprites/Background_SubUrban_v01.png" id="1_gyhlm"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="2_hrw36"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/Nodes/change_scene_detector.tscn" id="3_hitbl"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/tile_map.tscn" id="3_wqbpa"]
+[ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://Scenes/Nodes/RespawnManager.tscn" id="6_tbjh5"]
+[ext_resource type="PackedScene" uid="uid://jx52ewwvvbd4" path="res://Scenes/Nodes/draggableObj.tscn" id="7_hjjx2"]
+[ext_resource type="PackedScene" uid="uid://b2v6nlwxxmvyt" path="res://Scenes/Nodes/singleton.tscn" id="7_ofcqf"]
+
+[sub_resource type="Gradient" id="Gradient_oehyg"]
+offsets = PackedFloat32Array(0.551948)
+colors = PackedColorArray(0.61039, 0.61039, 0.61039, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yk5gu"]
+gradient = SubResource("Gradient_oehyg")
+width = 1920
+height = 80
+
+[node name="Introduction" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_gyhlm")
+
+[node name="ChangeSceneDetector" parent="." instance=ExtResource("3_hitbl")]
+position = Vector2(1978, 777)
+scale = Vector2(1.75, 1)
+my_scene = "res://Game Level/HighJumpPractice.tscn"
+
+[node name="Panel" parent="." instance=ExtResource("3_wqbpa")]
+position = Vector2(-1, 0)
+layer_0/tile_data = PackedInt32Array(131075, 2, 0, 131074, 2, 0, 131073, 2, 0, 131076, 2, 0, 131077, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 262145, 8, 3, 262146, 65544, 3, 262147, 131080, 3, 262148, 196616, 3, 262149, 262152, 3, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 458753, 2, 0, 524289, 2, 0, 589825, 0, 3, 589826, 65536, 3, 589827, 131072, 3, 589828, 196608, 3, 589829, 262144, 3, 524293, 2, 0, 458757, 2, 0, 458756, 2, 0, 524292, 2, 0, 524291, 2, 0, 458755, 2, 0, 458754, 2, 0, 524290, 2, 0, 524309, 2, 0, 524308, 2, 0, 524307, 2, 0, 524306, 2, 0, 524305, 2, 0, 524304, 2, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 589836, 0, 3, 589837, 65536, 3, 589838, 131072, 3, 589839, 196608, 3, 589840, 262144, 3, 589841, 327680, 3, 589842, 393216, 3, 589843, 458752, 3, 589844, 458752, 3, 589845, 458752, 3)
+
+[node name="TileMap" parent="Panel" instance=ExtResource("3_wqbpa")]
+position = Vector2(45, 44)
+layer_0/tile_data = PackedInt32Array(65536, 1, 0, 65537, 65537, 0, 65538, 65537, 0, 65539, 65537, 0, 65540, 65537, 0, 65541, 327681, 0, 131072, 1, 1, 196608, 1, 1, 262144, 1, 5, 262145, 65537, 5, 262146, 65537, 5, 262147, 65537, 5, 262148, 65537, 5, 262149, 327681, 5, 131077, 327681, 3, 196613, 327681, 3, 327680, 1, 0, 393216, 1, 1, 458752, 1, 1, 524288, 1, 4, 589824, 1, 5, 589825, 65537, 5, 589826, 65537, 5, 589827, 65537, 5, 589828, 65537, 5, 589829, 327681, 5, 524293, 327681, 4, 458757, 327681, 4, 393221, 327681, 4, 327685, 327681, 0, 327684, 196609, 0, 327683, 196609, 0, 327682, 196609, 0, 327681, 196609, 0, 458763, 1, 0, 524299, 1, 4, 589835, 1, 5, 589836, 65537, 5, 589837, 65537, 5, 589838, 65537, 5, 589839, 65537, 5, 589840, 65537, 5, 589841, 65537, 5, 589842, 65537, 5, 589843, 65537, 5, 589844, 65537, 5, 589845, 327681, 5, 524309, 327681, 4, 458773, 327681, 0, 458764, 65537, 0, 458765, 65537, 0, 458766, 65537, 0, 458767, 65537, 0, 458768, 65537, 0, 458769, 65537, 0, 458770, 65537, 0, 458771, 65537, 0, 458772, 65537, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_hrw36")]
+position = Vector2(162, 215)
+
+[node name="RespawnManager" parent="." instance=ExtResource("6_tbjh5")]
+
+[node name="singleton" parent="." instance=ExtResource("7_ofcqf")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 40)
+texture = SubResource("GradientTexture2D_yk5gu")
+
+[node name="Node2D" parent="." instance=ExtResource("7_hjjx2")]
+position = Vector2(418, 286)

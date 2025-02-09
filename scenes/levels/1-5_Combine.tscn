@@ -1,12 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://dwtr65j7orcym"]
+[gd_scene load_steps=35 format=3 uid="uid://dwtr65j7orcym"]
 
 [ext_resource type="Texture2D" uid="uid://d11pmosyoyoot" path="res://assets/sprites/chapter 1/background/BG_Temple_Evening_v01.PNG" id="1_75b0w"]
-[ext_resource type="Script" path="res://scripts/NPCs/chapter01/managers/1_5_combine.gd" id="1_einb1"]
-[ext_resource type="Script" path="res://scripts/NPCs/chapter01/gatekeeper_01.gd" id="2_0ja8h"]
 [ext_resource type="Texture2D" uid="uid://chet5uhwivnr5" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Gatekeeper01_v.02.png" id="2_uirqt"]
 [ext_resource type="Texture2D" uid="uid://bnrso763vy7uw" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Gatekeeper02_v.02.png" id="3_ovm5x"]
 [ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://scenes/UI/Interface.tscn" id="4_vg0o7"]
-[ext_resource type="Script" path="res://scripts/NPCs/chapter01/gatekeeper_02.gd" id="5_p8t7a"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://scenes/characters/player.tscn" id="5_w77j0"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://scenes/environments/PanelCollision.tscn" id="6_xselg"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://scenes/environments/PlatformPanel.tscn" id="7_wrvyn"]
@@ -22,12 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="17_71k8d"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://scenes/mechanics/draggablePanel.tscn" id="18_1q3pl"]
 [ext_resource type="Script" path="res://scripts/managers/respawn_detector.gd" id="19_ibnw7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oppb"]
-size = Vector2(452.365, 270.001)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wmle"]
-size = Vector2(442.336, 270)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_506pf"]
 texture = ExtResource("8_8gsc3")
@@ -245,43 +236,21 @@ size = Vector2(2533, 116.5)
 size = Vector2(178, 1443.5)
 
 [node name="PushAndLedgeGrabbingPractice" type="Node2D"]
-script = ExtResource("1_einb1")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("1_75b0w")
 
-[node name="Gatekeeper01" type="Node2D" parent="."]
+[node name="Gatekeeper01" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(1041, 407)
 scale = Vector2(1.05667, 1.02222)
-script = ExtResource("2_0ja8h")
-dialog_lines = Array[String](["Hey, did you know that in terms of..,", "What? I just want to tell you that our Isis love cats so much that she would kill us for them.", "Talking about cats..."])
-dialog_position = Vector2(0, 150)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gatekeeper01"]
-z_index = 1
 texture = ExtResource("2_uirqt")
 
-[node name="Area2D" type="Area2D" parent="Gatekeeper01"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gatekeeper01/Area2D"]
-position = Vector2(-0.94635, -0.97821)
-shape = SubResource("RectangleShape2D_4oppb")
-
-[node name="Gatekeeper02" type="Node2D" parent="."]
+[node name="Gatekeeper02" type="Sprite2D" parent="."]
 position = Vector2(1380.5, 305.5)
 scale = Vector2(0.913333, 1.01852)
-script = ExtResource("5_p8t7a")
-dialog_lines = Array[String](["No, please. Not again..."])
-
-[node name="Sprite2D" type="Sprite2D" parent="Gatekeeper02"]
 texture = ExtResource("3_ovm5x")
-
-[node name="Area2D" type="Area2D" parent="Gatekeeper02"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gatekeeper02/Area2D"]
-position = Vector2(-2.73718, 1.96356)
-shape = SubResource("RectangleShape2D_0wmle")
 
 [node name="UI" parent="." instance=ExtResource("4_vg0o7")]
 

@@ -16,13 +16,18 @@ func _ready():
 	cooldown_timer.timeout.connect(_reset_interaction)
 
 	await get_tree().process_frame  
-	if DialogManager.panel_sequence.size() > 0 and self == DialogManager.panel_sequence[0]:
+	if DialogManager.panel_sequence.size() > 0 and self in DialogManager.panel_sequence:
 		can_interact = true  
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		print(name + " was clicked!")  # ✅ Debugging to confirm clicks are detected
 		if can_interact:
 			_show_dialog()
+			DialogManager.close_dialog()
+		else:
+			print(name + " is NOT interactable!")  # ✅ Check if `can_interact` is still false
+
 
 func _show_dialog():
 	print(name + " is showing dialog!")  # ✅ Debugging to confirm dialog starts
