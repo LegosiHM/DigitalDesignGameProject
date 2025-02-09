@@ -11,33 +11,30 @@ config_version=5
 [application]
 
 config/name="Time Whiskers"
-run/main_scene="res://Game Level/1-1_Introduction.tscn"
+run/main_scene="res://scenes/levels/1-1_Introduction.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://sprites/UI/UI_Logo_v01.png"
+config/icon="res://assets/UI/UI_Logo_v01.png"
 
 [autoload]
 
-PlatformManager="*res://scripts/Managers/PlatformManager.gd"
-DialogManager="*res://scripts/singletons/DialogManager.gd"
+PlatformManager="*res://scripts/managers/PlatformManager.gd"
+DialogManager="*res://singletons/DialogManager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/initial_position=Vector2i(960, 540)
-mouse_cursor/custom_image="res://sprites/UI/UI_Cursor_Hover_v03.png"
+mouse_cursor/custom_image="res://assets/UI/UI_Cursor_Hover_v03.png"
 
 [file_customization]
 
 folder_colors={
-"res://Game Level/": "orange",
-"res://Scenes/": "yellow",
-"res://scripts/": "yellow",
-"res://scripts/Managers/": "red",
-"res://scripts/Puzzles/": "yellow",
+"res://assets/": "orange",
+"res://scenes/": "green",
+"res://scripts/": "blue",
 "res://scripts/UI-related/": "green",
-"res://scripts/player-related/": "orange",
-"res://sprites/": "green"
+"res://singletons/": "red"
 }
 
 [input]
@@ -81,6 +78,11 @@ sprint={
 drag={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+advance_dialog={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(182, 23),"global_position":Vector2(191, 69),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 
