@@ -1,13 +1,13 @@
 [gd_scene load_steps=16 format=3 uid="uid://we0xmiafwuua"]
 
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="1_jklu7"]
-[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://scenes/managers/change_scene_detector.tscn" id="2_nqvr0"]
-[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://scenes/environments/PlatformPanel.tscn" id="4_vr1sa"]
-[ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://scenes/managers/RespawnManager.tscn" id="5_mfxfo"]
-[ext_resource type="Script" path="res://scripts/NPCs/merchants.gd" id="6_d6l33"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_nqvr0"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/PlatformPanel.tscn" id="4_vr1sa"]
+[ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://Scenes/managers/RespawnManager.tscn" id="5_mfxfo"]
+[ext_resource type="Script" path="res://scripts/NPCs/Chapter01/merchants.gd" id="5_oxv5h"]
 [ext_resource type="Texture2D" uid="uid://dxbly0klrh03i" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Merchants_v.03.png" id="7_4iy3a"]
-[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://scenes/UI/Interface.tscn" id="8_vgbrw"]
-[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://scenes/characters/player.tscn" id="9_vv3vy"]
+[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/UI/Interface.tscn" id="8_vgbrw"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="9_vv3vy"]
 [ext_resource type="Texture2D" uid="uid://dlqr73td56cy5" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_CrowdedGate_v.02.PNG" id="10_i5q61"]
 [ext_resource type="Script" path="res://scripts/managers/respawn_detector.gd" id="11_bnqlj"]
 
@@ -50,7 +50,7 @@ layer_0/tile_data = PackedInt32Array(524304, 1, 5, 524317, 327681, 5, 262173, 32
 [node name="RespawnManager" parent="." instance=ExtResource("5_mfxfo")]
 
 [node name="Merchants" type="Node2D" parent="."]
-script = ExtResource("6_d6l33")
+script = ExtResource("5_oxv5h")
 dialog_lines = Array[String](["Hey sis, have you heard of that guy Mark? Seems like our queen... ", "Duh, Shut up and go back to work!"])
 dialog_position = Vector2(650, 250)
 

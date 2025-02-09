@@ -3,7 +3,7 @@ extends Control
 @onready var label = $MarginContainer/Label
 @onready var timer = $LetterDisplayTimer
 
-const MAX_WIDTH = 256
+const MAX_WIDTH = 256  
 
 var text = ""
 var letter_index = 0
@@ -16,24 +16,27 @@ signal finished_displaying()
 
 func display_text(text_to_display: String):
 	text = text_to_display
-	label.text = ""  # Clear previous text
-	letter_index = 0  # Reset letter index
-	
-	label.autowrap_mode = TextServer.AUTOWRAP_WORD  # ✅ Ensure text wraps properly
-	label.custom_minimum_size.x = min(size.x, MAX_WIDTH)  # ✅ Set max width constraint
-	
-	_display_letter()  # Start displaying text one letter at a time
+	label.text = ""  
+	letter_index = 0  
 
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD  
+	label.custom_minimum_size.x = MAX_WIDTH  
+
+	_display_letter()  
 
 func _display_letter():
 	if letter_index >= text.length():
-		finished_displaying.emit()  # Notify that the text is done displaying
+		finished_displaying.emit()  
 		return
 
-	label.text += text[letter_index]  # Add the next letter
+	label.text = text.substr(0, letter_index + 1)  
 	letter_index += 1
 
-	# Adjust timing based on character type
+	if label.text == text:  
+		timer.stop()  
+		finished_displaying.emit()
+		return  
+
 	match text[letter_index - 1]:
 		"!", ".", ",", "?":
 			timer.start(punctuation_time)
@@ -43,4 +46,4 @@ func _display_letter():
 			timer.start(letter_time)
 
 func _on_letter_display_timer_timeout():
-	_display_letter()  # Continue showing the next letter
+	_display_letter()  
