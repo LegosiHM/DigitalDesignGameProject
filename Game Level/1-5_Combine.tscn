@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://dwtr65j7orcym"]
+[gd_scene load_steps=35 format=3 uid="uid://dwtr65j7orcym"]
 
 [ext_resource type="Texture2D" uid="uid://d11pmosyoyoot" path="res://sprites/Chapter 1/Background/BG_Temple_Evening_v01.PNG" id="1_ut00u"]
 [ext_resource type="Texture2D" uid="uid://chet5uhwivnr5" path="res://sprites/Chapter 1/Story Panel/StoryPanel_Bazaar_Gatekeeper01_v.02.png" id="2_tmdrf"]
 [ext_resource type="Texture2D" uid="uid://bnrso763vy7uw" path="res://sprites/Chapter 1/Story Panel/StoryPanel_Bazaar_Gatekeeper02_v.02.png" id="3_lg04s"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/Nodes/PlatformPanel.tscn" id="4_m18fo"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/Nodes/player.tscn" id="6_6c63u"]
+[ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/Nodes/PanelCollision.tscn" id="6_ub3am"]
 [ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/UI/Interface.tscn" id="8_p3j70"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://sprites/Tileset/Panel_Platform_BrickRoad_v02.PNG" id="9_uhmil"]
 [ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://sprites/Tileset/Panel_Outline_v02.PNG" id="10_otcap"]
@@ -15,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://c0rgci0dd5se2" path="res://sprites/Tileset/Panel_Platform_PalaceTiles_v03.PNG" id="15_k67fo"]
 [ext_resource type="Texture2D" uid="uid://cs024ords13eo" path="res://sprites/Tileset/Panel_Platform_PalaceTiles_v04.PNG" id="16_vhe0x"]
 [ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://sprites/Tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="17_al3ow"]
-[ext_resource type="PackedScene" uid="uid://dmce37xwpfbth" path="res://Scenes/Nodes/draggablePanel_withObject.tscn" id="18_7hise"]
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://sprites/Tileset/Panel_Platform_Sand_v01.PNG" id="18_uxmih"]
+[ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/Nodes/draggablePanel.tscn" id="19_ao4ef"]
 [ext_resource type="Script" path="res://Scenes/Nodes/respawn_detector.gd" id="19_t3o7x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_506pf"]
@@ -256,6 +257,26 @@ texture = ExtResource("3_lg04s")
 [node name="Player" parent="." instance=ExtResource("6_6c63u")]
 position = Vector2(1555, 821)
 
+[node name="StaticPanelCollision4" parent="." instance=ExtResource("6_ub3am")]
+position = Vector2(1673, 852)
+scale = Vector2(18.7866, 14.4)
+
+[node name="StaticPanelCollision3" parent="." instance=ExtResource("6_ub3am")]
+position = Vector2(1821, 324)
+scale = Vector2(19.162, 14.28)
+
+[node name="StaticPanelCollision2" parent="." instance=ExtResource("6_ub3am")]
+light_mask = 12
+visibility_layer = 12
+position = Vector2(1376, 313)
+scale = Vector2(20.7575, -14.738)
+
+[node name="StaticPanelCollision" parent="." instance=ExtResource("6_ub3am")]
+light_mask = 12
+visibility_layer = 12
+position = Vector2(1034, 423)
+scale = Vector2(25.32, 14.6)
+
 [node name="Panel" parent="." instance=ExtResource("4_m18fo")]
 position = Vector2(30.25, 239)
 scale = Vector2(0.75, 0.75)
@@ -267,9 +288,10 @@ position = Vector2(45, 44)
 tile_set = SubResource("TileSet_febrp")
 layer_0/tile_data = PackedInt32Array(655381, 1, 5, 655382, 65537, 5, 655383, 65537, 5, 655384, 65537, 5, 655385, 65537, 5, 655386, 327681, 5, 589850, 327681, 4, 524314, 327681, 4, 458778, 327681, 4, 393242, 327681, 0, 393238, 262145, 0, 393239, 262145, 0, 393240, 262145, 0, 393241, 262145, 0, 393237, 1, 0, 458773, 1, 2, 524309, 1, 2, 589845, 1, 2, -131043, 327681, 0, -131047, 196609, 0, -131046, 196609, 0, -131045, 196609, 0, -131044, 196609, 0, -65507, 327681, 1, 29, 327681, 1, 65565, 327681, 1, 131097, 131073, 5, 131098, 131073, 5, 131099, 131073, 5, 131100, 131073, 5, 131101, 327681, 5, -131056, 1, 0, -65520, 1, 1, 16, 1, 2, 65552, 1, 3, 131088, 1, 5, 131089, 65537, 5, 131090, 131073, 5, 131091, 196609, 5, 65558, 327681, 4, 131094, 327681, 5, -65514, 327681, 2, 22, 327681, 3, -131052, 196609, 0, -131051, 262145, 0, -131050, 327681, 0, -131055, 131073, 0, -131054, 131073, 0, -131053, 196609, 0, 131092, 196609, 5, 131093, 196609, 5, 131096, 131073, 5, 131095, 1, 5, 65559, 1, 4, 23, 1, 4, -65513, 1, 4, -131049, 1, 0, -131048, 65537, 0)
 
-[node name="DraggablePanel" parent="." instance=ExtResource("18_7hise")]
-position = Vector2(457, 417)
-scale = Vector2(1.3, 1.3)
+[node name="draggablePanel" parent="." instance=ExtResource("19_ao4ef")]
+z_index = 6
+position = Vector2(395, 512)
+scale = Vector2(1.25, 1.19872)
 
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)
