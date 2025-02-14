@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmoy6fwmk1qrc"]
+
+[ext_resource type="Script" path="res://scripts/cutscenes/chapter_1_comic_cutscene1.gd" id="1_to2i0"]
+[ext_resource type="Texture2D" uid="uid://bykik81i3n315" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_01.PNG" id="2_y8i2c"]
+[ext_resource type="Texture2D" uid="uid://bysvioa3siarw" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_02.PNG" id="3_quqm3"]
+[ext_resource type="Texture2D" uid="uid://b6owrn6p4y6g" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_03.PNG" id="4_mr8mu"]
+[ext_resource type="Texture2D" uid="uid://bjgx7qa0r455r" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_04.PNG" id="5_0tpbb"]
+[ext_resource type="Texture2D" uid="uid://b4fmu0yul7kwg" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_05.PNG" id="6_lfi2h"]
+
+[node name="ComicCutscene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_to2i0")
+Panel1 = Vector2(50, 50)
+Panel2 = Vector2(800, 50)
+Panel3 = Vector2(50, 450)
+Panel4 = Vector2(1110, 450)
+Panel5 = Vector2(1625, 450)
+
+[node name="PanelContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel1" type="TextureRect" parent="PanelContainer"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 750.0
+offset_bottom = 410.0
+texture = ExtResource("2_y8i2c")
+
+[node name="Panel2" type="TextureRect" parent="PanelContainer"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 50.0
+offset_right = 1800.0
+offset_bottom = 410.0
+texture = ExtResource("3_quqm3")
+
+[node name="Panel3" type="TextureRect" parent="PanelContainer"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 450.0
+offset_right = 1050.0
+offset_bottom = 1000.0
+texture = ExtResource("4_mr8mu")
+
+[node name="Panel4" type="TextureRect" parent="PanelContainer"]
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 450.0
+offset_right = 1560.0
+offset_bottom = 1000.0
+texture = ExtResource("5_0tpbb")
+
+[node name="Panel5" type="TextureRect" parent="PanelContainer"]
+layout_mode = 0
+offset_left = 1625.0
+offset_top = 450.0
+offset_right = 1885.0
+offset_bottom = 1000.0
+texture = ExtResource("6_lfi2h")

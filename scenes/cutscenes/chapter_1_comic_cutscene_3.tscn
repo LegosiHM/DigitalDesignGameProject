@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnj3j7rqoytfx"]
+
+[ext_resource type="Script" path="res://scripts/cutscenes/chapter_1_comic_cutscene_3.gd" id="1_dq8qe"]
+[ext_resource type="Texture2D" uid="uid://c87xbvd82tv0p" path="res://assets/sprites/chapter 1/cutscenes/77b130bc-8d50-45a3-942c-ec8e2859c06a.png" id="1_vnwli"]
+[ext_resource type="Texture2D" uid="uid://c2e5garf728y8" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_10.PNG" id="2_as7g2"]
+[ext_resource type="Texture2D" uid="uid://bxr5stenrha0u" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_11.PNG" id="3_1u1tn"]
+
+[node name="chapter1_comic_cutscene3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dq8qe")
+Panel1 = Vector2(475, 25)
+Panel2 = Vector2(0, 550)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_vnwli")
+
+[node name="PanelContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel1" type="TextureRect" parent="PanelContainer"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 25.0
+offset_right = 1920.0
+offset_bottom = 525.0
+texture = ExtResource("2_as7g2")
+
+[node name="Panel2" type="TextureRect" parent="PanelContainer"]
+layout_mode = 0
+offset_top = 550.0
+offset_right = 1445.0
+offset_bottom = 1050.0
+texture = ExtResource("3_1u1tn")

@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3rx64gynmwk4"]
+[gd_scene load_steps=4 format=3 uid="uid://brfg8dmjv7mgl"]
 
-[ext_resource type="Script" path="res://scripts/NPCs/text_box.gd" id="1_o4jfk"]
-[ext_resource type="Texture2D" uid="uid://chsu576e4q861" path="res://assets/UI/UI_Textbox_v01.png" id="2_phcjk"]
-[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="3_04555"]
+[ext_resource type="Script" path="res://scripts/NPCs/text_box.gd" id="1_1vca3"]
+[ext_resource type="Texture2D" uid="uid://chsu576e4q861" path="res://assets/UI/UI_Textbox_v01.png" id="2_2qk6b"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="3_fptd8"]
 
 [node name="TextBox" type="MarginContainer"]
 offset_right = 373.0
 offset_bottom = 257.0
-script = ExtResource("1_o4jfk")
+script = ExtResource("1_1vca3")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2_phcjk")
+texture = ExtResource("2_2qk6b")
 region_rect = Rect2(0, 0.281193, 255.665, 256.447)
 patch_margin_left = 45
 patch_margin_top = 42
@@ -25,7 +25,7 @@ theme_override_constants/margin_left = 25
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_04555")
+theme_override_fonts/font = ExtResource("3_fptd8")
 theme_override_font_sizes/font_size = 50
 text = "Hello"
 vertical_alignment = 1

@@ -1,13 +1,13 @@
 [gd_scene load_steps=16 format=3 uid="uid://we0xmiafwuua"]
 
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="1_jklu7"]
-[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_nqvr0"]
-[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/PlatformPanel.tscn" id="4_vr1sa"]
-[ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://Scenes/managers/RespawnManager.tscn" id="5_mfxfo"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://scenes/managers/change_scene_detector.tscn" id="2_nqvr0"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://scenes/environments/PlatformPanel.tscn" id="4_vr1sa"]
+[ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://scenes/managers/RespawnManager.tscn" id="5_mfxfo"]
 [ext_resource type="Script" path="res://scripts/NPCs/Chapter01/merchants.gd" id="5_oxv5h"]
 [ext_resource type="Texture2D" uid="uid://dxbly0klrh03i" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Merchants_v.03.png" id="7_4iy3a"]
-[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://Scenes/UI/Interface.tscn" id="8_vgbrw"]
-[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="9_vv3vy"]
+[ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://scenes/UI/Interface.tscn" id="8_vgbrw"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://scenes/characters/player.tscn" id="9_vv3vy"]
 [ext_resource type="Texture2D" uid="uid://dlqr73td56cy5" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_CrowdedGate_v.02.PNG" id="10_i5q61"]
 [ext_resource type="Script" path="res://scripts/managers/respawn_detector.gd" id="11_bnqlj"]
 
@@ -41,7 +41,7 @@ my_scene = "res://scenes/levels/1-2_HighJumpPractice.tscn"
 [node name="Panel" parent="." instance=ExtResource("4_vr1sa")]
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
-layer_0/tile_data = PackedInt32Array(524317, 196608, 3, 524316, 196608, 3, 524315, 196608, 3, 524314, 196608, 3, 524313, 196608, 3, 524312, 196608, 3, 524311, 196608, 3, 524310, 196608, 3, 524309, 196608, 3, 524308, 196608, 3, 524307, 196608, 3, 524306, 196608, 3, 524305, 196608, 3, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 458772, 2, 0, 458773, 2, 0, 458774, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 458778, 2, 0, 458779, 2, 0, 458780, 2, 0, 458781, 2, 0, 393245, 2, 0, 393244, 2, 0, 393243, 2, 0, 393242, 2, 0, 393241, 2, 0, 393240, 2, 0, 393239, 2, 0, 393238, 2, 0, 393237, 2, 0, 393236, 2, 0, 393235, 2, 0, 393234, 2, 0, 393233, 2, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 327700, 2, 0, 327701, 2, 0, 327702, 2, 0, 327703, 2, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 65540, 196608, 3, 65541, 196608, 3, 65542, 196608, 3, 65543, 196608, 3, 65544, 196608, 3, 4, 2, 0, -65532, 2, 0, -131068, 2, 0, -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -131064, 2, 0, -65528, 2, 0, 8, 2, 0, 7, 2, 0, 6, 2, 0, 5, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, 524302, 131072, 3, 458766, 131072, 3, 393230, 131072, 3, 393229, 131072, 3, 393228, 131072, 3, 393227, 131072, 3, 393226, 131072, 3, 393225, 131072, 3, 393224, 131072, 3, 393223, 131072, 3, 458759, 131072, 3, 524295, 131072, 3, 524296, 131072, 3, 524297, 131072, 3, 524298, 131072, 3, 524299, 131072, 3, 524300, 131072, 3, 524301, 131072, 3, 458765, 131072, 3, 458764, 131072, 3, 458763, 131072, 3, 458762, 131072, 3, 458761, 131072, 3, 458760, 131072, 3, 327694, 65536, 3, 327693, 65536, 3, 327692, 65536, 3, 327691, 65536, 3, 327690, 65536, 3)
+layer_0/tile_data = PackedInt32Array(524317, 196608, 3, 524316, 196608, 3, 524315, 196608, 3, 524314, 196608, 3, 524313, 196608, 3, 524312, 196608, 3, 524311, 196608, 3, 524310, 196608, 3, 524309, 196608, 3, 524308, 196608, 3, 524307, 196608, 3, 524306, 196608, 3, 524305, 196608, 3, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 458772, 2, 0, 458773, 2, 0, 458774, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 458778, 2, 0, 458779, 2, 0, 458780, 2, 0, 458781, 2, 0, 393245, 2, 0, 393244, 2, 0, 393243, 2, 0, 393242, 2, 0, 393241, 2, 0, 393240, 2, 0, 393239, 2, 0, 393238, 2, 0, 393237, 2, 0, 393236, 2, 0, 393235, 2, 0, 393234, 2, 0, 393233, 2, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 327700, 2, 0, 327701, 2, 0, 327702, 2, 0, 327703, 2, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 65540, 196608, 3, 65541, 196608, 3, 65542, 196608, 3, 65543, 196608, 3, 65544, 196608, 3, 4, 2, 0, -65532, 2, 0, -131068, 2, 0, -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -131064, 2, 0, -65528, 2, 0, 8, 2, 0, 7, 2, 0, 6, 2, 0, 5, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, 458759, 131072, 3, 524291, 0, 3, 524292, 0, 3, 524293, 0, 3, 524294, 0, 3, 524295, 0, 3, 524296, 0, 3, 524297, 0, 3, 524298, 0, 3, 524299, 0, 3, 524300, 0, 3, 524301, 0, 3)
 
 [node name="Outline" parent="Panel" instance=ExtResource("4_vr1sa")]
 position = Vector2(45, 44)
@@ -73,7 +73,7 @@ shape = SubResource("RectangleShape2D_8jxsg")
 [node name="UI" parent="." instance=ExtResource("8_vgbrw")]
 
 [node name="Player" parent="." instance=ExtResource("9_vv3vy")]
-position = Vector2(388, 318)
+scale = Vector2(0.15, 0.15)
 
 [node name="Bazaar" type="Sprite2D" parent="."]
 position = Vector2(565.5, 748)
