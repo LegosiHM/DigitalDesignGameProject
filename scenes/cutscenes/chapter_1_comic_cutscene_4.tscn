@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7cvfgseaehsw"]
+[gd_scene load_steps=7 format=3 uid="uid://c7cvfgseaehsw"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/chapter_1_comic_cutscene_4.gd" id="1_2uo5e"]
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="2_klfjy"]
 [ext_resource type="Texture2D" uid="uid://dscceayq4mwtw" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_12.PNG" id="3_53k8p"]
+[ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="4_ky2oo"]
 [ext_resource type="Texture2D" uid="uid://d3me73s7gpvwd" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_13.PNG" id="4_uevrx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5oym5"]
+shader = ExtResource("4_ky2oo")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
 
 [node name="chapter1_comic_cutscene4" type="Control"]
 layout_mode = 3
@@ -35,6 +44,7 @@ offset_bottom = 550.0
 texture = ExtResource("3_53k8p")
 
 [node name="Panel2" type="TextureRect" parent="PanelContainer"]
+material = SubResource("ShaderMaterial_5oym5")
 layout_mode = 0
 offset_left = 1600.0
 offset_top = 800.0

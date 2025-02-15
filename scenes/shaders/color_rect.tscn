@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://brk8lgbd0qbsc"]
+
+[ext_resource type="Shader" path="res://scripts/shaders/Scene_transitions.gdshader" id="1_au3pn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3rxx4"]
+shader = ExtResource("1_au3pn")
+shader_parameter/in_color = Color(0, 0, 0, 1)
+shader_parameter/out_color = Color(0, 0, 0, 1)
+shader_parameter/in_out = 0.0
+shader_parameter/position = 1.0
+shader_parameter/size = Vector2(16, 16)
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_3rxx4")
+offset_right = 1920.0
+offset_bottom = 1080.0

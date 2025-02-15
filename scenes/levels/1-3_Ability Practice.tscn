@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cq3xys50xuc1j" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_PriestGlaring_v.03.png" id="4_h202d"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://scenes/mechanics/draggablePanel.tscn" id="5_gmthw"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://scenes/managers/change_scene_detector.tscn" id="6_72u40"]
-[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://scenes/UI/Interface.tscn" id="7_xqdrk"]
+[ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://scenes/UI/Interface.tscn" id="7_xqdrk"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://scenes/characters/player.tscn" id="8_ovjq7"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://scenes/environments/PanelCollision.tscn" id="9_ko52n"]
 [ext_resource type="Script" path="res://scripts/managers/respawn_detector.gd" id="10_6dl1h"]

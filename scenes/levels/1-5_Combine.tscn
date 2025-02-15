@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d11pmosyoyoot" path="res://assets/sprites/chapter 1/background/BG_Temple_Evening_v01.PNG" id="1_75b0w"]
 [ext_resource type="Texture2D" uid="uid://chet5uhwivnr5" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Gatekeeper01_v.02.png" id="2_uirqt"]
 [ext_resource type="Texture2D" uid="uid://bnrso763vy7uw" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Gatekeeper02_v.02.png" id="3_ovm5x"]
-[ext_resource type="PackedScene" uid="uid://cd8cq07mrhxnj" path="res://scenes/UI/Interface.tscn" id="4_vg0o7"]
+[ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://scenes/UI/Interface.tscn" id="4_vg0o7"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://scenes/characters/player.tscn" id="5_w77j0"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://scenes/environments/PanelCollision.tscn" id="6_xselg"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://scenes/environments/PlatformPanel.tscn" id="7_wrvyn"]

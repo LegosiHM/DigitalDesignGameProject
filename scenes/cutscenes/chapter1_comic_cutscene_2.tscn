@@ -1,10 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2uha3sy1b15v"]
+[gd_scene load_steps=11 format=3 uid="uid://c2uha3sy1b15v"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/chapter_1_comic_cutscene_2.gd" id="1_s4vf3"]
+[ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="2_ekncq"]
 [ext_resource type="Texture2D" uid="uid://cldxl3l5jgw2r" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_06.PNG" id="2_ysg1s"]
 [ext_resource type="Texture2D" uid="uid://b6xeovoiklyny" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_07.PNG" id="3_gupcx"]
 [ext_resource type="Texture2D" uid="uid://drjy1qggto88l" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_08.PNG" id="4_cwhs4"]
 [ext_resource type="Texture2D" uid="uid://ccirv0yytjta4" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_09.PNG" id="5_fht80"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dryie"]
+shader = ExtResource("2_ekncq")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdeye"]
+shader = ExtResource("2_ekncq")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_13ir6"]
+shader = ExtResource("2_ekncq")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_evjin"]
+shader = ExtResource("2_ekncq")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
 
 [node name="chapter1_comic_cutscene2" type="Control"]
 layout_mode = 3
@@ -25,6 +58,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Panel1" type="TextureRect" parent="PanelContainer"]
+material = SubResource("ShaderMaterial_dryie")
 layout_mode = 0
 offset_left = 40.0
 offset_top = 80.0
@@ -33,6 +67,7 @@ offset_bottom = 480.0
 texture = ExtResource("2_ysg1s")
 
 [node name="Panel2" type="TextureRect" parent="PanelContainer"]
+material = SubResource("ShaderMaterial_qdeye")
 layout_mode = 0
 offset_left = 1185.0
 offset_top = 80.0
@@ -41,6 +76,7 @@ offset_bottom = 480.0
 texture = ExtResource("3_gupcx")
 
 [node name="Panel3" type="TextureRect" parent="PanelContainer"]
+material = SubResource("ShaderMaterial_13ir6")
 layout_mode = 0
 offset_left = 80.0
 offset_top = 525.0
@@ -49,6 +85,7 @@ offset_bottom = 1025.0
 texture = ExtResource("4_cwhs4")
 
 [node name="Panel4" type="TextureRect" parent="PanelContainer"]
+material = SubResource("ShaderMaterial_evjin")
 layout_mode = 0
 offset_left = 690.0
 offset_top = 525.0

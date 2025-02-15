@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://we0xmiafwuua"]
+[gd_scene load_steps=17 format=3 uid="uid://we0xmiafwuua"]
 
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="1_jklu7"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://scenes/managers/change_scene_detector.tscn" id="2_nqvr0"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://scenes/UI/Interface.tscn" id="8_vgbrw"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://scenes/characters/player.tscn" id="9_vv3vy"]
 [ext_resource type="Texture2D" uid="uid://dlqr73td56cy5" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_CrowdedGate_v.02.PNG" id="10_i5q61"]
+[ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://scenes/shaders/color_rect.tscn" id="11_7p48x"]
 [ext_resource type="Script" path="res://scripts/managers/respawn_detector.gd" id="11_bnqlj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jxsg"]
@@ -72,9 +73,6 @@ shape = SubResource("RectangleShape2D_8jxsg")
 
 [node name="UI" parent="." instance=ExtResource("8_vgbrw")]
 
-[node name="Player" parent="." instance=ExtResource("9_vv3vy")]
-scale = Vector2(0.15, 0.15)
-
 [node name="Bazaar" type="Sprite2D" parent="."]
 position = Vector2(565.5, 748)
 scale = Vector2(1.63778, 1.47407)
@@ -105,6 +103,11 @@ shape = SubResource("RectangleShape2D_ir143")
 [node name="Detector04" type="CollisionShape2D" parent="RespawnDetector"]
 position = Vector2(1337, -852.25)
 shape = SubResource("RectangleShape2D_vaeto")
+
+[node name="Player" parent="." instance=ExtResource("9_vv3vy")]
+position = Vector2(500, 273)
+
+[node name="ColorRect" parent="." instance=ExtResource("11_7p48x")]
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
