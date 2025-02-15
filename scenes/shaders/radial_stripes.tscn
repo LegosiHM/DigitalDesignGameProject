@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://be2bvkjuygkfy"]
+
+[ext_resource type="Shader" path="res://scripts/shaders/Radial_Stripes.gdshader" id="1_omwcj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rs57d"]
+shader = ExtResource("1_omwcj")
+shader_parameter/shine_num = 8.0
+shader_parameter/rotation_speed = 3.0
+shader_parameter/light_magnitude = 2.0
+shader_parameter/filter_distence = 1.0
+shader_parameter/filter_magnitude = 1.0
+shader_parameter/filter_minv = 0.75
+shader_parameter/cut_inner_radius = 0.1
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/NOISE_speed = Vector2(0, 0)
+shader_parameter/NOISE_magnitude = 0.0
+
+[node name="Radial_Stripes" type="ColorRect"]
+material = SubResource("ShaderMaterial_rs57d")
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,6 +1,6 @@
 extends CanvasLayer  # Now correctly extends CanvasLayer
 
-@onready var transition_rect: ColorRect = get_node_or_null("ColorRect")  # Ensure this exists
+@onready var transition_rect: ColorRect = get_node_or_null("../CanvasLayer/ColorRect")  # Ensure this exists
 
 func _ready():
 	if transition_rect and transition_rect.material:
@@ -15,7 +15,7 @@ func play_fade_out():
 	var tween = create_tween()
 	tween.tween_property(
 		transition_rect.material, "shader_parameter/in_out", 
-		0.0, 0.8  # Fade out effect
+		0.0, 0.1  # Fade out effect
 	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	
 	tween.tween_property(

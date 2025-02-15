@@ -14,3 +14,4 @@ shader_parameter/size = Vector2(16, 16)
 material = SubResource("ShaderMaterial_3rxx4")
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
