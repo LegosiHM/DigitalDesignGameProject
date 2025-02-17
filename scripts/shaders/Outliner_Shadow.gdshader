@@ -29,7 +29,7 @@ bool hasContraryNeighbour(vec2 uv, vec2 texture_pixel_size, sampler2D texture) {
     for (float i = -ceil(outline_width); i <= ceil(outline_width); i++) {
         float x = abs(i) > outline_width ? outline_width * sign(i) : i;
         float offset;
-        
+
         if (pattern == 0) {
             offset = outline_width - abs(x);
         } else if (pattern == 1) {
@@ -37,11 +37,11 @@ bool hasContraryNeighbour(vec2 uv, vec2 texture_pixel_size, sampler2D texture) {
         } else if (pattern == 2) {
             offset = outline_width;
         }
-        
+
         for (float j = -ceil(offset); j <= ceil(offset); j++) {
             float y = abs(j) > offset ? offset * sign(j) : j;
             vec2 xy = uv + texture_pixel_size * vec2(x, y);
-            
+
             if ((xy != clamp(xy, vec2(0.0), vec2(1.0)) || texture(texture, xy).a <= 0.0) == inside) {
                 return true;
             }
@@ -56,7 +56,7 @@ void fragment() {
 
     vec4 shadow_color = vec4(drop_shadow_color.rgb, sample_texture(TEXTURE, uv - shadow_offset).a * drop_shadow_color.a);
     vec4 original_color = sample_texture(TEXTURE, uv);
-    
+
     vec2 texture_pixel_size = TEXTURE_PIXEL_SIZE;
     if (add_margins) {
         texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(outline_width * 2.0));

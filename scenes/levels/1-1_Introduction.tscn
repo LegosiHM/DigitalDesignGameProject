@@ -117,7 +117,6 @@ scale = Vector2(1.63778, 1.47407)
 texture = ExtResource("10_i5q61")
 
 [node name="Player" parent="." instance=ExtResource("9_vv3vy")]
-position = Vector2(500, 273)
 
 [node name="UI" parent="." instance=ExtResource("8_vgbrw")]
 
@@ -133,12 +132,6 @@ scale = Vector2(10, 10)
 
 [node name="ColorRect" parent="CanvasLayer" instance=ExtResource("11_7p48x")]
 visible = false
-
-[node name="Bazaar2" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_qq3qd")
-position = Vector2(565.5, 748)
-scale = Vector2(1.63778, 1.47407)
-texture = ExtResource("10_i5q61")
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
