@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 			currentEnergy -= 1
 			var new_position = get_global_mouse_position() - of
 			velocity = new_position - global_position
-			print(currentEnergy)
+			#print(currentEnergy)
 			if currentEnergy <=0:
 				dragging = false
 			if collide == true:

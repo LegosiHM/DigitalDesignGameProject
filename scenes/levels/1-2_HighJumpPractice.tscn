@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://scenes/shaders/Glitching.tscn" id="10_dmyp4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu41b"]
-size = Vector2(2313.5, 154)
+size = Vector2(1945.5, 154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htmvp"]
 size = Vector2(183, 1215)
@@ -31,7 +31,7 @@ script = ExtResource("6_q60dr")
 respawn_position = Vector2(168, 731)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(422.25, 47)
+position = Vector2(238.25, 47)
 shape = SubResource("RectangleShape2D_lu41b")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
@@ -67,7 +67,7 @@ layer_0/tile_data = PackedInt32Array(589824, 65537, 5, 589825, 65537, 5, 589826,
 [node name="UI" parent="." instance=ExtResource("4_wd71n")]
 
 [node name="Player" parent="." instance=ExtResource("5_qx2xe")]
-position = Vector2(168, 731)
+position = Vector2(84, 772)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("7_cradw")

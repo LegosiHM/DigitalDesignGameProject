@@ -7,19 +7,23 @@ enum {IDLE, WALK, JUMP, FALL, LEDGE_GRAB}
 ## The values for the jump direction, default is UP or -1
 enum JUMP_DIRECTIONS {UP = -1, DOWN = 1}
 
-## The path to the character's [Sprite2D] node.  If no node path is provided the [param PLAYER_SPRITE] will be set to [param $Sprite2D] if it exists.
-@export_node_path("Sprite2D") var PLAYER_SPRITE_PATH: NodePath
-@onready var PLAYER_SPRITE: Sprite2D = get_node(PLAYER_SPRITE_PATH) if PLAYER_SPRITE_PATH else $Sprite2D ## The [Sprite2D] of the player character
 @onready var COLLISION_HOLDER = $CollisionHolder
 @onready var COLLISION_SHAPE = $PlayerHitbox
 @onready var grab_hand_ray_cast = $CollisionHolder/GrabHandRayCast
 @onready var grab_check_ray_cast = $CollisionHolder/GrabCheckRayCast
+@onready var slow_fall_hand_raycast = $CollisionHolder/SlowFallHandRayCast
+@onready var slow_fall_check_raycast = $CollisionHolder/SlowFallCheckRayCast
+
 ## Enables/Disables hard movement when using a joystick.  When enabled, slightly moving the joystick
 ## will only move the character at a percentage of the maximum acceleration and speed instead of the maximum.
 @export var JOYSTICK_MOVEMENT := false
 
 ## Enable/Disable sprinting
 @export var ENABLE_SPRINT := false
+
+# 🎬 AnimationTree Setup
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var animation_state: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
 
 @export_group("Input Map Actions")
 @export var ACTION_UP := "up"
@@ -58,7 +62,7 @@ var jumping := false
 var apex_active: bool = false
 
 ## Lock movement when required
-var is_locked = false
+var is_locked: bool = false
 
 ## Platform-related state
 var platform: Node = null
@@ -66,13 +70,26 @@ var is_on_platform: bool = false
 
 ## Handles sprint and wall jump readiness
 @onready var can_sprint: bool = ENABLE_SPRINT
+var isSlowFalling: bool = false
+
+var ledge_grab_cooldown := false
+var slow_fall_cooldown := false
 
 func _ready():
+	animation_tree.active = true
 	## Ensure the platform connects to the lock_player_movement signal
 	if platform:
 		platform.connect("lock_player_movement", Callable(self, "_on_lock_player_movement"))
 	# Ensure CollisionHolder starts facing the correct direction
 	COLLISION_HOLDER.scale.x = 1
+
+func _process(delta):
+	var is_moving = abs(velocity.x) > 0.1  # Check if the player is moving
+	
+	if is_moving:
+		animation_state.travel("run")  # Play Run Animation
+	else:
+		animation_state.travel("idle")  # Keep the sprite static
 
 func _physics_process(delta: float) -> void:
 	## Only execute physics logic if not locked
@@ -82,7 +99,7 @@ func _physics_process(delta: float) -> void:
 	if isLocked:
 		return
 	
-	_check_ledge_grab()
+	_check_fall_behavior()
 
 	# If grabbing a ledge, allow climbing or jumping
 	if isGrabbing:
@@ -90,27 +107,50 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed(ACTION_JUMP):
 			isGrabbing = false
 			velocity.y = -JUMP_FORCE  # Jump up from ledge
+			return
 		if Input.is_action_just_pressed(ACTION_UP):
 			isGrabbing = false
 			position.y -= 5  # Climb up ledge
+			return
 		return
-	
+	elif isSlowFalling:
+		velocity = Vector2.ZERO
+		if Input.is_action_just_pressed(ACTION_JUMP):
+			velocity.y = -JUMP_FORCE  # Jump up from ledge
+			isSlowFalling = false
+			return
+		if Input.is_action_just_pressed(ACTION_UP):
+			position.y -= 5  # Climb up ledge
+			isSlowFalling = false
+			return
+		return
 
+var debug_timer := 0.0
 ## Ledge Grabbing Detection
-func _check_ledge_grab():
-	# Debugging output to verify detection
-
-	# Check if the player is falling and a ledge is detected
+func _check_fall_behavior():
 	var isFalling = velocity.y >= 0
-	var handClear = not grab_hand_ray_cast.is_colliding()
-	var ledgeDetected = grab_check_ray_cast.is_colliding()
-	var canGrab = isFalling and handClear and ledgeDetected and not isGrabbing
-
+	
+	# 🟢 Ledge Grab Logic
+	var ledgeGrab_handClear = not grab_hand_ray_cast.is_colliding()
+	var ledgeGrab_ledgeDetected = grab_check_ray_cast.is_colliding()
+	var canGrab = isFalling and ledgeGrab_handClear and ledgeGrab_ledgeDetected and not isGrabbing and not ledge_grab_cooldown
+	
+	# 🟡 Slow Fall Logic
+	var slowFall_handClear = slow_fall_hand_raycast.is_colliding()
+	var slowFall_ledgeDetected = slow_fall_check_raycast.is_colliding()
+	var shouldSlowFall = slowFall_handClear and slowFall_ledgeDetected and not slow_fall_cooldown
 	# If ledge grab is possible, enter grab state
 	if canGrab:
 		isGrabbing = true
 		state = LEDGE_GRAB
 		velocity = Vector2.ZERO  # Stop movement
+		start_ledge_grab_cooldown()
+		return
+	elif shouldSlowFall:
+		isSlowFalling = true
+		velocity = Vector2.ZERO  # Stop movement
+		start_slow_fall_cooldown()
+		return
 
 ## Overrideable physics process used by the controller that calls whatever functions should be called
 ## and any logic that needs to be done on the [param _physics_process] tick
@@ -154,12 +194,10 @@ func manage_state() -> void:
 ## Animation Handling (Auto-Flipping Collision & RayCasts)
 func manage_animations() -> void:
 	if velocity.x > 0:
-		PLAYER_SPRITE.flip_h = false
 		COLLISION_HOLDER.position.x = abs(COLLISION_HOLDER.position.x)  # Keep RayCasts on right
 		COLLISION_SHAPE.position.x = abs(COLLISION_SHAPE.position.x)  # Keep Collision on right
 		_flip_raycast_direction(1)  # Face right
 	elif velocity.x < 0:
-		PLAYER_SPRITE.flip_h = true
 		COLLISION_HOLDER.position.x = -abs(COLLISION_HOLDER.position.x)  # Move RayCasts left
 		COLLISION_SHAPE.position.x = -abs(COLLISION_SHAPE.position.x)  # Move Collision left
 		_flip_raycast_direction(-1)  # Face left
@@ -176,8 +214,10 @@ func _flip_raycast_direction(direction: int):
 
 ## Movement functions respect the locked state
 func handle_velocity(delta: float, input_direction: Vector2 = Vector2.ZERO) -> void:
-	if is_locked:
+	if is_locked or isGrabbing:
+		velocity.x = 0
 		return
+
 	if input_direction.x != 0:
 		apply_velocity(delta, input_direction)
 	else:
@@ -190,6 +230,9 @@ func handle_sprint(sprint_strength: float) -> void:
 		sprinting = false
 
 func handle_gravity(delta: float) -> void:
+	if isGrabbing:
+		return
+	
 	velocity.y += GRAVITY * delta
 	
 	if not is_on_floor() and can_jump:
@@ -272,3 +315,13 @@ func apply_friction(delta: float) -> void:
 		velocity.x = 0
 	else:
 		velocity.x += fric
+
+func start_ledge_grab_cooldown():
+	ledge_grab_cooldown = true
+	await get_tree().create_timer(0.7).timeout  # Adjust cooldown duration as needed
+	ledge_grab_cooldown = false
+
+func start_slow_fall_cooldown():
+	slow_fall_cooldown = true
+	await get_tree().create_timer(1.0).timeout  # Adjust cooldown duration as needed
+	slow_fall_cooldown = false

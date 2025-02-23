@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://scenes/shaders/Glitching.tscn" id="14_irrcm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npypg"]
-size = Vector2(2762.5, 154)
+size = Vector2(1940.5, 154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27b4b"]
 size = Vector2(183, 1393.5)
@@ -52,7 +52,7 @@ script = ExtResource("10_6dl1h")
 respawn_position = Vector2(165, 757)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(646.75, 47)
+position = Vector2(235.75, 47)
 shape = SubResource("RectangleShape2D_npypg")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
