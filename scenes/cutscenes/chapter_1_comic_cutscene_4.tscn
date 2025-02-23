@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/cutscenes/chapter_1_comic_cutscene_4.gd" id="1_2uo5e"]
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="2_klfjy"]
-[ext_resource type="Texture2D" uid="uid://dscceayq4mwtw" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_12.PNG" id="3_53k8p"]
+[ext_resource type="Texture2D" uid="uid://c8qsv6lh4yiwv" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_12_v1.png" id="3_7dg87"]
 [ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="4_ky2oo"]
 [ext_resource type="Texture2D" uid="uid://d3me73s7gpvwd" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_13.PNG" id="4_uevrx"]
 
@@ -41,7 +41,7 @@ offset_left = -50.0
 offset_top = 50.0
 offset_right = 1395.0
 offset_bottom = 550.0
-texture = ExtResource("3_53k8p")
+texture = ExtResource("3_7dg87")
 
 [node name="Panel2" type="TextureRect" parent="PanelContainer"]
 material = SubResource("ShaderMaterial_5oym5")

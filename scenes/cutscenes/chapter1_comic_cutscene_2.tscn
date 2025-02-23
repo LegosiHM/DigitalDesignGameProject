@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/cutscenes/chapter_1_comic_cutscene_2.gd" id="1_s4vf3"]
 [ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="2_ekncq"]
-[ext_resource type="Texture2D" uid="uid://cldxl3l5jgw2r" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_06.PNG" id="2_ysg1s"]
+[ext_resource type="Texture2D" uid="uid://cldxl3l5jgw2r" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_06.png" id="3_3m42f"]
 [ext_resource type="Texture2D" uid="uid://b6xeovoiklyny" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_07.PNG" id="3_gupcx"]
-[ext_resource type="Texture2D" uid="uid://drjy1qggto88l" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_08.PNG" id="4_cwhs4"]
 [ext_resource type="Texture2D" uid="uid://ccirv0yytjta4" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_09.PNG" id="5_fht80"]
+[ext_resource type="Texture2D" uid="uid://drjy1qggto88l" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_08.png" id="5_t6ewc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dryie"]
 shader = ExtResource("2_ekncq")
@@ -64,7 +64,7 @@ offset_left = 40.0
 offset_top = 80.0
 offset_right = 1160.0
 offset_bottom = 480.0
-texture = ExtResource("2_ysg1s")
+texture = ExtResource("3_3m42f")
 
 [node name="Panel2" type="TextureRect" parent="PanelContainer"]
 material = SubResource("ShaderMaterial_qdeye")
@@ -82,7 +82,7 @@ offset_left = 80.0
 offset_top = 525.0
 offset_right = 630.0
 offset_bottom = 1025.0
-texture = ExtResource("4_cwhs4")
+texture = ExtResource("5_t6ewc")
 
 [node name="Panel4" type="TextureRect" parent="PanelContainer"]
 material = SubResource("ShaderMaterial_evjin")

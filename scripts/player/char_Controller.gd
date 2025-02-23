@@ -203,14 +203,12 @@ func manage_animations() -> void:
 		_flip_raycast_direction(-1)  # Face left
 
 func _flip_raycast_direction(direction: int):
-	# Get RayCasts from CollisionHolder
-	var grab_hand_ray_cast = $CollisionHolder/GrabHandRayCast
-	var grab_check_ray_cast = $CollisionHolder/GrabCheckRayCast
 
 	# Flip RayCasts manually
 	grab_hand_ray_cast.target_position.x = abs(grab_hand_ray_cast.target_position.x) * direction
 	grab_check_ray_cast.target_position.x = abs(grab_check_ray_cast.target_position.x) * direction
-
+	slow_fall_hand_raycast.target_position.x = abs(slow_fall_hand_raycast.target_position.x) * direction
+	slow_fall_check_raycast.target_position.x = abs(slow_fall_hand_raycast.target_position.x) * direction
 
 ## Movement functions respect the locked state
 func handle_velocity(delta: float, input_direction: Vector2 = Vector2.ZERO) -> void:
@@ -252,7 +250,7 @@ func handle_jump(delta: float, move_direction: Vector2, jump_strength: float = 0
 		can_jump = true
 		jumping = false
 
-func apply_jump(move_direction: Vector2, jump_force: float = JUMP_FORCE, jump_direction: int = JUMP_DIRECTIONS.UP) -> void:
+func apply_jump(_move_direction: Vector2, jump_force: float = JUMP_FORCE, jump_direction: int = JUMP_DIRECTIONS.UP) -> void:
 	can_jump = false
 	should_jump = false
 	jumping = true

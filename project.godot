@@ -96,8 +96,11 @@ advance_dialog={
 2d_physics/layer_2="Object"
 2d_physics/layer_3="Panel"
 2d_physics/layer_4="DraggablePanel"
-2d_physics/layer_5="Background"
 
 [physics]
 
 2d/default_gravity=500.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
