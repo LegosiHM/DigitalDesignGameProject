@@ -71,6 +71,7 @@ position = Vector2(1168, 495)
 texture = ExtResource("4_geuh0")
 
 [node name="UI" parent="." instance=ExtResource("5_ece1k")]
+player_node_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("6_h2l7a")]
 position = Vector2(222, 677)

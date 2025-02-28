@@ -120,6 +120,7 @@ texture = ExtResource("10_i5q61")
 position = Vector2(427, 297)
 
 [node name="UI" parent="." instance=ExtResource("8_vgbrw")]
+player_node_path = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("11_fsxd4")

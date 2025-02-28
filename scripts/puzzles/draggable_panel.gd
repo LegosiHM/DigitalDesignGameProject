@@ -26,12 +26,10 @@ func _process(delta: float) -> void:
 		if not player.consume_energy(energy_needed):  
 			dragging = false
 			returning = true  # If no energy left, return panel
-			print_debug("[Panel] Stopped dragging - No energy left!")
 		else:
 			var new_position = get_global_mouse_position() - of
 			velocity = new_position - global_position
 			global_position = global_position.move_toward(new_position, (illegalDragging_speed if collide else normalDragging_speed) * delta)
-			print_debug("[Panel] Dragging... Energy Left:", player.current_energy)
 	
 	elif returning:
 		global_position = global_position.move_toward(original_position, return_speed * delta)
@@ -41,20 +39,17 @@ func _process(delta: float) -> void:
 
 func _on_button_button_down() -> void:
 	if player.current_energy < player.threshold_energy:
-		print_debug("[Panel] Not enough energy to drag! Current:", player.current_energy, "| Required:", player.threshold_energy)
 		return  # Prevent dragging if energy is below the threshold
 
 	dragging = true
 	returning = false
 	of = get_global_mouse_position() - global_position
 	player.is_dragging_panel = true
-	print_debug("[Panel] Dragging Started!")
 
 func _on_button_button_up() -> void:
 	dragging = false
 	returning = true
 	player.is_dragging_panel = false
-	print_debug("[Panel] Dragging Stopped!")
 
 func check_overlap_area():
 	collide = has_overlapping_areas()

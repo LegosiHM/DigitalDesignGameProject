@@ -78,7 +78,7 @@ var slow_fall_cooldown := false
 
 # Add energy variables here
 var max_energy: int = 200
-var threshold_energy: int = 100
+var threshold_energy: int = max_energy/2.5
 var current_energy: int = max_energy
 var restore_energy: bool = true
 var is_dragging_panel: bool = false
@@ -362,16 +362,11 @@ func restore_energy_process():
 		return
 	if current_energy < max_energy:  # Ensure energy restores only when below max
 		current_energy += 1
-		print("[Energy] Restoring Energy:%d" % current_energy)
-	else:
-		print("[Energy] Already full, stopping restoration")
 
 func consume_energy(amount: int) -> bool:
 	if current_energy >= amount:
 		current_energy -= amount
-		print_debug("[Energy] Consumed:", amount, "| Remaining:", current_energy)
 		return true  # Energy was successfully consumed
 	else:
-		print_debug("[Energy] Not enough energy! Current:", current_energy)
 		restore_energy = true  # Ensure energy starts restoring when empty
 		return false  # Not enough energy

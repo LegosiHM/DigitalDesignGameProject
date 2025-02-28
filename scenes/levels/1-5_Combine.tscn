@@ -326,6 +326,9 @@ z_index = 6
 position = Vector2(395, 512)
 scale = Vector2(1.25, 1.19872)
 
+[node name="Sprite2D" parent="DraggablePanel" index="0"]
+player_node_path = NodePath("../../Player")
+
 [node name="Panel" parent="." instance=ExtResource("7_wrvyn")]
 position = Vector2(30.25, 239)
 scale = Vector2(0.75, 0.75)
@@ -341,6 +344,7 @@ layer_0/tile_data = PackedInt32Array(655381, 1, 5, 655382, 65537, 5, 655383, 655
 position = Vector2(1555, 821)
 
 [node name="UI" parent="." instance=ExtResource("4_vg0o7")]
+player_node_path = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("20_6rrga")
@@ -356,3 +360,5 @@ scale = Vector2(10, 10)
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+
+[editable path="DraggablePanel"]

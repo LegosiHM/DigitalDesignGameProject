@@ -144,6 +144,7 @@ rotation = -1.5708
 layer_0/tile_data = PackedInt32Array(131080, 1, 0, 131082, 327681, 0, 131081, 131073, 0, 524298, 327681, 1, 458762, 327681, 1, 393226, 327681, 1, 327690, 327681, 1, 262154, 327681, 1, 196618, 327681, 1, 196616, 1, 1, 262152, 1, 1, 327688, 1, 1, 393224, 1, 1, 458760, 1, 1, 524296, 1, 1, 589832, 1, 5, 589834, 327681, 5, 589833, 196609, 5)
 
 [node name="UI" parent="." instance=ExtResource("7_xqdrk")]
+player_node_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("8_ovjq7")]
 position = Vector2(165, 757)
