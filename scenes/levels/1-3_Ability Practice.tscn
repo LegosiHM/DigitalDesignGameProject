@@ -118,6 +118,9 @@ z_index = 5
 position = Vector2(564, 296)
 scale = Vector2(0.75, 0.75)
 
+[node name="Sprite2D" parent="draggablePanel" index="0"]
+player_node_path = NodePath("../../Player")
+
 [node name="RigidBody2D" type="RigidBody2D" parent="draggablePanel"]
 mass = 0.001
 gravity_scale = 0.0
@@ -166,3 +169,5 @@ mouse_force_pass_scroll_events = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+
+[editable path="draggablePanel"]

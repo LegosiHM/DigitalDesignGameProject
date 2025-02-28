@@ -22,6 +22,7 @@ enum JUMP_DIRECTIONS {UP = -1, DOWN = 1}
 @export var ENABLE_SPRINT := false
 
 # 🎬 AnimationTree Setup
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_state: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
 
@@ -75,6 +76,13 @@ var isSlowFalling: bool = false
 var ledge_grab_cooldown := false
 var slow_fall_cooldown := false
 
+# Add energy variables here
+var max_energy: int = 200
+var threshold_energy: int = 100
+var current_energy: int = max_energy
+var restore_energy: bool = true
+var is_dragging_panel: bool = false
+
 func _ready():
 	animation_tree.active = true
 	## Ensure the platform connects to the lock_player_movement signal
@@ -83,16 +91,9 @@ func _ready():
 	# Ensure CollisionHolder starts facing the correct direction
 	COLLISION_HOLDER.scale.x = 1
 
-func _process(delta):
-	var is_moving = abs(velocity.x) > 0.1  # Check if the player is moving
-	
-	if is_moving:
-		animation_state.travel("run")  # Play Run Animation
-	else:
-		animation_state.travel("idle")  # Keep the sprite static
-
 func _physics_process(delta: float) -> void:
 	## Only execute physics logic if not locked
+	restore_energy_process()
 	if not is_locked:
 		physics_tick(delta)
 		
@@ -107,10 +108,14 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed(ACTION_JUMP):
 			isGrabbing = false
 			velocity.y = -JUMP_FORCE  # Jump up from ledge
+			animation_player.stop()
+			animation_tree.active = true
 			return
 		if Input.is_action_just_pressed(ACTION_UP):
 			isGrabbing = false
 			position.y -= 5  # Climb up ledge
+			animation_player.stop()
+			animation_tree.active = true
 			return
 		return
 	elif isSlowFalling:
@@ -118,10 +123,14 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed(ACTION_JUMP):
 			velocity.y = -JUMP_FORCE  # Jump up from ledge
 			isSlowFalling = false
+			animation_player.stop()
+			animation_tree.active = true
 			return
 		if Input.is_action_just_pressed(ACTION_UP):
 			position.y -= 5  # Climb up ledge
 			isSlowFalling = false
+			animation_player.stop()
+			animation_tree.active = true
 			return
 		return
 
@@ -193,6 +202,30 @@ func manage_state() -> void:
 
 ## Animation Handling (Auto-Flipping Collision & RayCasts)
 func manage_animations() -> void:
+	# 🟢 If ledge grabbing, disable AnimationTree and play ledge grab manually
+	if isGrabbing:
+		if animation_tree.active:  # Disable AnimationTree to stop unwanted animations
+			animation_tree.active = false
+		if not animation_player.is_playing():
+			animation_player.play("ledge_grab")  # Play ledge grab animation
+		return  # Stop further execution to prevent AnimationTree from running
+	elif isSlowFalling:
+		if animation_tree.active:  # Disable AnimationTree to stop unwanted animations
+			animation_tree.active = false
+		if not animation_player.is_playing():
+			animation_player.play("slow_fall")  # Play ledge grab animation
+		return
+
+	# 🟢 If NOT ledge grabbing, ensure AnimationTree is active again
+	if not animation_tree.active:
+		animation_tree.active = true  # Re-enable AnimationTree
+	animation_player.stop()  # Stop ledge grab animation
+	
+	if is_on_floor():
+		if velocity.x == 0:
+			animation_state.travel("idle")
+		else:
+			animation_state.travel("run")
 	if velocity.x > 0:
 		COLLISION_HOLDER.position.x = abs(COLLISION_HOLDER.position.x)  # Keep RayCasts on right
 		COLLISION_SHAPE.position.x = abs(COLLISION_SHAPE.position.x)  # Keep Collision on right
@@ -323,3 +356,22 @@ func start_slow_fall_cooldown():
 	slow_fall_cooldown = true
 	await get_tree().create_timer(1.0).timeout  # Adjust cooldown duration as needed
 	slow_fall_cooldown = false
+
+func restore_energy_process():
+	if is_dragging_panel:
+		return
+	if current_energy < max_energy:  # Ensure energy restores only when below max
+		current_energy += 1
+		print("[Energy] Restoring Energy:%d" % current_energy)
+	else:
+		print("[Energy] Already full, stopping restoration")
+
+func consume_energy(amount: int) -> bool:
+	if current_energy >= amount:
+		current_energy -= amount
+		print_debug("[Energy] Consumed:", amount, "| Remaining:", current_energy)
+		return true  # Energy was successfully consumed
+	else:
+		print_debug("[Energy] Not enough energy! Current:", current_energy)
+		restore_energy = true  # Ensure energy starts restoring when empty
+		return false  # Not enough energy
