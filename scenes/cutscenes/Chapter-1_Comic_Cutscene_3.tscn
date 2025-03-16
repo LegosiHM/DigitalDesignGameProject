@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://cnj3j7rqoytfx"]
 
-[ext_resource type="Script" path="res://scripts/cutscenes/chapter_1_comic_cutscene_3.gd" id="1_dq8qe"]
-[ext_resource type="Texture2D" uid="uid://c87xbvd82tv0p" path="res://assets/sprites/chapter 1/cutscenes/77b130bc-8d50-45a3-942c-ec8e2859c06a.png" id="1_vnwli"]
-[ext_resource type="Texture2D" uid="uid://c2e5garf728y8" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_10.PNG" id="2_as7g2"]
-[ext_resource type="Texture2D" uid="uid://bxr5stenrha0u" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_11.PNG" id="3_1u1tn"]
-[ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="3_bwy4f"]
+[ext_resource type="Script" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_3.gd" id="1_uomau"]
+[ext_resource type="Texture2D" uid="uid://c87xbvd82tv0p" path="res://assets/sprites/chapter 1/cutscenes/77b130bc-8d50-45a3-942c-ec8e2859c06a.png" id="2_jf56p"]
+[ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="3_7gh0n"]
+[ext_resource type="Texture2D" uid="uid://c2e5garf728y8" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_10.PNG" id="4_jqmg4"]
+[ext_resource type="Texture2D" uid="uid://bxr5stenrha0u" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_11.PNG" id="5_8f6en"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hlsbl"]
-shader = ExtResource("3_bwy4f")
+shader = ExtResource("3_7gh0n")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 10.0
 shader_parameter/pattern = 2
@@ -15,7 +15,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ivqdi"]
-shader = ExtResource("3_bwy4f")
+shader = ExtResource("3_7gh0n")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 10.0
 shader_parameter/pattern = 2
@@ -29,13 +29,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dq8qe")
+script = ExtResource("1_uomau")
 Panel1 = Vector2(475, 25)
 Panel2 = Vector2(0, 550)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("1_vnwli")
+texture = ExtResource("2_jf56p")
 
 [node name="PanelContainer" type="Control" parent="."]
 anchors_preset = 0
@@ -49,7 +49,7 @@ offset_left = 475.0
 offset_top = 25.0
 offset_right = 1920.0
 offset_bottom = 525.0
-texture = ExtResource("2_as7g2")
+texture = ExtResource("4_jqmg4")
 
 [node name="Panel2" type="TextureRect" parent="PanelContainer"]
 material = SubResource("ShaderMaterial_ivqdi")
@@ -57,4 +57,4 @@ layout_mode = 0
 offset_top = 550.0
 offset_right = 1445.0
 offset_bottom = 1050.0
-texture = ExtResource("3_1u1tn")
+texture = ExtResource("5_8f6en")

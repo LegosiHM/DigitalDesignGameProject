@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://c7cvfgseaehsw"]
 
-[ext_resource type="Script" path="res://scripts/cutscenes/chapter_1_comic_cutscene_4.gd" id="1_2uo5e"]
-[ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="2_klfjy"]
-[ext_resource type="Texture2D" uid="uid://c8qsv6lh4yiwv" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_12_v1.png" id="3_7dg87"]
-[ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="4_ky2oo"]
-[ext_resource type="Texture2D" uid="uid://d3me73s7gpvwd" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_13.PNG" id="4_uevrx"]
+[ext_resource type="Script" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_4.gd" id="1_tdwa7"]
+[ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="2_i3jja"]
+[ext_resource type="Texture2D" uid="uid://c8qsv6lh4yiwv" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_12_v1.png" id="3_abyf6"]
+[ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="4_m0hhn"]
+[ext_resource type="Texture2D" uid="uid://d3me73s7gpvwd" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_13.PNG" id="5_i4e8i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5oym5"]
-shader = ExtResource("4_ky2oo")
+shader = ExtResource("4_m0hhn")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 10.0
 shader_parameter/pattern = 2
@@ -21,13 +21,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2uo5e")
+script = ExtResource("1_tdwa7")
 Panel1 = Vector2(-50, 50)
 Panel2 = Vector2(1600, 800)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_klfjy")
+texture = ExtResource("2_i3jja")
 
 [node name="PanelContainer" type="Control" parent="."]
 layout_mode = 3
@@ -41,7 +41,7 @@ offset_left = -50.0
 offset_top = 50.0
 offset_right = 1395.0
 offset_bottom = 550.0
-texture = ExtResource("3_7dg87")
+texture = ExtResource("3_abyf6")
 
 [node name="Panel2" type="TextureRect" parent="PanelContainer"]
 material = SubResource("ShaderMaterial_5oym5")
@@ -50,4 +50,4 @@ offset_left = 1600.0
 offset_top = 800.0
 offset_right = 1850.0
 offset_bottom = 1050.0
-texture = ExtResource("4_uevrx")
+texture = ExtResource("5_i4e8i")

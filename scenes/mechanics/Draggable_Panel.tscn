@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwct7nede7txs"]
 
-[ext_resource type="Script" path="res://scripts/puzzles/draggable_panel.gd" id="1_tyfft"]
-[ext_resource type="PackedScene" uid="uid://bjw6twys1thrm" path="res://scenes/environments/DraggablePlatformPanel.tscn" id="2_8r00h"]
+[ext_resource type="Script" path="res://scripts/puzzles/Draggable_Panel.gd" id="1_tyfft"]
+[ext_resource type="PackedScene" uid="uid://bjw6twys1thrm" path="res://scenes/environments/Draggable_Platform_Panel.tscn" id="2_8r00h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5yap"]
 size = Vector2(321, 237)
 
 [node name="draggablePanel" type="Node2D"]
 
-[node name="Sprite2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 6
 script = ExtResource("1_tyfft")
 
-[node name="Button" type="Button" parent="Sprite2D"]
+[node name="Button" type="Button" parent="Area2D"]
 offset_left = -160.0
 offset_top = -121.0
 offset_right = 160.0
@@ -21,16 +21,16 @@ offset_bottom = 96.0
 scale = Vector2(0.999738, 1.10857)
 focus_mode = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 9
 visibility_layer = 8
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_h5yap")
 
-[node name="TileMap" parent="Sprite2D" instance=ExtResource("2_8r00h")]
+[node name="TileMap" parent="Area2D" instance=ExtResource("2_8r00h")]
 position = Vector2(0, 11)
 scale = Vector2(0.6, 0.6)
 layer_0/tile_data = PackedInt32Array(131069, 0, 3, 131070, 65536, 3, 131071, 131072, 3, 65536, 196608, 3, 65537, 262144, 3, 65538, 327680, 3)
 
-[connection signal="button_down" from="Sprite2D/Button" to="Sprite2D" method="_on_button_button_down"]
-[connection signal="button_up" from="Sprite2D/Button" to="Sprite2D" method="_on_button_button_up"]
+[connection signal="button_down" from="Area2D/Button" to="Area2D" method="_on_button_button_down"]
+[connection signal="button_up" from="Area2D/Button" to="Area2D" method="_on_button_button_up"]

@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="Time Whiskers"
-run/main_scene="res://scenes/cutscenes/chapter1_comic_cutscene1.tscn"
+run/main_scene="res://scenes/cutscenes/Chapter-1_Comic_Cutscene_1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/UI/UI_Logo_v01.png"
 
 [autoload]
 
-PlatformManager="*res://scripts/managers/PlatformManager.gd"
+PlatformManager="*res://zNot Used/PlatformManager.gd"
 DialogManager="*res://singletons/DialogManager.gd"
+CursorManager="*res://scripts/UI/Cursor_Manager.gd"
 
 [display]
 

@@ -1,8 +1,6 @@
 extends Control
 
-@export var player_node_path: NodePath  # Set this in the inspector to the Player node
-@onready var player = get_node(player_node_path) if player_node_path else null
-
+@onready var player = get_tree().current_scene.get_node("Player")
 @onready var energy_bar = $TextureProgressBar
 
 func _ready():

@@ -2,31 +2,31 @@
 
 [ext_resource type="Texture2D" uid="uid://s6ijtbtnvx4k" path="res://assets/sprites/chapter 1/background/BG_Suburb_Night_v02.PNG" id="1_i6cbv"]
 [ext_resource type="Texture2D" uid="uid://wfm1ss684p7i" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Priest_v.03.png" id="2_w0t8t"]
-[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://scenes/environments/PlatformPanel.tscn" id="3_4tmjt"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://scenes/environments/Platform_Panel.tscn" id="3_4tmjt"]
 [ext_resource type="Texture2D" uid="uid://cq3xys50xuc1j" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_PriestGlaring_v.03.png" id="4_h202d"]
-[ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://scenes/mechanics/draggablePanel.tscn" id="5_gmthw"]
+[ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://scenes/mechanics/Draggable_Panel.tscn" id="5_gmthw"]
 [ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="5_wfnga"]
-[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://scenes/managers/change_scene_detector.tscn" id="6_72u40"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://scenes/managers/Change_Scene_Detector.tscn" id="6_72u40"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://scenes/UI/Interface.tscn" id="7_xqdrk"]
-[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://scenes/characters/player.tscn" id="8_ovjq7"]
-[ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://scenes/environments/PanelCollision.tscn" id="9_ko52n"]
-[ext_resource type="Script" path="res://scripts/managers/respawn_detector.gd" id="10_6dl1h"]
-[ext_resource type="Script" path="res://scripts/managers/SceneTransitionManager.gd" id="11_auadr"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://scenes/characters/Player.tscn" id="8_ovjq7"]
+[ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://scenes/environments/Panel_Collision.tscn" id="9_ko52n"]
+[ext_resource type="Script" path="res://scripts/managers/Respawn_Detector.gd" id="10_6dl1h"]
+[ext_resource type="Script" path="res://scripts/managers/Scene_Transition_Manager.gd" id="11_auadr"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://scenes/shaders/Scenes_Transition.tscn" id="12_jhf7a"]
-[ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://scenes/shaders/radial_stripes.tscn" id="13_282pf"]
+[ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://scenes/shaders/Radial_Stripes.tscn" id="13_282pf"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://scenes/shaders/Glitching.tscn" id="14_irrcm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npypg"]
-size = Vector2(1940.5, 154)
+size = Vector2(1911, 172)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27b4b"]
-size = Vector2(183, 1393.5)
+size = Vector2(194, 1390)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdbxn"]
-size = Vector2(2292, 116.5)
+size = Vector2(2320, 181.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctvnn"]
-size = Vector2(178, 1060.5)
+size = Vector2(209, 378)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6su7"]
 shader = ExtResource("5_wfnga")
@@ -52,25 +52,28 @@ script = ExtResource("10_6dl1h")
 respawn_position = Vector2(165, 757)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(235.75, 47)
+position = Vector2(279.5, 38)
 shape = SubResource("RectangleShape2D_npypg")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(-789, -579.25)
+position = Vector2(-774, -571)
 shape = SubResource("RectangleShape2D_27b4b")
 
 [node name="Detector03" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(277, -1323)
+position = Vector2(291, -1355.38)
 shape = SubResource("RectangleShape2D_xdbxn")
 
 [node name="Detector04" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(1531, -822.25)
+position = Vector2(1345.5, -1077)
 shape = SubResource("RectangleShape2D_ctvnn")
 
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("6_72u40")]
 position = Vector2(2001, 656)
 scale = Vector2(2, 2)
 my_scene = "res://scenes/levels/1-4_PushAndLedgeGrabbingPractice.tscn"
+
+[node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
+position = Vector2(8.75, 21.5)
 
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
 
@@ -113,17 +116,10 @@ position = Vector2(1615, 406)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_h202d")
 
-[node name="draggablePanel" parent="." instance=ExtResource("5_gmthw")]
+[node name="Draggable_Panel" parent="." instance=ExtResource("5_gmthw")]
 z_index = 5
 position = Vector2(564, 296)
 scale = Vector2(0.75, 0.75)
-
-[node name="Sprite2D" parent="draggablePanel" index="0"]
-player_node_path = NodePath("../../Player")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="draggablePanel"]
-mass = 0.001
-gravity_scale = 0.0
 
 [node name="PlatformPanel" parent="." instance=ExtResource("3_4tmjt")]
 position = Vector2(0, 228)
@@ -144,7 +140,6 @@ rotation = -1.5708
 layer_0/tile_data = PackedInt32Array(131080, 1, 0, 131082, 327681, 0, 131081, 131073, 0, 524298, 327681, 1, 458762, 327681, 1, 393226, 327681, 1, 327690, 327681, 1, 262154, 327681, 1, 196618, 327681, 1, 196616, 1, 1, 262152, 1, 1, 327688, 1, 1, 393224, 1, 1, 458760, 1, 1, 524296, 1, 1, 589832, 1, 5, 589834, 327681, 5, 589833, 196609, 5)
 
 [node name="UI" parent="." instance=ExtResource("7_xqdrk")]
-player_node_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("8_ovjq7")]
 position = Vector2(165, 757)
@@ -171,4 +166,4 @@ mouse_force_pass_scroll_events = false
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
 
-[editable path="draggablePanel"]
+[editable path="ChangeSceneDetector"]

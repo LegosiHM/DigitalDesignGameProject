@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmoy6fwmk1qrc"]
+[gd_scene load_steps=14 format=3 uid="uid://cmoy6fwmk1qrc"]
 
-[ext_resource type="Script" path="res://scripts/cutscenes/chapter_1_comic_cutscene1.gd" id="1_to2i0"]
-[ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="2_7388m"]
-[ext_resource type="Texture2D" uid="uid://bykik81i3n315" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_01.PNG" id="2_y8i2c"]
-[ext_resource type="Texture2D" uid="uid://bysvioa3siarw" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_02.PNG" id="3_quqm3"]
-[ext_resource type="Texture2D" uid="uid://b6owrn6p4y6g" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_03.PNG" id="4_mr8mu"]
-[ext_resource type="Texture2D" uid="uid://bjgx7qa0r455r" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_04.PNG" id="5_0tpbb"]
-[ext_resource type="Texture2D" uid="uid://b4fmu0yul7kwg" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_05.PNG" id="6_lfi2h"]
+[ext_resource type="Script" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_1.gd" id="1_n4ev8"]
+[ext_resource type="Texture2D" uid="uid://bwc3jst7tahvd" path="res://assets/sprites/PaperTexture.jpg" id="2_lxx5a"]
+[ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="3_w1ept"]
+[ext_resource type="Texture2D" uid="uid://bykik81i3n315" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_01.PNG" id="4_u8dty"]
+[ext_resource type="Texture2D" uid="uid://bysvioa3siarw" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_02.PNG" id="5_00tj5"]
+[ext_resource type="Texture2D" uid="uid://b6owrn6p4y6g" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_03.PNG" id="6_fn38s"]
+[ext_resource type="Texture2D" uid="uid://bjgx7qa0r455r" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_04.PNG" id="7_gbnon"]
+[ext_resource type="Texture2D" uid="uid://b4fmu0yul7kwg" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_05.PNG" id="8_rggfy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5m36j"]
-shader = ExtResource("2_7388m")
+shader = ExtResource("3_w1ept")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 10.0
 shader_parameter/pattern = 2
@@ -17,7 +18,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ut4q"]
-shader = ExtResource("2_7388m")
+shader = ExtResource("3_w1ept")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 10.0
 shader_parameter/pattern = 2
@@ -25,7 +26,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u8xdw"]
-shader = ExtResource("2_7388m")
+shader = ExtResource("3_w1ept")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 10.0
 shader_parameter/pattern = 2
@@ -33,7 +34,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dcerh"]
-shader = ExtResource("2_7388m")
+shader = ExtResource("3_w1ept")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 10.0
 shader_parameter/pattern = 2
@@ -41,7 +42,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_870ak"]
-shader = ExtResource("2_7388m")
+shader = ExtResource("3_w1ept")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 10.0
 shader_parameter/pattern = 2
@@ -55,12 +56,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_to2i0")
+script = ExtResource("1_n4ev8")
 Panel1 = Vector2(50, 50)
 Panel2 = Vector2(800, 50)
 Panel3 = Vector2(50, 450)
 Panel4 = Vector2(1110, 450)
 Panel5 = Vector2(1625, 450)
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_lxx5a")
 
 [node name="PanelContainer" type="Control" parent="."]
 anchors_preset = 0
@@ -74,7 +78,7 @@ offset_left = 50.0
 offset_top = 50.0
 offset_right = 750.0
 offset_bottom = 410.0
-texture = ExtResource("2_y8i2c")
+texture = ExtResource("4_u8dty")
 
 [node name="Panel2" type="TextureRect" parent="PanelContainer"]
 material = SubResource("ShaderMaterial_3ut4q")
@@ -83,7 +87,7 @@ offset_left = 800.0
 offset_top = 50.0
 offset_right = 1800.0
 offset_bottom = 410.0
-texture = ExtResource("3_quqm3")
+texture = ExtResource("5_00tj5")
 
 [node name="Panel3" type="TextureRect" parent="PanelContainer"]
 material = SubResource("ShaderMaterial_u8xdw")
@@ -92,7 +96,7 @@ offset_left = 50.0
 offset_top = 450.0
 offset_right = 1050.0
 offset_bottom = 1000.0
-texture = ExtResource("4_mr8mu")
+texture = ExtResource("6_fn38s")
 
 [node name="Panel4" type="TextureRect" parent="PanelContainer"]
 material = SubResource("ShaderMaterial_dcerh")
@@ -101,7 +105,7 @@ offset_left = 1110.0
 offset_top = 450.0
 offset_right = 1560.0
 offset_bottom = 1000.0
-texture = ExtResource("5_0tpbb")
+texture = ExtResource("7_gbnon")
 
 [node name="Panel5" type="TextureRect" parent="PanelContainer"]
 material = SubResource("ShaderMaterial_870ak")
@@ -110,4 +114,4 @@ offset_left = 1625.0
 offset_top = 450.0
 offset_right = 1885.0
 offset_bottom = 1000.0
-texture = ExtResource("6_lfi2h")
+texture = ExtResource("8_rggfy")

@@ -1,12 +1,12 @@
 extends Sprite2D
 
+@export var player_node_path: NodePath  
+@onready var player = get_node(player_node_path)
 var dragging = false
 var of = Vector2(0, 0)
 var original_position = Vector2(0, 0)
 var returning = false
 var return_speed = 200.0
-@export var player_node_path: NodePath  
-@onready var player = get_node(player_node_path)
 var velocity = Vector2.ZERO
 var is_player_on_platform = false
 

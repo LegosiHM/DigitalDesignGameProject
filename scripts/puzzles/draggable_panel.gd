@@ -1,16 +1,14 @@
 extends Area2D
 
+@onready var player = get_tree().current_scene.get_node("Player")
 var dragging = false
 var collide = false
-var of = Vector2(0, 0)
+var offset = Vector2(0, 0)
 var original_position = Vector2(0, 0)
 var returning = false
 var return_speed = 150.0
 var illegalDragging_speed = 30.0
 var normalDragging_speed = 1000.0
-
-@export var player_node_path: NodePath  
-@onready var player = get_node(player_node_path)
 
 var velocity = Vector2.ZERO
 
@@ -27,7 +25,7 @@ func _process(delta: float) -> void:
 			dragging = false
 			returning = true  # If no energy left, return panel
 		else:
-			var new_position = get_global_mouse_position() - of
+			var new_position = get_global_mouse_position() - offset
 			velocity = new_position - global_position
 			global_position = global_position.move_toward(new_position, (illegalDragging_speed if collide else normalDragging_speed) * delta)
 	
@@ -43,7 +41,7 @@ func _on_button_button_down() -> void:
 
 	dragging = true
 	returning = false
-	of = get_global_mouse_position() - global_position
+	offset = get_global_mouse_position() - global_position
 	player.is_dragging_panel = true
 
 func _on_button_button_up() -> void:

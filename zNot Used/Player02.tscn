@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfghwubwluies"]
 
-[ext_resource type="Script" path="res://scripts/player/char_Controller.gd" id="1_ckfwc"]
+[ext_resource type="Script" path="res://scripts/player/Player_Controller.gd" id="1_ckfwc"]
 [ext_resource type="Texture2D" uid="uid://borh2hoal4d00" path="res://zNot Used/sprites/Temporary/Char_MainCat_Sprite_Idle_v02.png" id="2_c6okc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xont5"]

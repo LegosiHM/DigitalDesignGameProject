@@ -40,11 +40,9 @@ func _ready():
 	for i in range(panels.size()):
 		var start_x = screen_width if entry_directions[i] == 1 else -panels[i].size.x
 		panels[i].position = Vector2(start_x, target_positions[i].y)
-		print("🖼 Panel ", i, " start position: ", panels[i].position)
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-		print("🖱 Click detected! Trying to show next panel.")
 		show_next_panel()
 
 func show_next_panel():
@@ -52,9 +50,6 @@ func show_next_panel():
 		current_panel_index += 1
 		var panel = panels[current_panel_index]
 		var target_pos = target_positions[current_panel_index]
-
-		print("📌 Moving Panel ", current_panel_index, " to ", target_pos)
-
 		var tween = create_tween()
 		tween.tween_property(panel, "position", target_pos, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
