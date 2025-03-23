@@ -1059,8 +1059,8 @@ tracks/31/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xuqrx"]
 _data = {
-"RESET": SubResource("Animation_gptrj"),
-"run": SubResource("Animation_ck468")
+&"RESET": SubResource("Animation_gptrj"),
+&"run": SubResource("Animation_ck468")
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]

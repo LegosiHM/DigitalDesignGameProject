@@ -144,7 +144,7 @@ func apply_horizontal_movement(delta: float, input_direction: Vector2 = Vector2.
 		velocity.x = 0
 		return
 	if input_direction.x != 0:
-		apply_velocity(delta, input_direction)
+		apply_velocity(0.1, input_direction) #change from delta to 0.1 to make movement more snappy => may improve code later
 	else:
 		apply_friction(delta)
 
@@ -235,7 +235,7 @@ func restore_energy_process():
 	if is_dragging_panel:
 		return
 	if current_energy < max_energy:  # Ensure energy restores only when below max
-		current_energy += 1
+		current_energy += 5
 
 func consume_energy(amount: int) -> bool:
 	if current_energy >= amount:

@@ -1,10 +1,10 @@
 [gd_scene load_steps=23 format=3 uid="uid://d3ad0muthw2u2"]
 
-[ext_resource type="Script" path="res://scripts/player/Player_Controller.gd" id="1_rajx7"]
+[ext_resource type="Script" uid="uid://5eirkgen8jmk" path="res://scripts/player/Player_Controller.gd" id="1_rajx7"]
 [ext_resource type="Texture2D" uid="uid://dieow1dgsi0mq" path="res://Animation_PlaceHolder/cat21.png" id="3_2vnqc"]
 [ext_resource type="Texture2D" uid="uid://8an5kh5rd8vx" path="res://Animation_PlaceHolder/test.png" id="4_lnjaw"]
 [ext_resource type="Texture2D" uid="uid://by3ptbymkm5j7" path="res://Animation_PlaceHolder/cat.png" id="5_2emq8"]
-[ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://scenes/environments/Panel_Collision.tscn" id="5_3o7qo"]
+[ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="5_3o7qo"]
 [ext_resource type="Texture2D" uid="uid://c1644msx58tie" path="res://Animation_PlaceHolder/Sprite2D/slowffall.png" id="6_be7e4"]
 [ext_resource type="Texture2D" uid="uid://chb7mis60jxde" path="res://Animation_PlaceHolder/Sprite2D/Untitled64.png" id="6_laq07"]
 
@@ -2962,48 +2962,57 @@ tracks/8/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xuqrx"]
 _data = {
-"RESET": SubResource("Animation_gptrj"),
-"idle": SubResource("Animation_t3nfk"),
-"ledge_grab": SubResource("Animation_li8om"),
-"run_left": SubResource("Animation_7gpo8"),
-"run_right": SubResource("Animation_ck468"),
-"slow_fall": SubResource("Animation_f7tt0")
+&"RESET": SubResource("Animation_gptrj"),
+&"idle": SubResource("Animation_t3nfk"),
+&"ledge_grab": SubResource("Animation_li8om"),
+&"run_left": SubResource("Animation_7gpo8"),
+&"run_right": SubResource("Animation_ck468"),
+&"slow_fall": SubResource("Animation_f7tt0")
 }
 
 [node name="Player" type="CharacterBody2D"]
+light_mask = 513
+visibility_layer = 513
 z_index = 10
 position = Vector2(-1880, -230)
 scale = Vector2(2, 2)
 collision_mask = 14
 script = ExtResource("1_rajx7")
+acceleration = 1200.0
+max_speed = 480.0
+friction = 4000.0
 
-[node name="PlayerHitbox" type="CollisionShape2D" parent="."]
+[node name="PlayerHitbox" type="CollisionShape2D" parent="." groups=["Player"]]
+light_mask = 513
+visibility_layer = 513
 position = Vector2(1.59998, 0.949997)
 rotation = 1.5708
 scale = Vector2(0.949095, -0.987228)
 shape = SubResource("RectangleShape2D_xont5")
 
 [node name="CollisionHolder" type="Node2D" parent="."]
+light_mask = 513
+visibility_layer = 513
 
 [node name="GrabHandRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(0, -29.5)
-target_position = Vector2(50, 0)
+position = Vector2(5, -38.5)
+target_position = Vector2(42.5, 0.5)
 collision_mask = 6
 
 [node name="GrabCheckRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(0, -19)
-target_position = Vector2(50, 0)
+position = Vector2(5, -29)
+target_position = Vector2(42.5, 0)
 collision_mask = 6
 
 [node name="SlowFallHandRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(0, -29.5)
-target_position = Vector2(50, 0)
+position = Vector2(5, -38.5)
+target_position = Vector2(42.5, 0.5)
 collision_mask = 8
 collide_with_areas = true
 
 [node name="SlowFallCheckRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(0, -19)
-target_position = Vector2(50, 0)
+position = Vector2(5, -29.5)
+target_position = Vector2(42.5, 0)
 collision_mask = 8
 collide_with_areas = true
 
@@ -3306,10 +3315,12 @@ bone_angle = -71.316
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xuqrx")
+&"": SubResource("AnimationLibrary_xuqrx")
 }
 
 [node name="StaticPanelCollision" parent="." instance=ExtResource("5_3o7qo")]
+light_mask = 513
+visibility_layer = 513
 scale = Vector2(4, 4)
 
 [node name="LedgeGrabSprite2D" type="Sprite2D" parent="."]

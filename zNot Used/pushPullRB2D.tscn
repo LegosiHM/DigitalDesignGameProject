@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://giqd6rqhwspu"]
 
-[ext_resource type="Script" path="res://zNot Used/push_pull_rb_2d.gd" id="1_s867y"]
+[ext_resource type="Script" uid="uid://b1dtncnkmg5aj" path="res://zNot Used/push_pull_rb_2d.gd" id="1_s867y"]
 [ext_resource type="Texture2D" uid="uid://ddqya5cr6o8" path="res://assets/sprites/chapter 1/object/Platform_Object_Box_v01.PNG" id="2_276gm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnmui"]

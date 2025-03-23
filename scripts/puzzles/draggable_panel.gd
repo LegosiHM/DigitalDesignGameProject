@@ -6,21 +6,38 @@ var collide = false
 var offset = Vector2(0, 0)
 var original_position = Vector2(0, 0)
 var returning = false
-var return_speed = 150.0
-var illegalDragging_speed = 30.0
-var normalDragging_speed = 1000.0
+@export var return_speed = 150.0
+@export var illegalDragging_speed = 30.0
+@export var normalDragging_speed = 1000.0
+@export var energyConsumption = 1
+#if untouchable panel
+@export var untouchable = false
+var respawn_manager 
+var respawn_position
+var player_position
 
 var velocity = Vector2.ZERO
 
+
+
 func _ready() -> void:
 	original_position = global_position
+	respawn_manager = get_tree().current_scene.get_node("RespawnDetector")
+	respawn_position = respawn_manager.respawn_position #sometimes there is a bug here. Might need some fix later
 
 
 func _process(delta: float) -> void:
 	check_overlap_area()
+	player_position = get_tree().current_scene.get_node("Player").global_position
+	
+	#print(overlap_area)
+	if untouchable:
+		#if (collide and global_position.distance_to(player_position) < 150):
+		if(collide): #need to be fix to check if collide with just player's collision
+			get_tree().current_scene.get_node("Player").global_position = respawn_position
 	
 	if dragging:
-		var energy_needed = 2 if collide else 1
+		var energy_needed = 2*energyConsumption if collide else energyConsumption
 		if not player.consume_energy(energy_needed):  
 			dragging = false
 			returning = true  # If no energy left, return panel
@@ -34,6 +51,7 @@ func _process(delta: float) -> void:
 		if global_position.distance_to(original_position) < 1.0:
 			returning = false
 			global_position = original_position
+			
 
 func _on_button_button_down() -> void:
 	if player.current_energy < player.threshold_energy:
@@ -51,3 +69,5 @@ func _on_button_button_up() -> void:
 
 func check_overlap_area():
 	collide = has_overlapping_areas()
+	
+	

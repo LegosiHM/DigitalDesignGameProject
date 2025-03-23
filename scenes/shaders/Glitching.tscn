@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dikjq2qsvqnra"]
 
-[ext_resource type="Shader" path="res://scripts/shaders/Glitching.gdshader" id="1_4iwo2"]
+[ext_resource type="Shader" uid="uid://ce3r73trk1f32" path="res://scripts/shaders/Glitching.gdshader" id="1_4iwo2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_htnc8"]
 shader = ExtResource("1_4iwo2")

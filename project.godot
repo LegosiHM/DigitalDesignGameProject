@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Time Whiskers"
 run/main_scene="res://scenes/cutscenes/Chapter-1_Comic_Cutscene_1.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/UI/UI_Logo_v01.png"
 
 [autoload]
@@ -37,6 +37,10 @@ folder_colors={
 "res://scripts/UI-related/": "green",
 "res://singletons/": "red"
 }
+
+[global_group]
+
+Player=""
 
 [input]
 

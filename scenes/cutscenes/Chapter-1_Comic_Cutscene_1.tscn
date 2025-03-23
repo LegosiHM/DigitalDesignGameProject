@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://cmoy6fwmk1qrc"]
 
-[ext_resource type="Script" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_1.gd" id="1_n4ev8"]
+[ext_resource type="Script" uid="uid://bod3aikmvc0d1" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_1.gd" id="1_n4ev8"]
 [ext_resource type="Texture2D" uid="uid://bwc3jst7tahvd" path="res://assets/sprites/PaperTexture.jpg" id="2_lxx5a"]
-[ext_resource type="Shader" path="res://scripts/shaders/Outliner.gdshader" id="3_w1ept"]
+[ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="3_w1ept"]
 [ext_resource type="Texture2D" uid="uid://bykik81i3n315" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_01.PNG" id="4_u8dty"]
 [ext_resource type="Texture2D" uid="uid://bysvioa3siarw" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_02.PNG" id="5_00tj5"]
 [ext_resource type="Texture2D" uid="uid://b6owrn6p4y6g" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_03.PNG" id="6_fn38s"]

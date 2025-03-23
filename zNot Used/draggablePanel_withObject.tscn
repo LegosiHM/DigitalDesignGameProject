@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmce37xwpfbth"]
 
-[ext_resource type="Script" path="res://scripts/puzzles/Draggable_Panel.gd" id="1_2v4ay"]
-[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://scenes/environments/Platform_Panel.tscn" id="2_g54a6"]
+[ext_resource type="Script" uid="uid://pme7x8bbaxyf" path="res://scripts/puzzles/Draggable_Panel.gd" id="1_2v4ay"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="2_g54a6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_howw5"]
 size = Vector2(319, 240)

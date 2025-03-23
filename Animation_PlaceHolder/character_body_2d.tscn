@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0vygueksu33y"]
 
-[ext_resource type="Texture2D" uid="uid://ckjq5qi31dwrl" path="res://cat design update.png" id="1_mojg3"]
-[ext_resource type="Texture2D" uid="uid://dieow1dgsi0mq" path="res://cat21.png" id="2_fqx8n"]
-[ext_resource type="Texture2D" uid="uid://by3ptbymkm5j7" path="res://cat.png" id="3_rauni"]
+[ext_resource type="Texture2D" uid="uid://ckjq5qi31dwrl" path="res://Animation_PlaceHolder/cat design update.png" id="1_mojg3"]
+[ext_resource type="Texture2D" uid="uid://dieow1dgsi0mq" path="res://Animation_PlaceHolder/cat21.png" id="2_fqx8n"]
+[ext_resource type="Texture2D" uid="uid://by3ptbymkm5j7" path="res://Animation_PlaceHolder/cat.png" id="3_rauni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nh5gs"]
 size = Vector2(37.8209, 33.4134)

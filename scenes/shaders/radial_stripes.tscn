@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://be2bvkjuygkfy"]
 
-[ext_resource type="Shader" path="res://scripts/shaders/Radial_Stripes.gdshader" id="1_omwcj"]
+[ext_resource type="Shader" uid="uid://e4e6ejerddh" path="res://scripts/shaders/Radial_Stripes.gdshader" id="1_omwcj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rs57d"]
 shader = ExtResource("1_omwcj")

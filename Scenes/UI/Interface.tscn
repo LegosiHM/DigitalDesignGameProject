@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dh0uqfiqyaaub"]
 
 [ext_resource type="Texture2D" uid="uid://cgo4b542omte5" path="res://assets/UI/UI_InformationBar_v01.png" id="1_4xbg3"]
-[ext_resource type="Script" path="res://scripts/UI/EnergyBar.gd" id="1_gt1u1"]
+[ext_resource type="Script" uid="uid://tp54fg7f0k05" path="res://scripts/UI/EnergyBar.gd" id="1_gt1u1"]
 [ext_resource type="Texture2D" uid="uid://c0v08uwi25vhr" path="res://assets/UI/UI_PlayerIcon_v01.png" id="2_y4pbd"]
 [ext_resource type="Texture2D" uid="uid://dr8siuoq0nn3m" path="res://zNot Used/sprites/Temporary/รูปถ่าย.png" id="3_w106k"]
 [ext_resource type="Texture2D" uid="uid://b52nsxtelu6e6" path="res://assets/UI/UI_InformationEnergyBar_Outline_v01.png" id="4_yvfcv"]
