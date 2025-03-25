@@ -11,7 +11,6 @@ func _ready():
 		push_error("ERROR: ColorRect or its material is missing!")
 
 func play_fade_out():
-	print("Starting fade-out animation...")
 	var tween = create_tween()
 	tween.tween_property(
 		transition_rect.material, "shader_parameter/in_out", 
@@ -24,4 +23,3 @@ func play_fade_out():
 	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 
 	await tween.finished
-	print("Fade-out complete.")

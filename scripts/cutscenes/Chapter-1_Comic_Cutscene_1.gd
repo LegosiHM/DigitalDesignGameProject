@@ -62,4 +62,4 @@ func show_next_panel():
 		# If the screen is full, transition to the next scene
 		if current_panel_index + 1 >= panels.size():
 			await get_tree().create_timer(1.5).timeout
-			get_tree().change_scene_to_file("res://scenes/cutscenes/chapter1_comic_cutscene_2.tscn")
+			get_tree().change_scene_to_file("res://scenes/cutscenes/Chapter-1_Comic_Cutscene_2.tscn")
