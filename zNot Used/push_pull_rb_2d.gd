@@ -12,12 +12,10 @@ func _ready():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body and body.name == "Player":
 		player = body
-		print("Player detected")
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body and body.name == "Player":
 		player = null
-		print("Player left the detection range")
 
 func _process(_delta):
 	if player:
@@ -30,6 +28,5 @@ func _process(_delta):
 		
 		if dragging:
 			rb2d.position = player.position + offset
-			print("Box Position: ", rb2d.position)  
 		else:
 			pass
