@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ni2glwhr4v28"]
+
+[ext_resource type="Texture2D" uid="uid://baro3ju7rliib" path="res://assets/sprites/chapter 2/backgrounds/Background_Corridor_Night_v.01.PNG" id="1_k30ay"]
+[ext_resource type="Texture2D" uid="uid://cwdkg5b3dg1df" path="res://assets/sprites/chapter 2/assets/Decoration_ClosedDoor_Night_v.01.PNG" id="2_1m8ok"]
+[ext_resource type="Texture2D" uid="uid://cq84fesqkawug" path="res://zNot Used/IMG_2062.PNG" id="4_j1eic"]
+[ext_resource type="Texture2D" uid="uid://biul1x43ptiti" path="res://assets/sprites/chapter 2/assets/Platform_RaisedFloor_Night_v.01.PNG" id="4_jixps"]
+
+[node name="Test" type="Node2D"]
+
+[node name="BackgroundCorridorNightV_01" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_k30ay")
+
+[node name="DecorationClosedDoorNightV_01" type="Sprite2D" parent="."]
+position = Vector2(273, 663)
+texture = ExtResource("2_1m8ok")
+
+[node name="PlatformRaisedFloorNightV_01" type="Sprite2D" parent="."]
+position = Vector2(1361, 496)
+texture = ExtResource("4_jixps")
+
+[node name="Img2062" type="Sprite2D" parent="."]
+position = Vector2(755, 538)
+texture = ExtResource("4_j1eic")
