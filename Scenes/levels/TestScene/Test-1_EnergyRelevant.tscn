@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cs024ords13eo" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v04.PNG" id="11_p0xvo"]
 [ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="12_umjwq"]
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="13_ihqlo"]
-[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="14_6psc8"]
-[ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/managers/Respawn_Detector.gd" id="15_bvd2w"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/Player.tscn" id="14_6psc8"]
+[ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="15_bvd2w"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/mechanics/Draggable_Panel.tscn" id="16_4a1nr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_djknt"]
@@ -239,7 +239,6 @@ position = Vector2(960, 540)
 texture = ExtResource("1_5t0mb")
 
 [node name="UI" parent="." instance=ExtResource("1_kfwuu")]
-player_node_path = NodePath("../Player")
 
 [node name="Panel" parent="." instance=ExtResource("3_fnrly")]
 position = Vector2(-1, 339)
@@ -279,14 +278,8 @@ shape = SubResource("RectangleShape2D_0g174")
 [node name="draggablePanel2" parent="." instance=ExtResource("16_4a1nr")]
 position = Vector2(307, 863)
 
-[node name="Sprite2D" parent="draggablePanel2" index="0"]
-player_node_path = NodePath("../../Player")
-
 [node name="draggablePanel" parent="." instance=ExtResource("16_4a1nr")]
 position = Vector2(387, 414)
-
-[node name="Sprite2D" parent="draggablePanel" index="0"]
-player_node_path = NodePath("../../Player")
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
