@@ -278,12 +278,12 @@ shape = SubResource("RectangleShape2D_hhcng")
 [node name="untouchablePanle" parent="." instance=ExtResource("16_lrwww")]
 z_index = 3
 position = Vector2(1301, 711)
-scale = Vector2(1.755, 4.85)
+scale = Vector2(0.955, 4.85)
 
 [node name="untouchablePanle2" parent="." instance=ExtResource("16_lrwww")]
 z_index = 3
 position = Vector2(652, 706)
-scale = Vector2(1.755, 4.85)
+scale = Vector2(0.955, 4.85)
 
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
 

@@ -2993,25 +2993,26 @@ shape = SubResource("RectangleShape2D_xont5")
 [node name="CollisionHolder" type="Node2D" parent="."]
 light_mask = 513
 visibility_layer = 513
+position = Vector2(-1, -7.5)
 
 [node name="GrabHandRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(5, -38.5)
+position = Vector2(9.5, -32)
 target_position = Vector2(42.5, 0.5)
 collision_mask = 6
 
 [node name="GrabCheckRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(5, -29)
+position = Vector2(9.5, -22.5)
 target_position = Vector2(42.5, 0)
 collision_mask = 6
 
 [node name="SlowFallHandRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(5, -38.5)
+position = Vector2(9.5, -32)
 target_position = Vector2(42.5, 0.5)
 collision_mask = 8
 collide_with_areas = true
 
 [node name="SlowFallCheckRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(5, -29.5)
+position = Vector2(9.5, -23)
 target_position = Vector2(42.5, 0)
 collision_mask = 8
 collide_with_areas = true

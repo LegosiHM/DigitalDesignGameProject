@@ -1,9 +1,9 @@
 [gd_scene load_steps=22 format=3 uid="uid://csxm21t4vk04j"]
 
-[ext_resource type="Texture2D" uid="uid://s6ijtbtnvx4k" path="res://assets/sprites/chapter 1/background/BG_Suburb_Night_v02.PNG" id="1_i6cbv"]
 [ext_resource type="Texture2D" uid="uid://wfm1ss684p7i" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Priest_v.03.png" id="2_w0t8t"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="3_4tmjt"]
 [ext_resource type="Texture2D" uid="uid://cq3xys50xuc1j" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_PriestGlaring_v.03.png" id="4_h202d"]
+[ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="4_irrym"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/mechanics/Draggable_Panel.tscn" id="5_gmthw"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="5_wfnga"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="6_72u40"]
@@ -70,7 +70,7 @@ shape = SubResource("RectangleShape2D_ctvnn")
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("6_72u40")]
 position = Vector2(2001, 656)
 scale = Vector2(2, 2)
-my_scene = "res://scenes/levels/1-4_PushAndLedgeGrabbingPractice.tscn"
+my_scene = "res://Scenes/levels/Chapter01_Prologue/1-4_PushAndLedgeGrabbingPractice.tscn"
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(8.75, 21.5)
@@ -87,7 +87,7 @@ position = Vector2(889, 579)
 scale = Vector2(10.0653, 32.0694)
 
 [node name="StaticPanelCollision3" parent="PanelCollsionContainer" instance=ExtResource("9_ko52n")]
-position = Vector2(1182, 515)
+position = Vector2(1175, 515)
 scale = Vector2(13.6396, -33.0126)
 
 [node name="StaticPanelCollision4" parent="PanelCollsionContainer" instance=ExtResource("9_ko52n")]
@@ -101,12 +101,12 @@ scale = Vector2(25.9322, 13.5179)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("1_i6cbv")
+texture = ExtResource("4_irrym")
 
 [node name="StoryPanel_Priest" type="Sprite2D" parent="."]
 z_index = 1
 material = SubResource("ShaderMaterial_q6su7")
-position = Vector2(1187, 505)
+position = Vector2(1168, 505)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_w0t8t")
 
@@ -118,17 +118,17 @@ texture = ExtResource("4_h202d")
 
 [node name="Draggable_Panel" parent="." instance=ExtResource("5_gmthw")]
 z_index = 5
-position = Vector2(564, 296)
+position = Vector2(504, 296)
 scale = Vector2(0.75, 0.75)
 
 [node name="PlatformPanel" parent="." instance=ExtResource("3_4tmjt")]
 position = Vector2(0, 228)
 scale = Vector2(0.75, 0.75)
-layer_0/tile_data = PackedInt32Array(589825, 196608, 3, 589826, 196608, 3, 589827, 196608, 3, 589824, 196608, 3, 655359, 196608, 3, 589850, 196608, 3, 589851, 196608, 3, 589852, 196608, 3, 589849, 196608, 3, 589848, 196608, 3, 589847, 196608, 3, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 458755, 2, 0, 393219, 2, 0, 393218, 2, 0, 393217, 2, 0, 393216, 2, 0, 458751, 2, 0, 524287, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 524311, 2, 0, 524312, 2, 0, 524313, 2, 0, 524314, 2, 0, 524315, 2, 0, 524316, 2, 0, 458780, 2, 0, 393244, 2, 0, 393243, 2, 0, 393242, 2, 0, 393241, 2, 0, 393240, 2, 0, 393239, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 458778, 2, 0, 458779, 2, 0, 589846, 196608, 3, 589845, 196608, 3, 524310, 2, 0, 524309, 2, 0, 458773, 2, 0, 458774, 2, 0, 393238, 2, 0, 393237, 2, 0)
+layer_0/tile_data = PackedInt32Array(589825, 196608, 3, 589826, 196608, 3, 589827, 196608, 3, 589824, 196608, 3, 655359, 196608, 3, 589850, 196608, 3, 589851, 196608, 3, 589852, 196608, 3, 589849, 196608, 3, 589848, 196608, 3, 589847, 196608, 3, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 458755, 2, 0, 393219, 2, 0, 393218, 2, 0, 393217, 2, 0, 393216, 2, 0, 458751, 2, 0, 524287, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 524311, 2, 0, 524312, 2, 0, 524313, 2, 0, 524314, 2, 0, 524315, 2, 0, 524316, 2, 0, 458780, 2, 0, 393244, 2, 0, 393243, 2, 0, 393242, 2, 0, 393241, 2, 0, 393240, 2, 0, 393239, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 458778, 2, 0, 458779, 2, 0, 589846, 196608, 3, 589845, 196608, 3, 524310, 2, 0, 524309, 2, 0, 458773, 2, 0, 458774, 2, 0, 393238, 2, 0, 393237, 2, 0, 589844, 196608, 3, 524308, 2, 0, 458772, 2, 0, 393236, 2, 0)
 
 [node name="Outline" parent="PlatformPanel" instance=ExtResource("3_4tmjt")]
 position = Vector2(45, 44)
-layer_0/tile_data = PackedInt32Array(655383, 65537, 5, 655384, 65537, 5, 589827, 327681, 5, 589852, 327681, 5, 589851, 196609, 5, 589850, 196609, 5, 589849, 196609, 5, 589848, 196609, 5, 589847, 196609, 5, 589826, 196609, 5, 589825, 196609, 5, 589824, 196609, 5, 655359, 196609, 5, 655358, 1, 5, 589822, 1, 4, 524286, 1, 4, 458750, 1, 4, 393214, 1, 0, 327683, 327681, 0, 393215, 196609, 0, 327680, 196609, 0, 327681, 196609, 0, 327682, 196609, 0, 393219, 327681, 2, 458755, 327681, 2, 524291, 327681, 2, 327708, 327681, 0, 393244, 327681, 1, 458780, 327681, 1, 524316, 327681, 1, 327703, 131073, 0, 327704, 131073, 0, 327705, 262145, 0, 327706, 262145, 0, 327707, 262145, 0, 589845, 65537, 5, 589846, 65537, 5, 589844, 1, 5, 524308, 1, 4, 458772, 1, 4, 393236, 1, 4, 327700, 1, 0, 327701, 131073, 0, 327702, 131073, 0)
+layer_0/tile_data = PackedInt32Array(655383, 65537, 5, 655384, 65537, 5, 589827, 327681, 5, 589852, 327681, 5, 589851, 196609, 5, 589850, 196609, 5, 589849, 196609, 5, 589848, 196609, 5, 589847, 196609, 5, 589826, 196609, 5, 589825, 196609, 5, 589824, 196609, 5, 655359, 196609, 5, 655358, 1, 5, 589822, 1, 4, 524286, 1, 4, 458750, 1, 4, 393214, 1, 0, 327683, 327681, 0, 393215, 196609, 0, 327680, 196609, 0, 327681, 196609, 0, 327682, 196609, 0, 393219, 327681, 2, 458755, 327681, 2, 524291, 327681, 2, 327708, 327681, 0, 393244, 327681, 1, 458780, 327681, 1, 524316, 327681, 1, 327703, 131073, 0, 327704, 131073, 0, 327705, 262145, 0, 327706, 262145, 0, 327707, 262145, 0, 589845, 65537, 5, 589846, 65537, 5, 589844, 196609, 5, 327700, 196609, 0, 327701, 131073, 0, 327702, 131073, 0, 327699, 1, 0, 589843, 1, 5, 393235, 1, 3, 458771, 1, 3, 524307, 1, 3)
 
 [node name="WallPanel" parent="." instance=ExtResource("3_4tmjt")]
 rotation = 1.5708
