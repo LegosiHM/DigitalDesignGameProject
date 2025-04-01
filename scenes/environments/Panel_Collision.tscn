@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c28falcim1erc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qd627"]
-size = Vector2(15.75, 17.25)
 
 [node name="StaticPanelCollision" type="Area2D"]
 collision_layer = 6
