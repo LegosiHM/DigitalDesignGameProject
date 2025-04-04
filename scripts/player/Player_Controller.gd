@@ -39,6 +39,9 @@ var current_energy: int = max_energy
 var restore_energy: bool = true
 var is_dragging_panel: bool = false
 
+@onready var idle_sprite: AnimatedSprite2D = $IdleSprite
+var facing_direction := 1
+
 func _physics_process(delta: float) -> void:
 	restore_energy_process()
 	
@@ -55,7 +58,7 @@ func _physics_process(delta: float) -> void:
 			animation_tree.active = true
 			animation_player.stop()
 		if velocity.x == 0:
-			state = IDLE
+			idle_sprite.play("default")
 
 	_check_fall_behavior()
 	if is_grabbing:
@@ -111,14 +114,27 @@ func _check_fall_behavior():
 
 func manage_animations() -> void:
 	if is_grabbing:
-		if animation_tree.active:  # Disable AnimationTree to stop unwanted animations
-			animation_tree.active = false
-		if not animation_player.is_playing():
-			animation_player.play("ledge_grab")  # Play ledge grab animation
-		return  # Stop further execution to prevent AnimationTree from running
+		$LedgeGrabbingSprite.visible = true
+		animation_tree.active = false
+		animation_player.active = false
+		idle_sprite.visible = false
+		$SlowFallSprite2D.visible = false
+		$LedgeGrabSprite2D.visible = false
+		$polygon3.visible = false
+
+		if facing_direction < 0:
+			$LedgeGrabbingSprite.flip_h = true
+		else:
+			$LedgeGrabbingSprite.flip_h = false
+		if not $LedgeGrabbingSprite.is_playing():
+			$LedgeGrabbingSprite.play("default")
 	elif is_slowFalling:
 		if animation_tree.active:  # Disable AnimationTree to stop unwanted animations
 			animation_tree.active = false
+		
+		idle_sprite.visible = false
+		$LedgeGrabbingSprite.visible = false
+		
 		if not animation_player.is_playing():
 			animation_player.play("slow_fall")  # Play ledge grab animation
 		return
@@ -127,16 +143,34 @@ func manage_animations() -> void:
 	animation_player.stop()  # Stop ledge grab animation
 	if is_on_floor():
 		if velocity.x == 0:
-			animation_state.travel("idle")
+			idle_sprite.visible = true
+			animation_tree.active = false
+			$polygon3.visible = false
+			$LedgeGrabbingSprite.visible = false
+			$LedgeGrabSprite2D.visible = false
+			$SlowFallSprite2D.visible = false
+			if facing_direction < 0:
+				idle_sprite.flip_h = true
+			else:
+				idle_sprite.flip_h = false
+			if not idle_sprite.is_playing():
+				idle_sprite.play("default")
 		else:
+			idle_sprite.visible = false
+			$LedgeGrabbingSprite.visible = false
 			animation_state.travel("RunBlend")
-		var direction = sign(velocity.x)
-		animation_tree.set("parameters/RunBlend/blend_position", direction)
+			animation_tree.set("parameters/RunBlend/blend_position", sign(velocity.x))
 	if velocity.x > 0:
+		idle_sprite.visible = false
+		$polygon3.visible = true
+		facing_direction = 1
 		collision_holder.position.x = abs(collision_holder.position.x)  # Keep RayCasts on right
 		collision_shape.position.x = abs(collision_shape.position.x)  # Keep Collision on right
 		_flip_raycast_direction(1)  # Face right
 	elif velocity.x < 0:
+		idle_sprite.visible = false
+		$polygon3.visible = true
+		facing_direction = -1
 		collision_holder.position.x = -abs(collision_holder.position.x)  # Move RayCasts left
 		collision_shape.position.x = -abs(collision_shape.position.x)  # Move Collision left
 		_flip_raycast_direction(-1)  # Face left

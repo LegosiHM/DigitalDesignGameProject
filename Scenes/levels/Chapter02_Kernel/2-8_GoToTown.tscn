@@ -1,7 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://civr1r64l7rit"]
+[gd_scene load_steps=38 format=3 uid="uid://da21mawp1nj8m"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_57csm"]
-[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_1jj2f"]
+[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/Change_Scene_Detector.tscn" id="2_1jj2f"]
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="3_xybdx"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_hnqrq"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_dko4j"]
@@ -20,7 +20,8 @@
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="19_onb5q"]
 [ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="20_512wy"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="21_1hv6g"]
-[ext_resource type="PackedScene" uid="uid://b8t5wpi35pset" path="res://Scenes/mechanics/CH2_Draggable_Panel.tscn" id="21_57csm"]
+[ext_resource type="PackedScene" path="res://Scenes/mechanics/CH2_Draggable_Panel.tscn" id="21_57csm"]
+[ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="21_jwrh3"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="22_1jj2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
@@ -261,7 +262,6 @@ my_scene = "res://Scenes/levels/Chapter02_Kernel/2-9_MeetCouple1.tscn"
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(-3.04309, -823.214)
-scale = Vector2(1, 1)
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
@@ -312,11 +312,14 @@ offset_right = 241.0
 offset_bottom = 598.0
 scale = Vector2(10, 10)
 
-[node name="ColorRect" parent="CanvasLayer" instance=ExtResource("21_1hv6g")]
+[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("21_1hv6g")]
 offset_left = 1.0
 offset_top = 9.0
 offset_right = 1921.0
 offset_bottom = 1089.0
+
+[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("21_jwrh3")]
+visible = false
 
 [node name="draggablePanel" parent="." instance=ExtResource("21_57csm")]
 position = Vector2(1118, 442)
