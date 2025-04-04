@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://34c0tqmmjxmy" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_Insulting_v.01.PNG" id="17_ab6w5"]
 [ext_resource type="Texture2D" uid="uid://df3s6cxr5lwki" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_Chasing_v.01.PNG" id="18_ptahb"]
 [ext_resource type="Texture2D" uid="uid://c0eptjyoj40bm" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_CatStatue_v.01.PNG" id="19_rrse1"]
-[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/Player.tscn" id="20_x8ipv"]
+[ext_resource type="PackedScene" uid="uid://dfcsfxj0cwdfl" path="res://Scenes/characters/Player.tscn" id="20_x8ipv"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="21_m15tn"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/Change_Scene_Detector.tscn" id="22_mtye2"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="23_dhksy"]
