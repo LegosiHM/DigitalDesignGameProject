@@ -49,14 +49,6 @@ func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
 	move_and_slide()
 	
-	if is_on_solid_ground():
-		if is_slowFalling:
-			is_slowFalling = false
-			animation_tree.active = true
-			animation_player.stop()
-		if velocity.x == 0:
-			state = IDLE
-
 	_check_fall_behavior()
 	if is_grabbing:
 		velocity = Vector2.ZERO
@@ -252,6 +244,3 @@ func consume_energy(amount: int) -> bool:
 	else:
 		restore_energy = true  # Ensure energy starts restoring when empty
 		return false  # Not enough energy
-
-func is_on_solid_ground() -> bool:
-	return $CollisionHolder/GroundRay.is_colliding()

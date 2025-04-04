@@ -1,16 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://dcsqinws3turf"]
+[gd_scene load_steps=15 format=3 uid="uid://dcsqinws3turf"]
 
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="2_orc0u"]
-[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/Change_Scene_Detector.tscn" id="3_i4q5w"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="3_i4q5w"]
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="3_v1hng"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="4_wd71n"]
-[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/Player.tscn" id="5_qx2xe"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="5_qx2xe"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="6_q60dr"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="7_cradw"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="8_hwg8k"]
 [ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="9_g475x"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="10_dmyp4"]
-[ext_resource type="PackedScene" uid="uid://ciu82fkocu3x8" path="res://Scenes/shaders/respawn_effect.tscn" id="11_midtt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu41b"]
 size = Vector2(1979.5, 154)
@@ -90,14 +89,10 @@ offset_right = 99.0
 offset_bottom = 943.0
 
 [node name="ColorRect" parent="CanvasLayer" instance=ExtResource("8_hwg8k")]
-visible = false
 offset_left = 2.0
 offset_top = -4.0
 offset_right = 1922.0
 offset_bottom = 1076.0
-
-[node name="RespawnEffect" parent="CanvasLayer" instance=ExtResource("11_midtt")]
-visible = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
