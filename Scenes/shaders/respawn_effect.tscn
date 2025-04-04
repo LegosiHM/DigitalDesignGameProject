@@ -4,14 +4,16 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bt3x1"]
 shader = ExtResource("1_j72uw")
-shader_parameter/blur_radius = 8
-shader_parameter/Darkness = 0.0
-shader_parameter/R = 0.0
-shader_parameter/G = 0.0
-shader_parameter/B = 0.0
-shader_parameter/blur_strength = 0.1
+shader_parameter/AspectRatio = 1.5
+shader_parameter/Diamonds = 25.0
+shader_parameter/pixel_size = 0.08
+shader_parameter/finalcolor = Color(0, 0, 0, 1)
+shader_parameter/finalalpha = 0.0
+shader_parameter/height = -1.0
+shader_parameter/disable_pixel = true
 
 [node name="RespawnEffect" type="ColorRect"]
 material = SubResource("ShaderMaterial_bt3x1")
-offset_right = 1920.0
+offset_left = 3.0
+offset_right = 1923.0
 offset_bottom = 1080.0

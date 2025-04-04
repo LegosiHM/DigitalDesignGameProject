@@ -50,19 +50,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if is_on_solid_ground():
-		if is_grabbing:
-			is_grabbing = false  # Cancel slow fall if landed
-			animation_tree.active = true  # Re-enable normal animations
-			animation_player.stop()
-			animation_state.travel("idle")
 		if is_slowFalling:
-			is_slowFalling = false  # Cancel slow fall if landed
-			animation_tree.active = true  # Re-enable normal animations
+			is_slowFalling = false
+			animation_tree.active = true
 			animation_player.stop()
-			animation_state.travel("idle")
 		if velocity.x == 0:
-			animation_state.travel("idle")
-	
+			state = IDLE
+
 	_check_fall_behavior()
 	if is_grabbing:
 		velocity = Vector2.ZERO
@@ -131,7 +125,7 @@ func manage_animations() -> void:
 	if not animation_tree.active:
 		animation_tree.active = true  # Re-enable AnimationTree
 	animation_player.stop()  # Stop ledge grab animation
-	if is_on_solid_ground():
+	if is_on_floor():
 		if velocity.x == 0:
 			animation_state.travel("idle")
 		else:

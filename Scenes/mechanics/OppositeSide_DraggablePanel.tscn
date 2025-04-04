@@ -16,7 +16,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33jo2"]
 size = Vector2(321, 237)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5h3s7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33jo2"]
 texture = ExtResource("3_5h3s7")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -36,7 +36,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44lyj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5h3s7"]
 texture = ExtResource("4_44lyj")
 texture_region_size = Vector2i(90, 90)
 0:0/0 = 0
@@ -60,12 +60,12 @@ texture_region_size = Vector2i(90, 90)
 4:5/0 = 0
 5:5/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ht4kb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44lyj"]
 texture = ExtResource("5_ht4kb")
 texture_region_size = Vector2i(90, 90)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_10cbd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ht4kb"]
 texture = ExtResource("6_10cbd")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -85,7 +85,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ohyvs"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_10cbd"]
 texture = ExtResource("7_ohyvs")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -105,7 +105,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tewqf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ohyvs"]
 texture = ExtResource("8_tewqf")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -125,7 +125,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6djys"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tewqf"]
 texture = ExtResource("9_6djys")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -145,7 +145,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_atb4a"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6djys"]
 texture = ExtResource("10_atb4a")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -165,7 +165,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m55aj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_atb4a"]
 texture = ExtResource("11_m55aj")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -185,7 +185,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_djdik"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m55aj"]
 texture = ExtResource("12_djdik")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -208,16 +208,16 @@ texture_region_size = Vector2i(90, 90)
 [sub_resource type="TileSet" id="TileSet_vpe8i"]
 tile_size = Vector2i(90, 90)
 physics_layer_0/collision_layer = 8
-sources/0 = SubResource("TileSetAtlasSource_5h3s7")
-sources/2 = SubResource("TileSetAtlasSource_ht4kb")
-sources/3 = SubResource("TileSetAtlasSource_10cbd")
-sources/4 = SubResource("TileSetAtlasSource_ohyvs")
-sources/5 = SubResource("TileSetAtlasSource_tewqf")
-sources/6 = SubResource("TileSetAtlasSource_6djys")
-sources/7 = SubResource("TileSetAtlasSource_atb4a")
-sources/8 = SubResource("TileSetAtlasSource_m55aj")
-sources/9 = SubResource("TileSetAtlasSource_djdik")
-sources/1 = SubResource("TileSetAtlasSource_44lyj")
+sources/0 = SubResource("TileSetAtlasSource_33jo2")
+sources/2 = SubResource("TileSetAtlasSource_44lyj")
+sources/3 = SubResource("TileSetAtlasSource_ht4kb")
+sources/4 = SubResource("TileSetAtlasSource_10cbd")
+sources/5 = SubResource("TileSetAtlasSource_ohyvs")
+sources/6 = SubResource("TileSetAtlasSource_tewqf")
+sources/7 = SubResource("TileSetAtlasSource_6djys")
+sources/8 = SubResource("TileSetAtlasSource_atb4a")
+sources/9 = SubResource("TileSetAtlasSource_m55aj")
+sources/1 = SubResource("TileSetAtlasSource_5h3s7")
 
 [node name="oppositePanel" type="Node2D"]
 light_mask = 512

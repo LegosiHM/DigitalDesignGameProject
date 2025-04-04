@@ -280,7 +280,7 @@ position = Vector2(1262, -288)
 shape = SubResource("RectangleShape2D_hhcng")
 
 [node name="untouchablePanle" parent="." instance=ExtResource("16_4nxux")]
-position = Vector2(1703, 456)
+position = Vector2(1432, 833)
 
 [node name="oppositePanel" parent="." instance=ExtResource("17_mn6ek")]
 position = Vector2(1401, 575)
