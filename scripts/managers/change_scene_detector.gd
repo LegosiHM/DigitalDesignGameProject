@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var my_scene: String
-@onready var transition_rect: ColorRect = get_node_or_null("../CanvasLayer/ColorRect")  # Safe node retrieval
+@onready var transition_rect: ColorRect = get_node_or_null("../CanvasLayer/Scenes_Transition")  # Safe node retrieval
 var transitioning = false  # A flag to prevent multiple scene transitions from happening at the same time.
 
 func _ready():

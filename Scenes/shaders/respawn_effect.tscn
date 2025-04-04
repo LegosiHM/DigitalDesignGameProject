@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://fn01f38daqgr"]
+
+[ext_resource type="Shader" uid="uid://tsbktc7k3rsm" path="res://scripts/shaders/Respawn_Effect.gdshader" id="1_0d35e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gf6i2"]
+shader = ExtResource("1_0d35e")
+shader_parameter/AspectRatio = 1.5
+shader_parameter/Diamonds = 50.0
+shader_parameter/pixel_size = 0.08
+shader_parameter/finalcolor = Color(0, 0, 0, 1)
+shader_parameter/finalalpha = 0.0
+shader_parameter/height = -1.0
+shader_parameter/disable_pixel = true
+
+[node name="Respawn_Effect" type="ColorRect"]
+material = SubResource("ShaderMaterial_gf6i2")
+offset_right = 1920.0
+offset_bottom = 1080.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsm1jl5axqvgh"]
+[gd_scene load_steps=3 format=3 uid="uid://bdjoj5en38q4p"]
 
 [ext_resource type="Script" uid="uid://lmwhv37j74i8" path="res://scripts/Managers/change_scene_detector.gd" id="1_nln5k"]
 

@@ -1,6 +1,6 @@
 extends CanvasLayer  # Now correctly extends CanvasLayer
 
-@onready var transition_rect: ColorRect = get_node_or_null("../CanvasLayer/ColorRect")  # Ensure this exists
+@onready var transition_rect: ColorRect = get_node_or_null("../CanvasLayer/Scenes_Transition")  # Ensure this exists
 
 func _ready():
 	if transition_rect and transition_rect.material:

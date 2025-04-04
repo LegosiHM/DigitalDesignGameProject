@@ -10,7 +10,7 @@ shader_parameter/in_out = 0.0
 shader_parameter/position = 1.0
 shader_parameter/size = Vector2(16, 16)
 
-[node name="ColorRect" type="ColorRect"]
+[node name="Scenes_Transition" type="ColorRect"]
 material = SubResource("ShaderMaterial_3rxx4")
 offset_right = 1920.0
 offset_bottom = 1080.0
