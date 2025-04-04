@@ -2996,26 +2996,29 @@ visibility_layer = 513
 position = Vector2(-1, -7.5)
 
 [node name="GrabHandRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(9.5, -32)
-target_position = Vector2(42.5, 0.5)
+position = Vector2(0, -32)
+target_position = Vector2(55, 0)
 collision_mask = 6
 
 [node name="GrabCheckRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(9.5, -22.5)
-target_position = Vector2(42.5, 0)
+position = Vector2(0, -22.5)
+target_position = Vector2(55, 0)
 collision_mask = 6
 
 [node name="SlowFallHandRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(9.5, -32)
-target_position = Vector2(42.5, 0.5)
+position = Vector2(0, -32)
+target_position = Vector2(55, 0.5)
 collision_mask = 8
 collide_with_areas = true
 
 [node name="SlowFallCheckRayCast" type="RayCast2D" parent="CollisionHolder"]
-position = Vector2(9.5, -23)
-target_position = Vector2(42.5, 0)
+position = Vector2(0, -23)
+target_position = Vector2(55, 0)
 collision_mask = 8
 collide_with_areas = true
+
+[node name="GroundRay" type="RayCast2D" parent="CollisionHolder"]
+collision_mask = 14
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_8uom8")

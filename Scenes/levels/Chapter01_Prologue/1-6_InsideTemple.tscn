@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cc8yfh1fuqh7h" path="res://assets/sprites/chapter 1/background/BG_Temple_Night_v01.PNG" id="1_1lmcl"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="2_7kt35"]
 [ext_resource type="Shader" uid="uid://ray55c0pgeoq" path="res://scripts/shaders/Outliner_Shadow.gdshader" id="3_ptahb"]
-[ext_resource type="Texture2D" uid="uid://bob6jpd876yc0" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_Ritual_v.01.PNG" id="4_rrse1"]
+[ext_resource type="Texture2D" uid="uid://crrsaqjp1ldsc" path="res://assets/sprites/chapter 1/story panel/StoryPanel_ InsideTemple_Ritual _v.01.PNG" id="4_rrse1"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="5_x8ipv"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="6_m15tn"]
 [ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="7_mtye2"]
@@ -16,15 +16,15 @@
 [ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="14_5qj8d"]
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="15_xe81i"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="16_jo4no"]
-[ext_resource type="Texture2D" uid="uid://34c0tqmmjxmy" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_Insulting_v.01.PNG" id="17_ab6w5"]
-[ext_resource type="Texture2D" uid="uid://df3s6cxr5lwki" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_Chasing_v.01.PNG" id="18_ptahb"]
-[ext_resource type="Texture2D" uid="uid://c0eptjyoj40bm" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_CatStatue_v.01.PNG" id="19_rrse1"]
-[ext_resource type="PackedScene" uid="uid://dfcsfxj0cwdfl" path="res://Scenes/characters/Player.tscn" id="20_x8ipv"]
+[ext_resource type="Texture2D" uid="uid://bipdw8apv8hga" path="res://assets/sprites/chapter 1/story panel/StoryPaneL InsideTemple_Insulting v.01.PNG" id="17_ab6w5"]
+[ext_resource type="Texture2D" uid="uid://clba0827jtciw" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_Chasing_v.01.PNG" id="18_ptahb"]
+[ext_resource type="Texture2D" uid="uid://e0ms8ime6f6s" path="res://assets/sprites/chapter 1/story panel/StoryPanel _InsideTemple_CatStatue _v.01.PNG" id="19_rrse1"]
+[ext_resource type="PackedScene" uid="uid://dfcsfxj0cwdfl" path="res://Scenes/characters/player.tscn" id="20_x8ipv"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="21_m15tn"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/Change_Scene_Detector.tscn" id="22_mtye2"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="23_dhksy"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="24_kroaf"]
-[ext_resource type="PackedScene" uid="uid://ciu82fkocu3x8" path="res://Scenes/shaders/respawn_effect.tscn" id="25_h6445"]
+[ext_resource type="PackedScene" uid="uid://q5mkgcipohdx" path="res://Scenes/shaders/respawn_effect.tscn" id="25_h6445"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ncy2w"]
 texture = ExtResource("6_m15tn")
@@ -346,10 +346,9 @@ my_scene = "res://Scenes/levels/Chapter01_Prologue/1-7_Flee1.tscn"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("23_dhksy")
 
-[node name="ColorRect" parent="CanvasLayer" instance=ExtResource("24_kroaf")]
-visible = false
+[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("24_kroaf")]
 
-[node name="RespawnEffect" parent="CanvasLayer" instance=ExtResource("25_h6445")]
+[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("25_h6445")]
 visible = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
