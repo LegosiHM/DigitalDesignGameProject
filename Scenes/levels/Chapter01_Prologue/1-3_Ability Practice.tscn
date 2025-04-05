@@ -8,7 +8,7 @@
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="5_wfnga"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/Change_Scene_Detector.tscn" id="6_72u40"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="7_xqdrk"]
-[ext_resource type="PackedScene" uid="uid://dfcsfxj0cwdfl" path="res://Scenes/characters/player.tscn" id="8_ovjq7"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="8_ovjq7"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="9_ko52n"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="10_6dl1h"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="11_auadr"]

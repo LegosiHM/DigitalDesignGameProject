@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://q5mkgcipohdx"]
+[gd_scene load_steps=3 format=3 uid="uid://fn01f38daqgr"]
 
 [ext_resource type="Shader" uid="uid://bgyk3me620lsg" path="res://scripts/shaders/Respawn_Effect.gdshader" id="1_0d35e"]
 

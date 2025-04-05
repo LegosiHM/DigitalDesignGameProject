@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bnrso763vy7uw" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Gatekeeper02_v.02.png" id="3_ovm5x"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="4_c00ox"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="4_vg0o7"]
-[ext_resource type="PackedScene" uid="uid://dfcsfxj0cwdfl" path="res://Scenes/characters/player.tscn" id="5_w77j0"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="5_w77j0"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="6_xselg"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="7_wrvyn"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="8_8gsc3"]

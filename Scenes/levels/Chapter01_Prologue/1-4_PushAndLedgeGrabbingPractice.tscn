@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="3_1hpxw"]
 [ext_resource type="Texture2D" uid="uid://dcsbgglf7cj7v" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_TempleWall_v.02.png" id="4_geuh0"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="5_ece1k"]
-[ext_resource type="PackedScene" uid="uid://dfcsfxj0cwdfl" path="res://Scenes/characters/player.tscn" id="6_h2l7a"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="6_h2l7a"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="8_7yqwk"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="9_jgpn4"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="10_hwt45"]

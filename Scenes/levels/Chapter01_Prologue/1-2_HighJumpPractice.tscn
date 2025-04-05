@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/Change_Scene_Detector.tscn" id="3_i4q5w"]
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="3_v1hng"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="4_wd71n"]
-[ext_resource type="PackedScene" uid="uid://dfcsfxj0cwdfl" path="res://Scenes/characters/player.tscn" id="5_qx2xe"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="5_qx2xe"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="6_q60dr"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="7_cradw"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="8_hwg8k"]
