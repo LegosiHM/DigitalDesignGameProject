@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://p0idhm8l5gv"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_333m1"]
-[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/Change_Scene_Detector.tscn" id="2_i20xy"]
+[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/change_scene_detector.tscn" id="2_i20xy"]
 [ext_resource type="Texture2D" uid="uid://baoqb7rk4yrck" path="res://assets/sprites/chapter 2/backgrounds/Background_Corridor_Day_v.01.PNG" id="3_p5qmr"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_1og61"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_bq2l6"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://op8mn4yc76rn"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_i2wto"]
-[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/Change_Scene_Detector.tscn" id="2_pfu75"]
+[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/change_scene_detector.tscn" id="2_pfu75"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="3_ak4re"]
 [ext_resource type="Texture2D" uid="uid://s6ijtbtnvx4k" path="res://assets/sprites/chapter 1/background/BG_Suburb_Night_v02.PNG" id="4_wse5n"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/mechanics/Draggable_Panel.tscn" id="5_ne4ou"]

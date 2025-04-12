@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://46f6uv7th1xg" path="res://Scenes/managers/RespawnManager.tscn" id="1_0g6jc"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="2_tjq7w"]
-[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/Change_Scene_Detector.tscn" id="3_h2w07"]
+[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/change_scene_detector.tscn" id="3_h2w07"]
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="4_fxv5w"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="5_3vw8x"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="6_b1m8i"]

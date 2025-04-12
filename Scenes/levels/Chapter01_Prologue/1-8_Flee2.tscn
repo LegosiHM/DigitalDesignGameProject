@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://b7ql5h6ruj5cg"]
 
 [ext_resource type="Texture2D" uid="uid://dy3juqpq2g1h5" path="res://assets/sprites/chapter 1/background/BG_Suburb_Evening_v02.PNG" id="1_g62pi"]
-[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/Change_Scene_Detector.tscn" id="2_51iw3"]
+[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/change_scene_detector.tscn" id="2_51iw3"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="3_18b3w"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_tdeq0"]
 [ext_resource type="Texture2D" uid="uid://dcsbgglf7cj7v" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_TempleWall_v.02.png" id="5_v6ad5"]
