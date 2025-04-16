@@ -2,19 +2,31 @@ extends Area2D
 
 @export var my_scene: String
 @onready var transition_rect: ColorRect = get_node_or_null("../CanvasLayer/Scenes_Transition")  # Safe node retrieval
+@export var disable_on_default = false
+@export var portal_visual: ColorRect
 var transitioning = false  # A flag to prevent multiple scene transitions from happening at the same time.
 
 func _ready():
+	if disable_on_default == true:
+		visible = false
+		portal_visual.visible = false
+		print("cant see warp")
 	if transition_rect and transition_rect.material:
 		 # If transition_rect and its material exist, set shader parameters to hide the transition effect.
 		transition_rect.material.set_shader_parameter("in_out", 0.0)  # Makes sure the screen starts with no effect.
 		transition_rect.material.set_shader_parameter("position", 1.0)  # Puts the effect off-screen.
 	else:
 		push_error("ERROR: ColorRect or its material is missing!")
-
+		
+func _process(delta):
+	if visible == true:
+		disable_on_default = false
+		if portal_visual != null:
+			portal_visual.visible = true
+		
 # This function is triggered when a PhysicsBody2D (like a player) enters the Area2D.
 func _on_body_entered(body: PhysicsBody2D) -> void:
-	if transitioning or my_scene.is_empty():
+	if transitioning or my_scene.is_empty() or disable_on_default:
 		return  # If a transition is already happening or the scene name is empty, do nothing.
 	transitioning = true # Set the flag to true to prevent re-entering.
 	start_scene_transition() # Call the function to start the transition effect.
@@ -42,3 +54,4 @@ func start_scene_transition():
 	await tween.finished  # Waits until the animation is finished before changing the scene.
 
 	get_tree().change_scene_to_file(my_scene)  # Change scene AFTER transition
+		

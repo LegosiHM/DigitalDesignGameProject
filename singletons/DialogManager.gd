@@ -3,22 +3,25 @@ extends Node
 @onready var text_box_scene = preload("res://scenes/UI/TextBox.tscn")  # Make sure path is correct
 
 var dialog_lines: Array[String] = []
+var dialog_position_Array: Array[Vector2] = []
+var dialog_position: Vector2
 var current_line_index = 0
 
 var text_box
-var text_box_position: Vector2
+#var text_box_position: Vector2
 var is_dialog_active = false
 var can_advance_line = false
 var current_panel = null  # Stores the panel that triggered the dialog
 
-func start_dialog(position: Vector2, lines: Array[String], panel = null):
+func start_dialog(positions: Array[Vector2], lines: Array[String], panel = null):
 	if is_dialog_active:
 		return
 
 	dialog_lines = lines
-	text_box_position = position  
+	dialog_position_Array = positions
 	is_dialog_active = true
 	current_line_index = 0  
+	dialog_position = dialog_position_Array[current_line_index]
 	current_panel = panel  # Store the interacting panel
 
 	_show_text_box()  
@@ -31,7 +34,7 @@ func _show_text_box():
 	text_box.finished_displaying.connect(_on_text_box_finished_displaying)
 	get_tree().root.add_child(text_box)
 
-	text_box.global_position = text_box_position  
+	text_box.position = dialog_position
 
 	text_box.modulate.a = 0
 	var tween = get_tree().create_tween()
@@ -58,7 +61,8 @@ func _unhandled_input(event):
 		if current_line_index >= dialog_lines.size():
 			close_dialog()
 			return
-
+			
+		dialog_position = dialog_position_Array[current_line_index]
 		_show_text_box()
 		can_advance_line = false  
 
