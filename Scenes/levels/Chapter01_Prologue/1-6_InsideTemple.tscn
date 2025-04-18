@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://e0ms8ime6f6s" path="res://assets/sprites/chapter 1/story panel/StoryPanel _InsideTemple_CatStatue _v.01.PNG" id="19_rrse1"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="20_x8ipv"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="21_m15tn"]
-[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/Change_Scene_Detector.tscn" id="22_mtye2"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="22_mtye2"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="23_dhksy"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="24_kroaf"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="25_h6445"]
@@ -286,12 +286,12 @@ texture = ExtResource("1_1lmcl")
 [node name="PlatformPanel" parent="." instance=ExtResource("5_x8ipv")]
 position = Vector2(-575, 104)
 tile_set = SubResource("TileSet_voep8")
-layer_0/tile_data = PackedInt32Array(131078, 0, 3, 131079, 0, 3, 131080, 0, 3, 131081, 0, 3, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 9, 2, 0, 8, 2, 0, 7, 2, 0, 6, 2, 0, 589835, 65536, 3, 589836, 65536, 3, 589837, 65536, 3, 589838, 65536, 3, 589839, 65536, 3, 589840, 65536, 3, 589841, 65536, 3, 589842, 65536, 3, 589843, 65536, 3, 589844, 65536, 3, 589845, 65536, 3, 589846, 65536, 3, 589847, 65536, 3)
+layer_0/tile_data = PackedInt32Array(65544, 2, 0, 65545, 2, 0, 131078, 0, 3, 131079, 0, 3, 131080, 0, 3, 131081, 0, 3, 65542, 2, 0, 65543, 2, 0, 9, 2, 0, 8, 2, 0, 7, 2, 0, 6, 2, 0, 589835, 65536, 3, 589836, 65536, 3, 589837, 65536, 3, 589838, 65536, 3, 589839, 65536, 3, 589840, 65536, 3, 589841, 65536, 3, 589842, 65536, 3, 589843, 65536, 3, 589844, 65536, 3, 589845, 65536, 3, 589846, 65536, 3, 589847, 65536, 3)
 
 [node name="Outline" parent="PlatformPanel" instance=ExtResource("5_x8ipv")]
 position = Vector2(497, 137)
 tile_set = SubResource("TileSet_voep8")
-layer_0/tile_data = PackedInt32Array(-131068, 327681, 0, -131069, 262145, 0, -131070, 262145, 0, -131071, 262145, 0, -131072, 262145, 0, -65532, 327681, 1, 4, 327681, 1, 65540, 327681, 5, 65539, 262145, 5, 65538, 262145, 5, 65537, 262145, 5, 65536, 262145, 5)
+layer_0/tile_data = PackedInt32Array(4, 327681, 1, 65539, 262145, 5, 65540, 327681, 5, 65538, 262145, 5, -131068, 327681, 0, -131069, 262145, 0, -131070, 262145, 0, -131071, 262145, 0, -131072, 262145, 0, -65532, 327681, 1, 65537, 262145, 5, 65536, 262145, 5)
 
 [node name="StroyPanel_Ritual" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_x76qa")

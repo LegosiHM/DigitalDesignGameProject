@@ -2974,7 +2974,6 @@ _data = {
 light_mask = 513
 visibility_layer = 513
 z_index = 10
-position = Vector2(-1880, -230)
 scale = Vector2(2, 2)
 collision_mask = 14
 script = ExtResource("1_rajx7")
@@ -3018,6 +3017,26 @@ collision_mask = 8
 collide_with_areas = true
 
 [node name="GroundRay" type="RayCast2D" parent="CollisionHolder"]
+collision_mask = 14
+
+[node name="TopOuterLeft" type="RayCast2D" parent="CollisionHolder"]
+position = Vector2(-29.5, 0)
+rotation = 3.14159
+collision_mask = 14
+
+[node name="TopOuterRight" type="RayCast2D" parent="CollisionHolder"]
+position = Vector2(32.5, 0)
+rotation = 3.14159
+collision_mask = 14
+
+[node name="TopInnerLeft" type="RayCast2D" parent="CollisionHolder"]
+position = Vector2(-8.5, 0)
+rotation = 3.14159
+collision_mask = 14
+
+[node name="TopInnerRight" type="RayCast2D" parent="CollisionHolder"]
+position = Vector2(13, 0)
+rotation = 3.14159
 collision_mask = 14
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

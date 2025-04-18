@@ -1,6 +1,10 @@
 extends CharacterBody2D
 enum {IDLE, WALK, JUMP, FALL, LEDGE_GRAB}
 enum jump_directions {UP = -1, DOWN = 1}
+@onready var top_outer_left = $CollisionHolder/TopOuterLeft
+@onready var top_inner_left = $CollisionHolder/TopInnerLeft
+@onready var top_outer_right = $CollisionHolder/TopOuterRight
+@onready var top_inner_right = $CollisionHolder/TopInnerRight
 @onready var collision_holder = $CollisionHolder
 @onready var collision_shape = $PlayerHitbox
 @onready var grab_hand_rayCast = $CollisionHolder/GrabHandRayCast
@@ -48,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	manage_animations()
 	handle_gravity(delta)
 	move_and_slide()
-	
+
 	if is_on_solid_ground():
 		if is_slowFalling:
 			is_slowFalling = false
@@ -58,6 +62,13 @@ func _physics_process(delta: float) -> void:
 			state = IDLE
 
 	_check_fall_behavior()
+	# Run ledge correction regardless of jumping/floor state
+	if top_outer_right.is_colliding() and not top_inner_right.is_colliding() and not top_inner_left.is_colliding() and not top_outer_left.is_colliding():
+		position.x -= 10
+
+	elif top_outer_left.is_colliding() and not top_inner_left.is_colliding() and not top_inner_right.is_colliding() and not top_outer_right.is_colliding():
+		position.x += 10
+
 	if is_grabbing:
 		velocity = Vector2.ZERO
 		if Input.is_action_just_pressed("jump"):
@@ -146,6 +157,11 @@ func _flip_raycast_direction(direction: int):
 	grab_check_rayCast.target_position.x = abs(grab_check_rayCast.target_position.x) * direction
 	slowFall_hand_rayCast.target_position.x = abs(slowFall_hand_rayCast.target_position.x) * direction
 	slowFall_check_rayCast.target_position.x = abs(slowFall_check_rayCast.target_position.x) * direction
+	
+	top_outer_left.target_position.x = -abs(top_outer_left.target_position.x) * direction
+	top_inner_left.target_position.x = -abs(top_inner_left.target_position.x) * direction
+	top_outer_right.target_position.x = abs(top_outer_right.target_position.x) * direction
+	top_inner_right.target_position.x = abs(top_inner_right.target_position.x) * direction
 
 func apply_horizontal_movement(delta: float, input_direction: Vector2 = Vector2.ZERO) -> void:
 	if is_grabbing:
