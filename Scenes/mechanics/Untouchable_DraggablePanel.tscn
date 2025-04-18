@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bukvj0rphopvc"]
+[gd_scene load_steps=6 format=3 uid="uid://bukvj0rphopvc"]
 
 [ext_resource type="Script" uid="uid://pme7x8bbaxyf" path="res://scripts/puzzles/draggable_panel.gd" id="1_6bqu7"]
+[ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="2_aoe35"]
+[ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="3_7hv8n"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aoe35"]
 
@@ -23,11 +25,11 @@ energyConsumption = 2
 untouchable = true
 
 [node name="Button" type="Button" parent="Area2D"]
-offset_left = -62.0
+offset_left = -87.0
 offset_top = -60.0
-offset_right = 39.0
+offset_right = 14.0
 offset_bottom = 30.0
-scale = Vector2(1.25225, 1.38857)
+scale = Vector2(1.77225, 1.38857)
 focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
@@ -40,6 +42,12 @@ light_mask = 512
 visibility_layer = 512
 position = Vector2(0.5, -0.75)
 shape = SubResource("RectangleShape2D_6bqu7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_aoe35")
+
+[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("3_7hv8n")]
+visible = false
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

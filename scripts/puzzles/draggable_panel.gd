@@ -18,7 +18,7 @@ var player_position
 
 var velocity = Vector2.ZERO
 
-
+var effect_running := false
 
 func _ready() -> void:
 	original_position = global_position
@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 	if untouchable:
 		#if (collide and global_position.distance_to(player_position) < 150):
 		if(collide): #need to be fix to check if collide with just player's collision
-			get_tree().current_scene.get_node("Player").global_position = respawn_position
+			respawn_with_effect()
 	
 	if dragging:
 		var energy_needed = 2*energyConsumption if collide else energyConsumption
@@ -70,4 +70,27 @@ func _on_button_button_up() -> void:
 func check_overlap_area():
 	collide = has_overlapping_areas()
 	
+func respawn_with_effect():
+	effect_running = true
+
+	var player = get_tree().current_scene.get_node("Player")
+	var blur_effect = $"../CanvasLayer/Respawn_Effect"
+	var material := blur_effect.material as ShaderMaterial
+
+	blur_effect.visible = true
+
+	var tween := get_tree().create_tween()
+	respawn_timer()
+	tween.tween_property(material, "shader_parameter/height", 1.0, 0.7)
+	tween.tween_property(material, "shader_parameter/height", -1.0, 0.7)
+	await tween.finished
+
+	blur_effect.visible = false
+
+	effect_running = false
+	
+func respawn_timer():
+	var player = get_tree().current_scene.get_node("Player")
+	await get_tree().create_timer(0.1).timeout
+	player.global_position = respawn_position
 	

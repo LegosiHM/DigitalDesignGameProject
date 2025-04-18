@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://b83vywucafrgx"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_qm6qx"]
-[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/change_scene_detector.tscn" id="2_dy6oq"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_dy6oq"]
 [ext_resource type="Texture2D" uid="uid://s6ijtbtnvx4k" path="res://assets/sprites/chapter 1/background/BG_Suburb_Night_v02.PNG" id="3_8gt2d"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="4_wo0xv"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="5_cdni2"]
@@ -72,14 +72,17 @@ shape = SubResource("RectangleShape2D_ir143")
 position = Vector2(1377, -426)
 shape = SubResource("RectangleShape2D_vaeto")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_dy6oq")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_dy6oq")]
 z_index = 10
-position = Vector2(-755, 239)
+position = Vector2(-3, -3)
 scale = Vector2(1.80741, 1.50943)
-my_scene = "res://Scenes/levels/Chapter01_Prologue/1-2_HighJumpPractice.tscn"
+my_scene = "res://Scenes/levels/Chapter02_Kernel/2-1_MeetCleopatra.tscn"
+disable_on_default = true
+portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
-position = Vector2(-1.43433, 42.7313)
+position = Vector2(331.413, 502.176)
+scale = Vector2(4.66376, 0.363998)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -87,8 +90,9 @@ texture = ExtResource("3_8gt2d")
 
 [node name="Merchants" type="Node2D" parent="."]
 script = ExtResource("4_wo0xv")
-dialog_lines = Array[String](["Hey sis, have you heard of that guy Mark? Seems like our queen... ", "Duh, Shut up and go back to work!"])
-dialog_position = Vector2(650, 250)
+dialog_lines = Array[String](["...", "..."])
+dialog_position_Array = Array[Vector2]([Vector2(800, 100), Vector2(1550, 350)])
+cooldown_time = 10000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Merchants"]
 material = SubResource("ShaderMaterial_gllmq")
@@ -102,6 +106,25 @@ texture = ExtResource("6_ml2dw")
 position = Vector2(1429, 391)
 shape = SubResource("RectangleShape2D_8jxsg")
 
+[node name="Bazaar" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+script = ExtResource("4_wo0xv")
+dialog_lines = Array[String](["..."])
+dialog_position_Array = Array[Vector2]([Vector2(400, 300)])
+will_reveal_object = true
+reveal_path = NodePath("../ChangeSceneDetector")
+
+[node name="Panel_Bazaar" type="Sprite2D" parent="Bazaar"]
+material = SubResource("ShaderMaterial_qq3qd")
+position = Vector2(565.5, 748)
+scale = Vector2(1.63778, 1.47407)
+texture = ExtResource("9_nx3yu")
+
+[node name="Area2D" type="Area2D" parent="Bazaar"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bazaar/Area2D"]
+position = Vector2(570, 759)
+shape = SubResource("RectangleShape2D_8jxsg")
+
 [node name="Panel" parent="." instance=ExtResource("7_4nq8k")]
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
@@ -110,12 +133,6 @@ layer_0/tile_data = PackedInt32Array(524317, 196608, 3, 524316, 196608, 3, 52431
 [node name="Outline" parent="Panel" instance=ExtResource("7_4nq8k")]
 position = Vector2(45, 44)
 layer_0/tile_data = PackedInt32Array(524304, 1, 5, 524317, 327681, 5, 262173, 327681, 0, 262160, 1, 0, 262161, 65537, 0, 262162, 65537, 0, 262163, 65537, 0, 262164, 65537, 0, 262165, 65537, 0, 262166, 65537, 0, 262167, 65537, 0, 262168, 65537, 0, 262169, 65537, 0, 262170, 65537, 0, 262171, 65537, 0, 262172, 65537, 0, 327696, 1, 1, 393232, 1, 1, 458768, 1, 1, 327709, 327681, 1, 393245, 327681, 1, 458781, 327681, 1, 524305, 131073, 5, 524306, 131073, 5, 524307, 131073, 5, 524308, 131073, 5, 524309, 131073, 5, 524310, 131073, 5, 524311, 131073, 5, 524312, 131073, 5, 524313, 131073, 5, 524316, 131073, 5, 524315, 131073, 5, 524314, 131073, 5)
-
-[node name="Panel_Bazaar" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_qq3qd")
-position = Vector2(565.5, 748)
-scale = Vector2(1.63778, 1.47407)
-texture = ExtResource("9_nx3yu")
 
 [node name="Player" parent="." instance=ExtResource("10_72gyj")]
 position = Vector2(1784, 787)
@@ -126,6 +143,7 @@ position = Vector2(1784, 787)
 script = ExtResource("12_y3hpj")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("13_1081g")]
+visible = false
 offset_left = 384.0
 offset_top = 562.0
 offset_right = 424.0

@@ -1,12 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://csxm21t4vk04j"]
+[gd_scene load_steps=26 format=3 uid="uid://csxm21t4vk04j"]
 
 [ext_resource type="Texture2D" uid="uid://wfm1ss684p7i" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Priest_v.03.png" id="2_w0t8t"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="3_4tmjt"]
 [ext_resource type="Texture2D" uid="uid://cq3xys50xuc1j" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_PriestGlaring_v.03.png" id="4_h202d"]
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="4_irrym"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="5_8tpl8"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/mechanics/Draggable_Panel.tscn" id="5_gmthw"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="5_wfnga"]
-[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/change_scene_detector.tscn" id="6_72u40"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="6_72u40"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="7_xqdrk"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="8_ovjq7"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="9_ko52n"]
@@ -18,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="16_qrlb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npypg"]
-size = Vector2(1911, 172)
+size = Vector2(2371, 172)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27b4b"]
 size = Vector2(194, 1390)
@@ -37,6 +38,9 @@ shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tpl8"]
+size = Vector2(245, 637)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dgnu4"]
 shader = ExtResource("5_wfnga")
 shader_parameter/color = Color(0, 0, 0, 1)
@@ -44,6 +48,9 @@ shader_parameter/width = 18.0
 shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uv5w"]
+size = Vector2(505, 327.5)
 
 [node name="AbilityPractice" type="Node2D"]
 
@@ -53,7 +60,7 @@ script = ExtResource("10_6dl1h")
 respawn_position = Vector2(165, 757)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(279.5, 38)
+position = Vector2(509.5, 38)
 shape = SubResource("RectangleShape2D_npypg")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
@@ -68,10 +75,12 @@ shape = SubResource("RectangleShape2D_xdbxn")
 position = Vector2(1345.5, -1077)
 shape = SubResource("RectangleShape2D_ctvnn")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("6_72u40")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("6_72u40")]
 position = Vector2(2001, 656)
 scale = Vector2(2, 2)
 my_scene = "res://Scenes/levels/Chapter01_Prologue/1-4_PushAndLedgeGrabbingPractice.tscn"
+disable_on_default = true
+portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(8.75, 21.5)
@@ -104,18 +113,46 @@ scale = Vector2(25.9322, 13.5179)
 position = Vector2(960, 540)
 texture = ExtResource("4_irrym")
 
-[node name="StoryPanel_Priest" type="Sprite2D" parent="."]
-z_index = 1
+[node name="Panel_Priest" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
+position = Vector2(960, 540)
+script = ExtResource("5_8tpl8")
+dialog_lines = Array[String](["..."])
+dialog_position_Array = Array[Vector2]([Vector2(750, 500)])
+will_reveal_object = true
+reveal_panel = NodePath("../Panel_PriestGlare")
+
+[node name="StoryPanel_Priest" type="Sprite2D" parent="Panel_Priest"]
 material = SubResource("ShaderMaterial_q6su7")
-position = Vector2(1168, 505)
+position = Vector2(208, -35)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_w0t8t")
 
-[node name="StoryPanel_PriestGlaring" type="Sprite2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Panel_Priest"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel_Priest/Area2D"]
+position = Vector2(209.5, -35.5)
+shape = SubResource("RectangleShape2D_8tpl8")
+
+[node name="Panel_PriestGlare" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+visible = false
+position = Vector2(1920, 1080)
+script = ExtResource("5_8tpl8")
+dialog_lines = Array[String](["..."])
+dialog_position_Array = Array[Vector2]([Vector2(1200, 100)])
+will_reveal_object = true
+reveal_path = NodePath("../ChangeSceneDetector")
+
+[node name="StoryPanel_PriestGlaring" type="Sprite2D" parent="Panel_PriestGlare"]
 material = SubResource("ShaderMaterial_dgnu4")
-position = Vector2(1615, 406)
+position = Vector2(-305, -674)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_h202d")
+
+[node name="Area2D" type="Area2D" parent="Panel_PriestGlare"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel_PriestGlare/Area2D"]
+position = Vector2(-303.5, -673.75)
+shape = SubResource("RectangleShape2D_4uv5w")
 
 [node name="Draggable_Panel" parent="." instance=ExtResource("5_gmthw")]
 z_index = 5
@@ -162,7 +199,6 @@ offset_right = 80.0
 offset_bottom = 945.0
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("12_jhf7a")]
-visible = false
 mouse_force_pass_scroll_events = false
 
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("16_qrlb0")]

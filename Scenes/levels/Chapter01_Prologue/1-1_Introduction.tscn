@@ -26,7 +26,7 @@ size = Vector2(183, 1209)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir143"]
 size = Vector2(2259, 137.25)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gllmq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tjq7w"]
 shader = ExtResource("6_b1m8i")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 10.0
@@ -34,10 +34,10 @@ shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jxsg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2w07"]
 size = Vector2(736, 420)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qq3qd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fxv5w"]
 shader = ExtResource("9_yxj02")
 shader_parameter/drop_shadow_color = Color(0, 0, 0, 0.211765)
 shader_parameter/shadow_offset = Vector2(-0.05, 0.1)
@@ -77,36 +77,14 @@ z_index = 10
 position = Vector2(1943, 790)
 scale = Vector2(1.80741, 1.50943)
 my_scene = "res://Scenes/levels/Chapter01_Prologue/1-2_HighJumpPractice.tscn"
-disable_on_default = true
 portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(-1.43433, 13.9126)
-scale = Vector2(1, 1)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("4_fxv5w")
-
-[node name="Merchants" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel", "reveal_path")]
-script = ExtResource("5_3vw8x")
-dialog_lines = Array[String](["Hey sis, have you heard of that guy Mark? Seems like our queen... ", "Duh, Shut up and go back to work!"])
-dialog_position_Array = Array[Vector2]([Vector2(700, 160), Vector2(1500, 500)])
-will_reveal_object = true
-reveal_panel = NodePath("../Bazaar")
-reveal_path = NodePath("../ChangeSceneDetector")
-
-[node name="Sprite2D" type="Sprite2D" parent="Merchants"]
-material = SubResource("ShaderMaterial_gllmq")
-position = Vector2(1430, 390)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("7_n671r")
-
-[node name="Area2D" type="Area2D" parent="Merchants"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchants/Area2D"]
-position = Vector2(1429, 391)
-shape = SubResource("RectangleShape2D_8jxsg")
 
 [node name="Panel" parent="." instance=ExtResource("8_fblph")]
 position = Vector2(-1, 339)
@@ -116,15 +94,6 @@ layer_0/tile_data = PackedInt32Array(524317, 196608, 3, 524316, 196608, 3, 52431
 [node name="Outline" parent="Panel" instance=ExtResource("8_fblph")]
 position = Vector2(45, 44)
 layer_0/tile_data = PackedInt32Array(524304, 1, 5, 524317, 327681, 5, 262173, 327681, 0, 262160, 1, 0, 262161, 65537, 0, 262162, 65537, 0, 262163, 65537, 0, 262164, 65537, 0, 262165, 65537, 0, 262166, 65537, 0, 262167, 65537, 0, 262168, 65537, 0, 262169, 65537, 0, 262170, 65537, 0, 262171, 65537, 0, 262172, 65537, 0, 327696, 1, 1, 393232, 1, 1, 458768, 1, 1, 327709, 327681, 1, 393245, 327681, 1, 458781, 327681, 1, 524305, 131073, 5, 524306, 131073, 5, 524307, 131073, 5, 524308, 131073, 5, 524309, 131073, 5, 524310, 131073, 5, 524311, 131073, 5, 524312, 131073, 5, 524313, 131073, 5, 524316, 131073, 5, 524315, 131073, 5, 524314, 131073, 5, 65539, 1, 5, 3, 1, 4, -65533, 1, 4, -131069, 1, 4, -196605, 1, 0, -196601, 131073, 0, -196600, 131073, 0, 65544, 131073, 5, 65540, 131073, 5, 65541, 131073, 5, 65542, 131073, 5, 65543, 131073, 5, -196604, 131073, 0, -196603, 131073, 0, -196602, 131073, 0, 65547, 327681, 5, 11, 327681, 3, -131061, 327681, 3, -65525, 327681, 3, -196597, 327681, 0, -196599, 131073, 0, -196598, 131073, 0, 65545, 131073, 5, 65546, 131073, 5)
-
-[node name="Bazaar" type="Node2D" parent="."]
-visible = false
-position = Vector2(565.5, 748)
-scale = Vector2(1.63778, 1.47407)
-
-[node name="Panel_Bazaar" type="Sprite2D" parent="Bazaar"]
-material = SubResource("ShaderMaterial_qq3qd")
-texture = ExtResource("10_dj4mr")
 
 [node name="Player" parent="." instance=ExtResource("11_dqcp6")]
 position = Vector2(427, 297)
@@ -142,10 +111,45 @@ offset_bottom = 640.0
 scale = Vector2(10, 10)
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("15_0todq")]
-visible = false
 
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("16_tjq7w")]
 visible = false
+
+[node name="Merchants2" type="Node2D" parent="."]
+script = ExtResource("5_3vw8x")
+dialog_lines = Array[String](["...", "..."])
+dialog_position_Array = Array[Vector2]([Vector2(800, 100), Vector2(1550, 350)])
+cooldown_time = 10000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Merchants2"]
+material = SubResource("ShaderMaterial_tjq7w")
+position = Vector2(1430, 390)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("7_n671r")
+
+[node name="Area2D" type="Area2D" parent="Merchants2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchants2/Area2D"]
+position = Vector2(1429, 391)
+shape = SubResource("RectangleShape2D_h2w07")
+
+[node name="Bazaar2" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+script = ExtResource("5_3vw8x")
+dialog_lines = Array[String](["..."])
+dialog_position_Array = Array[Vector2]([Vector2(600, 600)])
+reveal_path = NodePath("")
+
+[node name="Panel_Bazaar" type="Sprite2D" parent="Bazaar2"]
+material = SubResource("ShaderMaterial_fxv5w")
+position = Vector2(565.5, 748)
+scale = Vector2(1.63778, 1.47407)
+texture = ExtResource("10_dj4mr")
+
+[node name="Area2D" type="Area2D" parent="Bazaar2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bazaar2/Area2D"]
+position = Vector2(570, 759)
+shape = SubResource("RectangleShape2D_h2w07")
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

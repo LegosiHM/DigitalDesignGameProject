@@ -1,6 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://bbkm28l77chqh"]
+[gd_scene load_steps=51 format=3 uid="uid://bbkm28l77chqh"]
 
-[ext_resource type="Texture2D" uid="uid://cc8yfh1fuqh7h" path="res://assets/sprites/chapter 1/background/BG_Temple_Night_v01.PNG" id="1_1lmcl"]
+[ext_resource type="Texture2D" uid="uid://d11pmosyoyoot" path="res://assets/sprites/chapter 1/background/BG_Temple_Evening_v01.PNG" id="1_h6445"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="2_7kt35"]
 [ext_resource type="Shader" uid="uid://ray55c0pgeoq" path="res://scripts/shaders/Outliner_Shadow.gdshader" id="3_ptahb"]
 [ext_resource type="Texture2D" uid="uid://c6ujdl4ss5orw" path="res://assets/sprites/chapter 1/story panel/StoryPanel_ InsideTemple_Ritual _v.01.PNG" id="4_rrse1"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cs024ords13eo" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v04.PNG" id="13_b0y6l"]
 [ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="14_5qj8d"]
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="15_xe81i"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="16_h6445"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="16_jo4no"]
 [ext_resource type="Texture2D" uid="uid://chvaips52w3rf" path="res://assets/sprites/chapter 1/story panel/StoryPaneL InsideTemple_Insulting v.01.PNG" id="17_ab6w5"]
 [ext_resource type="Texture2D" uid="uid://b8lt6hngw6nyn" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_Chasing_v.01.PNG" id="18_ptahb"]
@@ -25,6 +26,7 @@
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="23_dhksy"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="24_kroaf"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="25_h6445"]
+[ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="27_h6445"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ncy2w"]
 texture = ExtResource("6_m15tn")
@@ -239,6 +241,9 @@ shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = false
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe81i"]
+size = Vector2(1180.5, 903)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6gv85"]
 shader = ExtResource("16_jo4no")
 shader_parameter/color = Color(0, 0, 0, 1)
@@ -246,6 +251,20 @@ shader_parameter/width = 15.0
 shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6445"]
+size = Vector2(292.5, 551.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8ipv"]
+shader = ExtResource("16_jo4no")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 15.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0y6l"]
+size = Vector2(280, 340.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrse1"]
 shader = ExtResource("16_jo4no")
@@ -255,13 +274,8 @@ shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8ipv"]
-shader = ExtResource("16_jo4no")
-shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/width = 15.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qj8d"]
+size = Vector2(281, 542.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtye2"]
 size = Vector2(1927, 154)
@@ -279,49 +293,112 @@ size = Vector2(178, 1477)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("1_1lmcl")
+texture = ExtResource("1_h6445")
 
 [node name="UI" parent="." instance=ExtResource("2_7kt35")]
 
 [node name="PlatformPanel" parent="." instance=ExtResource("5_x8ipv")]
 position = Vector2(-575, 104)
 tile_set = SubResource("TileSet_voep8")
-layer_0/tile_data = PackedInt32Array(131078, 0, 3, 131079, 0, 3, 131080, 0, 3, 131081, 0, 3, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 9, 2, 0, 8, 2, 0, 7, 2, 0, 6, 2, 0, 589835, 65536, 3, 589836, 65536, 3, 589837, 65536, 3, 589838, 65536, 3, 589839, 65536, 3, 589840, 65536, 3, 589841, 65536, 3, 589842, 65536, 3, 589843, 65536, 3, 589844, 65536, 3, 589845, 65536, 3, 589846, 65536, 3, 589847, 65536, 3)
+layer_0/tile_data = PackedInt32Array(131078, 0, 3, 131079, 0, 3, 131080, 0, 3, 131081, 0, 3, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 9, 2, 0, 8, 2, 0, 7, 2, 0, 6, 2, 0, 589838, 65536, 3, 589839, 65536, 3, 589840, 65536, 3, 589841, 65536, 3, 589842, 65536, 3, 589843, 65536, 3, 589844, 65536, 3, 589845, 65536, 3, 589846, 65536, 3, 589847, 65536, 3, 589848, 65536, 3, 589849, 65536, 3, 589850, 65536, 3)
 
 [node name="Outline" parent="PlatformPanel" instance=ExtResource("5_x8ipv")]
 position = Vector2(497, 137)
 tile_set = SubResource("TileSet_voep8")
 layer_0/tile_data = PackedInt32Array(-131068, 327681, 0, -131069, 262145, 0, -131070, 262145, 0, -131071, 262145, 0, -131072, 262145, 0, -65532, 327681, 1, 4, 327681, 1, 65540, 327681, 5, 65539, 262145, 5, 65538, 262145, 5, 65537, 262145, 5, 65536, 262145, 5)
 
-[node name="StroyPanel_Ritual" type="Sprite2D" parent="."]
+[node name="Panel_Ritual" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
+position = Vector2(1920, 1080)
+script = ExtResource("16_h6445")
+dialog_lines = Array[String](["...", "...", "...", "...", "...", "..."])
+dialog_position_Array = Array[Vector2]([Vector2(700, 700), Vector2(1400, 700), Vector2(900, 150), Vector2(1500, 150), Vector2(1000, 750), Vector2(1100, 150)])
+cooldown_time = 10000.0
+will_reveal_object = true
+reveal_panel = NodePath("../Panel_Yell")
+
+[node name="StroyPanel_Ritual" type="Sprite2D" parent="Panel_Ritual"]
 material = SubResource("ShaderMaterial_x76qa")
-position = Vector2(983, 551)
+position = Vector2(-643, -529)
 texture = ExtResource("4_rrse1")
 
-[node name="StoryPanelInsideTempleInsultingV_01" type="Sprite2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Panel_Ritual"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel_Ritual/Area2D"]
+position = Vector2(-639, -530.5)
+shape = SubResource("RectangleShape2D_xe81i")
+
+[node name="Panel_Yell" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
+visible = false
+position = Vector2(1920, 1080)
+script = ExtResource("16_h6445")
+dialog_lines = Array[String](["..."])
+dialog_position_Array = Array[Vector2]([Vector2(700, 200)])
+cooldown_time = 10000.0
+will_reveal_object = true
+reveal_panel = NodePath("../Panel_Pray")
+
+[node name="StoryPanelInsideTempleInsultingV_01" type="Sprite2D" parent="Panel_Yell"]
 material = SubResource("ShaderMaterial_6gv85")
-position = Vector2(184, 735)
+position = Vector2(-1408, -709)
 texture = ExtResource("17_ab6w5")
 
-[node name="StoryPanelInsideTempleChasingV_01" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_rrse1")
-position = Vector2(1749, 370)
-texture = ExtResource("18_ptahb")
+[node name="Area2D" type="Area2D" parent="Panel_Yell"]
 
-[node name="StoryPanelInsideTempleCatStatueV_01" type="Sprite2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel_Yell/Area2D"]
+position = Vector2(-1410.25, -707.75)
+shape = SubResource("RectangleShape2D_h6445")
+
+[node name="Panel_Pray" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
+visible = false
+position = Vector2(1920, 1080)
+script = ExtResource("16_h6445")
+dialog_lines = Array[String](["..."])
+dialog_position_Array = Array[Vector2]([Vector2(650, 600)])
+cooldown_time = 10000.0
+will_reveal_object = true
+reveal_panel = NodePath("../Panel_Run")
+
+[node name="StoryPanelInsideTempleCatStatueV_01" type="Sprite2D" parent="Panel_Pray"]
 material = SubResource("ShaderMaterial_x8ipv")
-position = Vector2(1751, 841)
+position = Vector2(-1436, -234)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("19_rrse1")
 
+[node name="Area2D" type="Area2D" parent="Panel_Pray"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel_Pray/Area2D"]
+position = Vector2(-1432, -231.25)
+shape = SubResource("RectangleShape2D_b0y6l")
+
+[node name="Panel_Run" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+visible = false
+position = Vector2(1920, 1080)
+script = ExtResource("16_h6445")
+dialog_lines = Array[String](["..."])
+dialog_position_Array = Array[Vector2]([Vector2(300, 400)])
+cooldown_time = 10000.0
+will_reveal_object = true
+reveal_path = NodePath("../ChangeSceneDetector")
+
+[node name="StoryPanelInsideTempleChasingV_01" type="Sprite2D" parent="Panel_Run"]
+material = SubResource("ShaderMaterial_rrse1")
+position = Vector2(-1749, -364)
+texture = ExtResource("18_ptahb")
+
+[node name="Area2D" type="Area2D" parent="Panel_Run"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel_Run/Area2D"]
+position = Vector2(-1746.5, -359.25)
+shape = SubResource("RectangleShape2D_5qj8d")
+
 [node name="Player" parent="." instance=ExtResource("20_x8ipv")]
-position = Vector2(994, -291)
+position = Vector2(1308, -291)
 jump_force = 2500.0
 
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)
 script = ExtResource("21_m15tn")
-respawn_position = Vector2(1555, 821)
+respawn_position = Vector2(1308, -291)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
 position = Vector2(287.5, 47)
@@ -339,9 +416,11 @@ shape = SubResource("RectangleShape2D_gqu7t")
 position = Vector2(1338, -611.5)
 shape = SubResource("RectangleShape2D_dhksy")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("22_mtye2")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("22_mtye2")]
 position = Vector2(-88, 128)
-my_scene = "res://Scenes/levels/Chapter01_Prologue/1-7_Flee1.tscn"
+my_scene = "res://Scenes/levels/Chapter01_Prologue/1-6_Flee1.tscn"
+disable_on_default = true
+portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("23_dhksy")
@@ -350,6 +429,13 @@ script = ExtResource("23_dhksy")
 
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("25_h6445")]
 visible = false
+
+[node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("27_h6445")]
+offset_left = -210.0
+offset_top = -4.99994
+offset_right = -170.0
+offset_bottom = 35.0001
+scale = Vector2(10, 10)
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

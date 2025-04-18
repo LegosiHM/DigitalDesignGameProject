@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dcsqinws3turf"]
 
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="2_orc0u"]
-[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/change_scene_detector.tscn" id="3_i4q5w"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="3_i4q5w"]
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="3_v1hng"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="4_wd71n"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="5_qx2xe"]
@@ -90,7 +90,6 @@ offset_right = 99.0
 offset_bottom = 943.0
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("8_hwg8k")]
-visible = false
 offset_left = 2.0
 offset_top = -4.0
 offset_right = 1922.0

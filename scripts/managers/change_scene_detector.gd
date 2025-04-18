@@ -21,6 +21,7 @@ func _ready():
 func _process(delta):
 	if visible == true:
 		disable_on_default = false
+		#print("can see warp")
 		if portal_visual != null:
 			portal_visual.visible = true
 		
