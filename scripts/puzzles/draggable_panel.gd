@@ -25,8 +25,8 @@ func _ready() -> void:
 	respawn_manager = get_tree().current_scene.get_node("RespawnDetector")
 	respawn_position = respawn_manager.respawn_position #sometimes there is a bug here. Might need some fix later
 
-
 func _process(delta: float) -> void:
+	
 	check_overlap_area()
 	player_position = get_tree().current_scene.get_node("Player").global_position
 	

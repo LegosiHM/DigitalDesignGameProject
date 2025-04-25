@@ -8,19 +8,23 @@ extends Node2D
 @onready var area = $Area2D
 @onready var cooldown_timer = Timer.new()  
 
+
 var i = 0
 var dialog_active = false
-var can_interact = true  
+var can_interact = true
 
 @export var will_reveal_object = false
 @export var reveal_panel: Node2D
 @export var reveal_path: Area2D
 
 func _ready():
+	
 	area.input_event.connect(_on_input_event)  
 	add_child(cooldown_timer)  
 	cooldown_timer.one_shot = true  
 	cooldown_timer.timeout.connect(_reset_interaction)
+	
+	modulate = Color("333333")
 
 func _process(delta):
 	if visible:
@@ -28,10 +32,14 @@ func _process(delta):
 		set_process(false)
 	else:
 		can_interact = false
+			
+		
+		
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		if !can_interact or dialog_active:  
+		modulate = Color("ffffff")
+		if !can_interact or dialog_active:
 			return
 
 		_show_dialog()

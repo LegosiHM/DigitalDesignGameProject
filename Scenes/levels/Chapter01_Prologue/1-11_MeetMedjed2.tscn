@@ -25,6 +25,9 @@ size = Vector2(2204, 139.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0y2c"]
 size = Vector2(130, 1225)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujr4f"]
+size = Vector2(525, 465.5)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aoc2a"]
 shader = ExtResource("7_8cpil")
 shader_parameter/color = Color(0, 0, 0, 1)
@@ -32,9 +35,6 @@ shader_parameter/width = 18.0
 shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujr4f"]
-size = Vector2(525, 465.5)
 
 [node name="HighJumpPractice" type="Node2D"]
 
@@ -139,7 +139,7 @@ reveal_panel = NodePath("../draggablePanel")
 reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="StoryPanel_Priest" type="Sprite2D" parent="Panel_Medjed1"]
-material = SubResource("ShaderMaterial_aoc2a")
+z_index = 1
 position = Vector2(-1236, -382)
 scale = Vector2(1.43333, 0.531111)
 texture = ExtResource("8_4mfih")
@@ -149,6 +149,12 @@ texture = ExtResource("8_4mfih")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel_Medjed1/Area2D"]
 position = Vector2(-1230.5, -378.75)
 shape = SubResource("RectangleShape2D_ujr4f")
+
+[node name="StoryPanel_Priest2" type="Sprite2D" parent="Panel_Medjed1"]
+material = SubResource("ShaderMaterial_aoc2a")
+position = Vector2(-1236, -382)
+scale = Vector2(1.43333, 0.531111)
+texture = ExtResource("8_4mfih")
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

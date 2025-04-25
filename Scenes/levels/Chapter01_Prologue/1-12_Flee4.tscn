@@ -28,6 +28,9 @@ size = Vector2(2259, 137.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vaeto"]
 size = Vector2(160, 1355)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jxsg"]
+size = Vector2(736, 420)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gllmq"]
 shader = ExtResource("5_cdni2")
 shader_parameter/color = Color(0, 0, 0, 1)
@@ -35,9 +38,6 @@ shader_parameter/width = 10.0
 shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jxsg"]
-size = Vector2(736, 420)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qq3qd"]
 shader = ExtResource("8_a2fcq")
@@ -95,7 +95,7 @@ dialog_position_Array = Array[Vector2]([Vector2(800, 100), Vector2(1550, 350)])
 cooldown_time = 10000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Merchants"]
-material = SubResource("ShaderMaterial_gllmq")
+z_index = 1
 position = Vector2(1430, 390)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("6_ml2dw")
@@ -106,6 +106,12 @@ texture = ExtResource("6_ml2dw")
 position = Vector2(1429, 391)
 shape = SubResource("RectangleShape2D_8jxsg")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Merchants"]
+material = SubResource("ShaderMaterial_gllmq")
+position = Vector2(1430, 390)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("6_ml2dw")
+
 [node name="Bazaar" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
 script = ExtResource("4_wo0xv")
 dialog_lines = Array[String](["..."])
@@ -114,7 +120,7 @@ will_reveal_object = true
 reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="Panel_Bazaar" type="Sprite2D" parent="Bazaar"]
-material = SubResource("ShaderMaterial_qq3qd")
+z_index = 1
 position = Vector2(565.5, 748)
 scale = Vector2(1.63778, 1.47407)
 texture = ExtResource("9_nx3yu")
@@ -124,6 +130,12 @@ texture = ExtResource("9_nx3yu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bazaar/Area2D"]
 position = Vector2(570, 759)
 shape = SubResource("RectangleShape2D_8jxsg")
+
+[node name="Panel_Bazaar2" type="Sprite2D" parent="Bazaar"]
+material = SubResource("ShaderMaterial_qq3qd")
+position = Vector2(565.5, 748)
+scale = Vector2(1.63778, 1.47407)
+texture = ExtResource("9_nx3yu")
 
 [node name="Panel" parent="." instance=ExtResource("7_4nq8k")]
 position = Vector2(-1, 339)

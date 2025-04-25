@@ -288,29 +288,41 @@ shape = SubResource("RectangleShape2D_jtlif")
 position = Vector2(960, 540)
 texture = ExtResource("1_75b0w")
 
-[node name="GateKeeper01" type="Node2D" parent="."]
-position = Vector2(76, 421)
-
-[node name="Sprite2D" type="Sprite2D" parent="GateKeeper01"]
-material = SubResource("ShaderMaterial_aavoo")
-position = Vector2(1041, 407)
-scale = Vector2(1.05667, 1.02222)
-texture = ExtResource("2_uirqt")
-
-[node name="GateKeeper02" type="Node2D" parent="."]
-position = Vector2(16, 191)
-
-[node name="Sprite2D" type="Sprite2D" parent="GateKeeper02"]
-material = SubResource("ShaderMaterial_4ijxj")
-position = Vector2(1380.5, 305.5)
-scale = Vector2(0.913333, 1.01852)
-texture = ExtResource("3_ovm5x")
-
 [node name="Panel_Gatekeeper" type="Node2D" parent="."]
 position = Vector2(1920, 1080)
 script = ExtResource("26_df7tg")
 dialog_lines = Array[String](["...", "...", "...", "..."])
 dialog_position_Array = Array[Vector2]([Vector2(650, 550), Vector2(900, 300), Vector2(650, 550), Vector2(650, 550)])
+
+[node name="GateKeeper01" type="Node2D" parent="Panel_Gatekeeper"]
+position = Vector2(-1844, -659)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_Gatekeeper/GateKeeper01"]
+z_index = 1
+position = Vector2(1041, 407)
+scale = Vector2(1.05667, 1.02222)
+texture = ExtResource("2_uirqt")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_Gatekeeper/GateKeeper01"]
+material = SubResource("ShaderMaterial_aavoo")
+position = Vector2(1041, 407)
+scale = Vector2(1.05667, 1.02222)
+texture = ExtResource("2_uirqt")
+
+[node name="GateKeeper02" type="Node2D" parent="Panel_Gatekeeper"]
+position = Vector2(-1904, -889)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_Gatekeeper/GateKeeper02"]
+z_index = 1
+position = Vector2(1380.5, 305.5)
+scale = Vector2(0.913333, 1.01852)
+texture = ExtResource("3_ovm5x")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_Gatekeeper/GateKeeper02"]
+material = SubResource("ShaderMaterial_4ijxj")
+position = Vector2(1380.5, 305.5)
+scale = Vector2(0.913333, 1.01852)
+texture = ExtResource("3_ovm5x")
 
 [node name="Area2D" type="Area2D" parent="Panel_Gatekeeper"]
 

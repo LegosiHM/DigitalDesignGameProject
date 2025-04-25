@@ -26,6 +26,9 @@ size = Vector2(183, 1209)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir143"]
 size = Vector2(2259, 137.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2w07"]
+size = Vector2(736, 420)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tjq7w"]
 shader = ExtResource("6_b1m8i")
 shader_parameter/color = Color(0, 0, 0, 1)
@@ -33,9 +36,6 @@ shader_parameter/width = 10.0
 shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2w07"]
-size = Vector2(736, 420)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fxv5w"]
 shader = ExtResource("9_yxj02")
@@ -122,7 +122,7 @@ dialog_position_Array = Array[Vector2]([Vector2(800, 100), Vector2(1550, 350)])
 cooldown_time = 10000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Merchants2"]
-material = SubResource("ShaderMaterial_tjq7w")
+z_index = 1
 position = Vector2(1430, 390)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("7_n671r")
@@ -133,14 +133,19 @@ texture = ExtResource("7_n671r")
 position = Vector2(1429, 391)
 shape = SubResource("RectangleShape2D_h2w07")
 
-[node name="Bazaar2" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+[node name="Sprite2D2" type="Sprite2D" parent="Merchants2"]
+material = SubResource("ShaderMaterial_tjq7w")
+position = Vector2(1430, 390)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("7_n671r")
+
+[node name="Bazaar2" type="Node2D" parent="."]
 script = ExtResource("5_3vw8x")
 dialog_lines = Array[String](["..."])
 dialog_position_Array = Array[Vector2]([Vector2(600, 600)])
-reveal_path = NodePath("")
 
 [node name="Panel_Bazaar" type="Sprite2D" parent="Bazaar2"]
-material = SubResource("ShaderMaterial_fxv5w")
+z_index = 1
 position = Vector2(565.5, 748)
 scale = Vector2(1.63778, 1.47407)
 texture = ExtResource("10_dj4mr")
@@ -150,6 +155,12 @@ texture = ExtResource("10_dj4mr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bazaar2/Area2D"]
 position = Vector2(570, 759)
 shape = SubResource("RectangleShape2D_h2w07")
+
+[node name="Panel_Bazaar2" type="Sprite2D" parent="Bazaar2"]
+material = SubResource("ShaderMaterial_fxv5w")
+position = Vector2(565.5, 748)
+scale = Vector2(1.63778, 1.47407)
+texture = ExtResource("10_dj4mr")
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

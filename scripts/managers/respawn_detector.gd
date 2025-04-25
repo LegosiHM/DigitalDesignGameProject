@@ -4,6 +4,7 @@ extends Area2D
 var entered := false
 var effect_running := false
 
+
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	entered = true
 

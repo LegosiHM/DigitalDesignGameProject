@@ -1,8 +1,8 @@
-[gd_scene load_steps=51 format=3 uid="uid://bbkm28l77chqh"]
+[gd_scene load_steps=50 format=3 uid="uid://bbkm28l77chqh"]
 
 [ext_resource type="Texture2D" uid="uid://d11pmosyoyoot" path="res://assets/sprites/chapter 1/background/BG_Temple_Evening_v01.PNG" id="1_h6445"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="2_7kt35"]
-[ext_resource type="Shader" uid="uid://ray55c0pgeoq" path="res://scripts/shaders/Outliner_Shadow.gdshader" id="3_ptahb"]
+[ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/mechanics/Draggable_Panel.tscn" id="3_h6445"]
 [ext_resource type="Texture2D" uid="uid://c6ujdl4ss5orw" path="res://assets/sprites/chapter 1/story panel/StoryPanel_ InsideTemple_Ritual _v.01.PNG" id="4_rrse1"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="5_x8ipv"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="6_m15tn"]
@@ -231,16 +231,6 @@ sources/8 = SubResource("TileSetAtlasSource_g5h3k")
 sources/9 = SubResource("TileSetAtlasSource_kwd4o")
 sources/1 = SubResource("TileSetAtlasSource_e6l5g")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x76qa"]
-shader = ExtResource("3_ptahb")
-shader_parameter/drop_shadow_color = Color(0, 0, 0, 0.5)
-shader_parameter/shadow_offset = Vector2(-0.025, 0.05)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_width = 15.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = false
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xe81i"]
 size = Vector2(1180.5, 903)
 
@@ -255,18 +245,10 @@ shader_parameter/add_margins = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6445"]
 size = Vector2(292.5, 551.5)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8ipv"]
-shader = ExtResource("16_jo4no")
-shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/width = 15.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0y6l"]
 size = Vector2(280, 340.5)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrse1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8ipv"]
 shader = ExtResource("16_jo4no")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 15.0
@@ -276,6 +258,14 @@ shader_parameter/add_margins = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qj8d"]
 size = Vector2(281, 542.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrse1"]
+shader = ExtResource("16_jo4no")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 15.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtye2"]
 size = Vector2(1927, 154)
@@ -297,6 +287,11 @@ texture = ExtResource("1_h6445")
 
 [node name="UI" parent="." instance=ExtResource("2_7kt35")]
 
+[node name="draggablePanel" parent="." instance=ExtResource("3_h6445")]
+visible = false
+z_index = 2
+position = Vector2(507, 579)
+
 [node name="PlatformPanel" parent="." instance=ExtResource("5_x8ipv")]
 position = Vector2(-575, 104)
 tile_set = SubResource("TileSet_voep8")
@@ -305,7 +300,7 @@ layer_0/tile_data = PackedInt32Array(131078, 0, 3, 131079, 0, 3, 131080, 0, 3, 1
 [node name="Outline" parent="PlatformPanel" instance=ExtResource("5_x8ipv")]
 position = Vector2(497, 137)
 tile_set = SubResource("TileSet_voep8")
-layer_0/tile_data = PackedInt32Array(-131068, 327681, 0, -131069, 262145, 0, -131070, 262145, 0, -131071, 262145, 0, -131072, 262145, 0, -65532, 327681, 1, 4, 327681, 1, 65540, 327681, 5, 65539, 262145, 5, 65538, 262145, 5, 65537, 262145, 5, 65536, 262145, 5)
+layer_0/tile_data = PackedInt32Array(-131068, 327681, 0, -131069, 262145, 0, -131070, 262145, 0, -131071, 262145, 0, -131072, 262145, 0, -65532, 327681, 1, 4, 327681, 1, 65538, 262145, 5, 65537, 262145, 5, 65536, 262145, 5, 65540, 327681, 5, 65539, 262145, 5)
 
 [node name="Panel_Ritual" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
 position = Vector2(1920, 1080)
@@ -317,15 +312,21 @@ will_reveal_object = true
 reveal_panel = NodePath("../Panel_Yell")
 
 [node name="StroyPanel_Ritual" type="Sprite2D" parent="Panel_Ritual"]
-material = SubResource("ShaderMaterial_x76qa")
+z_index = 1
 position = Vector2(-643, -529)
 texture = ExtResource("4_rrse1")
 
 [node name="Area2D" type="Area2D" parent="Panel_Ritual"]
+z_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel_Ritual/Area2D"]
 position = Vector2(-639, -530.5)
 shape = SubResource("RectangleShape2D_xe81i")
+
+[node name="StroyPanel_Ritual2" type="Sprite2D" parent="Panel_Ritual"]
+material = SubResource("ShaderMaterial_6gv85")
+position = Vector2(-643, -529)
+texture = ExtResource("4_rrse1")
 
 [node name="Panel_Yell" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
 visible = false
@@ -338,7 +339,7 @@ will_reveal_object = true
 reveal_panel = NodePath("../Panel_Pray")
 
 [node name="StoryPanelInsideTempleInsultingV_01" type="Sprite2D" parent="Panel_Yell"]
-material = SubResource("ShaderMaterial_6gv85")
+z_index = 1
 position = Vector2(-1408, -709)
 texture = ExtResource("17_ab6w5")
 
@@ -347,6 +348,11 @@ texture = ExtResource("17_ab6w5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel_Yell/Area2D"]
 position = Vector2(-1410.25, -707.75)
 shape = SubResource("RectangleShape2D_h6445")
+
+[node name="StoryPanelInsideTempleInsultingV_02" type="Sprite2D" parent="Panel_Yell"]
+material = SubResource("ShaderMaterial_6gv85")
+position = Vector2(-1408, -709)
+texture = ExtResource("17_ab6w5")
 
 [node name="Panel_Pray" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
 visible = false
@@ -359,7 +365,7 @@ will_reveal_object = true
 reveal_panel = NodePath("../Panel_Run")
 
 [node name="StoryPanelInsideTempleCatStatueV_01" type="Sprite2D" parent="Panel_Pray"]
-material = SubResource("ShaderMaterial_x8ipv")
+z_index = 1
 position = Vector2(-1436, -234)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("19_rrse1")
@@ -370,7 +376,13 @@ texture = ExtResource("19_rrse1")
 position = Vector2(-1432, -231.25)
 shape = SubResource("RectangleShape2D_b0y6l")
 
-[node name="Panel_Run" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+[node name="StoryPanelInsideTempleCatStatueV_02" type="Sprite2D" parent="Panel_Pray"]
+material = SubResource("ShaderMaterial_x8ipv")
+position = Vector2(-1436, -234)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("19_rrse1")
+
+[node name="Panel_Run" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel", "reveal_path")]
 visible = false
 position = Vector2(1920, 1080)
 script = ExtResource("16_h6445")
@@ -378,10 +390,11 @@ dialog_lines = Array[String](["..."])
 dialog_position_Array = Array[Vector2]([Vector2(300, 400)])
 cooldown_time = 10000.0
 will_reveal_object = true
+reveal_panel = NodePath("../draggablePanel")
 reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="StoryPanelInsideTempleChasingV_01" type="Sprite2D" parent="Panel_Run"]
-material = SubResource("ShaderMaterial_rrse1")
+z_index = 1
 position = Vector2(-1749, -364)
 texture = ExtResource("18_ptahb")
 
@@ -391,9 +404,13 @@ texture = ExtResource("18_ptahb")
 position = Vector2(-1746.5, -359.25)
 shape = SubResource("RectangleShape2D_5qj8d")
 
+[node name="StoryPanelInsideTempleChasingV_02" type="Sprite2D" parent="Panel_Run"]
+material = SubResource("ShaderMaterial_rrse1")
+position = Vector2(-1749, -364)
+texture = ExtResource("18_ptahb")
+
 [node name="Player" parent="." instance=ExtResource("20_x8ipv")]
 position = Vector2(1308, -291)
-jump_force = 2500.0
 
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)

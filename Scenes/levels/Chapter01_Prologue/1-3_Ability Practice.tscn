@@ -30,18 +30,10 @@ size = Vector2(2320, 181.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctvnn"]
 size = Vector2(209, 378)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6su7"]
-shader = ExtResource("5_wfnga")
-shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/width = 18.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tpl8"]
 size = Vector2(245, 637)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dgnu4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6su7"]
 shader = ExtResource("5_wfnga")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 18.0
@@ -51,6 +43,14 @@ shader_parameter/add_margins = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4uv5w"]
 size = Vector2(505, 327.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dgnu4"]
+shader = ExtResource("5_wfnga")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 18.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
 
 [node name="AbilityPractice" type="Node2D"]
 
@@ -122,7 +122,7 @@ will_reveal_object = true
 reveal_panel = NodePath("../Panel_PriestGlare")
 
 [node name="StoryPanel_Priest" type="Sprite2D" parent="Panel_Priest"]
-material = SubResource("ShaderMaterial_q6su7")
+z_index = 1
 position = Vector2(208, -35)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_w0t8t")
@@ -132,6 +132,12 @@ texture = ExtResource("2_w0t8t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel_Priest/Area2D"]
 position = Vector2(209.5, -35.5)
 shape = SubResource("RectangleShape2D_8tpl8")
+
+[node name="StoryPanel_Priest2" type="Sprite2D" parent="Panel_Priest"]
+material = SubResource("ShaderMaterial_q6su7")
+position = Vector2(208, -35)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_w0t8t")
 
 [node name="Panel_PriestGlare" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
 visible = false
@@ -143,7 +149,7 @@ will_reveal_object = true
 reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="StoryPanel_PriestGlaring" type="Sprite2D" parent="Panel_PriestGlare"]
-material = SubResource("ShaderMaterial_dgnu4")
+z_index = 1
 position = Vector2(-305, -674)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_h202d")
@@ -153,6 +159,12 @@ texture = ExtResource("4_h202d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel_PriestGlare/Area2D"]
 position = Vector2(-303.5, -673.75)
 shape = SubResource("RectangleShape2D_4uv5w")
+
+[node name="StoryPanel_PriestGlaring2" type="Sprite2D" parent="Panel_PriestGlare"]
+material = SubResource("ShaderMaterial_dgnu4")
+position = Vector2(-305, -674)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_h202d")
 
 [node name="Draggable_Panel" parent="." instance=ExtResource("5_gmthw")]
 z_index = 5
