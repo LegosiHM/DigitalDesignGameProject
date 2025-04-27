@@ -39,6 +39,10 @@ var current_energy: int = max_energy
 var restore_energy: bool = true
 var is_dragging_panel: bool = false
 
+@export_group("Motorcycle Boost Settings")
+@export var boost_multiplier: float = 1.5  # How much faster than max_speed to overshoot
+@export var boost_decay_speed: float = 8.0  # How fast the overshoot fades back to max_speed
+
 @onready var idle_sprite: AnimatedSprite2D = $IdleSprite
 var facing_direction := 1
 
@@ -228,8 +232,20 @@ func get_input_direction() -> Vector2:
 	return Vector2(x_dir if joystick_movement else sign(x_dir), y_dir if joystick_movement else sign(y_dir))
 
 func apply_velocity(delta: float, move_direction: Vector2) -> void:
+	# Accelerate as usual
 	velocity.x += move_direction.x * acceleration * delta
-	velocity.x = clamp(velocity.x, -max_speed * abs(move_direction.x), max_speed * abs(move_direction.x))
+	
+	# Overshoot limit (boost phase)
+	var boosted_speed = max_speed * boost_multiplier
+	
+	# Check if we are overshooting the normal max_speed
+	if abs(velocity.x) > max_speed:
+		# If we're in the boosted zone, apply damping to slow toward max_speed
+		velocity.x = lerp(velocity.x, max_speed * sign(velocity.x), boost_decay_speed * delta)
+	
+	# Clamp in case it still goes too far (safety net)
+	velocity.x = clamp(velocity.x, -boosted_speed, boosted_speed)
+
 
 func cancel_jump(delta: float) -> void:
 	jumping = false
