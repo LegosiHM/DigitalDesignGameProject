@@ -11,7 +11,19 @@ var target_positions = []  # Stores the final position of each panel
 var entry_directions = []  # Controls if a panel enters from left (-1) or right (1)
 var current_panel_index = -1  # Tracks the current panel being displayed
 
+@export var idle_time_threshold: float = 3.0
+@export var blink_speed: float = 2.0  # How fast it blinks (up and down)
+@export var target_opacity: float = 0.5  # Max opacity (50%)
+
+var idle_timer: float = 0.0
+var reminder_visible: bool = false
+var fade_in_progress: bool = false
+var current_opacity: float = 0.0
+
+@onready var reminder_label = $ReminderLabel
+
 func _ready():
+	reminder_label.modulate.a = 0.0
 	panels = panel_container.get_children()
 
 	if panels.size() == 0:
@@ -63,3 +75,31 @@ func show_next_panel():
 		if current_panel_index + 1 >= panels.size():
 			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/cutscenes/Chapter-1_Comic_Cutscene_2.tscn")
+
+func _process(delta: float):
+	if Input.is_action_just_pressed("click"):
+		idle_timer = 0.0
+		if reminder_visible:
+			reminder_visible = false
+			fade_in_progress = false
+			reminder_label.modulate.a = 0.0  # Hide immediately
+	else:
+		idle_timer += delta
+		if idle_timer >= idle_time_threshold:
+			if not reminder_visible:
+				reminder_visible = true
+				fade_in_progress = true
+				current_opacity = 0.0  # Start fade-in from 0
+	
+	# Handle fade-in and blinking
+	if reminder_visible:
+		if fade_in_progress:
+			current_opacity += delta  # Adjust speed if needed
+			var alpha = clamp(current_opacity, 0.0, target_opacity)
+			reminder_label.modulate.a = alpha
+			if alpha >= target_opacity:
+				fade_in_progress = false  # Done fading in
+		else:
+			# Blinking (opacity going up and down smoothly)
+			var blink_opacity = 1 + (target_opacity - 1) * (0.5 + 0.5 * sin(blink_speed * Time.get_ticks_msec() / 1000.0))
+			reminder_label.modulate.a = blink_opacity

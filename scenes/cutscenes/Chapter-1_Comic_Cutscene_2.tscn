@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2uha3sy1b15v"]
+[gd_scene load_steps=13 format=3 uid="uid://c2uha3sy1b15v"]
 
 [ext_resource type="Script" uid="uid://kuj43c6cuhor" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_2.gd" id="1_3r1wt"]
 [ext_resource type="Texture2D" uid="uid://bwc3jst7tahvd" path="res://assets/sprites/PaperTexture.jpg" id="2_4s635"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b6xeovoiklyny" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_07.PNG" id="5_4uw36"]
 [ext_resource type="Texture2D" uid="uid://drjy1qggto88l" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_08.PNG" id="6_8xql8"]
 [ext_resource type="Texture2D" uid="uid://ccirv0yytjta4" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_09.PNG" id="7_r6ypr"]
+[ext_resource type="Texture2D" uid="uid://b2hctaoc42p0v" path="res://assets/UI/Group 1.png" id="8_yu4up"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dryie"]
 shader = ExtResource("3_oqqvh")
@@ -96,3 +97,8 @@ offset_top = 525.0
 offset_right = 1840.0
 offset_bottom = 1025.0
 texture = ExtResource("7_r6ypr")
+
+[node name="ReminderLabel" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.521569)
+position = Vector2(1828, 876)
+texture = ExtResource("8_yu4up")

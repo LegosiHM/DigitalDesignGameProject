@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7cvfgseaehsw"]
+[gd_scene load_steps=8 format=3 uid="uid://c7cvfgseaehsw"]
 
 [ext_resource type="Script" uid="uid://b8avkq7tkggyk" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_4.gd" id="1_tdwa7"]
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="2_i3jja"]
 [ext_resource type="Texture2D" uid="uid://c8qsv6lh4yiwv" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_12_v1.png" id="3_abyf6"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="4_m0hhn"]
 [ext_resource type="Texture2D" uid="uid://d3me73s7gpvwd" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_13.PNG" id="5_i4e8i"]
+[ext_resource type="Texture2D" uid="uid://b2hctaoc42p0v" path="res://assets/UI/Group 1.png" id="6_bayqu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5oym5"]
 shader = ExtResource("4_m0hhn")
@@ -51,3 +52,8 @@ offset_top = 800.0
 offset_right = 1850.0
 offset_bottom = 1050.0
 texture = ExtResource("5_i4e8i")
+
+[node name="ReminderLabel" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.521569)
+position = Vector2(1828, 876)
+texture = ExtResource("6_bayqu")
