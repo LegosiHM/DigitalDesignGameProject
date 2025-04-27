@@ -22,9 +22,19 @@ var current_opacity: float = 0.0
 
 @onready var reminder_label = $ReminderLabel
 
+var skip_timer: float = 0.0
+var holding_skip: bool = false
+
+@onready var skip_ring: TextureProgressBar = $SkipRing
+@onready var skip_label: Label = $SkipLabel
+
 func _ready():
 	reminder_label.modulate.a = 0.0
 	panels = panel_container.get_children()
+	
+	skip_ring.visible = false
+	skip_ring.value = 0
+	skip_label.visible = false
 
 	if panels.size() == 0:
 		print("⚠ ERROR: No panels found! Make sure PanelContainer has children.")
@@ -103,3 +113,31 @@ func _process(delta: float):
 			# Blinking (opacity going up and down smoothly)
 			var blink_opacity = 1 + (target_opacity - 1) * (0.5 + 0.5 * sin(blink_speed * Time.get_ticks_msec() / 1000.0))
 			reminder_label.modulate.a = blink_opacity
+	
+	# ===========================
+	# ESC Hold-to-Skip Logic Fixed
+	# ===========================
+	if not holding_skip and Input.is_action_pressed("ui_cancel"):
+		holding_skip = true
+		skip_ring.visible = true
+		skip_label.visible = true  # Show the "Skip" label
+
+	if holding_skip:
+		if Input.is_action_pressed("ui_cancel"):
+			skip_timer += delta
+			skip_ring.value = skip_timer
+		
+		if skip_timer >= 2.0:
+			skip_cutscene()  # Directly skip without waiting for release!
+	else:
+		# Player let go early → reset everything
+		holding_skip = false
+		skip_timer = 0.0
+		skip_ring.value = 0
+		skip_ring.visible = false
+		skip_label.visible = false
+
+
+func skip_cutscene():
+	# You can adjust this to your next scene or however you handle cutscene end:
+	get_tree().change_scene_to_file("res://Scenes/levels/Chapter01_Prologue/1-1_Introduction.tscn")

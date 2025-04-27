@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2uha3sy1b15v"]
+[gd_scene load_steps=15 format=3 uid="uid://c2uha3sy1b15v"]
 
 [ext_resource type="Script" uid="uid://kuj43c6cuhor" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_2.gd" id="1_3r1wt"]
 [ext_resource type="Texture2D" uid="uid://bwc3jst7tahvd" path="res://assets/sprites/PaperTexture.jpg" id="2_4s635"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://drjy1qggto88l" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_08.PNG" id="6_8xql8"]
 [ext_resource type="Texture2D" uid="uid://ccirv0yytjta4" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_09.PNG" id="7_r6ypr"]
 [ext_resource type="Texture2D" uid="uid://b2hctaoc42p0v" path="res://assets/UI/Group 1.png" id="8_yu4up"]
+[ext_resource type="Texture2D" uid="uid://cvn11k7g1vipv" path="res://assets/UI/Ellipse 1.png" id="9_511ak"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="10_suhqb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dryie"]
 shader = ExtResource("3_oqqvh")
@@ -102,3 +104,25 @@ texture = ExtResource("7_r6ypr")
 modulate = Color(1, 1, 1, 0.521569)
 position = Vector2(1828, 876)
 texture = ExtResource("8_yu4up")
+
+[node name="SkipRing" type="TextureProgressBar" parent="."]
+offset_left = 1741.0
+offset_top = 29.0
+offset_right = 1791.0
+offset_bottom = 79.0
+max_value = 2.0
+step = 0.01
+fill_mode = 5
+texture_progress = ExtResource("9_511ak")
+tint_under = Color(0, 0, 0, 1)
+
+[node name="SkipLabel" type="Label" parent="."]
+offset_left = 1797.0
+offset_top = 14.0
+offset_right = 1900.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.385493, 0.385492, 0.385492, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_suhqb")
+theme_override_font_sizes/font_size = 50
+text = "SKIP"
