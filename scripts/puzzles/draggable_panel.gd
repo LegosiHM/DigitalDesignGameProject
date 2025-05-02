@@ -16,6 +16,9 @@ var respawn_manager
 var respawn_position
 var player_position
 
+#if stuck on Collider
+@export var stuckOnCollider = false
+
 var velocity = Vector2.ZERO
 
 var effect_running := false
@@ -47,7 +50,15 @@ func _process(delta: float) -> void:
 			global_position = global_position.move_toward(new_position, (illegalDragging_speed if collide else normalDragging_speed) * delta)
 	
 	elif returning:
-		global_position = global_position.move_toward(original_position, return_speed * delta)
+		if(stuckOnCollider):
+			if(collide):
+				global_position = global_position.move_toward(original_position, return_speed * delta)
+				global_position = global_position.move_toward(original_position, -return_speed*delta)
+			else:
+				global_position = global_position.move_toward(original_position, return_speed * delta)
+		else:
+			global_position = global_position.move_toward(original_position, return_speed * delta)
+		
 		if global_position.distance_to(original_position) < 1.0:
 			returning = false
 			global_position = original_position

@@ -1,7 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://0ew4v68aj6a8"]
+[gd_scene load_steps=39 format=3 uid="uid://0ew4v68aj6a8"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_7242q"]
-[ext_resource type="PackedScene" uid="uid://bdjoj5en38q4p" path="res://Scenes/managers/change_scene_detector.tscn" id="2_vivsh"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_vivsh"]
 [ext_resource type="Texture2D" uid="uid://cgx71tum7x2vc" path="res://assets/sprites/chapter 1/background/BG_Temple_Day_v01.PNG" id="3_vivsh"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_bcjvt"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_sk5dt"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://b8t5wpi35pset" path="res://Scenes/mechanics/CH2_Draggable_Panel.tscn" id="21_7242q"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="21_llyv8"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="22_vivsh"]
+[ext_resource type="PackedScene" uid="uid://c4hm6pp78ao00" path="res://Scenes/mechanics/CH2_Stuckable_Draggable_Panel.tscn" id="23_llyv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -258,7 +259,7 @@ shape = SubResource("RectangleShape2D_ne1c2")
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("2_vivsh")]
 z_index = 10
 position = Vector2(1934, 1387)
-my_scene = "res://Scenes/levels/Chapter02_Kernel/2-10_MeetCouple2.tscn"
+my_scene = "res://Scenes/levels/Chapter02_Kernel/2-12_InTemple1.tscn"
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(13, -867)
@@ -273,7 +274,7 @@ modulate = Color(0.803922, 0.803922, 0.803922, 1)
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
 tile_set = SubResource("TileSet_vfyhx")
-layer_0/tile_data = PackedInt32Array(589848, 9, 3, 589849, 65545, 3, 589850, 131081, 3, 589851, 196617, 3, 589852, 262153, 3, 589829, 327689, 3, 655359, 7, 3, 589824, 9, 3, 589825, 65545, 3, 589826, 131081, 3, 589827, 196617, 3, 589828, 262153, 3, 655384, 131079, 3, 655385, 131079, 3, 655386, 131079, 3, 655387, 131079, 3, 655388, 131079, 3, 720895, 131079, 3, 655360, 131079, 3, 655361, 131079, 3, 655362, 131079, 3, 655363, 131079, 3, 655364, 131079, 3, 655365, 131079, 3, 589847, 458761, 3, 589846, 393225, 3, 655382, 131079, 3, 655383, 131079, 3, 327703, 131075, 3, 393239, 131075, 3, 458775, 131075, 3, 524311, 131075, 3, 327706, 131075, 3, 393242, 131075, 3, 458778, 131075, 3, 524314, 131075, 3, 327702, 131075, 3, 393238, 131075, 3, 458774, 131075, 3, 524310, 131075, 3, 327705, 131075, 3, 393241, 131075, 3, 458777, 131075, 3, 524313, 131075, 3, 589844, 393225, 3, 655380, 131079, 3, 589845, 458761, 3, 655381, 131079, 3)
+layer_0/tile_data = PackedInt32Array(589848, 9, 3, 589849, 65545, 3, 589850, 131081, 3, 589851, 196617, 3, 589852, 262153, 3, 589829, 327689, 3, 655359, 7, 3, 589824, 9, 3, 589825, 65545, 3, 589826, 131081, 3, 589827, 196617, 3, 589828, 262153, 3, 655384, 131079, 3, 655385, 131079, 3, 655386, 131079, 3, 655387, 131079, 3, 655388, 131079, 3, 720895, 131079, 3, 655360, 131079, 3, 655361, 131079, 3, 655362, 131079, 3, 655363, 131079, 3, 655364, 131079, 3, 655365, 131079, 3, 589847, 458761, 3, 589846, 393225, 3, 655382, 131079, 3, 655383, 131079, 3, 327703, 131075, 3, 393239, 131075, 3, 458775, 131075, 3, 524311, 131075, 3, 327706, 131075, 3, 393242, 131075, 3, 458778, 131075, 3, 524314, 131075, 3, 327702, 131075, 3, 393238, 131075, 3, 458774, 131075, 3, 524310, 131075, 3, 327705, 131075, 3, 393241, 131075, 3, 458777, 131075, 3, 524313, 131075, 3, 589844, 393225, 3, 655380, 131079, 3, 589845, 458761, 3, 655381, 131079, 3, 524308, 131077, 3, 458772, 131077, 3, 393236, 131077, 3, 327700, 131077, 3, 262164, 131077, 3, 196628, 131077, 3, 131092, 131077, 3, 65556, 131077, 3, 655379, 131077, 3, 589843, 131077, 3, 524307, 131077, 3, 458771, 131077, 3, 393235, 131077, 3, 327699, 131077, 3, 262163, 131077, 3, 196627, 131077, 3, 131091, 131077, 3, 65555, 131077, 3, 19, 131077, 3, -65517, 131077, 3, -131053, 131077, 3, -131052, 131077, 3, -65516, 131077, 3, 20, 131077, 3)
 
 [node name="Outline" parent="Panel" instance=ExtResource("4_bcjvt")]
 position = Vector2(45, 44)
@@ -321,14 +322,6 @@ offset_bottom = 1089.0
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("21_llyv8")]
 visible = false
 
-[node name="draggablePanel" parent="." instance=ExtResource("21_7242q")]
-position = Vector2(437, 500)
-scale = Vector2(0.5, 0.5)
-
-[node name="draggablePanel2" parent="." instance=ExtResource("21_7242q")]
-position = Vector2(437, 855)
-scale = Vector2(0.5, 0.5)
-
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
 
 [node name="StaticPanelCollision3" parent="PanelCollsionContainer" instance=ExtResource("22_vivsh")]
@@ -350,6 +343,19 @@ scale = Vector2(43.2211, -7.937)
 position = Vector2(1782, 1030)
 rotation = 3.14159
 scale = Vector2(43.2211, -7.937)
+
+[node name="StaticPanelCollision5" parent="PanelCollsionContainer" instance=ExtResource("22_vivsh")]
+position = Vector2(1351, 689)
+rotation = 3.14159
+scale = Vector2(6.741, -47.877)
+
+[node name="StuckablePanel2" parent="." instance=ExtResource("23_llyv8")]
+position = Vector2(542, 585)
+scale = Vector2(0.5, 0.5)
+
+[node name="draggablePanel" parent="." instance=ExtResource("21_7242q")]
+position = Vector2(541, 825)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
