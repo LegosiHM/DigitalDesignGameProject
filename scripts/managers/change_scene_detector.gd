@@ -24,6 +24,10 @@ func _process(delta):
 		#print("can see warp")
 		if portal_visual != null:
 			portal_visual.visible = true
+	
+	if (Input.is_key_pressed(KEY_P)):
+		start_scene_transition()
+		
 		
 # This function is triggered when a PhysicsBody2D (like a player) enters the Area2D.
 func _on_body_entered(body: PhysicsBody2D) -> void:

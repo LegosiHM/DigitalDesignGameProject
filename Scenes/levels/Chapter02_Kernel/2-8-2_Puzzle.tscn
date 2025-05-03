@@ -1,29 +1,28 @@
-[gd_scene load_steps=39 format=3 uid="uid://0ew4v68aj6a8"]
+[gd_scene load_steps=38 format=3 uid="uid://b3fg8d5sskwx0"]
 
-[ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_7242q"]
-[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_vivsh"]
-[ext_resource type="Texture2D" uid="uid://cgx71tum7x2vc" path="res://assets/sprites/chapter 1/background/BG_Temple_Day_v01.PNG" id="3_vivsh"]
-[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_bcjvt"]
-[ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_sk5dt"]
-[ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="6_eai0f"]
-[ext_resource type="Texture2D" uid="uid://d0ghbyaweujm2" path="res://assets/sprites/chapter 1/tileset/Panel_Background_v01.PNG" id="7_7s8q5"]
-[ext_resource type="Texture2D" uid="uid://x465pcsbne4k" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v01.PNG" id="8_lugaw"]
-[ext_resource type="Texture2D" uid="uid://orvpm0ri6hum" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v01.PNG" id="9_c60vt"]
-[ext_resource type="Texture2D" uid="uid://dxkb0i8a7738a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v02.PNG" id="10_keoo6"]
-[ext_resource type="Texture2D" uid="uid://c0rgci0dd5se2" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v03.PNG" id="11_g82kt"]
-[ext_resource type="Texture2D" uid="uid://cs024ords13eo" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v04.PNG" id="12_6q1nn"]
-[ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="13_1x70y"]
-[ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="14_yf3dy"]
-[ext_resource type="Texture2D" uid="uid://b8uu3geiv8sd0" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Pillar_Day_v.01.PNG" id="15_y67aj"]
-[ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="16_nq60f"]
-[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="17_xv0bf"]
-[ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="18_1f60w"]
-[ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="19_0dqhw"]
-[ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="20_d1psb"]
-[ext_resource type="PackedScene" uid="uid://b8t5wpi35pset" path="res://Scenes/mechanics/CH2_Draggable_Panel.tscn" id="21_7242q"]
-[ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="21_llyv8"]
-[ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="22_vivsh"]
-[ext_resource type="PackedScene" uid="uid://c4hm6pp78ao00" path="res://Scenes/mechanics/CH2_Stuckable_Draggable_Panel.tscn" id="23_llyv8"]
+[ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_lrkdk"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_subok"]
+[ext_resource type="Texture2D" uid="uid://bjv33hau2hp0d" path="res://assets/sprites/chapter 2/assets/Bazaar/Background_BazaarCH.2_v01.PNG" id="3_c7h28"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_x3dna"]
+[ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_e8q2y"]
+[ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="6_7gvvb"]
+[ext_resource type="Texture2D" uid="uid://d0ghbyaweujm2" path="res://assets/sprites/chapter 1/tileset/Panel_Background_v01.PNG" id="7_m7hm0"]
+[ext_resource type="Texture2D" uid="uid://x465pcsbne4k" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v01.PNG" id="8_ruv3k"]
+[ext_resource type="Texture2D" uid="uid://orvpm0ri6hum" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v01.PNG" id="9_yyxfo"]
+[ext_resource type="Texture2D" uid="uid://dxkb0i8a7738a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v02.PNG" id="10_jxa77"]
+[ext_resource type="Texture2D" uid="uid://c0rgci0dd5se2" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v03.PNG" id="11_k5gkt"]
+[ext_resource type="Texture2D" uid="uid://cs024ords13eo" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v04.PNG" id="12_vjeur"]
+[ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="13_5jw8n"]
+[ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="14_2y0xi"]
+[ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="15_cmlyr"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="16_j16i0"]
+[ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="17_aw16i"]
+[ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="18_hay25"]
+[ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="19_43cae"]
+[ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="20_k5edl"]
+[ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="21_7qrq3"]
+[ext_resource type="PackedScene" uid="uid://c4hm6pp78ao00" path="res://Scenes/mechanics/CH2_Stuckable_Draggable_Panel.tscn" id="22_k33y5"]
+[ext_resource type="PackedScene" uid="uid://b8t5wpi35pset" path="res://Scenes/mechanics/CH2_Draggable_Panel.tscn" id="23_subok"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -35,7 +34,7 @@ size = Vector2(2259, 137.25)
 size = Vector2(199, 1115.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oe17k"]
-texture = ExtResource("5_sk5dt")
+texture = ExtResource("5_e8q2y")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -55,7 +54,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pvje2"]
-texture = ExtResource("6_eai0f")
+texture = ExtResource("6_7gvvb")
 texture_region_size = Vector2i(90, 90)
 0:0/0 = 0
 1:0/0 = 0
@@ -79,12 +78,12 @@ texture_region_size = Vector2i(90, 90)
 5:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o4l4y"]
-texture = ExtResource("7_7s8q5")
+texture = ExtResource("7_m7hm0")
 texture_region_size = Vector2i(90, 90)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g3tgw"]
-texture = ExtResource("8_lugaw")
+texture = ExtResource("8_ruv3k")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -104,7 +103,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s8hek"]
-texture = ExtResource("9_c60vt")
+texture = ExtResource("9_yyxfo")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -124,7 +123,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hl87s"]
-texture = ExtResource("10_keoo6")
+texture = ExtResource("10_jxa77")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -144,7 +143,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vbmdj"]
-texture = ExtResource("11_g82kt")
+texture = ExtResource("11_k5gkt")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -164,7 +163,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qarcb"]
-texture = ExtResource("12_6q1nn")
+texture = ExtResource("12_vjeur")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -184,7 +183,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnskw"]
-texture = ExtResource("13_1x70y")
+texture = ExtResource("13_5jw8n")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -204,7 +203,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxuhn"]
-texture = ExtResource("14_yf3dy")
+texture = ExtResource("14_2y0xi")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -237,11 +236,11 @@ sources/8 = SubResource("TileSetAtlasSource_cnskw")
 sources/9 = SubResource("TileSetAtlasSource_wxuhn")
 sources/1 = SubResource("TileSetAtlasSource_pvje2")
 
-[node name="2-11MeetCouple3" type="Node2D"]
+[node name="2-8GoToTown" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)
-script = ExtResource("1_7242q")
+script = ExtResource("1_lrkdk")
 respawn_position = Vector2(162, 837)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
@@ -256,31 +255,32 @@ shape = SubResource("RectangleShape2D_l45ed")
 position = Vector2(-806, -526)
 shape = SubResource("RectangleShape2D_ne1c2")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_vivsh")]
+[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_subok")]
 z_index = 10
 position = Vector2(1934, 1387)
-my_scene = "res://Scenes/levels/Chapter02_Kernel/2-12_InTemple1.tscn"
+my_scene = "res://Scenes/levels/Chapter02_Kernel/2-9_MeetCouple1.tscn"
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
-position = Vector2(13, -867)
+position = Vector2(129, -831)
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
 position = Vector2(958, 540)
-texture = ExtResource("3_vivsh")
+texture = ExtResource("3_c7h28")
 
-[node name="Panel" parent="." instance=ExtResource("4_bcjvt")]
+[node name="Panel" parent="." instance=ExtResource("4_x3dna")]
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
 tile_set = SubResource("TileSet_vfyhx")
-layer_0/tile_data = PackedInt32Array(589848, 9, 3, 589849, 65545, 3, 589850, 131081, 3, 589851, 196617, 3, 589852, 262153, 3, 589829, 327689, 3, 655359, 7, 3, 589824, 9, 3, 589825, 65545, 3, 589826, 131081, 3, 589827, 196617, 3, 589828, 262153, 3, 655384, 131079, 3, 655385, 131079, 3, 655386, 131079, 3, 655387, 131079, 3, 655388, 131079, 3, 720895, 131079, 3, 655360, 131079, 3, 655361, 131079, 3, 655362, 131079, 3, 655363, 131079, 3, 655364, 131079, 3, 655365, 131079, 3, 589847, 458761, 3, 589846, 393225, 3, 655382, 131079, 3, 655383, 131079, 3, 327703, 131075, 3, 393239, 131075, 3, 458775, 131075, 3, 524311, 131075, 3, 327706, 131075, 3, 393242, 131075, 3, 458778, 131075, 3, 524314, 131075, 3, 327702, 131075, 3, 393238, 131075, 3, 458774, 131075, 3, 524310, 131075, 3, 327705, 131075, 3, 393241, 131075, 3, 458777, 131075, 3, 524313, 131075, 3, 589844, 393225, 3, 655380, 131079, 3, 589845, 458761, 3, 655381, 131079, 3, 524308, 131077, 3, 458772, 131077, 3, 393236, 131077, 3, 327700, 131077, 3, 262164, 131077, 3, 196628, 131077, 3, 131092, 131077, 3, 65556, 131077, 3, 655379, 131077, 3, 589843, 131077, 3, 524307, 131077, 3, 458771, 131077, 3, 393235, 131077, 3, 327699, 131077, 3, 262163, 131077, 3, 196627, 131077, 3, 131091, 131077, 3, 65555, 131077, 3, 19, 131077, 3, -65517, 131077, 3, -131053, 131077, 3, -131052, 131077, 3, -65516, 131077, 3, 20, 131077, 3)
+layer_0/tile_data = PackedInt32Array(589845, 327689, 3, 589846, 393225, 3, 589847, 458761, 3, 589848, 9, 3, 589849, 65545, 3, 589850, 131081, 3, 589851, 196617, 3, 589852, 262153, 3, 589837, 327689, 3, 589838, 393225, 3, 589839, 458761, 3, 589840, 9, 3, 589841, 65545, 3, 589842, 131081, 3, 589843, 196617, 3, 589844, 262153, 3, 589829, 327689, 3, 589830, 393225, 3, 589831, 458761, 3, 589832, 9, 3, 589833, 65545, 3, 589834, 131081, 3, 589835, 196617, 3, 589836, 262153, 3, 655359, 7, 3, 589824, 9, 3, 589825, 65545, 3, 589826, 131081, 3, 589827, 196617, 3, 589828, 262153, 3, 655375, 131079, 3, 655376, 131079, 3, 655377, 131079, 3, 655378, 131079, 3, 655379, 131079, 3, 655380, 131079, 3, 655381, 131079, 3, 655382, 131079, 3, 655383, 131079, 3, 655384, 131079, 3, 655385, 131079, 3, 655386, 131079, 3, 655387, 131079, 3, 655388, 131079, 3, 720895, 131079, 3, 655360, 131079, 3, 655361, 131079, 3, 655362, 131079, 3, 655363, 131079, 3, 655364, 131079, 3, 655365, 131079, 3, 655366, 131079, 3, 655367, 131079, 3, 655368, 131079, 3, 655369, 131079, 3, 655370, 131079, 3, 655371, 131079, 3, 655372, 131079, 3, 655373, 131079, 3, 655374, 131079, 3, 131099, 131080, 3, 524302, 131080, 3, 458766, 131080, 3, 393230, 131080, 3, 327694, 131080, 3, 262158, 131080, 3, -196594, 131080, 3, -262130, 131080, 3, 196635, 131080, 3, 524301, 131080, 3, 458765, 131080, 3, 393229, 131080, 3, 327693, 131080, 3, 262157, 131080, 3, -196595, 131080, 3, -262131, 131080, 3, -327667, 131080, 3, -327666, 131080, 3, -327653, 196616, 3, -327652, 196616, 3, 524306, 131078, 3, 458770, 131078, 3, 393234, 131078, 3, 327698, 131078, 3, 327699, 131078, 3, 393235, 131078, 3, 458771, 131078, 3, 524307, 131078, 3, 65563, 196616, 3, 27, 196616, 3, -65509, 196616, 3, -131045, 196616, 3, -196581, 196616, 3, -262117, 196616, 3, -262116, 196616, 3, -196580, 196616, 3, -131044, 196616, 3, -65508, 196616, 3, 28, 196616, 3, 65564, 196616, 3, 524309, 196614, 3, 458773, 196614, 3, 458774, 196614, 3, 458775, 196614, 3, 458776, 196614, 3, 524312, 196614, 3, 524311, 196614, 3, 524310, 196614, 3, -327681, 131080, 3, -393216, 131080, 3, -393215, 131080, 3, -393214, 131080, 3, -393213, 131080, 3, -393212, 131080, 3, -393211, 131080, 3, -393210, 131080, 3, -393209, 131080, 3, -393208, 131080, 3, -393207, 131080, 3, -393206, 131080, 3, -393205, 131080, 3, -393204, 131080, 3, -393201, 131080, 3, -393200, 131080, 3, -393199, 131080, 3, -393198, 131080, 3, -393197, 131080, 3, -393196, 131080, 3, -393195, 131080, 3, -393194, 131080, 3, -393193, 131080, 3, -393192, 131080, 3, -393191, 131080, 3, -393190, 131080, 3, 327687, 131078, 3, 393223, 131078, 3, 458759, 131078, 3, 524295, 131078, 3, 327690, 131078, 3, 393226, 131078, 3, 458762, 131078, 3, 524298, 131078, 3, 327688, 131078, 3, 393224, 131078, 3, 458760, 131078, 3, 524296, 131078, 3, 327691, 131078, 3, 393227, 131078, 3, 458763, 131078, 3, 524299, 131078, 3, 131079, 131080, 3, 196615, 131080, 3, 131080, 131080, 3, 196616, 131080, 3, 131081, 131080, 3, 196617, 131080, 3, 131082, 131080, 3, 196618, 131080, 3, 131083, 131080, 3, 196619, 131080, 3, 131084, 131080, 3, 196620, 131080, 3, 131085, 131080, 3, 196621, 131080, 3, 131086, 131080, 3, 196622, 131080, 3, 131087, 131080, 3, 196623, 131080, 3, 131088, 131080, 3, 196624, 131080, 3, 131089, 131080, 3, 196625, 131080, 3, 131090, 131080, 3, 196626, 131080, 3, 131091, 131080, 3, 196627, 131080, 3, 131092, 131080, 3, 196628, 131080, 3, 131078, 131080, 3, 196614, 131080, 3)
 
-[node name="Outline" parent="Panel" instance=ExtResource("4_bcjvt")]
+[node name="Outline" parent="Panel" instance=ExtResource("4_x3dna")]
 position = Vector2(45, 44)
 tile_set = SubResource("TileSet_vfyhx")
 
 [node name="DecorationBack" type="Area2D" parent="."]
+visible = false
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
 
@@ -289,73 +289,94 @@ z_index = 20
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
 
-[node name="DecorationPillarDayV_02" type="Sprite2D" parent="DecorationFront"]
-visible = false
-modulate = Color(0, 0.0627451, 0.215686, 0.811765)
-position = Vector2(1236, 282.667)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("15_y67aj")
-
-[node name="UI" parent="." instance=ExtResource("16_nq60f")]
+[node name="UI" parent="." instance=ExtResource("15_cmlyr")]
 z_index = 4
 
-[node name="Player" parent="." instance=ExtResource("17_xv0bf")]
+[node name="Player" parent="." instance=ExtResource("16_j16i0")]
 position = Vector2(162, 837)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("18_1f60w")
+script = ExtResource("17_aw16i")
 
-[node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("19_0dqhw")]
-visible = false
-offset_left = 201.0
-offset_top = 558.0
-offset_right = 241.0
-offset_bottom = 598.0
+[node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("18_hay25")]
+offset_left = 1744.0
+offset_top = 588.0
+offset_right = 1784.0
+offset_bottom = 628.0
 scale = Vector2(10, 10)
 
-[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("20_d1psb")]
+[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("19_43cae")]
 offset_left = 1.0
 offset_top = 9.0
 offset_right = 1921.0
 offset_bottom = 1089.0
 
-[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("21_llyv8")]
+[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("20_k5edl")]
 visible = false
 
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
 
-[node name="StaticPanelCollision3" parent="PanelCollsionContainer" instance=ExtResource("22_vivsh")]
-position = Vector2(1552, 843)
+[node name="StaticPanelCollision6" parent="PanelCollsionContainer" instance=ExtResource("21_7qrq3")]
+position = Vector2(950, 1030)
 rotation = 3.14159
-scale = Vector2(6.741, -16.662)
+scale = Vector2(99.901, -7.937)
 
-[node name="StaticPanelCollision4" parent="PanelCollsionContainer" instance=ExtResource("22_vivsh")]
-position = Vector2(1752, 843)
+[node name="StaticPanelCollision7" parent="PanelCollsionContainer" instance=ExtResource("21_7qrq3")]
+position = Vector2(948, 734)
 rotation = 3.14159
-scale = Vector2(6.741, -16.662)
+scale = Vector2(6.85122, -25.3171)
 
-[node name="StaticPanelCollision6" parent="PanelCollsionContainer" instance=ExtResource("22_vivsh")]
-position = Vector2(-26.9999, 1030)
+[node name="StaticPanelCollision8" parent="PanelCollsionContainer" instance=ExtResource("21_7qrq3")]
+position = Vector2(912, 538)
 rotation = 3.14159
-scale = Vector2(43.2211, -7.937)
+scale = Vector2(50.511, -6.595)
 
-[node name="StaticPanelCollision7" parent="PanelCollsionContainer" instance=ExtResource("22_vivsh")]
-position = Vector2(1782, 1030)
+[node name="StaticPanelCollision9" parent="PanelCollsionContainer" instance=ExtResource("21_7qrq3")]
+position = Vector2(948, 73)
 rotation = 3.14159
-scale = Vector2(43.2211, -7.937)
+scale = Vector2(6.851, -13.665)
 
-[node name="StaticPanelCollision5" parent="PanelCollsionContainer" instance=ExtResource("22_vivsh")]
-position = Vector2(1351, 689)
+[node name="StaticPanelCollision10" parent="PanelCollsionContainer" instance=ExtResource("21_7qrq3")]
+position = Vector2(1892, 207)
 rotation = 3.14159
-scale = Vector2(6.741, -47.877)
+scale = Vector2(6.851, -26.185)
 
-[node name="StuckablePanel2" parent="." instance=ExtResource("23_llyv8")]
-position = Vector2(542, 585)
-scale = Vector2(0.5, 0.5)
+[node name="StaticPanelCollision11" parent="PanelCollsionContainer" instance=ExtResource("21_7qrq3")]
+position = Vector2(2329, 546)
+rotation = 3.14159
+scale = Vector2(50.511, -6.595)
 
-[node name="draggablePanel" parent="." instance=ExtResource("21_7242q")]
-position = Vector2(541, 825)
-scale = Vector2(0.5, 0.5)
+[node name="StaticPanelCollision12" parent="PanelCollsionContainer" instance=ExtResource("21_7qrq3")]
+position = Vector2(538, 940)
+rotation = 3.14159
+scale = Vector2(6.85122, -25.3171)
+
+[node name="StaticPanelCollision13" parent="PanelCollsionContainer" instance=ExtResource("21_7qrq3")]
+position = Vector2(747, 940)
+rotation = 3.14159
+scale = Vector2(6.85122, -25.3171)
+
+[node name="StaticPanelCollision14" parent="PanelCollsionContainer" instance=ExtResource("21_7qrq3")]
+position = Vector2(1279, 940)
+rotation = 3.14159
+scale = Vector2(6.85122, -25.3171)
+
+[node name="StaticPanelCollision15" parent="PanelCollsionContainer" instance=ExtResource("21_7qrq3")]
+position = Vector2(1564, 881)
+rotation = 3.14159
+scale = Vector2(13.156, -7.149)
+
+[node name="StuckablePanel" parent="." instance=ExtResource("22_k33y5")]
+position = Vector2(466, 254)
+scale = Vector2(0.434457, 1.37227)
+
+[node name="StuckablePanel2" parent="." instance=ExtResource("22_k33y5")]
+position = Vector2(1207, 254)
+scale = Vector2(0.434457, 1.37227)
+
+[node name="draggablePanel" parent="." instance=ExtResource("23_subok")]
+position = Vector2(1604, 450)
+scale = Vector2(0.752429, 1.13994)
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

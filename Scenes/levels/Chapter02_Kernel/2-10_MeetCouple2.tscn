@@ -257,7 +257,7 @@ shape = SubResource("RectangleShape2D_ne1c2")
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("2_dq6fq")]
 z_index = 10
 position = Vector2(1934, 1387)
-my_scene = "res://Scenes/levels/Chapter02_Kernel/2-12_InTemple1.tscn"
+my_scene = "res://Scenes/levels/Chapter02_Kernel/2-11_MeetCouple3.tscn"
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(13, -579)
