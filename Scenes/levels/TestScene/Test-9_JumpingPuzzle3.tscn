@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="15_x8fj0"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="16_eykac"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/mechanics/Draggable_Panel.tscn" id="17_wrvrd"]
-[ext_resource type="Texture2D" uid="uid://cmx1xsm50w0jt" path="res://assets/sprites/chapter 2/assets/Platform_RaisedFloor_Day_v.01.PNG" id="18_ssr78"]
+[ext_resource type="Texture2D" uid="uid://cmx1xsm50w0jt" path="res://assets/sprites/chapter 2/assets/Palace/Platform_RaisedFloor_Day_v.01.PNG" id="18_ssr78"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lefwt"]
 texture = ExtResource("4_54sxj")

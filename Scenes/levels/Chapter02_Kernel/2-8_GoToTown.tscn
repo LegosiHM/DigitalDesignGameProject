@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="16_8mdnm"]
 [ext_resource type="Texture2D" uid="uid://blt8tkcvnuxis" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_Building_v.02.PNG" id="16_oylxo"]
 [ext_resource type="Texture2D" uid="uid://bv3hp7s1lejhy" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_LeftBoothPillar_v.01.PNG" id="17_8mdnm"]
-[ext_resource type="Texture2D" uid="uid://b8uu3geiv8sd0" path="res://assets/sprites/chapter 2/assets/Decoration_Pillar_Day_v.01.PNG" id="17_xdjnd"]
+[ext_resource type="Texture2D" uid="uid://b8uu3geiv8sd0" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Pillar_Day_v.01.PNG" id="17_xdjnd"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="18_jb087"]
 [ext_resource type="Texture2D" uid="uid://c0n6agjtgs8mk" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothProduce_v.02.PNG" id="18_xdjnd"]
 [ext_resource type="Texture2D" uid="uid://bk22tlq0vn3ix" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_RightBoothPillar_v.01.PNG" id="19_jb087"]

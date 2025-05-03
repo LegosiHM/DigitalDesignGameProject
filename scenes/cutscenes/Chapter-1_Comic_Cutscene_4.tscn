@@ -61,6 +61,7 @@ position = Vector2(1828, 876)
 texture = ExtResource("6_bayqu")
 
 [node name="SkipRing" type="TextureProgressBar" parent="."]
+layout_mode = 0
 offset_left = 1741.0
 offset_top = 29.0
 offset_right = 1791.0
@@ -72,6 +73,7 @@ texture_progress = ExtResource("7_puxec")
 tint_under = Color(0, 0, 0, 1)
 
 [node name="SkipLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 1797.0
 offset_top = 14.0
 offset_right = 1900.0
