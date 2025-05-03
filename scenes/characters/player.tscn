@@ -3564,7 +3564,6 @@ script = ExtResource("1_rajx7")
 acceleration = 1200.0
 max_speed = 480.0
 friction = 4000.0
-jump_force = 1800.0
 jump_cancel_force = 10000.0
 boost_multiplier = 20.0
 boost_decay_speed = 3.0

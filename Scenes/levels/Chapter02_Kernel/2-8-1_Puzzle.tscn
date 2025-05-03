@@ -305,7 +305,6 @@ offset_bottom = 628.0
 scale = Vector2(10, 10)
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("31_fitkb")]
-visible = false
 offset_left = 1.0
 offset_top = 9.0
 offset_right = 1921.0
