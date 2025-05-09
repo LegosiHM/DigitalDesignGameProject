@@ -70,28 +70,6 @@ texture = ExtResource("4_geuh0")
 [node name="Player" parent="." instance=ExtResource("6_h2l7a")]
 position = Vector2(222, 677)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("9_jgpn4")
-
-[node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("11_omgn5")]
-offset_left = 1392.0
-offset_top = -264.0
-offset_right = 1432.0
-offset_bottom = -224.0
-scale = Vector2(10, 10)
-
-[node name="Glitching" parent="CanvasLayer" instance=ExtResource("11_a88ds")]
-offset_left = -169.0
-offset_top = 522.0
-offset_right = 80.0
-offset_bottom = 948.0
-
-[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("10_hwt45")]
-visibility_layer = 8
-
-[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("11_lshpn")]
-visible = false
-
 [node name="draggablePanel" parent="." instance=ExtResource("13_adg2g")]
 position = Vector2(1249, 464)
 scale = Vector2(0.6, 0.6)
@@ -110,6 +88,31 @@ my_scene = "res://Scenes/levels/Chapter01_Prologue/1-5_Combine.tscn"
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(8.77778, -666.669)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("9_jgpn4")
+
+[node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("11_omgn5")]
+offset_left = 1363.0
+offset_top = -199.0
+offset_right = 1403.0
+offset_bottom = -159.0
+scale = Vector2(10, 10)
+
+[node name="Glitching" parent="CanvasLayer" instance=ExtResource("11_a88ds")]
+offset_left = -87.0
+offset_top = 537.0
+offset_right = 80.0
+offset_bottom = 945.0
+
+[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("11_lshpn")]
+visible = false
+
+[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("10_hwt45")]
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 1922.0
+offset_bottom = 1076.0
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

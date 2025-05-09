@@ -100,11 +100,11 @@ offset_right = -161.0
 offset_bottom = 600.0
 scale = Vector2(10, 10)
 
-[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("10_36pr0")]
-mouse_force_pass_scroll_events = false
-
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("11_wp2a6")]
 visible = false
+
+[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("10_36pr0")]
+mouse_force_pass_scroll_events = false
 
 [node name="Panel_Medjed1" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
 position = Vector2(1943, 1083)

@@ -12,13 +12,17 @@ extends Node2D
 var i = 0
 var dialog_active = false
 var can_interact = true
+var interacted_once = false
+
+#var original_position = Vector2(0, 0)
+#var up_moving_position = Vector2(0, 0)
+#var down_moving_position= Vector2(0, 0)
 
 @export var will_reveal_object = false
 @export var reveal_panel: Node2D
 @export var reveal_path: Area2D
 
 func _ready():
-	
 	area.input_event.connect(_on_input_event)  
 	add_child(cooldown_timer)  
 	cooldown_timer.one_shot = true  
@@ -32,9 +36,6 @@ func _process(delta):
 		set_process(false)
 	else:
 		can_interact = false
-			
-		
-		
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
@@ -52,6 +53,7 @@ func _show_dialog():
 func _on_dialog_finished():
 	cooldown_timer.start(cooldown_time)  
 	dialog_active = false
+	interacted_once = true
 	
 	if will_reveal_object:
 		if reveal_panel != null:

@@ -381,6 +381,13 @@ position = Vector2(953, 1161)
 rotation = 3.14159
 scale = Vector2(-108.784, 7.4829)
 
+[node name="ChangeSceneDetector" parent="." instance=ExtResource("24_py2tp")]
+z_index = 5
+position = Vector2(2008, 123)
+rotation = -1.5708
+scale = Vector2(5.487, 0.229998)
+my_scene = "res://Scenes/levels/Chapter01_Prologue/1-6_InsideTemple.tscn"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("20_6rrga")
 
@@ -391,17 +398,10 @@ offset_right = 1797.0
 offset_bottom = 76.0
 scale = Vector2(10, 10)
 
-[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("21_8jstf")]
-
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("24_4mqif")]
 visible = false
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("24_py2tp")]
-z_index = 5
-position = Vector2(2008, 123)
-rotation = -1.5708
-scale = Vector2(5.487, 0.229998)
-my_scene = "res://Scenes/levels/Chapter01_Prologue/1-6_InsideTemple.tscn"
+[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("21_8jstf")]
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

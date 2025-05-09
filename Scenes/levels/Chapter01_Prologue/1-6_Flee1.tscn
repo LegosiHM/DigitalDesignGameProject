@@ -386,6 +386,13 @@ position = Vector2(953, 1161)
 rotation = 3.14159
 scale = Vector2(-108.784, 7.4829)
 
+[node name="ChangeSceneDetector" parent="." instance=ExtResource("24_bfr2w")]
+z_index = 5
+position = Vector2(1712, 1233)
+rotation = -1.5708
+scale = Vector2(1.727, 1.87)
+my_scene = "res://Scenes/levels/Chapter01_Prologue/1-8_Flee2.tscn"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("21_dlxug")
 
@@ -396,17 +403,10 @@ offset_right = 1267.0
 offset_bottom = 955.0
 scale = Vector2(10, 10)
 
-[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("23_qpk6i")]
-
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("25_xxeta")]
 visible = false
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("24_bfr2w")]
-z_index = 5
-position = Vector2(1712, 1233)
-rotation = -1.5708
-scale = Vector2(1.727, 1.87)
-my_scene = "res://Scenes/levels/Chapter01_Prologue/1-8_Flee2.tscn"
+[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("23_qpk6i")]
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

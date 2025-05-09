@@ -256,7 +256,7 @@ shape = SubResource("RectangleShape2D_ne1c2")
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("2_wewhh")]
 z_index = 10
 position = Vector2(1934, 1387)
-my_scene = "res://Scenes/levels/Chapter02_Kernel/2-10_MeetCouple2.tscn"
+my_scene = "res://Scenes/levels/Chapter02_PartitionToEpilogue/2-13_Blood.tscn"
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(13, -867)
@@ -310,14 +310,14 @@ offset_right = 241.0
 offset_bottom = 598.0
 scale = Vector2(10, 10)
 
+[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("21_omwve")]
+visible = false
+
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("20_n8h7l")]
 offset_left = 1.0
 offset_top = 9.0
 offset_right = 1921.0
 offset_bottom = 1089.0
-
-[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("21_omwve")]
-visible = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

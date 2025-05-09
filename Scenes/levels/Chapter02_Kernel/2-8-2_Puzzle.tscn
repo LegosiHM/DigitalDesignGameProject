@@ -1,8 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://b3fg8d5sskwx0"]
+[gd_scene load_steps=37 format=3 uid="uid://b3fg8d5sskwx0"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_lrkdk"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_subok"]
-[ext_resource type="Texture2D" uid="uid://bjv33hau2hp0d" path="res://assets/sprites/chapter 2/assets/Bazaar/Background_BazaarCH.2_v01.PNG" id="3_c7h28"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_x3dna"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_e8q2y"]
 [ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="6_7gvvb"]
@@ -266,7 +265,6 @@ position = Vector2(129, -831)
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
 position = Vector2(958, 540)
-texture = ExtResource("3_c7h28")
 
 [node name="Panel" parent="." instance=ExtResource("4_x3dna")]
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
@@ -305,14 +303,14 @@ offset_right = 1784.0
 offset_bottom = 628.0
 scale = Vector2(10, 10)
 
+[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("20_k5edl")]
+visible = false
+
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("19_43cae")]
 offset_left = 1.0
 offset_top = 9.0
 offset_right = 1921.0
 offset_bottom = 1089.0
-
-[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("20_k5edl")]
-visible = false
 
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
 

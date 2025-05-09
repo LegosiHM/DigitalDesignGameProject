@@ -121,11 +121,11 @@ offset_top = 517.0
 offset_right = 2425.0
 offset_bottom = 834.0
 
-[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("12_uywn0")]
-mouse_force_pass_scroll_events = false
-
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("13_pfu75")]
 visible = false
+
+[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("12_uywn0")]
+mouse_force_pass_scroll_events = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

@@ -95,14 +95,14 @@ offset_right = -186.0
 offset_bottom = 603.0
 scale = Vector2(10, 10)
 
+[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("13_26fxu")]
+visible = false
+
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("12_oochw")]
 offset_left = 2.0
 offset_top = -4.0
 offset_right = 1922.0
 offset_bottom = 1076.0
-
-[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("13_26fxu")]
-visible = false
 
 [node name="UI" parent="." instance=ExtResource("13_i1weu")]
 

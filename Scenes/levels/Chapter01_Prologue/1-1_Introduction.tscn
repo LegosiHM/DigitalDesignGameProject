@@ -110,10 +110,10 @@ offset_right = 1714.0
 offset_bottom = 640.0
 scale = Vector2(10, 10)
 
-[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("15_0todq")]
-
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("16_tjq7w")]
 visible = false
+
+[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("15_0todq")]
 
 [node name="Merchants2" type="Node2D" parent="."]
 script = ExtResource("5_3vw8x")

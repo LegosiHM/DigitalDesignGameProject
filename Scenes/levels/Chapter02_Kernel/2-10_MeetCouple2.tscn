@@ -311,14 +311,14 @@ offset_right = 241.0
 offset_bottom = 598.0
 scale = Vector2(10, 10)
 
+[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("21_dq6fq")]
+visible = false
+
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("20_82c6t")]
 offset_left = 1.0
 offset_top = 9.0
 offset_right = 1921.0
 offset_bottom = 1089.0
-
-[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("21_dq6fq")]
-visible = false
 
 [node name="untouchablePanle" parent="." instance=ExtResource("21_o4iyx")]
 position = Vector2(417, 321)
