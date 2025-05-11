@@ -219,12 +219,12 @@ sources/8 = SubResource("TileSetAtlasSource_atb4a")
 sources/9 = SubResource("TileSetAtlasSource_m55aj")
 sources/1 = SubResource("TileSetAtlasSource_5h3s7")
 
-[node name="oppositePanel" type="Node2D"]
+[node name="oppositePanel" type="Node2D" groups=["draggable_panels"]]
 light_mask = 512
 visibility_layer = 512
 
-[node name="Area2D2" type="Area2D" parent="."]
-collision_layer = 16
+[node name="Area2D2" type="Area2D" parent="." groups=["draggable_panels"]]
+collision_layer = 24
 collision_mask = 6
 script = ExtResource("1_pujrn")
 illegalDragging_speed = -100.0

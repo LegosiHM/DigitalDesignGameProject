@@ -43,17 +43,36 @@ var sprite_original_offset := Vector2.ZERO
 
 var facing_direction := 1
 
+var current_platform_velocity := Vector2.ZERO
+var touching_panels := []
+
 func _ready() -> void:
 	sprite_original_offset = $AnimatedSprite2D.position
 
 func _physics_process(delta: float) -> void:
 	restore_energy_process()
 	
+
+	
 	var inputs: Dictionary = get_inputs()
 	handle_jump(delta, inputs.input_direction, inputs.jump_strength, inputs.jump_pressed, inputs.jump_released)
 	apply_horizontal_movement(delta, inputs.input_direction)
 	manage_animations()
 	handle_gravity(delta)
+	for panel in touching_panels:
+		if panel.returning and panel.has_method("get_motion_delta") and is_on_floor():
+			var motion = panel.get_motion_delta(delta)
+
+			var platform_velocity = motion / delta
+			platform_velocity = platform_velocity.clamp(Vector2(-62, -62), Vector2(62, 62))
+
+			velocity += platform_velocity
+
+
+			break
+
+
+
 	move_and_slide()
 	
 	if is_on_solid_ground():
@@ -96,6 +115,10 @@ func _physics_process(delta: float) -> void:
 		facing_direction = 1
 	elif velocity.x < 0:
 		facing_direction = -1
+	
+	current_platform_velocity = Vector2.ZERO
+
+
 
 
 func _check_fall_behavior():
@@ -153,17 +176,18 @@ func manage_animations() -> void:
 	if not is_on_floor():
 		if velocity.y < -10:
 			sprite.play("jump")
-		elif velocity.y > 10:
-			sprite.play("landing")
-		# Small buffer at apex
 		else:
-			# Optional: keep previous animation or do nothing
-			pass
+			sprite.play("landing")
+
 
 	elif abs(velocity.x) > 10:
-		sprite.play("run")
+		if get_input_direction().x != 0:
+			sprite.play("run")  # only play run if input is pressed
+		else:
+			sprite.play("default")  # player is standing on moving thing
 	else:
 		sprite.play("default")
+
 
 func _flip_raycast_direction(direction: int):
 	grab_hand_rayCast.target_position.x = abs(grab_hand_rayCast.target_position.x) * direction
@@ -291,3 +315,13 @@ func consume_energy(amount: int) -> bool:
 
 func is_on_solid_ground() -> bool:
 	return $CollisionHolder/GroundRay.is_colliding()
+
+
+func _on_platform_entered(area: Area2D) -> void:
+	if area.is_in_group("draggable_panels"):
+		touching_panels.append(area)
+
+
+func _on_platform_exited(area: Area2D) -> void:
+	if area.is_in_group("draggable_panels"):
+		touching_panels.erase(area)

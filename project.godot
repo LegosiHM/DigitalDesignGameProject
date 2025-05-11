@@ -41,6 +41,7 @@ folder_colors={
 [global_group]
 
 Player=""
+draggable_panels=""
 
 [input]
 

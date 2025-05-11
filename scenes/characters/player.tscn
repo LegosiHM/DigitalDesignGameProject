@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=3 uid="uid://d3ad0muthw2u2"]
+[gd_scene load_steps=193 format=3 uid="uid://d3ad0muthw2u2"]
 
 [ext_resource type="Script" uid="uid://5eirkgen8jmk" path="res://scripts/player/Player_Controller.gd" id="1_rajx7"]
 [ext_resource type="Texture2D" uid="uid://cm2e7c3qv4237" path="res://Animation/Idle(New)/idlenew2_00.png" id="3_ir7wy"]
@@ -192,6 +192,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xont5"]
 size = Vector2(72.8062, 64.0176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir7wy"]
+size = Vector2(81, 10)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7105b"]
 animations = [{
@@ -841,8 +844,18 @@ light_mask = 513
 visibility_layer = 513
 scale = Vector2(4, 4)
 
+[node name="PlatformDetector" type="Area2D" parent="."]
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformDetector"]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_ir7wy")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3.5)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_7105b")
-frame_progress = 0.00509773
+frame_progress = 0.934571
+
+[connection signal="area_entered" from="PlatformDetector" to="." method="_on_platform_entered"]
+[connection signal="area_exited" from="PlatformDetector" to="." method="_on_platform_exited"]

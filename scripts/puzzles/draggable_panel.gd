@@ -23,17 +23,19 @@ var velocity = Vector2.ZERO
 
 var effect_running := false
 
+var last_position = Vector2.ZERO
+
 func _ready() -> void:
 	original_position = global_position
 	respawn_manager = get_tree().current_scene.get_node("RespawnDetector")
-	respawn_position = respawn_manager.respawn_position #sometimes there is a bug here. Might need some fix later
+	respawn_position = respawn_manager.respawn_position #
+	last_position = global_position
 
 func _process(delta: float) -> void:
 	
 	check_overlap_area()
 	player_position = get_tree().current_scene.get_node("Player").global_position
 	
-	#print(overlap_area)
 	if untouchable:
 		#if (collide and global_position.distance_to(player_position) < 150):
 		if(collide): #need to be fix to check if collide with just player's collision
@@ -50,19 +52,25 @@ func _process(delta: float) -> void:
 			global_position = global_position.move_toward(new_position, (illegalDragging_speed if collide else normalDragging_speed) * delta)
 	
 	elif returning:
-		if(stuckOnCollider):
-			if(collide):
+		var previous_position = global_position
+
+		if stuckOnCollider:
+			if collide:
 				global_position = global_position.move_toward(original_position, return_speed * delta)
-				global_position = global_position.move_toward(original_position, -return_speed*delta)
+				global_position = global_position.move_toward(original_position, -return_speed * delta)
 			else:
 				global_position = global_position.move_toward(original_position, return_speed * delta)
 		else:
 			global_position = global_position.move_toward(original_position, return_speed * delta)
+
+		# ✅ Calculate actual velocity
+		velocity = (global_position - previous_position) / delta
 		
 		if global_position.distance_to(original_position) < 1.0:
 			returning = false
 			global_position = original_position
-			
+			velocity = Vector2.ZERO  # stop movement
+
 
 func _on_button_button_down() -> void:
 	if player.current_energy < player.threshold_energy:
@@ -105,3 +113,11 @@ func respawn_timer():
 	await get_tree().create_timer(0.1).timeout
 	player.global_position = respawn_position
 	
+func get_velocity() -> Vector2:
+	return velocity
+
+
+func get_motion_delta(delta: float) -> Vector2:
+	var motion = global_position - last_position
+	last_position = global_position
+	return motion

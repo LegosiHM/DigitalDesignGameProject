@@ -423,10 +423,10 @@ sources/8 = SubResource("TileSetAtlasSource_ubqb1")
 sources/9 = SubResource("TileSetAtlasSource_53fio")
 sources/1 = SubResource("TileSetAtlasSource_p803j")
 
-[node name="draggablePanel" type="Node2D"]
+[node name="draggablePanel" type="Node2D" groups=["draggable_panels"]]
 
-[node name="Area2D2" type="Area2D" parent="."]
-collision_layer = 16
+[node name="Area2D2" type="Area2D" parent="." groups=["draggable_panels"]]
+collision_layer = 24
 collision_mask = 6
 script = ExtResource("1_tyfft")
 return_speed = 400.0
