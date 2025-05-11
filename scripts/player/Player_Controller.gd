@@ -8,9 +8,6 @@ enum jump_directions {UP = -1, DOWN = 1}
 @onready var slowFall_hand_rayCast = $CollisionHolder/SlowFallHandRayCast
 @onready var slowFall_check_rayCast = $CollisionHolder/SlowFallCheckRayCast
 @export var joystick_movement := false
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var animation_tree: AnimationTree = $AnimationTree
-@onready var animation_state: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
 @export_group("Movement Values")
 @export_range(0, 10000, 0.1) var acceleration: float = 700.0
 @export_range(0, 10000, 0.1) var max_speed: float = 600.0
@@ -38,13 +35,16 @@ var threshold_energy: float = max_energy/2.5
 var current_energy: int = max_energy
 var restore_energy: bool = true
 var is_dragging_panel: bool = false
+var sprite_original_offset := Vector2.ZERO
 
 @export_group("Motorcycle Boost Settings")
 @export var boost_multiplier: float = 1.5  # How much faster than max_speed to overshoot
 @export var boost_decay_speed: float = 8.0  # How fast the overshoot fades back to max_speed
 
-@onready var idle_sprite: AnimatedSprite2D = $IdleSprite
 var facing_direction := 1
+
+func _ready() -> void:
+	sprite_original_offset = $AnimatedSprite2D.position
 
 func _physics_process(delta: float) -> void:
 	restore_energy_process()
@@ -59,25 +59,25 @@ func _physics_process(delta: float) -> void:
 	if is_on_solid_ground():
 		if is_slowFalling:
 			is_slowFalling = false
-			animation_tree.active = true
-			animation_player.stop()
+
 		if velocity.x == 0:
-			idle_sprite.play("default")
+			$AnimatedSprite2D.play("default")
+
 
 	_check_fall_behavior()
 	if is_grabbing:
 		velocity = Vector2.ZERO
 		if Input.is_action_just_pressed("jump"):
 			is_grabbing = false
+			$AnimatedSprite2D.position = sprite_original_offset
 			velocity.y = -jump_force  # Jump up from ledge
-			animation_player.stop()
-			animation_tree.active = true
+
 			return
 		if Input.is_action_just_pressed("up"):
 			is_grabbing = false
 			position.y -= 5  # Climb up ledge
-			animation_player.stop()
-			animation_tree.active = true
+			$AnimatedSprite2D.position = sprite_original_offset
+
 			return
 		return
 	elif is_slowFalling:
@@ -85,16 +85,18 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_force  # Jump up from ledge
 			is_slowFalling = false
-			animation_player.stop()
-			animation_tree.active = true
 			return
 		if Input.is_action_just_pressed("up"):
 			position.y -= 5  # Climb up ledge
 			is_slowFalling = false
-			animation_player.stop()
-			animation_tree.active = true
 			return
 		return
+		
+	if velocity.x > 0:
+		facing_direction = 1
+	elif velocity.x < 0:
+		facing_direction = -1
+
 
 func _check_fall_behavior():
 	var is_falling = velocity.y >= 0
@@ -117,67 +119,51 @@ func _check_fall_behavior():
 		return
 
 func manage_animations() -> void:
-	if is_grabbing:
-		$LedgeGrabbingSprite.visible = true
-		animation_tree.active = false
-		animation_player.active = false
-		idle_sprite.visible = false
-		$SlowFallSprite2D.visible = false
-		$LedgeGrabSprite2D.visible = false
-		$polygon3.visible = false
+	var sprite = $AnimatedSprite2D
 
-		if facing_direction < 0:
-			$LedgeGrabbingSprite.flip_h = true
-		else:
-			$LedgeGrabbingSprite.flip_h = false
-		if not $LedgeGrabbingSprite.is_playing():
-			$LedgeGrabbingSprite.play("default")
-	elif is_slowFalling:
-		if animation_tree.active:  # Disable AnimationTree to stop unwanted animations
-			animation_tree.active = false
-		
-		idle_sprite.visible = false
-		$LedgeGrabbingSprite.visible = false
-		
-		if not animation_player.is_playing():
-			animation_player.play("slow_fall")  # Play ledge grab animation
-		return
-	if not animation_tree.active:
-		animation_tree.active = true  # Re-enable AnimationTree
-	animation_player.stop()  # Stop ledge grab animation
-	if is_on_floor():
-		if velocity.x == 0:
-			idle_sprite.visible = true
-			animation_tree.active = false
-			$polygon3.visible = false
-			$LedgeGrabbingSprite.visible = false
-			$LedgeGrabSprite2D.visible = false
-			$SlowFallSprite2D.visible = false
-			if facing_direction < 0:
-				idle_sprite.flip_h = true
-			else:
-				idle_sprite.flip_h = false
-			if not idle_sprite.is_playing():
-				idle_sprite.play("default")
-		else:
-			idle_sprite.visible = false
-			$LedgeGrabbingSprite.visible = false
-			animation_state.travel("RunBlend")
-			animation_tree.set("parameters/RunBlend/blend_position", sign(velocity.x))
+	# Update facing direction
 	if velocity.x > 0:
-		idle_sprite.visible = false
-		$polygon3.visible = true
 		facing_direction = 1
-		collision_holder.position.x = abs(collision_holder.position.x)  # Keep RayCasts on right
-		collision_shape.position.x = abs(collision_shape.position.x)  # Keep Collision on right
-		_flip_raycast_direction(1)  # Face right
 	elif velocity.x < 0:
-		idle_sprite.visible = false
-		$polygon3.visible = true
 		facing_direction = -1
-		collision_holder.position.x = -abs(collision_holder.position.x)  # Move RayCasts left
-		collision_shape.position.x = -abs(collision_shape.position.x)  # Move Collision left
-		_flip_raycast_direction(-1)  # Face left
+
+	# Flip sprite
+	sprite.flip_h = facing_direction < 0
+
+	# 💡 Flip raycasts and hitbox
+	_flip_raycast_direction(facing_direction)
+	collision_holder.position.x = abs(collision_holder.position.x) * facing_direction
+	collision_shape.position.x = abs(collision_shape.position.x) * facing_direction
+
+	# Priority animation states
+	# Near the top of manage_animations()
+	if not is_grabbing:
+		$AnimatedSprite2D.position = sprite_original_offset
+
+	if is_grabbing:
+		var offset = 12  # adjust as needed
+		sprite.position = sprite_original_offset + Vector2(facing_direction * offset, 0)
+		sprite.play("ledge_grab")
+		return
+	elif is_slowFalling:
+		sprite.play("slow_falling")
+		return
+
+	# Air animations
+	if not is_on_floor():
+		if velocity.y < -10:
+			sprite.play("jump")
+		elif velocity.y > 10:
+			sprite.play("landing")
+		# Small buffer at apex
+		else:
+			# Optional: keep previous animation or do nothing
+			pass
+
+	elif abs(velocity.x) > 10:
+		sprite.play("run")
+	else:
+		sprite.play("default")
 
 func _flip_raycast_direction(direction: int):
 	grab_hand_rayCast.target_position.x = abs(grab_hand_rayCast.target_position.x) * direction
