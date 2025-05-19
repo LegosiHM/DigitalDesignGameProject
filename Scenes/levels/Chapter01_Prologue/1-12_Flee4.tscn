@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b83vywucafrgx"]
+[gd_scene load_steps=24 format=3 uid="uid://b83vywucafrgx"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_qm6qx"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_dy6oq"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="13_1081g"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="14_ret27"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="15_dy6oq"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="16_8gt2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wm84s"]
 size = Vector2(1921, 167)
@@ -90,13 +91,13 @@ texture = ExtResource("3_8gt2d")
 
 [node name="Merchants" type="Node2D" parent="."]
 script = ExtResource("4_wo0xv")
-dialog_lines = Array[String](["...", "..."])
-dialog_position_Array = Array[Vector2]([Vector2(800, 100), Vector2(1550, 350)])
+dialog_lines = Array[String](["Hey sis, have you heard of that guy Mark? Seems like our queen... ", "Duh, Shut up and go back to work!"])
+dialog_position_Array = Array[Vector2]([Vector2(800, 100), Vector2(1500, 350)])
 cooldown_time = 10000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Merchants"]
 z_index = 1
-position = Vector2(1430, 390)
+position = Vector2(1431, 390)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("6_ml2dw")
 
@@ -114,8 +115,8 @@ texture = ExtResource("6_ml2dw")
 
 [node name="Bazaar" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
 script = ExtResource("4_wo0xv")
-dialog_lines = Array[String](["..."])
-dialog_position_Array = Array[Vector2]([Vector2(400, 300)])
+dialog_lines = Array[String](["“The path is open for you, little guy. As always...”"])
+dialog_position_Array = Array[Vector2]([Vector2(400, 150)])
 will_reveal_object = true
 reveal_path = NodePath("../ChangeSceneDetector")
 
@@ -140,7 +141,7 @@ texture = ExtResource("9_nx3yu")
 [node name="Panel" parent="." instance=ExtResource("7_4nq8k")]
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
-layer_0/tile_data = PackedInt32Array(524317, 196608, 3, 524316, 196608, 3, 524315, 196608, 3, 524314, 196608, 3, 524313, 196608, 3, 524312, 196608, 3, 524311, 196608, 3, 524310, 196608, 3, 524309, 196608, 3, 524308, 196608, 3, 524307, 196608, 3, 524306, 196608, 3, 524305, 196608, 3, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 458772, 2, 0, 458773, 2, 0, 458774, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 458778, 2, 0, 458779, 2, 0, 458780, 2, 0, 458781, 2, 0, 393245, 2, 0, 393244, 2, 0, 393243, 2, 0, 393242, 2, 0, 393241, 2, 0, 393240, 2, 0, 393239, 2, 0, 393238, 2, 0, 393237, 2, 0, 393236, 2, 0, 393235, 2, 0, 393234, 2, 0, 393233, 2, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 327700, 2, 0, 327701, 2, 0, 327702, 2, 0, 327703, 2, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0)
+layer_0/tile_data = PackedInt32Array(524317, 262148, 3, 524316, 262148, 3, 524315, 262148, 3, 524314, 262148, 3, 524313, 262148, 3, 524312, 262148, 3, 524311, 262148, 3, 524310, 262148, 3, 524309, 262148, 3, 524308, 262148, 3, 524307, 262148, 3, 524306, 262148, 3, 524305, 262148, 3, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 458772, 2, 0, 458773, 2, 0, 458774, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 458778, 2, 0, 458779, 2, 0, 458780, 2, 0, 458781, 2, 0, 393245, 2, 0, 393244, 2, 0, 393243, 2, 0, 393242, 2, 0, 393241, 2, 0, 393240, 2, 0, 393239, 2, 0, 393238, 2, 0, 393237, 2, 0, 393236, 2, 0, 393235, 2, 0, 393234, 2, 0, 393233, 2, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 327700, 2, 0, 327701, 2, 0, 327702, 2, 0, 327703, 2, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0)
 
 [node name="Outline" parent="Panel" instance=ExtResource("7_4nq8k")]
 position = Vector2(45, 44)
@@ -155,17 +156,55 @@ position = Vector2(1784, 787)
 script = ExtResource("12_y3hpj")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("13_1081g")]
-visible = false
-offset_left = 384.0
-offset_top = 562.0
-offset_right = 424.0
-offset_bottom = 602.0
+offset_left = 96.0
+offset_top = 250.0
+offset_right = 195.0
+offset_bottom = 349.0
 scale = Vector2(10, 10)
 
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("15_dy6oq")]
 visible = false
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("14_ret27")]
+
+[node name="Chapter" type="Label" parent="."]
+offset_left = 1467.0
+offset_top = 6.0
+offset_right = 1672.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("16_8gt2d")
+theme_override_font_sizes/font_size = 50
+text = "CH.1"
+
+[node name="Scene" type="Label" parent="Chapter"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = -2.0
+offset_right = 401.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("16_8gt2d")
+theme_override_font_sizes/font_size = 50
+text = "A Crime In Tail"
+
+[node name="Tutorial3" type="RichTextLabel" parent="."]
+z_index = 20
+offset_left = 259.0
+offset_top = 440.0
+offset_right = 904.0
+offset_bottom = 574.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("16_8gt2d")
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=purple]Jump in here~"
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

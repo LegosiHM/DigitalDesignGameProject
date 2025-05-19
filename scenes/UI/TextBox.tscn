@@ -14,7 +14,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 
 [node name="TextBox" type="MarginContainer"]
-z_index = 1
+z_index = 8
 offset_right = 373.0
 offset_bottom = 257.0
 script = ExtResource("1_1vca3")

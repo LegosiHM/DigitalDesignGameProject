@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtgnr1sgj11md"]
+[gd_scene load_steps=24 format=3 uid="uid://dtgnr1sgj11md"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_d1sdk"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_wp2a6"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dy1070urkrhar" path="res://assets/sprites/chapter 1/story panel/StoryPanel_MedjedIntroduction_v.02.png" id="14_5geg3"]
 [ext_resource type="Texture2D" uid="uid://c6ujdl4ss5orw" path="res://assets/sprites/chapter 1/story panel/StoryPanel_ InsideTemple_Ritual _v.01.PNG" id="14_iyibb"]
 [ext_resource type="Texture2D" uid="uid://c3utkb1ne7mgf" path="res://assets/sprites/chapter 1/story panel/StoryPanel_MedjedIntroduction_v.03.png" id="16_avmyx"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="17_5geg3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npypg"]
 size = Vector2(1911, 172)
@@ -76,7 +77,9 @@ portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 position = Vector2(8.75, 21.5)
 
 [node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.824015, 0.624368, 0.680987, 1)
 position = Vector2(960, 540)
+scale = Vector2(-1, -1)
 texture = ExtResource("3_c4q5o")
 
 [node name="PlatformPanel" parent="." instance=ExtResource("4_yqcgk")]
@@ -110,9 +113,12 @@ visible = false
 mouse_force_pass_scroll_events = false
 
 [node name="Panel_Medjed1" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
-position = Vector2(1943, 1083)
+z_index = 2
+position = Vector2(2375, 1140)
+rotation = -0.345575
+scale = Vector2(1.5, 1.5)
 script = ExtResource("12_dn0co")
-dialog_lines = Array[String](["..."])
+dialog_lines = Array[String](["Hehe~"])
 dialog_position_Array = Array[Vector2]([Vector2(1500, 500)])
 cooldown_time = 10000.0
 will_reveal_object = true
@@ -137,9 +143,11 @@ texture = ExtResource("12_5r88o")
 
 [node name="Panel_Medjed2" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
 visible = false
-position = Vector2(1313, 1080)
+position = Vector2(1329, 1314)
+rotation = 0.230383
+scale = Vector2(1.3, 1.3)
 script = ExtResource("12_dn0co")
-dialog_lines = Array[String](["..."])
+dialog_lines = Array[String](["Finally met, aren't we~"])
 dialog_position_Array = Array[Vector2]([Vector2(700, 100)])
 cooldown_time = 10000.0
 will_reveal_object = true
@@ -165,10 +173,13 @@ texture = ExtResource("14_iyibb")
 
 [node name="Panel_Medjed3" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
 visible = false
-position = Vector2(682, 1080)
+z_index = 11
+position = Vector2(1210, 1560)
+rotation = -0.230383
+scale = Vector2(1.5, 1.5)
 script = ExtResource("12_dn0co")
-dialog_lines = Array[String](["..."])
-dialog_position_Array = Array[Vector2]([Vector2(100, 500)])
+dialog_lines = Array[String](["About the relic on your neck~"])
+dialog_position_Array = Array[Vector2]([Vector2(100, 150)])
 cooldown_time = 10000.0
 will_reveal_object = true
 reveal_path = NodePath("../ChangeSceneDetector")
@@ -190,6 +201,104 @@ material = SubResource("ShaderMaterial_5geg3")
 position = Vector2(-349, -679)
 scale = Vector2(0.497741, -0.356472)
 texture = ExtResource("14_iyibb")
+
+[node name="Tutorial" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 1653.0
+offset_top = 7.0
+offset_right = 2096.0
+offset_bottom = 86.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("17_5geg3")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=darkred]Welcome~"
+
+[node name="Tutorial2" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 133.0
+offset_top = 147.0
+offset_right = 576.0
+offset_bottom = 226.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("17_5geg3")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=darkred]Welcome~"
+
+[node name="Tutorial3" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 1155.0
+offset_top = 362.0
+offset_right = 1598.0
+offset_bottom = 441.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("17_5geg3")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=darkred]Welcome~"
+
+[node name="Tutorial4" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 97.0
+offset_top = 707.0
+offset_right = 540.0
+offset_bottom = 786.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("17_5geg3")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=darkred]Welcome~"
+
+[node name="Tutorial5" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 1498.0
+offset_top = 935.0
+offset_right = 1941.0
+offset_bottom = 1014.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("17_5geg3")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=darkred]Welcome~"
+
+[node name="Tutorial6" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 631.0
+offset_top = 507.0
+offset_right = 1074.0
+offset_bottom = 586.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("17_5geg3")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=darkred]Welcome~"
+
+[node name="Tutorial7" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 859.0
+offset_top = 738.0
+offset_right = 1315.0
+offset_bottom = 887.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("17_5geg3")
+theme_override_font_sizes/normal_font_size = 84
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=darkred]Welcome~"
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

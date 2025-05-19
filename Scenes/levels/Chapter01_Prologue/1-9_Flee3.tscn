@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://op8mn4yc76rn"]
+[gd_scene load_steps=19 format=3 uid="uid://op8mn4yc76rn"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_i2wto"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_pfu75"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="11_3jrvo"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="12_uywn0"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="13_pfu75"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="14_ak4re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npypg"]
 size = Vector2(1911, 172)
@@ -126,6 +127,115 @@ visible = false
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("12_uywn0")]
 mouse_force_pass_scroll_events = false
+
+[node name="Chapter" type="Label" parent="."]
+offset_left = 1467.0
+offset_top = 6.0
+offset_right = 1672.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("14_ak4re")
+theme_override_font_sizes/font_size = 50
+text = "CH.1"
+
+[node name="Scene" type="Label" parent="Chapter"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = -2.0
+offset_right = 401.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("14_ak4re")
+theme_override_font_sizes/font_size = 50
+text = "A Crime In Tail"
+
+[node name="Tutorial" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 1374.0
+offset_top = 202.0
+offset_right = 1817.0
+offset_bottom = 281.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("14_ak4re")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=darkred]Come a little closer"
+
+[node name="Tutorial2" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 111.0
+offset_top = 718.0
+offset_right = 912.0
+offset_bottom = 837.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("14_ak4re")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=darkblue]...My Little Time Traveller"
+
+[node name="Tutorial3" type="RichTextLabel" parent="."]
+z_index = 20
+offset_left = 719.0
+offset_top = 421.0
+offset_right = 1822.0
+offset_bottom = 555.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("14_ak4re")
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][color=purple]You are almost there..."
+
+[node name="Tutorial4" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 1656.0
+offset_top = 360.0
+offset_right = 1880.0
+offset_bottom = 441.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("14_ak4re")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = " [shake rate=50 level = 50 connected = 1][color=darkgreen]Ahahaha![/color][/shake]"
+
+[node name="Tutorial5" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 107.0
+offset_top = 132.0
+offset_right = 331.0
+offset_bottom = 213.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("14_ak4re")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = " [shake rate=50 level = 50 connected = 1][color=darkgreen]Ahahaha![/color][/shake]"
+
+[node name="Tutorial6" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 515.0
+offset_top = 887.0
+offset_right = 739.0
+offset_bottom = 968.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("14_ak4re")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = " [shake rate=50 level = 50 connected = 1][color=darkgreen]Ahahaha![/color][/shake]"
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

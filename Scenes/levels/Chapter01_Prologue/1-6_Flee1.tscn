@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dbgvqum1nn1t0"]
+[gd_scene load_steps=46 format=3 uid="uid://dbgvqum1nn1t0"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_wgiw6"]
 [ext_resource type="Texture2D" uid="uid://d11pmosyoyoot" path="res://assets/sprites/chapter 1/background/BG_Temple_Evening_v01.PNG" id="2_bfr2w"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="24_bfr2w"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="25_ap8ra"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="25_xxeta"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="27_ec0j5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlp3"]
 size = Vector2(1927, 154)
@@ -292,8 +293,8 @@ texture = ExtResource("2_bfr2w")
 position = Vector2(3150.1, 1596.5)
 scale = Vector2(0.913333, 1.01852)
 script = ExtResource("25_ap8ra")
-dialog_lines = Array[String](["...", "...", "...", "..."])
-dialog_position_Array = Array[Vector2]([Vector2(450, 700), Vector2(1450, 500), Vector2(450, 700), Vector2(450, 700)])
+dialog_lines = Array[String](["Hey, did you know that in terms of..,", "No, please. Not again...", "What? I just want to tell you that our Isis love cats so much that she would kill us for them.", "Talking about cats..."])
+dialog_position_Array = Array[Vector2]([Vector2(450, 700), Vector2(1450, 500), Vector2(450, 500), Vector2(450, 700)])
 cooldown_time = 50.0
 
 [node name="GateKeeper02" type="Node2D" parent="Panel_Gatekeeper"]
@@ -348,7 +349,7 @@ scale = Vector2(0.970001, 0.930207)
 position = Vector2(30.25, 239)
 scale = Vector2(0.75, 0.75)
 tile_set = SubResource("TileSet_febrp")
-layer_0/tile_data = PackedInt32Array(655382, 65536, 3, 655383, 65536, 3, 655384, 65536, 3, 655385, 65536, 3, 655386, 65536, 3, 131098, 65536, 3, 131099, 65536, 3, 131100, 65536, 3, 131101, 65536, 3, 131097, 65536, 3, 65561, 2, 0, 25, 2, 0, -65511, 2, 0, -65510, 2, 0, -65509, 2, 0, -65508, 2, 0, 28, 2, 0, 29, 2, 0, 65565, 2, 0, 65564, 2, 0, 65563, 2, 0, 65562, 2, 0, 26, 2, 0, -65507, 2, 0, 27, 2, 0, 589846, 2, 0, 524310, 2, 0, 524311, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 524313, 2, 0, 524314, 2, 0, 589849, 2, 0, 589848, 2, 0, 524312, 2, 0, 458774, 2, 0, 458778, 2, 0, 589850, 2, 0, 589847, 2, 0, 131096, 131072, 3, 65560, 2, 0, 24, 2, 0, -65512, 2, 0, 327679, 131072, 3, 262144, 131072, 3, 262145, 131072, 3, 4, 131072, 3, 5, 131072, 3, 6, 131072, 3, 7, 131072, 3, 8, 131072, 3, 9, 131072, 3, 10, 131072, 3, 11, 131072, 3, 12, 131072, 3, 13, 131072, 3, 14, 131072, 3, 196609, 2, 0, 131073, 2, 0, 65537, 2, 0, 65536, 2, 0, 131071, 2, 0, 196607, 2, 0, 262143, 2, 0, 196608, 2, 0, 131072, 2, 0, -65532, 2, 0, -131068, 2, 0, -131058, 2, 0, -65522, 2, 0, -65523, 2, 0, -65524, 2, 0, -65525, 2, 0, -65526, 2, 0, -65527, 2, 0, -65528, 2, 0, -65529, 2, 0, -65530, 2, 0, -65531, 2, 0, -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -131064, 2, 0, -131063, 2, 0, -131062, 2, 0, -131061, 2, 0, -131060, 2, 0, -131059, 2, 0, 15, 196608, 3, 16, 196608, 3, 17, 196608, 3, 18, 196608, 3, 19, 196608, 3, -65521, 2, 0, -65520, 2, 0, -65519, 2, 0, -65518, 2, 0, -65517, 2, 0, -131053, 2, 0, -131054, 2, 0, -131055, 2, 0, -131056, 2, 0, -131057, 2, 0, 20, 131072, 3, 21, 131072, 3, 22, 131072, 3, -65516, 2, 0, -131052, 2, 0, -131051, 2, 0, -131050, 2, 0, -65514, 2, 0, -65515, 2, 0, 65534, 65536, 3, 131070, 65536, 3, 196606, 65536, 3, 262142, 65536, 3, 327678, 65536, 3, -2, 65536, 3, -65538, 65536, 3, -131074, 65536, 3, -196610, 65536, 3)
+layer_0/tile_data = PackedInt32Array(655382, 131076, 3, 655383, 131076, 3, 655384, 131076, 3, 655385, 131076, 3, 655386, 131076, 3, 131098, 131076, 3, 131099, 131076, 3, 131100, 131076, 3, 131101, 131076, 3, 131097, 131076, 3, 65561, 2, 0, 25, 2, 0, -65511, 2, 0, -65510, 2, 0, -65509, 2, 0, -65508, 2, 0, 28, 2, 0, 29, 2, 0, 65565, 2, 0, 65564, 2, 0, 65563, 2, 0, 65562, 2, 0, 26, 2, 0, -65507, 2, 0, 27, 2, 0, 589846, 2, 0, 524310, 2, 0, 524311, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 524313, 2, 0, 524314, 2, 0, 589849, 2, 0, 589848, 2, 0, 524312, 2, 0, 458774, 2, 0, 458778, 2, 0, 589850, 2, 0, 589847, 2, 0, 131096, 131076, 3, 65560, 2, 0, 24, 2, 0, -65512, 2, 0, 327679, 131076, 3, 262144, 131076, 3, 262145, 131076, 3, 4, 131076, 3, 5, 131076, 3, 6, 131076, 3, 7, 131076, 3, 8, 131076, 3, 9, 131076, 3, 10, 131076, 3, 11, 131076, 3, 12, 131076, 3, 13, 131076, 3, 14, 131076, 3, 196609, 2, 0, 131073, 2, 0, 65537, 2, 0, 65536, 2, 0, 131071, 2, 0, 196607, 2, 0, 262143, 2, 0, 196608, 2, 0, 131072, 2, 0, -65532, 2, 0, -131068, 2, 0, -131058, 2, 0, -65522, 2, 0, -65523, 2, 0, -65524, 2, 0, -65525, 2, 0, -65526, 2, 0, -65527, 2, 0, -65528, 2, 0, -65529, 2, 0, -65530, 2, 0, -65531, 2, 0, -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -131064, 2, 0, -131063, 2, 0, -131062, 2, 0, -131061, 2, 0, -131060, 2, 0, -131059, 2, 0, 15, 131076, 3, 16, 131076, 3, 17, 131076, 3, 18, 131076, 3, 19, 131076, 3, -65521, 2, 0, -65520, 2, 0, -65519, 2, 0, -65518, 2, 0, -65517, 2, 0, -131053, 2, 0, -131054, 2, 0, -131055, 2, 0, -131056, 2, 0, -131057, 2, 0, 20, 131076, 3, 21, 131076, 3, 22, 131076, 3, -65516, 2, 0, -131052, 2, 0, -131051, 2, 0, -131050, 2, 0, -65514, 2, 0, -65515, 2, 0, 65534, 65536, 3, 131070, 65536, 3, 196606, 65536, 3, 262142, 65536, 3, 327678, 131076, 3, -2, 65536, 3, -65538, 65536, 3, -131074, 65536, 3, -196610, 65536, 3)
 
 [node name="Outline" parent="Panel" instance=ExtResource("7_ihivy")]
 position = Vector2(45, 44)
@@ -397,16 +398,55 @@ my_scene = "res://Scenes/levels/Chapter01_Prologue/1-8_Flee2.tscn"
 script = ExtResource("21_dlxug")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("22_g4x4i")]
-offset_left = 1227.0
-offset_top = 915.0
-offset_right = 1267.0
-offset_bottom = 955.0
+offset_left = 1246.0
+offset_top = 814.0
+offset_right = 1286.0
+offset_bottom = 854.0
 scale = Vector2(10, 10)
 
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("25_xxeta")]
 visible = false
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("23_qpk6i")]
+
+[node name="Chapter" type="Label" parent="."]
+offset_left = 1467.0
+offset_top = 6.0
+offset_right = 1672.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("27_ec0j5")
+theme_override_font_sizes/font_size = 50
+text = "CH.1"
+
+[node name="Scene" type="Label" parent="Chapter"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = -2.0
+offset_right = 401.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("27_ec0j5")
+theme_override_font_sizes/font_size = 50
+text = "A Crime In Tail"
+
+[node name="Tutorial" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 195.0
+offset_top = 133.0
+offset_right = 1920.0
+offset_bottom = 257.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("27_ec0j5")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = " [shake rate=50 level = 50 connected = 1][color=purple]Ahem![/color][/shake] Don't you think it's weird that [wave amp=50.0 freq=5.0 connected=1]  [color=darkred]Egyptians can speak modern English?"
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
