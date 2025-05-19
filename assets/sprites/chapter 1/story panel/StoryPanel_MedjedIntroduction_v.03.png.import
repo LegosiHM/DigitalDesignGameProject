@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdor4s4em2hy1"
-path="res://.godot/imported/Background_CH2Bazaar_v.02.PNG-99fde8df4244dde60a18eeb5db6d28f2.ctex"
+uid="uid://c3utkb1ne7mgf"
+path="res://.godot/imported/StoryPanel_MedjedIntroduction_v.03.png-5dc12239c039a7ea4d82dbf0a991005d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chapter 2/assets/Palace/Background_CH2Bazaar_v.02.PNG"
-dest_files=["res://.godot/imported/Background_CH2Bazaar_v.02.PNG-99fde8df4244dde60a18eeb5db6d28f2.ctex"]
+source_file="res://assets/sprites/chapter 1/story panel/StoryPanel_MedjedIntroduction_v.03.png"
+dest_files=["res://.godot/imported/StoryPanel_MedjedIntroduction_v.03.png-5dc12239c039a7ea4d82dbf0a991005d.ctex"]
 
 [params]
 

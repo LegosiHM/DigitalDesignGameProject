@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdor4s4em2hy1"
-path="res://.godot/imported/Background_CH2Bazaar_v.02.PNG-99fde8df4244dde60a18eeb5db6d28f2.ctex"
+uid="uid://bwl7j51xubke"
+path="res://.godot/imported/Cutscene_01.png-f0ba587233187a0d74c365e74b8c818c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chapter 2/assets/Palace/Background_CH2Bazaar_v.02.PNG"
-dest_files=["res://.godot/imported/Background_CH2Bazaar_v.02.PNG-99fde8df4244dde60a18eeb5db6d28f2.ctex"]
+source_file="res://assets/sprites/chapter 1-2 transition/Cutscene_01.png"
+dest_files=["res://.godot/imported/Cutscene_01.png-f0ba587233187a0d74c365e74b8c818c.ctex"]
 
 [params]
 

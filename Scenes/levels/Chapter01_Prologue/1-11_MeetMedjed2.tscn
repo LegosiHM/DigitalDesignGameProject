@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://62p0cy78mww3"]
+[gd_scene load_steps=22 format=3 uid="uid://62p0cy78mww3"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_lup6q"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_26fxu"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="13_26fxu"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="13_71ltb"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="13_i1weu"]
+[ext_resource type="Texture2D" uid="uid://mc4pxf411qx1" path="res://assets/sprites/chapter 1/story panel/StoryPanel_MedjedIntroduction_v.04.png" id="14_71ltb"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="14_eragc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu41b"]
@@ -141,8 +142,7 @@ reveal_path = NodePath("../ChangeSceneDetector")
 [node name="StoryPanel_Priest" type="Sprite2D" parent="Panel_Medjed1"]
 z_index = 1
 position = Vector2(-1236, -382)
-scale = Vector2(1.43333, 0.531111)
-texture = ExtResource("8_4mfih")
+texture = ExtResource("14_71ltb")
 
 [node name="Area2D" type="Area2D" parent="Panel_Medjed1"]
 
@@ -151,9 +151,9 @@ position = Vector2(-1230.5, -378.75)
 shape = SubResource("RectangleShape2D_ujr4f")
 
 [node name="StoryPanel_Priest2" type="Sprite2D" parent="Panel_Medjed1"]
+visible = false
 material = SubResource("ShaderMaterial_aoc2a")
 position = Vector2(-1236, -382)
-scale = Vector2(1.43333, 0.531111)
 texture = ExtResource("8_4mfih")
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]

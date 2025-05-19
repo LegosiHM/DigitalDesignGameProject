@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwxkixi1awkib"]
+
+[ext_resource type="Script" uid="uid://c70fygndrafsw" path="res://scripts/mainmenu.gd" id="1_6hnpv"]
+[ext_resource type="Texture2D" uid="uid://b2if1ww175gns" path="res://assets/UI/MainMenu/UI_NewGameButton_UnderLayer_v.1.png" id="2_lgpea"]
+[ext_resource type="Texture2D" uid="uid://tjcd5ood7142" path="res://assets/UI/MainMenu/UI_NewGameButton_HoverLayer_v.1.png" id="3_i27ks"]
+[ext_resource type="Texture2D" uid="uid://bhdwbpp4wbm74" path="res://assets/UI/MainMenu/Mainmenu-V.1.png" id="4_i27ks"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6hnpv")
+
+[node name="Mainmenu-v_1" type="Sprite2D" parent="."]
+position = Vector2(942, 537)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("4_i27ks")
+
+[node name="NewGameButton" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="UnderLayer" type="TextureRect" parent="NewGameButton"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 550.0
+offset_right = 384.0
+offset_bottom = 663.0
+texture = ExtResource("2_lgpea")
+
+[node name="HoverLayer" type="TextureRect" parent="NewGameButton"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 550.0
+offset_right = 474.0
+offset_bottom = 663.0
+texture = ExtResource("3_i27ks")
+
+[node name="Button" type="Button" parent="NewGameButton"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 550.0
+offset_right = 384.0
+offset_bottom = 663.0
+
+[connection signal="mouse_entered" from="NewGameButton/Button" to="." method="_on_new_game_button_mouse_entered"]
+[connection signal="mouse_exited" from="NewGameButton/Button" to="." method="_on_new_game_button_mouse_exited"]
+[connection signal="pressed" from="NewGameButton/Button" to="." method="_on_new_game_button_pressed"]

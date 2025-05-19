@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdor4s4em2hy1"
-path="res://.godot/imported/Background_CH2Bazaar_v.02.PNG-99fde8df4244dde60a18eeb5db6d28f2.ctex"
+uid="uid://tjcd5ood7142"
+path="res://.godot/imported/UI_NewGameButton_HoverLayer_v.1.png-56fecc9a696f9b7f9569889824a9b43b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chapter 2/assets/Palace/Background_CH2Bazaar_v.02.PNG"
-dest_files=["res://.godot/imported/Background_CH2Bazaar_v.02.PNG-99fde8df4244dde60a18eeb5db6d28f2.ctex"]
+source_file="res://assets/UI/MainMenu/UI_NewGameButton_HoverLayer_v.1.png"
+dest_files=["res://.godot/imported/UI_NewGameButton_HoverLayer_v.1.png-56fecc9a696f9b7f9569889824a9b43b.ctex"]
 
 [params]
 
