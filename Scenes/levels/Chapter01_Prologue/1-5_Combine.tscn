@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dwtr65j7orcym"]
+[gd_scene load_steps=46 format=3 uid="uid://dwtr65j7orcym"]
 
 [ext_resource type="Texture2D" uid="uid://d11pmosyoyoot" path="res://assets/sprites/chapter 1/background/BG_Temple_Evening_v01.PNG" id="1_75b0w"]
 [ext_resource type="Texture2D" uid="uid://chet5uhwivnr5" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Gatekeeper01_v.02.png" id="2_uirqt"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="24_4mqif"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="24_py2tp"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="26_df7tg"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="27_barcx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlp3"]
 size = Vector2(1927, 154)
@@ -291,8 +292,8 @@ texture = ExtResource("1_75b0w")
 [node name="Panel_Gatekeeper" type="Node2D" parent="."]
 position = Vector2(1920, 1080)
 script = ExtResource("26_df7tg")
-dialog_lines = Array[String](["...", "...", "...", "..."])
-dialog_position_Array = Array[Vector2]([Vector2(650, 550), Vector2(900, 300), Vector2(650, 550), Vector2(650, 550)])
+dialog_lines = Array[String](["#€¥, ∂!∂ ¥0μ ℏ∩0ω +#@+ !∩ +€⌈m$ 0£..,", "N0, p|€@$€. N0+ @9@!∩...", "⍵#@+? ! ¿μ$+ ω@∩+ +0 +€|| ¥0μ +#@+ 0μ⌈ !$!$ |0√€ ¢@+$ $0 mμ¢# +#@+ $#€ ω0μ|∂ ℏ!|| μ$ £0⌈ +#€m.", "+@|ℏ!∩9 @60μ+ ¢@+$..."])
+dialog_position_Array = Array[Vector2]([Vector2(650, 550), Vector2(900, 300), Vector2(650, 510), Vector2(650, 550)])
 
 [node name="GateKeeper01" type="Node2D" parent="Panel_Gatekeeper"]
 position = Vector2(-1844, -659)
@@ -402,6 +403,43 @@ scale = Vector2(10, 10)
 visible = false
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("21_8jstf")]
+
+[node name="Chapter" type="Label" parent="."]
+offset_left = 1385.0
+offset_top = 6.0
+offset_right = 1590.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("27_barcx")
+theme_override_font_sizes/font_size = 50
+text = "Prologue"
+
+[node name="Scene" type="Label" parent="Chapter"]
+layout_mode = 0
+offset_left = 217.0
+offset_right = 509.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("27_barcx")
+theme_override_font_sizes/font_size = 50
+text = "A Cat In Time"
+
+[node name="Tutorial" type="RichTextLabel" parent="."]
+offset_left = 411.0
+offset_top = 139.0
+offset_right = 1783.0
+offset_bottom = 243.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("27_barcx")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "Try to use your [wave amp=50.0 freq=5.0 connected=1] [color=purple]KNOWLEDGE[/color][/wave] to solve [shake rate=50 level = 50 connected = 1] [color=darkred]THIS"
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

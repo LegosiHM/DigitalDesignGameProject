@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://brfg8dmjv7mgl"]
+[gd_scene load_steps=6 format=3 uid="uid://brfg8dmjv7mgl"]
 
 [ext_resource type="Script" uid="uid://blbcg8r3wwsu3" path="res://scripts/NPCs/TextBox.gd" id="1_1vca3"]
 [ext_resource type="Texture2D" uid="uid://chsu576e4q861" path="res://assets/UI/UI_Textbox_v01.png" id="2_2qk6b"]
+[ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="2_g0whw"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="3_fptd8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_itxli"]
+shader = ExtResource("2_g0whw")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
 
 [node name="TextBox" type="MarginContainer"]
 z_index = 1
@@ -11,6 +20,8 @@ offset_bottom = 257.0
 script = ExtResource("1_1vca3")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+modulate = Color(0.907942, 0.907942, 0.907942, 1)
+material = SubResource("ShaderMaterial_itxli")
 layout_mode = 2
 texture = ExtResource("2_2qk6b")
 region_rect = Rect2(0, 0.281193, 255.665, 256.447)
@@ -27,11 +38,13 @@ theme_override_constants/margin_left = 25
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_fptd8")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 42
 text = "Hello"
 vertical_alignment = 1
+uppercase = true
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

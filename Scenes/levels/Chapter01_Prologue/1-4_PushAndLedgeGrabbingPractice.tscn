@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bm82hrowymhds"]
+[gd_scene load_steps=20 format=3 uid="uid://bm82hrowymhds"]
 
 [ext_resource type="Texture2D" uid="uid://dy3juqpq2g1h5" path="res://assets/sprites/chapter 1/background/BG_Suburb_Evening_v02.PNG" id="1_adg2g"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_0gfru"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="11_omgn5"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/mechanics/Draggable_Panel.tscn" id="13_adg2g"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="14_lshpn"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="15_ml5d1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8bya"]
 size = Vector2(1922, 196)
@@ -55,7 +56,7 @@ position = Vector2(1350.5, -510)
 shape = SubResource("RectangleShape2D_0kf1p")
 
 [node name="PlatformPanel" parent="." instance=ExtResource("3_1hpxw")]
-layer_0/tile_data = PackedInt32Array(131078, 2, 0, 196614, 2, 0, 262150, 2, 0, 327686, 2, 0, 393222, 2, 0, 458758, 2, 0, 524294, 2, 0, 589830, 0, 3, 589831, 0, 3, 589832, 0, 3, 589833, 0, 3, 589834, 0, 3, 589835, 0, 3, 589836, 0, 3, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 589839, 0, 3, 589840, 0, 3, 589841, 0, 3, 589842, 0, 3, 589843, 0, 3, 589838, 0, 3, 589837, 0, 3, 524306, 2, 0, 524307, 0, 3, 458771, 0, 3, 393235, 0, 3, 327699, 0, 3, 262163, 0, 3, 131085, 2, 0, 131084, 2, 0, 131083, 2, 0, 131082, 2, 0, 131081, 2, 0, 131080, 2, 0, 131079, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 262152, 2, 0, 262153, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 262156, 2, 0, 262155, 2, 0, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0, 262160, 2, 0, 262161, 2, 0, 262162, 2, 0, 327698, 2, 0, 393234, 2, 0, 393233, 2, 0, 458769, 2, 0, 458770, 2, 0, 524305, 2, 0, 524304, 2, 0, 458768, 2, 0, 393232, 2, 0, 327696, 2, 0, 327697, 2, 0, 458767, 2, 0, 458766, 2, 0, 393230, 2, 0, 327694, 2, 0, 458765, 2, 0, 393229, 2, 0, 393231, 2, 0, 327695, 2, 0, 327693, 2, 0, 393228, 2, 0, 458764, 2, 0, 327692, 2, 0, 393227, 2, 0, 458763, 2, 0, 327691, 2, 0, 458762, 2, 0, 524298, 2, 0, 393226, 2, 0, 327690, 2, 0, 262154, 2, 0, 327689, 2, 0, 393225, 2, 0, 458761, 2, 0, 524296, 2, 0, 458760, 2, 0, 393224, 2, 0, 327688, 2, 0, 524297, 2, 0, 327687, 2, 0, 262151, 2, 0, 393223, 2, 0, 458759, 2, 0, 524295, 2, 0, 589827, 196611, 3, 589826, 131075, 3, 589825, 65539, 3, 589824, 3, 3, 524288, 2, 0, 458752, 2, 0, 458753, 2, 0, 524289, 2, 0, 524290, 2, 0, 458754, 2, 0, 458755, 2, 0, 524291, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 458751, 2, 0, 524287, 2, 0, 589823, 2, 0, 655359, 131075, 3, 196627, 262144, 3, 131087, 262144, 3, 131088, 262144, 3, 131089, 262144, 3, 131090, 262144, 3, 131091, 262144, 3)
+layer_0/tile_data = PackedInt32Array(131078, 2, 0, 196614, 2, 0, 262150, 2, 0, 327686, 2, 0, 393222, 2, 0, 458758, 2, 0, 524294, 2, 0, 589830, 65540, 3, 589831, 65540, 3, 589832, 65540, 3, 589833, 65540, 3, 589834, 65540, 3, 589835, 65540, 3, 589836, 65540, 3, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 589839, 65540, 3, 589840, 65540, 3, 589841, 65540, 3, 589842, 65540, 3, 589843, 65540, 3, 589838, 65540, 3, 589837, 65540, 3, 524306, 2, 0, 524307, 0, 3, 458771, 0, 3, 393235, 0, 3, 327699, 0, 3, 262163, 0, 3, 131085, 2, 0, 131084, 2, 0, 131083, 2, 0, 131082, 2, 0, 131081, 2, 0, 131080, 2, 0, 131079, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 262152, 2, 0, 262153, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 262156, 2, 0, 262155, 2, 0, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0, 262160, 2, 0, 262161, 2, 0, 262162, 2, 0, 327698, 2, 0, 393234, 2, 0, 393233, 2, 0, 458769, 2, 0, 458770, 2, 0, 524305, 2, 0, 524304, 2, 0, 458768, 2, 0, 393232, 2, 0, 327696, 2, 0, 327697, 2, 0, 458767, 2, 0, 458766, 2, 0, 393230, 2, 0, 327694, 2, 0, 458765, 2, 0, 393229, 2, 0, 393231, 2, 0, 327695, 2, 0, 327693, 2, 0, 393228, 2, 0, 458764, 2, 0, 327692, 2, 0, 393227, 2, 0, 458763, 2, 0, 327691, 2, 0, 458762, 2, 0, 524298, 2, 0, 393226, 2, 0, 327690, 2, 0, 262154, 2, 0, 327689, 2, 0, 393225, 2, 0, 458761, 2, 0, 524296, 2, 0, 458760, 2, 0, 393224, 2, 0, 327688, 2, 0, 524297, 2, 0, 327687, 2, 0, 262151, 2, 0, 393223, 2, 0, 458759, 2, 0, 524295, 2, 0, 524288, 2, 0, 458752, 2, 0, 458753, 2, 0, 524289, 2, 0, 524290, 2, 0, 458754, 2, 0, 458755, 2, 0, 524291, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 458751, 2, 0, 524287, 2, 0, 589823, 2, 0, 196627, 262144, 3, 589827, 65540, 3, 589826, 65540, 3, 589825, 65540, 3, 589824, 65540, 3, 655359, 65540, 3, 131088, 262144, 3, 131089, 262144, 3, 131090, 262144, 3, 131091, 262144, 3)
 
 [node name="Outline" parent="PlatformPanel" instance=ExtResource("3_1hpxw")]
 position = Vector2(45, 44)
@@ -100,6 +101,7 @@ offset_bottom = -159.0
 scale = Vector2(10, 10)
 
 [node name="Glitching" parent="CanvasLayer" instance=ExtResource("11_a88ds")]
+visible = false
 offset_left = -87.0
 offset_top = 537.0
 offset_right = 80.0
@@ -113,6 +115,56 @@ offset_left = 2.0
 offset_top = -4.0
 offset_right = 1922.0
 offset_bottom = 1076.0
+
+[node name="Chapter" type="Label" parent="."]
+offset_left = 1385.0
+offset_top = 6.0
+offset_right = 1590.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("15_ml5d1")
+theme_override_font_sizes/font_size = 50
+text = "Prologue"
+
+[node name="Scene" type="Label" parent="Chapter"]
+layout_mode = 0
+offset_left = 217.0
+offset_right = 509.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("15_ml5d1")
+theme_override_font_sizes/font_size = 50
+text = "A Cat In Time"
+
+[node name="Tutorial" type="RichTextLabel" parent="."]
+offset_left = 303.0
+offset_top = 276.0
+offset_right = 1675.0
+offset_bottom = 380.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("15_ml5d1")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "If a Panel [shake rate=50 level = 50 connected = 1] [color=darkred]collide[/color][/shake] with another Panel, it will move[wave amp=50.0 freq=5.0 connected=1] [color=purple] SLOWER"
+
+[node name="Tutorial2" type="RichTextLabel" parent="."]
+offset_left = 437.0
+offset_top = 586.0
+offset_right = 1809.0
+offset_bottom = 756.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("15_ml5d1")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "And you will [wave amp=50.0 freq=5.0 connected=1] [color=purple]SLOW FALL[/color][/wave] when trying to grab the  [shake rate=50 level = 50 connected = 1] [color=darkred]Draggable Panel"
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
