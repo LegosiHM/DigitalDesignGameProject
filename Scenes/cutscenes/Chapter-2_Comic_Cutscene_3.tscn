@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://burfug55c0meb"]
+[gd_scene load_steps=8 format=3 uid="uid://burfug55c0meb"]
 
 [ext_resource type="Script" uid="uid://cjrn5setdo6ke" path="res://scripts/cutscenes/chapter_2_comic_cutscene_3.gd" id="1_fcpgv"]
 [ext_resource type="Texture2D" uid="uid://bwc3jst7tahvd" path="res://assets/sprites/PaperTexture.jpg" id="2_4ykxc"]
 [ext_resource type="Texture2D" uid="uid://0y4sr7w8b3u7" path="res://assets/sprites/chapter 1-2 transition/Cutscene_03.png" id="3_fcpgv"]
-[ext_resource type="Texture2D" uid="uid://b2hctaoc42p0v" path="res://assets/UI/Group 1.png" id="4_thsdo"]
 [ext_resource type="Texture2D" uid="uid://cvn11k7g1vipv" path="res://assets/UI/Ellipse 1.png" id="5_recd7"]
+[ext_resource type="Texture2D" uid="uid://b66d1q8cojbj5" path="res://assets/UI/UI_ReminderLabel_v.1.png" id="6_4ykxc"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="6_v1ibm"]
+[ext_resource type="Texture2D" uid="uid://l1lo8csjn6x0" path="res://assets/UI/UI_LeftClick.png" id="7_s0eer"]
 
 [node name="ComicCutscene" type="Control"]
 layout_mode = 3
@@ -31,11 +32,6 @@ offset_bottom = 1080.0
 pivot_offset = Vector2(593, 912)
 texture = ExtResource("3_fcpgv")
 
-[node name="ReminderLabel" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.521569)
-position = Vector2(1828, 876)
-texture = ExtResource("4_thsdo")
-
 [node name="SkipRing" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_left = 1741.0
@@ -59,3 +55,14 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_v1ibm")
 theme_override_font_sizes/font_size = 50
 text = "SKIP"
+
+[node name="Reminder" type="Node2D" parent="."]
+
+[node name="ReminderLabel" type="Sprite2D" parent="Reminder"]
+position = Vector2(1785, 904)
+texture = ExtResource("6_4ykxc")
+
+[node name="UiLeftClick" type="Sprite2D" parent="Reminder"]
+position = Vector2(1615, 903)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_s0eer")
