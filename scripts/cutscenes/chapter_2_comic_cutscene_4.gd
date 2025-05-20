@@ -133,4 +133,4 @@ func _process(delta: float):
 
 func skip_cutscene():
 	# You can adjust this to your next scene or however you handle cutscene end:
-	get_tree().change_scene_to_file("res://Scenes/cutscenes/Chapter-2_Comic_Cutscene_5.tscn")
+	get_tree().change_scene_to_file("res://Scenes/cutscenes/Continue.tscn")

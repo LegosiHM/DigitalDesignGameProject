@@ -1,6 +1,6 @@
 extends Node
 
-@onready var text_box_scene = preload("res://scenes/UI/TextBox.tscn")  # Make sure path is correct
+@onready var text_box_scene = preload("res://Scenes/UI/TextBox.tscn")  # Make sure path is correct
 
 var dialog_lines: Array[String] = []
 var dialog_position_Array: Array[Vector2] = []

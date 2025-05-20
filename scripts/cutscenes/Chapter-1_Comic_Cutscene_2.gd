@@ -82,7 +82,7 @@ func show_next_panel():
 		# If the screen is full, transition to the next scene
 		if current_panel_index + 1 >= panels.size():
 			await get_tree().create_timer(1.5).timeout
-			get_tree().change_scene_to_file("res://scenes/cutscenes/Chapter-1_Comic_Cutscene_3.tscn")
+			get_tree().change_scene_to_file("res://Scenes/cutscenes/Chapter-1_Comic_Cutscene_3.tscn")
 
 func _process(delta: float):
 	if Input.is_action_just_pressed("click"):

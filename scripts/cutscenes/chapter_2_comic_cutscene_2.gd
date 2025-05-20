@@ -16,7 +16,7 @@ var reminder_visible: bool = false
 var fade_in_progress: bool = false
 var current_opacity: float = 0.0
 
-@onready var reminder_label = $ReminderLabel
+@onready var reminder_label = $Reminder
 
 var skip_timer: float = 0.0
 var holding_skip: bool = false
@@ -132,4 +132,4 @@ func _process(delta: float):
 
 func skip_cutscene():
 	# You can adjust this to your next scene or however you handle cutscene end:
-	get_tree().change_scene_to_file("res://Scenes/cutscenes/Chapter-2_Comic_Cutscene_3.tscn")
+	get_tree().change_scene_to_file("res://Scenes/cutscenes/Continue.tscn")
