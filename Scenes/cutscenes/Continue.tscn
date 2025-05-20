@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://2l261dkdhcaj"]
+
+[ext_resource type="Script" uid="uid://bi6vfkt0by2pw" path="res://scripts/cutscenes/continue.gd" id="1_im8cv"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="2_hfwlg"]
+
+[node name="Continue" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_im8cv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1925.0
+offset_bottom = 1083.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 450.0
+offset_right = 1300.0
+offset_bottom = 576.0
+pivot_offset = Vector2(295, 63)
+theme_override_fonts/font = ExtResource("2_hfwlg")
+theme_override_font_sizes/font_size = 80
+text = "To Be Continued..."

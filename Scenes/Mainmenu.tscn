@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwxkixi1awkib"]
+[gd_scene load_steps=9 format=3 uid="uid://dwxkixi1awkib"]
 
 [ext_resource type="Script" uid="uid://c70fygndrafsw" path="res://scripts/mainmenu.gd" id="1_6hnpv"]
+[ext_resource type="Texture2D" uid="uid://coa2a0amgtcgp" path="res://scripts/wap3w.png" id="2_28j1r"]
 [ext_resource type="Texture2D" uid="uid://b2if1ww175gns" path="res://assets/UI/MainMenu/UI_NewGameButton_UnderLayer_v.1.png" id="2_lgpea"]
 [ext_resource type="Texture2D" uid="uid://tjcd5ood7142" path="res://assets/UI/MainMenu/UI_NewGameButton_HoverLayer_v.1.png" id="3_i27ks"]
-[ext_resource type="Texture2D" uid="uid://bhdwbpp4wbm74" path="res://assets/UI/MainMenu/Mainmenu-V.1.png" id="4_i27ks"]
 [ext_resource type="Texture2D" uid="uid://7du0xxujy2xl" path="res://assets/UI/UI_GameLogo v.1.png" id="5_28j1r"]
+[ext_resource type="Texture2D" uid="uid://bv3wvw6v6dr2w" path="res://assets/UI/MainMenu/Load Button.png" id="6_lsapa"]
+[ext_resource type="Texture2D" uid="uid://bnskamwgftub1" path="res://assets/UI/MainMenu/Options Button.png" id="7_6a1r1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uk3yw"]
+texture = ExtResource("7_6a1r1")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,10 +20,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6hnpv")
 
-[node name="Mainmenu-v_1" type="Sprite2D" parent="."]
-position = Vector2(942, 537)
-scale = Vector2(1.15, 1.15)
-texture = ExtResource("4_i27ks")
+[node name="Wap3w" type="Sprite2D" parent="."]
+position = Vector2(961.5, 539.5)
+scale = Vector2(1.10938, 1.11214)
+texture = ExtResource("2_28j1r")
 
 [node name="NewGameButton" type="Control" parent="."]
 anchors_preset = 0
@@ -52,6 +57,31 @@ position = Vector2(474, 261)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_28j1r")
 
+[node name="LoadButton" type="Sprite2D" parent="."]
+modulate = Color(0.281187, 0.281187, 0.281187, 1)
+position = Vector2(20, 750)
+texture = ExtResource("6_lsapa")
+offset = Vector2(233, 0)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 825.0
+offset_right = 487.0
+offset_bottom = 938.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_uk3yw")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_uk3yw")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_uk3yw")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_uk3yw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_uk3yw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_uk3yw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uk3yw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_uk3yw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uk3yw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_uk3yw")
+theme_override_styles/normal = SubResource("StyleBoxTexture_uk3yw")
+
 [connection signal="mouse_entered" from="NewGameButton/Button" to="." method="_on_new_game_button_mouse_entered"]
 [connection signal="mouse_exited" from="NewGameButton/Button" to="." method="_on_new_game_button_mouse_exited"]
 [connection signal="pressed" from="NewGameButton/Button" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_quit_button_pressed"]

@@ -3,8 +3,6 @@ extends Control
 @onready var panel_container = $PanelContainer
 @export var Panel1 = Vector2()
 @export var Panel2 = Vector2()
-@export var Panel3 = Vector2()
-@export var Panel4 = Vector2()
 var panels = []
 var target_positions = []  # Stores the final position of each panel
 var entry_directions = []  # Controls if a panel enters from left (-1) or right (1)
@@ -45,9 +43,7 @@ func _ready():
 	# Define the exact positions where panels should land
 	target_positions = [
 		Panel1,   # Panel 1 position
-		Panel2,  # Panel 2 position
-		Panel3,  # Panel 3 position
-		Panel4   # Panel 4 position
+		Panel2  # Panel 2 position
 	]
 
 	# Define the entry direction for each panel (-1 = left, 1 = right)
@@ -82,7 +78,7 @@ func show_next_panel():
 		# If the screen is full, transition to the next scene
 		if current_panel_index + 1 >= panels.size():
 			await get_tree().create_timer(1.5).timeout
-			get_tree().change_scene_to_file("res://scenes/cutscenes/Chapter-1_Comic_Cutscene_3.tscn")
+			get_tree().change_scene_to_file("res://Scenes/cutscenes/Chapter-2_Comic_Cutscene_5.tscn")
 
 func _process(delta: float):
 	if Input.is_action_just_pressed("click"):
@@ -111,7 +107,6 @@ func _process(delta: float):
 			# Blinking (opacity going up and down smoothly)
 			var blink_opacity = 1 + (target_opacity - 1) * (0.5 + 0.5 * sin(blink_speed * Time.get_ticks_msec() / 1000.0))
 			reminder_label.modulate.a = blink_opacity
-	
 	# ===========================
 	# ESC Hold-to-Skip Logic Fixed
 	# ===========================
@@ -138,4 +133,4 @@ func _process(delta: float):
 
 func skip_cutscene():
 	# You can adjust this to your next scene or however you handle cutscene end:
-	get_tree().change_scene_to_file("res://Scenes/levels/Chapter01_Prologue/1-1_Introduction.tscn")
+	get_tree().change_scene_to_file("res://Scenes/cutscenes/Chapter-2_Comic_Cutscene_5.tscn")

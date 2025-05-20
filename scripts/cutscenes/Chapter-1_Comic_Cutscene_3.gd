@@ -17,7 +17,7 @@ var reminder_visible: bool = false
 var fade_in_progress: bool = false
 var current_opacity: float = 0.0
 
-@onready var reminder_label = $ReminderLabel
+@onready var reminder_label = $Reminder
 
 var skip_timer: float = 0.0
 var holding_skip: bool = false

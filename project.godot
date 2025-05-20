@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Time Whiskers"
-run/main_scene="res://scenes/cutscenes/Chapter-1_Comic_Cutscene_1.tscn"
+run/main_scene="uid://dwxkixi1awkib"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/UI/UI_Logo_v01.png"
 

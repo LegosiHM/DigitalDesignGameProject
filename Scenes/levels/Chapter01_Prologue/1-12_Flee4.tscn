@@ -77,7 +77,7 @@ shape = SubResource("RectangleShape2D_vaeto")
 z_index = 10
 position = Vector2(-3, -3)
 scale = Vector2(1.80741, 1.50943)
-my_scene = "res://Scenes/levels/Chapter02_Kernel/2-1_MeetCleopatra.tscn"
+my_scene = "res://Scenes/cutscenes/Chapter-2_Comic_Cutscene_1.tscn"
 disable_on_default = true
 portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 

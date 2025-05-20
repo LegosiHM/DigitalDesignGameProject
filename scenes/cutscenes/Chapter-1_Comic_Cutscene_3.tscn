@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnj3j7rqoytfx"]
+[gd_scene load_steps=12 format=3 uid="uid://cnj3j7rqoytfx"]
 
 [ext_resource type="Script" uid="uid://b2sd2dusjp1cx" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_3.gd" id="1_uomau"]
-[ext_resource type="Texture2D" uid="uid://c87xbvd82tv0p" path="res://assets/sprites/chapter 1/cutscenes/77b130bc-8d50-45a3-942c-ec8e2859c06a.png" id="2_jf56p"]
+[ext_resource type="Texture2D" uid="uid://c8l7471mbnxyj" path="res://assets/sprites/chapter 1/cutscenes/a7b8f838-1de1-4b8c-89cb-62648579acd5.png" id="2_3kaq8"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="3_7gh0n"]
 [ext_resource type="Texture2D" uid="uid://c2e5garf728y8" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_10.PNG" id="4_jqmg4"]
 [ext_resource type="Texture2D" uid="uid://bxr5stenrha0u" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_11.PNG" id="5_8f6en"]
-[ext_resource type="Texture2D" uid="uid://b2hctaoc42p0v" path="res://assets/UI/Group 1.png" id="6_g7m8q"]
+[ext_resource type="Texture2D" uid="uid://b66d1q8cojbj5" path="res://assets/UI/UI_ReminderLabel_v.1.png" id="6_3kaq8"]
 [ext_resource type="Texture2D" uid="uid://cvn11k7g1vipv" path="res://assets/UI/Ellipse 1.png" id="7_3kaq8"]
+[ext_resource type="Texture2D" uid="uid://l1lo8csjn6x0" path="res://assets/UI/UI_LeftClick.png" id="7_3rtto"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="8_3rtto"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hlsbl"]
@@ -37,8 +38,9 @@ Panel1 = Vector2(475, 25)
 Panel2 = Vector2(0, 550)
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-texture = ExtResource("2_jf56p")
+position = Vector2(962.25, 548.5)
+scale = Vector2(1.00236, 1.01638)
+texture = ExtResource("2_3kaq8")
 
 [node name="PanelContainer" type="Control" parent="."]
 anchors_preset = 0
@@ -62,10 +64,16 @@ offset_right = 1445.0
 offset_bottom = 1050.0
 texture = ExtResource("5_8f6en")
 
-[node name="ReminderLabel" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.521569)
-position = Vector2(1828, 876)
-texture = ExtResource("6_g7m8q")
+[node name="Reminder" type="Node2D" parent="."]
+
+[node name="ReminderLabel" type="Sprite2D" parent="Reminder"]
+position = Vector2(1785, 904)
+texture = ExtResource("6_3kaq8")
+
+[node name="UiLeftClick" type="Sprite2D" parent="Reminder"]
+position = Vector2(1615, 903)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_3rtto")
 
 [node name="SkipRing" type="TextureProgressBar" parent="."]
 layout_mode = 0

@@ -47,7 +47,7 @@ var current_platform_velocity := Vector2.ZERO
 var touching_panels := []
 
 func _ready() -> void:
-	sprite_original_offset = $AnimatedSprite2D.position
+	sprite_original_offset = $AnimatedSprite2D_1.position
 
 func _physics_process(delta: float) -> void:
 	restore_energy_process()
@@ -80,7 +80,7 @@ func _physics_process(delta: float) -> void:
 			is_slowFalling = false
 
 		if velocity.x == 0:
-			$AnimatedSprite2D.play("default")
+			$AnimatedSprite2D_1.play("default")
 
 
 	_check_fall_behavior()
@@ -88,14 +88,14 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		if Input.is_action_just_pressed("jump"):
 			is_grabbing = false
-			$AnimatedSprite2D.position = sprite_original_offset
+			$AnimatedSprite2D_1.position = sprite_original_offset
 			velocity.y = -jump_force  # Jump up from ledge
 
 			return
 		if Input.is_action_just_pressed("up"):
 			is_grabbing = false
 			position.y -= 5  # Climb up ledge
-			$AnimatedSprite2D.position = sprite_original_offset
+			$AnimatedSprite2D_1.position = sprite_original_offset
 
 			return
 		return
@@ -142,7 +142,7 @@ func _check_fall_behavior():
 		return
 
 func manage_animations() -> void:
-	var sprite = $AnimatedSprite2D
+	var sprite = $AnimatedSprite2D_1
 
 	# Update facing direction
 	if velocity.x > 0:
@@ -161,7 +161,7 @@ func manage_animations() -> void:
 	# Priority animation states
 	# Near the top of manage_animations()
 	if not is_grabbing:
-		$AnimatedSprite2D.position = sprite_original_offset
+		$AnimatedSprite2D_1.position = sprite_original_offset
 
 	if is_grabbing:
 		var offset = 12  # adjust as needed

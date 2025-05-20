@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7cvfgseaehsw"]
+[gd_scene load_steps=11 format=3 uid="uid://c7cvfgseaehsw"]
 
 [ext_resource type="Script" uid="uid://b8avkq7tkggyk" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_4.gd" id="1_tdwa7"]
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="2_i3jja"]
 [ext_resource type="Texture2D" uid="uid://c8qsv6lh4yiwv" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_12_v1.png" id="3_abyf6"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="4_m0hhn"]
 [ext_resource type="Texture2D" uid="uid://d3me73s7gpvwd" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_13.PNG" id="5_i4e8i"]
-[ext_resource type="Texture2D" uid="uid://b2hctaoc42p0v" path="res://assets/UI/Group 1.png" id="6_bayqu"]
 [ext_resource type="Texture2D" uid="uid://cvn11k7g1vipv" path="res://assets/UI/Ellipse 1.png" id="7_puxec"]
+[ext_resource type="Texture2D" uid="uid://b66d1q8cojbj5" path="res://assets/UI/UI_ReminderLabel_v.1.png" id="8_hw21p"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="8_rri2e"]
+[ext_resource type="Texture2D" uid="uid://l1lo8csjn6x0" path="res://assets/UI/UI_LeftClick.png" id="9_88rdi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5oym5"]
 shader = ExtResource("4_m0hhn")
@@ -55,11 +56,6 @@ offset_right = 1850.0
 offset_bottom = 1050.0
 texture = ExtResource("5_i4e8i")
 
-[node name="ReminderLabel" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.521569)
-position = Vector2(1828, 876)
-texture = ExtResource("6_bayqu")
-
 [node name="SkipRing" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_left = 1741.0
@@ -83,3 +79,14 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_rri2e")
 theme_override_font_sizes/font_size = 50
 text = "SKIP"
+
+[node name="Reminder" type="Node2D" parent="."]
+
+[node name="ReminderLabel" type="Sprite2D" parent="Reminder"]
+position = Vector2(1785, 904)
+texture = ExtResource("8_hw21p")
+
+[node name="UiLeftClick" type="Sprite2D" parent="Reminder"]
+position = Vector2(1615, 903)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_88rdi")

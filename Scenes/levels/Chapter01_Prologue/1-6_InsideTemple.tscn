@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bbkm28l77chqh"]
+[gd_scene load_steps=56 format=3 uid="uid://bbkm28l77chqh"]
 
 [ext_resource type="Texture2D" uid="uid://d11pmosyoyoot" path="res://assets/sprites/chapter 1/background/BG_Temple_Evening_v01.PNG" id="1_h6445"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="2_7kt35"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://chvaips52w3rf" path="res://assets/sprites/chapter 1/story panel/StoryPaneL InsideTemple_Insulting v.01.PNG" id="17_ab6w5"]
 [ext_resource type="Texture2D" uid="uid://b8lt6hngw6nyn" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_Chasing_v.01.PNG" id="18_ptahb"]
 [ext_resource type="Texture2D" uid="uid://cqsbrkj3tyos2" path="res://Animation/Jewelry/Collar.png" id="19_5qj8d"]
+[ext_resource type="Script" uid="uid://cs8d2pmtpi7hx" path="res://scripts/player/jewelry.gd" id="19_jo4no"]
 [ext_resource type="Texture2D" uid="uid://d0dw64crmklry" path="res://assets/sprites/chapter 1/story panel/StoryPanel _InsideTemple_CatStatue _v.01.PNG" id="19_rrse1"]
 [ext_resource type="Shader" uid="uid://hafbr2i311c0" path="res://scripts/shaders/Bouncing.gdshader" id="19_xe81i"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="20_x8ipv"]
@@ -371,6 +372,7 @@ texture = ExtResource("17_ab6w5")
 [node name="Jewelry" type="Area2D" parent="."]
 position = Vector2(1078, 865)
 rotation = -0.412285
+script = ExtResource("19_jo4no")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jewelry"]
 z_index = 2
@@ -448,7 +450,7 @@ position = Vector2(-1749, -364)
 texture = ExtResource("18_ptahb")
 
 [node name="Player" parent="." instance=ExtResource("20_x8ipv")]
-position = Vector2(986, -291)
+position = Vector2(1251, -285)
 
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)
@@ -530,5 +532,6 @@ theme_override_font_sizes/normal_font_size = 84
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1] [color=purple]Oopsie![/color][/wave] Did you just [shake rate=50 level = 50 connected = 1] [color=darkred]STOLE...THAT THING?!"
 
+[connection signal="body_entered" from="Jewelry" to="Jewelry" method="_on_body_entered"]
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
