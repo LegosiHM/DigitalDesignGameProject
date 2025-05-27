@@ -141,7 +141,6 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_w0t8t")
 
 [node name="Panel_PriestGlare" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
-visible = false
 position = Vector2(1920, 1080)
 script = ExtResource("5_8tpl8")
 dialog_lines = Array[String](["?! ⍵#0'$ +#€⌈€!"])
