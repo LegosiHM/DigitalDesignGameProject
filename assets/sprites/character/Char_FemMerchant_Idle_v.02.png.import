@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c87xbvd82tv0p"
-path="res://.godot/imported/77b130bc-8d50-45a3-942c-ec8e2859c06a.png-0409f14a024d93fa9b37429a4132fd76.ctex"
+uid="uid://crsaumjpmqk7x"
+path="res://.godot/imported/Char_FemMerchant_Idle_v.02.png-f5c360cc5469711e8151c63fda4b3c72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chapter 1/cutscenes/77b130bc-8d50-45a3-942c-ec8e2859c06a.png"
-dest_files=["res://.godot/imported/77b130bc-8d50-45a3-942c-ec8e2859c06a.png-0409f14a024d93fa9b37429a4132fd76.ctex"]
+source_file="res://assets/sprites/character/Char_FemMerchant_Idle_v.02.png"
+dest_files=["res://.godot/imported/Char_FemMerchant_Idle_v.02.png-f5c360cc5469711e8151c63fda4b3c72.ctex"]
 
 [params]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://b3fg8d5sskwx0"]
+[gd_scene load_steps=38 format=3 uid="uid://b3fg8d5sskwx0"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_lrkdk"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_subok"]
+[ext_resource type="Texture2D" uid="uid://cdor4s4em2hy1" path="res://assets/sprites/chapter 2/backgrounds/Background_CH2Bazaar_v.02.PNG" id="3_subok"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_x3dna"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_e8q2y"]
 [ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="6_7gvvb"]
@@ -265,6 +266,7 @@ position = Vector2(129, -831)
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
 position = Vector2(958, 540)
+texture = ExtResource("3_subok")
 
 [node name="Panel" parent="." instance=ExtResource("4_x3dna")]
 modulate = Color(0.803922, 0.803922, 0.803922, 1)

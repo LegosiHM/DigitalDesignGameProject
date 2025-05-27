@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgllfva2wfr15"
-path="res://.godot/imported/Tileset_Bazaar_v.01.PNG-3a968e23ecd5b81d9ba782e532cbb1ff.ctex"
+uid="uid://b3c6pbwlq74mb"
+path="res://.godot/imported/Char_MaleMerchant_Idle_v.01.png-fa63066ac8f2a4dd612c8a7a7591873d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chapter 2/tilesets/Tileset_Bazaar_v.01.PNG"
-dest_files=["res://.godot/imported/Tileset_Bazaar_v.01.PNG-3a968e23ecd5b81d9ba782e532cbb1ff.ctex"]
+source_file="res://assets/sprites/character/Char_MaleMerchant_Idle_v.01.png"
+dest_files=["res://.godot/imported/Char_MaleMerchant_Idle_v.01.png-fa63066ac8f2a4dd612c8a7a7591873d.ctex"]
 
 [params]
 

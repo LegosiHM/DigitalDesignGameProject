@@ -29,7 +29,7 @@
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="27_barcx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlp3"]
-size = Vector2(1927, 154)
+size = Vector2(2021, 154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8uvc"]
 size = Vector2(203.5, 1487)
@@ -38,7 +38,7 @@ size = Vector2(203.5, 1487)
 size = Vector2(1924, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtlif"]
-size = Vector2(178, 772)
+size = Vector2(178, 776)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aavoo"]
 shader = ExtResource("4_c00ox")
@@ -270,7 +270,7 @@ script = ExtResource("19_ibnw7")
 respawn_position = Vector2(1555, 821)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(287.5, 47)
+position = Vector2(240.5, 47)
 shape = SubResource("RectangleShape2D_gnlp3")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
@@ -282,7 +282,7 @@ position = Vector2(288, -1425)
 shape = SubResource("RectangleShape2D_bmmmy")
 
 [node name="Detector04" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(1338, -259)
+position = Vector2(1338, -261)
 shape = SubResource("RectangleShape2D_jtlif")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -378,7 +378,7 @@ rotation = 3.14159
 scale = Vector2(-37.7723, 13.2026)
 
 [node name="StaticPanelCollision5" parent="PanelCollissionHolder" instance=ExtResource("6_xselg")]
-position = Vector2(953, 1161)
+position = Vector2(947, 1155)
 rotation = 3.14159
 scale = Vector2(-108.784, 7.4829)
 

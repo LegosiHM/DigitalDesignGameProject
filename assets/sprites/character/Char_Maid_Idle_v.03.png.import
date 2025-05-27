@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpbg2bpj5v6eo"
-path="res://.godot/imported/Background_CH2Bazaar_v.01.PNG-d79636bb69e0b95389f15b6ce7fc9128.ctex"
+uid="uid://c3q7c5j432kv"
+path="res://.godot/imported/Char_Maid_Idle_v.03.png-1e599b0e84c71642b0f11363a490253b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chapter 2/assets/Palace/Background_CH2Bazaar_v.01.PNG"
-dest_files=["res://.godot/imported/Background_CH2Bazaar_v.01.PNG-d79636bb69e0b95389f15b6ce7fc9128.ctex"]
+source_file="res://assets/sprites/character/Char_Maid_Idle_v.03.png"
+dest_files=["res://.godot/imported/Char_Maid_Idle_v.03.png-1e599b0e84c71642b0f11363a490253b.ctex"]
 
 [params]
 

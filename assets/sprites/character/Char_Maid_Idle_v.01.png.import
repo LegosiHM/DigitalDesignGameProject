@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8l7471mbnxyj"
-path="res://.godot/imported/a7b8f838-1de1-4b8c-89cb-62648579acd5.png-283e1ce6cb3e6d40a4e5296238f098ff.ctex"
+uid="uid://cpcrktwgdqsmt"
+path="res://.godot/imported/Char_Maid_Idle_v.01.png-7c9d6058859534ab4363598c5cbcfcab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chapter 1/cutscenes/a7b8f838-1de1-4b8c-89cb-62648579acd5.png"
-dest_files=["res://.godot/imported/a7b8f838-1de1-4b8c-89cb-62648579acd5.png-283e1ce6cb3e6d40a4e5296238f098ff.ctex"]
+source_file="res://assets/sprites/character/Char_Maid_Idle_v.01.png"
+dest_files=["res://.godot/imported/Char_Maid_Idle_v.01.png-7c9d6058859534ab4363598c5cbcfcab.ctex"]
 
 [params]
 

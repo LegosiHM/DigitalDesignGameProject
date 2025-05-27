@@ -475,7 +475,7 @@ shape = SubResource("RectangleShape2D_dhksy")
 
 [node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("22_mtye2")]
 position = Vector2(-88, 128)
-my_scene = "res://Scenes/levels/Chapter01_Prologue/1-6_Flee1.tscn"
+my_scene = "res://Scenes/levels/Chapter01_Prologue/1-7_Flee1.tscn"
 disable_on_default = true
 portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 
