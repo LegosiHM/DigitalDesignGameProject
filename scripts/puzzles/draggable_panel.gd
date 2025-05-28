@@ -49,7 +49,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	check_overlap_area()
 
-	var player_position = player.global_position
+	var _player_position = player.global_position
 	
 	if untouchable:
 		if collide:
@@ -121,14 +121,14 @@ func check_overlap_area():
 func respawn_with_effect():
 	effect_running = true
 	var blur_effect = $"../CanvasLayer/Respawn_Effect"
-	var material := blur_effect.material as ShaderMaterial
+	var blur_shader_material := blur_effect.material as ShaderMaterial
 
 	blur_effect.visible = true
 
 	var tween := get_tree().create_tween()
 	respawn_timer()  # Teleport the player
-	tween.tween_property(material, "shader_parameter/height", 1.0, 0.7)
-	tween.tween_property(material, "shader_parameter/height", -1.0, 0.7)
+	tween.tween_property(blur_shader_material, "shader_parameter/height", 1.0, 0.7)
+	tween.tween_property(blur_shader_material, "shader_parameter/height", -1.0, 0.7)
 	await tween.finished
 
 	blur_effect.visible = false
@@ -145,7 +145,7 @@ func respawn_timer():
 func get_velocity() -> Vector2:
 	return velocity
 
-func get_motion_delta(delta: float) -> Vector2:
+func get_motion_delta(_delta: float) -> Vector2:
 	var motion = global_position - last_position
 	last_position = global_position
 	return motion

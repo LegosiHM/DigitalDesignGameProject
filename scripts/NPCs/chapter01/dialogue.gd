@@ -42,7 +42,7 @@ func _ready():
 # ------------------------------------------------------------------------------
 # _process(delta): Optimized toggle for interaction availability
 # ------------------------------------------------------------------------------
-func _process(delta):
+func _process(_delta):
 	if visible:
 		can_interact = true
 		set_process(false)  # Disable further processing to save performance
@@ -52,7 +52,7 @@ func _process(delta):
 # ------------------------------------------------------------------------------
 # _on_input_event(): Triggered when clicked by mouse
 # ------------------------------------------------------------------------------
-func _on_input_event(viewport, event, shape_idx):
+func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		modulate = Color("ffffff")  # Change color to show interaction
 		if !can_interact or dialog_active:
