@@ -20,6 +20,7 @@ config/icon="res://assets/UI/UI_Logo_v01.png"
 PlatformManager="*res://zNot Used/PlatformManager.gd"
 DialogManager="*res://singletons/DialogManager.gd"
 CursorManager="*res://scripts/UI/Cursor_Manager.gd"
+Global="*res://singletons/Global.gd"
 
 [display]
 
@@ -42,6 +43,7 @@ folder_colors={
 
 Player=""
 draggable_panels=""
+hj_collectibles=""
 
 [input]
 

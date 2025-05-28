@@ -80,7 +80,7 @@ func _physics_process(delta: float) -> void:
 			is_slowFalling = false
 
 		if velocity.x == 0:
-			$AnimatedSprite2D_1.play("default")
+			play_anim("default")
 
 
 	_check_fall_behavior()
@@ -166,27 +166,27 @@ func manage_animations() -> void:
 	if is_grabbing:
 		var offset = 12  # adjust as needed
 		sprite.position = sprite_original_offset + Vector2(facing_direction * offset, 0)
-		sprite.play("ledge_grab")
+		play_anim("ledge_grab")
 		return
 	elif is_slowFalling:
-		sprite.play("slow_falling")
+		play_anim("slow_falling")
 		return
 
 	# Air animations
 	if not is_on_floor():
 		if velocity.y < -10:
-			sprite.play("jump")
+			play_anim("jump")
 		else:
-			sprite.play("landing")
+			play_anim("landing")
 
 
 	elif abs(velocity.x) > 10:
 		if get_input_direction().x != 0:
-			sprite.play("run")  # only play run if input is pressed
+			play_anim("run")  # only play run if input is pressed
 		else:
-			sprite.play("default")  # player is standing on moving thing
+			play_anim("default")  # player is standing on moving thing
 	else:
-		sprite.play("default")
+		play_anim("default")
 
 
 func _flip_raycast_direction(direction: int):
@@ -325,3 +325,10 @@ func _on_platform_entered(area: Area2D) -> void:
 func _on_platform_exited(area: Area2D) -> void:
 	if area.is_in_group("draggable_panels"):
 		touching_panels.erase(area)
+
+func apply_hj_power() -> void:
+	Global.has_hj_power = true
+
+func play_anim(name: String):
+	var suffix := "HJ" if Global.has_hj_power else ""
+	$AnimatedSprite2D_1.play(name + suffix)

@@ -369,7 +369,7 @@ material = SubResource("ShaderMaterial_6gv85")
 position = Vector2(-1408, -709)
 texture = ExtResource("17_ab6w5")
 
-[node name="Jewelry" type="Area2D" parent="."]
+[node name="Jewelry" type="Area2D" parent="." groups=["hj_collectibles"]]
 position = Vector2(1078, 865)
 rotation = -0.412285
 script = ExtResource("19_jo4no")
