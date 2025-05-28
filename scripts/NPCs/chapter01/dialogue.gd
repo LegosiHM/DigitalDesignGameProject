@@ -54,10 +54,11 @@ func _process(_delta):
 # ------------------------------------------------------------------------------
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		modulate = Color("ffffff")  # Change color to show interaction
-		if !can_interact or dialog_active:
+		# Do not proceed if already showing dialog
+		if !can_interact or dialog_active or DialogManager.is_dialog_active:
 			return
-
+		
+		modulate = Color("ffffff")  # Change color to show interaction
 		_show_dialog()
 
 # ------------------------------------------------------------------------------
