@@ -76,5 +76,6 @@ func respawn_with_effect():
 
 func respawn_timer():
 	var player = get_tree().current_scene.get_node("Player")
+	player.audio_game_over.play()
 	await get_tree().create_timer(0.5).timeout  # Delay actual teleport slightly for visual sync
 	player.global_position = respawn_position  # Teleport the player to the designated point

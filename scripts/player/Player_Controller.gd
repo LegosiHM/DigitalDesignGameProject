@@ -52,6 +52,24 @@ enum jump_directions { UP = -1, DOWN = 1 }
 @export var boost_decay_speed: float = 8.0
 
 # ------------------------------------------------------------------------------
+# AUDIO STREAM PLAYERS (SFX)
+# ------------------------------------------------------------------------------
+
+@onready var audio_jump = $AudioManager/Audio_Jump
+@onready var audio_land = $AudioManager/Audio_Land
+@onready var audio_ledge_grab = $AudioManager/Audio_LedgeGrab
+@onready var audio_slow_fall = $AudioManager/Audio_SlowFall
+@onready var audio_walk_start = $AudioManager/Audio_WalkStart
+@onready var audio_game_over = $AudioManager/Audio_GameOver
+@onready var audio_dragging = $AudioManager/Audio_Dragging
+@onready var audio_drag_end = $AudioManager/Audio_DragEnd
+@onready var audio_drag_threshold = $AudioManager/Audio_DragThreshold
+@onready var audio_drag_fully_replenish = $AudioManager/Audio_DragFullyReplenish
+@onready var audio_illegal_drag = $AudioManager/Audio_IllegalDrag
+@onready var audio_hypnotize_before = $AudioManager/Audio_HypnotizeBefore
+@onready var audio_hypnotize_after = $AudioManager/Audio_HypnotizeAfter
+
+# ------------------------------------------------------------------------------
 # INTERNAL STATE VARIABLES
 # ------------------------------------------------------------------------------
 
@@ -71,6 +89,9 @@ var touching_panels := []
 var sprite_original_offset := Vector2.ZERO
 
 var input_enabled: bool = true # If false, input is ignored (used for respawn delay)
+
+var walk_input_started := false # Used to trigger walk start SFX only once
+var was_dragging_panel := false # Used to track dragging state change for SFX
 
 # ------------------------------------------------------------------------------
 # ENERGY SYSTEM
@@ -97,6 +118,20 @@ func _physics_process(delta: float) -> void:
 	if not input_enabled:
 		play_anim("default")
 		return
+	
+	# ------------------------------------------------------------------------------
+	# WALK START SOUND (IMMEDIATE ON INPUT)
+	# ------------------------------------------------------------------------------
+
+	if not walk_input_started and is_on_floor():
+		if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
+			audio_walk_start.play()
+			walk_input_started = true
+
+	if Input.is_action_just_released("left") or Input.is_action_just_released("right"):
+		# Reset so the next walk can play again
+		walk_input_started = false
+
 
 	var inputs: Dictionary = get_inputs()
 	handle_jump(delta, inputs.input_direction, inputs.jump_strength, inputs.jump_pressed, inputs.jump_released)
@@ -115,6 +150,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_solid_ground():
 		if is_slowFalling:
 			is_slowFalling = false
+			audio_slow_fall.stop()
 		if velocity.x == 0:
 			play_anim("default")
 
@@ -127,24 +163,30 @@ func _physics_process(delta: float) -> void:
 			is_grabbing = false
 			$AnimatedSprite2D_1.position = sprite_original_offset
 			velocity.y = -jump_force
+			audio_slow_fall.stop()
 			return
 		if Input.is_action_just_pressed("up"):
 			is_grabbing = false
 			position.y -= 5
 			$AnimatedSprite2D_1.position = sprite_original_offset
+			audio_slow_fall.stop()
 			return
 		return
 
 	# Handle slow fall logic
 	elif is_slowFalling:
 		velocity = Vector2.ZERO
+		if not audio_slow_fall.playing:
+			audio_slow_fall.play()
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_force
 			is_slowFalling = false
+			audio_slow_fall.stop()
 			return
 		if Input.is_action_just_pressed("up"):
 			position.y -= 5
 			is_slowFalling = false
+			audio_slow_fall.stop()
 			return
 		return
 
@@ -192,6 +234,7 @@ func _check_fall_behavior():
 
 	if can_grab:
 		is_grabbing = true
+		audio_ledge_grab.play()
 		state = LEDGE_GRAB
 		velocity = Vector2.ZERO
 		start_ledgeGrab_cooldown()
@@ -238,6 +281,8 @@ func manage_animations() -> void:
 			play_anim("jump")
 		else:
 			play_anim("landing")
+			if not is_grabbing or not is_slowFalling:
+				audio_land.play()
 	elif abs(velocity.x) > 10:
 		if get_input_direction().x != 0:
 			play_anim("run")
@@ -290,6 +335,7 @@ func apply_jump(_move_direction: Vector2, jump_direction: int = jump_directions.
 	should_jump = false
 	jumping = true
 	velocity.y += jump_force * jump_direction
+	audio_jump.play()
 
 func apply_velocity(delta: float, move_direction: Vector2) -> void:
 	velocity.x += move_direction.x * acceleration * delta
@@ -327,15 +373,36 @@ func reset_apex_modifier() -> void:
 	apex_active = false
 	gravity /= apex_gravity_modifier
 
+
 # ------------------------------------------------------------------------------
 # ENERGY SYSTEM
 # ------------------------------------------------------------------------------
 
 func restore_energy_process():
-	if is_dragging_panel:
-		return
-	if current_energy < max_energy:
+	# Detect transition: not dragging → dragging
+	if is_dragging_panel and not was_dragging_panel:
+		audio_dragging.play()
+
+	# Detect transition: dragging → not dragging
+	elif not is_dragging_panel and was_dragging_panel:
+		if audio_dragging.playing:
+			audio_dragging.stop()
+		audio_drag_end.play()
+
+	# Replenish energy (and maybe play replenish SFX)
+	if not is_dragging_panel and current_energy < max_energy:
+		var was_above_threshold := current_energy >= threshold_energy
 		current_energy += 5
+	
+		if current_energy >= max_energy:
+			audio_drag_fully_replenish.play()
+		
+		elif current_energy >= threshold_energy and not was_above_threshold:
+			audio_drag_threshold.play()
+
+	# Update state at the end of frame
+	was_dragging_panel = is_dragging_panel
+
 
 func consume_energy(amount: int) -> bool:
 	if current_energy >= amount:

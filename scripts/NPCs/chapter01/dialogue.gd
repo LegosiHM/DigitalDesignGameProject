@@ -66,8 +66,18 @@ func _on_input_event(_viewport, event, _shape_idx):
 # ------------------------------------------------------------------------------
 func _show_dialog():
 	dialog_active = true
-	can_interact = false  # Prevent re-interaction until dialog ends
-	DialogManager.start_dialog(dialog_position_Array, dialog_lines, self)  # External manager handles dialog
+	can_interact = false
+
+	# 🔊 Play the correct hypnotize SFX based on HJ state
+	var player = get_tree().current_scene.get_node("Player")
+	if player:
+		if not Global.has_hj_power:
+			player.audio_hypnotize_before.play()
+		else:
+			player.audio_hypnotize_after.play()
+
+	DialogManager.start_dialog(dialog_position_Array, dialog_lines, self)
+
 
 # ------------------------------------------------------------------------------
 # _on_dialog_finished(): Called by DialogManager when dialog is done

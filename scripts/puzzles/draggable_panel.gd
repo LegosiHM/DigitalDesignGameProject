@@ -46,15 +46,25 @@ func _ready() -> void:
 # PROCESS: Main logic each frame
 # ------------------------------------------------------------------------------
 
+# ------------------------------------------------------------------------------
+# PROCESS: Main logic each frame
+# ------------------------------------------------------------------------------
+
 func _process(delta: float) -> void:
 	check_overlap_area()
 
 	var _player_position = player.global_position
-	
+
+	# ------------------------------------------------------------------------------
+	# HANDLE UNTOUCHABLE PANEL (Respawn Trigger)
+	# ------------------------------------------------------------------------------
 	if untouchable:
 		if collide:
 			respawn_with_effect()
 
+	# ------------------------------------------------------------------------------
+	# DRAGGING LOGIC
+	# ------------------------------------------------------------------------------
 	if dragging:
 		var energy_needed = energyConsumption * (2 if collide else 1)
 
@@ -69,6 +79,17 @@ func _process(delta: float) -> void:
 		var move_speed = illegalDragging_speed if collide else normalDragging_speed
 		global_position = global_position.move_toward(new_position, move_speed * delta)
 
+		# ------------------------------------------------------------------------------
+		# PLAY ILLEGAL DRAG SOUND FROM PLAYER (When over forbidden area)
+		# ------------------------------------------------------------------------------
+		if collide and not player.audio_illegal_drag.playing:
+			player.audio_illegal_drag.play()
+		elif not collide and player.audio_illegal_drag.playing:
+			player.audio_illegal_drag.stop()
+
+	# ------------------------------------------------------------------------------
+	# RETURNING LOGIC
+	# ------------------------------------------------------------------------------
 	elif returning:
 		var previous_position = global_position
 

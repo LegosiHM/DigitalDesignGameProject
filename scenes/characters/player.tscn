@@ -1,4 +1,4 @@
-[gd_scene load_steps=384 format=3 uid="uid://d3ad0muthw2u2"]
+[gd_scene load_steps=397 format=3 uid="uid://d3ad0muthw2u2"]
 
 [ext_resource type="Script" uid="uid://5eirkgen8jmk" path="res://scripts/player/Player_Controller.gd" id="1_rajx7"]
 [ext_resource type="Texture2D" uid="uid://cm2e7c3qv4237" path="res://Animation/Normal/Idle(New)/idlenew2_00.png" id="3_ir7wy"]
@@ -380,6 +380,19 @@
 [ext_resource type="Texture2D" uid="uid://km8y74kqlnye" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ3.png" id="378_k5hpy"]
 [ext_resource type="Texture2D" uid="uid://c5mvtmqd6i1qf" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ4.png" id="379_kg8cp"]
 [ext_resource type="Texture2D" uid="uid://b0mf6e6x7jikh" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ5.png" id="380_13glq"]
+[ext_resource type="AudioStream" uid="uid://bp7u6eulaexlc" path="res://assets/SFX/CatSFX/SFX_Cat_Jump_v01.mp3" id="381_5wu6c"]
+[ext_resource type="AudioStream" uid="uid://mf1bgqwr8bec" path="res://assets/SFX/CatSFX/SFX_Cat_Land_v01.mp3" id="382_k5hpy"]
+[ext_resource type="AudioStream" uid="uid://7acjhwt3yy3g" path="res://assets/SFX/CatSFX/SFX_Cat_LedgeGrab_v01.mp3" id="383_13glq"]
+[ext_resource type="AudioStream" uid="uid://bjsynla6q67qg" path="res://assets/SFX/CatSFX/SFX_Cat_SlowFall_v01.mp3" id="384_27bba"]
+[ext_resource type="AudioStream" uid="uid://dklqc3flbn47f" path="res://assets/SFX/CatSFX/SFX_Cat_Walk_v01.mp3" id="385_j5556"]
+[ext_resource type="AudioStream" uid="uid://c2x4cbmwemd2" path="res://assets/SFX/CatSFX/SFX_CatAbility_Dragging_v01.mp3" id="386_7ot4o"]
+[ext_resource type="AudioStream" uid="uid://d3kmgwb81242l" path="res://assets/SFX/CatSFX/SFX_CatAbility_DragEnd_v01.mp3" id="387_yilp0"]
+[ext_resource type="AudioStream" uid="uid://b20mm38o4ad67" path="res://assets/SFX/CatSFX/SFX_CatAbility_DragReachThreshold_v01.mp3" id="388_nc2j5"]
+[ext_resource type="AudioStream" uid="uid://k0ux28oiaysk" path="res://assets/SFX/CatSFX/SFX_CatAbility_DragFullyReplenish_v01.mp3" id="389_7ot4o"]
+[ext_resource type="AudioStream" uid="uid://hw47q1mrof8r" path="res://assets/SFX/CatSFX/SFX_Cat_GameOver_v01.mp3" id="390_e8w4b"]
+[ext_resource type="AudioStream" uid="uid://bovtieu1mbsq5" path="res://assets/SFX/CatSFX/SFX_CatAbility_IllegalDragging_v01.mp3" id="390_yilp0"]
+[ext_resource type="AudioStream" uid="uid://bxvjle6jxr54j" path="res://assets/SFX/CatSFX/SFX_CatAbility_HypnotizeUseBefore_v01.mp3" id="391_nc2j5"]
+[ext_resource type="AudioStream" uid="uid://c0yjllb8x2kii" path="res://assets/SFX/CatSFX/SFX_CatAbility_HypnotizeUseAfter_v01.mp3" id="392_phb7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xont5"]
 size = Vector2(72.8062, 64.0176)
@@ -1652,6 +1665,60 @@ sprite_frames = SubResource("SpriteFrames_7105b")
 animation = &"slow_fallingHJ"
 frame = 2
 frame_progress = 0.229841
+
+[node name="AudioManager" type="Node2D" parent="."]
+
+[node name="Audio_Jump" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("381_5wu6c")
+max_distance = 4096.0
+
+[node name="Audio_Land" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("382_k5hpy")
+max_distance = 4096.0
+
+[node name="Audio_LedgeGrab" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("383_13glq")
+max_distance = 4096.0
+
+[node name="Audio_SlowFall" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("384_27bba")
+max_distance = 4096.0
+
+[node name="Audio_WalkStart" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("385_j5556")
+max_distance = 4096.0
+
+[node name="Audio_Dragging" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("386_7ot4o")
+max_distance = 4096.0
+
+[node name="Audio_DragEnd" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("387_yilp0")
+max_distance = 4096.0
+
+[node name="Audio_DragThreshold" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("388_nc2j5")
+max_distance = 4096.0
+
+[node name="Audio_DragFullyReplenish" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("389_7ot4o")
+max_distance = 4096.0
+
+[node name="Audio_IllegalDrag" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("390_yilp0")
+max_distance = 4096.0
+
+[node name="Audio_GameOver" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("390_e8w4b")
+max_distance = 4096.0
+
+[node name="Audio_HypnotizeBefore" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("391_nc2j5")
+max_distance = 4096.0
+
+[node name="Audio_HypnotizeAfter" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("392_phb7l")
+max_distance = 4096.0
 
 [connection signal="area_entered" from="PlatformDetector" to="." method="_on_platform_entered"]
 [connection signal="area_exited" from="PlatformDetector" to="." method="_on_platform_exited"]
