@@ -58,6 +58,12 @@ func _show_text_box():
 	# Attach to current scene's root
 	if get_tree().current_scene:
 		get_tree().current_scene.add_child(text_box)
+	
+	# Start dialog and tell player to play talking sound
+	var player = get_tree().current_scene.get_node("Player")
+	if player and player.has_method("play_npc_talking"):
+		player.play_npc_talking()
+
 
 	# Position the dialog box
 	text_box.position = dialog_position
@@ -77,6 +83,11 @@ func _show_text_box():
 
 # Called when the text box has fully typed out its message
 func _on_text_box_finished_displaying():
+	# Stop dialog sound
+	var player = get_tree().current_scene.get_node("Player")
+	if player and player.has_method("stop_npc_talking"):
+		player.stop_npc_talking()
+
 	can_advance_line = true
 
 # ------------------------------------------------------------------------------

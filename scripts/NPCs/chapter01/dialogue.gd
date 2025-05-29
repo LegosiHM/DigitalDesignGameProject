@@ -79,19 +79,22 @@ func _show_dialog():
 	DialogManager.start_dialog(dialog_position_Array, dialog_lines, self)
 
 
-# ------------------------------------------------------------------------------
-# _on_dialog_finished(): Called by DialogManager when dialog is done
-# ------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# _on_dialog_finished(): Triggered by DialogManager after dialog ends
+# ---------------------------------------------------------------------------
+
 func _on_dialog_finished():
-	cooldown_timer.start(cooldown_time)  # Start cooldown before player can interact again
+	cooldown_timer.start(cooldown_time)
 	dialog_active = false
 	interacted_once = true
 
-	# Reveal hidden elements if specified
 	if will_reveal_object:
-		if reveal_panel != null:
+		if reveal_panel:
+			var player = get_tree().current_scene.get_node("Player")
+			if player and player.has_method("play_panel_reveal"):
+				player.play_panel_reveal()
 			reveal_panel.visible = true
-		if reveal_path != null:
+		if reveal_path:
 			reveal_path.visible = true
 
 # ------------------------------------------------------------------------------

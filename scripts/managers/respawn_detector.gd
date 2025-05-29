@@ -58,6 +58,7 @@ func respawn_with_effect():
 
 	# Animate the blur height to show a blur effect in and out
 	tween.tween_property(blur_material, "shader_parameter/height", 1.0, 0.7)
+	player.audio_respawn.play()
 	tween.tween_property(blur_material, "shader_parameter/height", -1.0, 0.7)
 
 	# Delay to prevent input before respawn finishes

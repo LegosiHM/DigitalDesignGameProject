@@ -1,4 +1,4 @@
-[gd_scene load_steps=397 format=3 uid="uid://d3ad0muthw2u2"]
+[gd_scene load_steps=400 format=3 uid="uid://d3ad0muthw2u2"]
 
 [ext_resource type="Script" uid="uid://5eirkgen8jmk" path="res://scripts/player/Player_Controller.gd" id="1_rajx7"]
 [ext_resource type="Texture2D" uid="uid://cm2e7c3qv4237" path="res://Animation/Normal/Idle(New)/idlenew2_00.png" id="3_ir7wy"]
@@ -393,6 +393,9 @@
 [ext_resource type="AudioStream" uid="uid://bovtieu1mbsq5" path="res://assets/SFX/CatSFX/SFX_CatAbility_IllegalDragging_v01.mp3" id="390_yilp0"]
 [ext_resource type="AudioStream" uid="uid://bxvjle6jxr54j" path="res://assets/SFX/CatSFX/SFX_CatAbility_HypnotizeUseBefore_v01.mp3" id="391_nc2j5"]
 [ext_resource type="AudioStream" uid="uid://c0yjllb8x2kii" path="res://assets/SFX/CatSFX/SFX_CatAbility_HypnotizeUseAfter_v01.mp3" id="392_phb7l"]
+[ext_resource type="AudioStream" uid="uid://dt1g0y30s6oli" path="res://assets/SFX/UISFX/SFX_UI_NPCTalking_v01.mp3" id="394_swy83"]
+[ext_resource type="AudioStream" uid="uid://byld8sduthn54" path="res://assets/SFX/UISFX/SFX_UI_PanelReveal_v01.mp3" id="395_3hrn4"]
+[ext_resource type="AudioStream" uid="uid://dxawry1h5keqf" path="res://assets/SFX/UISFX/SFX_UI_Respawn_v01.mp3" id="396_f0lna"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xont5"]
 size = Vector2(72.8062, 64.0176)
@@ -1718,6 +1721,18 @@ max_distance = 4096.0
 
 [node name="Audio_HypnotizeAfter" type="AudioStreamPlayer2D" parent="AudioManager"]
 stream = ExtResource("392_phb7l")
+max_distance = 4096.0
+
+[node name="Audio_NPCTalking" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("394_swy83")
+max_distance = 4096.0
+
+[node name="Audio_PanelReveal" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("395_3hrn4")
+max_distance = 4096.0
+
+[node name="Audio_Respawn" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("396_f0lna")
 max_distance = 4096.0
 
 [connection signal="area_entered" from="PlatformDetector" to="." method="_on_platform_entered"]

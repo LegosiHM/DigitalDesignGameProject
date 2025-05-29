@@ -68,6 +68,9 @@ enum jump_directions { UP = -1, DOWN = 1 }
 @onready var audio_illegal_drag = $AudioManager/Audio_IllegalDrag
 @onready var audio_hypnotize_before = $AudioManager/Audio_HypnotizeBefore
 @onready var audio_hypnotize_after = $AudioManager/Audio_HypnotizeAfter
+@onready var audio_npc_talking = $AudioManager/Audio_NPCTalking
+@onready var audio_panel_reveal = $AudioManager/Audio_PanelReveal
+@onready var audio_respawn = $AudioManager/Audio_Respawn
 
 # ------------------------------------------------------------------------------
 # INTERNAL STATE VARIABLES
@@ -472,3 +475,19 @@ func apply_friction(delta: float) -> void:
 		velocity.x = 0
 	else:
 		velocity.x += fric
+
+# -------------------------------------------------------------------
+# PUBLIC METHODS TO PLAY DIALOG-RELATED SFX
+# -------------------------------------------------------------------
+
+func play_npc_talking():
+	if audio_npc_talking and not audio_npc_talking.playing:
+		audio_npc_talking.play()
+
+func stop_npc_talking():
+	if audio_npc_talking and audio_npc_talking.playing:
+		audio_npc_talking.stop()
+
+func play_panel_reveal():
+	if audio_panel_reveal:
+		audio_panel_reveal.play()
