@@ -7,6 +7,7 @@ extends Control
 @onready var reminder_label = $Reminder
 @onready var skip_ring: TextureProgressBar = $SkipRing
 @onready var skip_label: Label = $SkipLabel
+@onready var audio_panel_click: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # ---------------------------
 # PANEL FINAL POSITIONS
@@ -113,6 +114,13 @@ func show_next_panel():
 		var panel = panels[current_panel_index]
 		var target_pos = target_positions[current_panel_index]
 
+		# 🔊 Clone and play sound for this panel
+		var sfx = audio_panel_click.duplicate()
+		add_child(sfx)
+		sfx.play()
+		sfx.finished.connect(sfx.queue_free)  # Clean up after done
+
+		# 🧊 Move panel in
 		var tween = create_tween()
 		tween.tween_property(panel, "position", target_pos, FINAL_TWEEN_DURATION).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
@@ -123,6 +131,7 @@ func show_next_panel():
 			await wait_for_click()
 			reminder_label.modulate.a = 0.0
 			get_tree().change_scene_to_file(target_cutscene)
+
 
 # ---------------------------
 # CLICK OR KEYBOARD ACCEPT HANDLER

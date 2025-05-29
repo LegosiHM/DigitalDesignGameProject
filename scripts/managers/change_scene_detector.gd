@@ -89,6 +89,10 @@ func start_scene_transition():
 	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 
 	await tween.finished  # Wait for animation before changing scenes
+	
+	var player = get_tree().current_scene.get_node("Player")
+	player.audio_changescene.play()
+	await player.audio_changescene.finished
 	get_tree().change_scene_to_file(my_scene)
 
 # ------------------------------------------------------------------------------

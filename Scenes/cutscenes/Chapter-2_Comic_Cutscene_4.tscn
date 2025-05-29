@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqysrlab1520p"]
+[gd_scene load_steps=10 format=3 uid="uid://dqysrlab1520p"]
 
 [ext_resource type="Script" uid="uid://copttklwub58o" path="res://scripts/cutscenes/chapter_2_comic_cutscene_4.gd" id="1_vbs2a"]
 [ext_resource type="Texture2D" uid="uid://bwc3jst7tahvd" path="res://assets/sprites/PaperTexture.jpg" id="2_vbs2a"]
@@ -8,8 +8,9 @@
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="6_cho11"]
 [ext_resource type="Texture2D" uid="uid://b66d1q8cojbj5" path="res://assets/UI/UI_ReminderLabel_v.1.png" id="7_3io3p"]
 [ext_resource type="Texture2D" uid="uid://l1lo8csjn6x0" path="res://assets/UI/UI_LeftClick.png" id="8_257k1"]
+[ext_resource type="AudioStream" uid="uid://boytlvw6hlk1o" path="res://assets/SFX/UISFX/SFX_UI_ClickCutscene_v01.mp3" id="9_257k1"]
 
-[node name="ComicCutscene" type="Control"]
+[node name="Chapter-2_Comic_Cutscene_4" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,3 +75,6 @@ texture = ExtResource("7_3io3p")
 position = Vector2(1615, 903)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_257k1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_257k1")

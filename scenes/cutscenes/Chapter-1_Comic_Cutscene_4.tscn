@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7cvfgseaehsw"]
+[gd_scene load_steps=12 format=3 uid="uid://c7cvfgseaehsw"]
 
 [ext_resource type="Script" uid="uid://b8avkq7tkggyk" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_4.gd" id="1_tdwa7"]
 [ext_resource type="Texture2D" uid="uid://bo7miitcigpta" path="res://assets/sprites/chapter 1/background/BG_Suburb_Day_v02.PNG" id="2_i3jja"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b66d1q8cojbj5" path="res://assets/UI/UI_ReminderLabel_v.1.png" id="8_hw21p"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="8_rri2e"]
 [ext_resource type="Texture2D" uid="uid://l1lo8csjn6x0" path="res://assets/UI/UI_LeftClick.png" id="9_88rdi"]
+[ext_resource type="AudioStream" uid="uid://boytlvw6hlk1o" path="res://assets/SFX/UISFX/SFX_UI_ClickCutscene_v01.mp3" id="10_hw21p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5oym5"]
 shader = ExtResource("4_m0hhn")
@@ -18,7 +19,7 @@ shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 
-[node name="chapter1_comic_cutscene4" type="Control"]
+[node name="Chapter-1_Comic_Cutscene_4" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,3 +91,6 @@ texture = ExtResource("8_hw21p")
 position = Vector2(1615, 903)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_88rdi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_hw21p")

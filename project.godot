@@ -21,6 +21,7 @@ PlatformManager="*res://zNot Used/PlatformManager.gd"
 DialogManager="*res://singletons/DialogManager.gd"
 CursorManager="*res://scripts/UI/Cursor_Manager.gd"
 Global="*res://singletons/Global.gd"
+BGMManager="*res://singletons/BGMManager.tscn"
 
 [display]
 

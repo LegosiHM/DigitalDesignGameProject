@@ -233,7 +233,7 @@ sources/8 = SubResource("TileSetAtlasSource_57t7d")
 sources/9 = SubResource("TileSetAtlasSource_j0ep0")
 sources/1 = SubResource("TileSetAtlasSource_d6tir")
 
-[node name="2-16_WildAnimal" type="Node2D"]
+[node name="2-17_MeetOctavia" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=400 format=3 uid="uid://d3ad0muthw2u2"]
+[gd_scene load_steps=401 format=3 uid="uid://d3ad0muthw2u2"]
 
 [ext_resource type="Script" uid="uid://5eirkgen8jmk" path="res://scripts/player/Player_Controller.gd" id="1_rajx7"]
 [ext_resource type="Texture2D" uid="uid://cm2e7c3qv4237" path="res://Animation/Normal/Idle(New)/idlenew2_00.png" id="3_ir7wy"]
@@ -396,6 +396,7 @@
 [ext_resource type="AudioStream" uid="uid://dt1g0y30s6oli" path="res://assets/SFX/UISFX/SFX_UI_NPCTalking_v01.mp3" id="394_swy83"]
 [ext_resource type="AudioStream" uid="uid://byld8sduthn54" path="res://assets/SFX/UISFX/SFX_UI_PanelReveal_v01.mp3" id="395_3hrn4"]
 [ext_resource type="AudioStream" uid="uid://dxawry1h5keqf" path="res://assets/SFX/UISFX/SFX_UI_Respawn_v01.mp3" id="396_f0lna"]
+[ext_resource type="AudioStream" uid="uid://d38fcbl8khr4c" path="res://assets/SFX/UISFX/SFX_UI_ChangeScene_v01.mp3" id="397_5vd8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xont5"]
 size = Vector2(72.8062, 64.0176)
@@ -1734,6 +1735,9 @@ max_distance = 4096.0
 [node name="Audio_Respawn" type="AudioStreamPlayer2D" parent="AudioManager"]
 stream = ExtResource("396_f0lna")
 max_distance = 4096.0
+
+[node name="Audio_ChangeScene" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("397_5vd8g")
 
 [connection signal="area_entered" from="PlatformDetector" to="." method="_on_platform_entered"]
 [connection signal="area_exited" from="PlatformDetector" to="." method="_on_platform_exited"]

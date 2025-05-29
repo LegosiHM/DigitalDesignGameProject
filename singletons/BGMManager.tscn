@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5ssmmk4fhyg8"]
+
+[ext_resource type="Script" uid="uid://v4psi5giohnc" path="res://singletons/bgm_manager.gd" id="1_hp5h5"]
+
+[node name="BGMManager" type="AudioStreamPlayer2D"]
+bus = &"Music"
+script = ExtResource("1_hp5h5")

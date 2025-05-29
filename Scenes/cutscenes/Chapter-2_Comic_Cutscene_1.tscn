@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://c27u82empvvqq"]
+[gd_scene load_steps=9 format=3 uid="uid://c27u82empvvqq"]
 
 [ext_resource type="Script" uid="uid://b8jqamedge2r6" path="res://scripts/cutscenes/chapter_2_comic_cutscene_1.gd" id="1_5gloq"]
 [ext_resource type="Texture2D" uid="uid://bwc3jst7tahvd" path="res://assets/sprites/PaperTexture.jpg" id="2_43djf"]
 [ext_resource type="Texture2D" uid="uid://bwl7j51xubke" path="res://assets/sprites/chapter 1-2 transition/Cutscene_01.png" id="3_5gloq"]
 [ext_resource type="Texture2D" uid="uid://b66d1q8cojbj5" path="res://assets/UI/UI_ReminderLabel_v.1.png" id="6_y23xc"]
 [ext_resource type="Texture2D" uid="uid://l1lo8csjn6x0" path="res://assets/UI/UI_LeftClick.png" id="7_ycq1f"]
+[ext_resource type="AudioStream" uid="uid://boytlvw6hlk1o" path="res://assets/SFX/UISFX/SFX_UI_ClickCutscene_v01.mp3" id="8_ycq1f"]
 [ext_resource type="Texture2D" uid="uid://cvn11k7g1vipv" path="res://assets/UI/Ellipse 1.png" id="10_iblcx"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="11_2iqwq"]
 
-[node name="ComicCutscene" type="Control"]
+[node name="Chapter-2_Comic_Cutscene_1" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,3 +70,6 @@ texture = ExtResource("6_y23xc")
 position = Vector2(1615, 903)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_ycq1f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ycq1f")

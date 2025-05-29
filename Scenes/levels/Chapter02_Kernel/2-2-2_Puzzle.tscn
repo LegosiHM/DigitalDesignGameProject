@@ -446,7 +446,7 @@ sources/8 = SubResource("TileSetAtlasSource_fxn8x")
 sources/9 = SubResource("TileSetAtlasSource_bxrud")
 sources/1 = SubResource("TileSetAtlasSource_af48b")
 
-[node name="2-2FollowCleopatra2" type="Node2D"]
+[node name="2-2-2_Puzzle" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)
@@ -606,7 +606,6 @@ texture = ExtResource("16_dmghs")
 [node name="CharMaidIdleV_03Shadow" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 0.486275)
 position = Vector2(590.571, 887.714)
-scale = Vector2(1, 1)
 texture = ExtResource("17_ceax8")
 
 [node name="CharMaidIdleV_03" type="Sprite2D" parent="NPC"]

@@ -22,7 +22,7 @@ size = Vector2(183, 1209)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir143"]
 size = Vector2(2259, 137.25)
 
-[node name="Introduction" type="Node2D"]
+[node name="1-1_Introduction" type="Node2D"]
 
 [node name="RespawnManager" parent="." instance=ExtResource("1_0g6jc")]
 

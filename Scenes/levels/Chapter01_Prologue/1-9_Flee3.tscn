@@ -27,7 +27,7 @@ size = Vector2(2320, 181.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctvnn"]
 size = Vector2(215, 1362)
 
-[node name="AbilityPractice" type="Node2D"]
+[node name="1-9_Flee3" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)

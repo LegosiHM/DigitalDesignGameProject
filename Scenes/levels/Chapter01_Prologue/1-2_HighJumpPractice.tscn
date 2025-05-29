@@ -25,7 +25,7 @@ size = Vector2(2204, 139.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0y2c"]
 size = Vector2(184, 245)
 
-[node name="HighJumpPractice" type="Node2D"]
+[node name="1-2_HighJumpPractice" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)

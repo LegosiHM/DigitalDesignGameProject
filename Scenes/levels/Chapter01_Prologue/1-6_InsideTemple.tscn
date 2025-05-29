@@ -294,7 +294,7 @@ size = Vector2(1924, 178)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhksy"]
 size = Vector2(178, 1477)
 
-[node name="1-6InsideTemple" type="Node2D"]
+[node name="1-6_InsideTemple" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)

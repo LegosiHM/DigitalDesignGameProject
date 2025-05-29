@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwxkixi1awkib"]
+[gd_scene load_steps=10 format=3 uid="uid://dwxkixi1awkib"]
 
 [ext_resource type="Script" uid="uid://c70fygndrafsw" path="res://scripts/mainmenu.gd" id="1_6hnpv"]
 [ext_resource type="Texture2D" uid="uid://coa2a0amgtcgp" path="res://scripts/wap3w.png" id="2_28j1r"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://7du0xxujy2xl" path="res://assets/UI/UI_GameLogo v.1.png" id="5_28j1r"]
 [ext_resource type="Texture2D" uid="uid://bv3wvw6v6dr2w" path="res://assets/UI/MainMenu/Load Button.png" id="6_lsapa"]
 [ext_resource type="Texture2D" uid="uid://bnskamwgftub1" path="res://assets/UI/MainMenu/Options Button.png" id="7_6a1r1"]
+[ext_resource type="AudioStream" uid="uid://ciu18o0l5ebuo" path="res://assets/SFX/UISFX/SFX_UI_ClickMenu_v01.mp3" id="8_uk3yw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uk3yw"]
 texture = ExtResource("7_6a1r1")
@@ -80,6 +81,9 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_uk3yw")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uk3yw")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_uk3yw")
 theme_override_styles/normal = SubResource("StyleBoxTexture_uk3yw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_uk3yw")
 
 [connection signal="mouse_entered" from="NewGameButton/Button" to="." method="_on_new_game_button_mouse_entered"]
 [connection signal="mouse_exited" from="NewGameButton/Button" to="." method="_on_new_game_button_mouse_exited"]

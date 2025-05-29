@@ -50,7 +50,7 @@ shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = false
 
-[node name="Introduction" type="Node2D"]
+[node name="1-12_Flee4" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)

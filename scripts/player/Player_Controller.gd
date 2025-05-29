@@ -71,6 +71,7 @@ enum jump_directions { UP = -1, DOWN = 1 }
 @onready var audio_npc_talking = $AudioManager/Audio_NPCTalking
 @onready var audio_panel_reveal = $AudioManager/Audio_PanelReveal
 @onready var audio_respawn = $AudioManager/Audio_Respawn
+@onready var audio_changescene = $AudioManager/Audio_ChangeScene
 
 # ------------------------------------------------------------------------------
 # INTERNAL STATE VARIABLES

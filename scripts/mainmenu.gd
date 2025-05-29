@@ -7,6 +7,8 @@ var hover_offset := 380      # adjust to match your button
 var transition_time := 0.2
 @export var target_scene := "res://Scenes/cutscenes/Chapter-1_Comic_Cutscene_1.tscn"  # set to your actual target
 
+@onready var audio_click = $AudioStreamPlayer2D
+
 func _ready():
 	_reset()
 
@@ -37,6 +39,8 @@ func _on_new_game_button_mouse_exited():
 
 
 func _on_new_game_button_pressed() -> void:
+	audio_click.play()
+	await audio_click.finished
 	get_tree().change_scene_to_file(target_scene)
 
 
