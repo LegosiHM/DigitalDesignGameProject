@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bu0d8t6kgod2"]
+[gd_scene load_steps=40 format=3 uid="uid://bu0d8t6kgod2"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_emypd"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_eqjfw"]
@@ -15,14 +15,16 @@
 [ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="13_tfgfw"]
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="14_rpk40"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="15_xcuam"]
+[ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/character/Char_Medjed_Idle_v.01.png" id="16_8sm3u"]
 [ext_resource type="Texture2D" uid="uid://b8uu3geiv8sd0" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Pillar_Day_v.01.PNG" id="16_no820"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="17_d6lof"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="18_avjnk"]
 [ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="19_f60ni"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="20_y6vhl"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="21_o4wva"]
-[ext_resource type="PackedScene" uid="uid://b8t5wpi35pset" path="res://Scenes/mechanics/CH2_Draggable_Panel.tscn" id="22_ucwgr"]
+[ext_resource type="PackedScene" uid="uid://c4hm6pp78ao00" path="res://Scenes/mechanics/CH2_Stuckable_Draggable_Panel.tscn" id="22_eqjfw"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="23_slt2c"]
+[ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="24_eqjfw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -269,34 +271,54 @@ modulate = Color(0.821789, 0.821789, 0.821789, 1)
 position = Vector2(958, 540)
 texture = ExtResource("3_8sm3u")
 
-[node name="Panel" parent="." instance=ExtResource("4_8s7ul")]
-position = Vector2(-1, 339)
-scale = Vector2(0.75, 0.75)
-tile_set = SubResource("TileSet_vfyhx")
-layer_0/tile_data = PackedInt32Array(589845, 7, 3, 589846, 65543, 3, 589847, 131079, 3, 589848, 196615, 3, 589849, 262151, 3, 589850, 327687, 3, 589851, 393223, 3, 589852, 458759, 3, 589844, 458759, 3, 589829, 393223, 3, 589830, 458759, 3, 589831, 131079, 3, 655359, 7, 3, 589824, 65543, 3, 589825, 131079, 3, 589826, 196615, 3, 589827, 262151, 3, 589828, 327687, 3, 655380, 196615, 3, 655381, 196615, 3, 655382, 196615, 3, 655383, 196615, 3, 655384, 196615, 3, 655385, 196615, 3, 655386, 196615, 3, 655387, 196615, 3, 655388, 196615, 3, 720895, 196615, 3, 655360, 196615, 3, 655361, 196615, 3, 655362, 196615, 3, 655363, 196615, 3, 655364, 196615, 3, 655365, 196615, 3, 655366, 196615, 3, 655367, 196615, 3, 393236, 327687, 3, 458772, 327687, 3, 524308, 327687, 3, 393237, 327687, 3, 458773, 327687, 3, 524309, 327687, 3, 393238, 327687, 3, 458774, 327687, 3, 524310, 327687, 3, 393239, 327687, 3, 458775, 327687, 3, 524311, 327687, 3, 393240, 327687, 3, 458776, 327687, 3, 524312, 327687, 3, 393241, 327687, 3, 458777, 327687, 3, 524313, 327687, 3, 393242, 327687, 3, 458778, 327687, 3, 524314, 327687, 3, 393243, 327687, 3, 458779, 327687, 3, 524315, 327687, 3, 393244, 327687, 3, 458780, 327687, 3, 524316, 327687, 3, -262139, 65541, 3, -196603, 65541, 3, -131067, 65541, 3, -65531, 65541, 3, 5, 65541, 3, 4, 65541, 3, 3, 65541, 3, 2, 65541, 3, 1, 65541, 3, 0, 65541, 3, -65536, 65541, 3, -65535, 65541, 3, -65534, 65541, 3, -65533, 65541, 3, -65532, 65541, 3, -131068, 65541, 3, -131069, 65541, 3, -131070, 65541, 3, -131071, 65541, 3, -131072, 65541, 3, -196607, 65541, 3, -196606, 65541, 3, -196605, 65541, 3, -196604, 65541, 3, -262140, 65541, 3, -262141, 65541, 3, -262142, 65541, 3, -262143, 65541, 3, -262144, 65541, 3, -196608, 65541, 3, 65541, 65541, 3, 131077, 65541, 3, 196613, 65541, 3, 196612, 65541, 3, 131076, 65541, 3, 65540, 65541, 3, -262138, 65541, 3, -196602, 65541, 3, -131066, 65541, 3, -65530, 65541, 3, 196614, 65541, 3, 131078, 65541, 3, 65542, 65541, 3, 6, 65541, 3, -327674, 65541, 3, -327675, 65541, 3, -327676, 65541, 3, -327677, 65541, 3, -327678, 65541, 3, -327679, 65541, 3, -327680, 65541, 3, -327673, 65541, 3, -327672, 65541, 3, -327671, 65541, 3, -327670, 65541, 3, -327669, 65541, 3, -327668, 65541, 3, -327667, 65541, 3, -327666, 65541, 3, -327665, 65541, 3, -327664, 65541, 3, -327663, 65541, 3, -327662, 65541, 3, -327661, 65541, 3, -327660, 65541, 3, -327659, 65541, 3, -327658, 65541, 3, -327657, 65541, 3, -327656, 65541, 3, -327655, 65541, 3, -327654, 65541, 3, -327653, 65541, 3)
-
-[node name="Outline" parent="Panel" instance=ExtResource("4_8s7ul")]
-position = Vector2(45, 44)
-tile_set = SubResource("TileSet_vfyhx")
-
 [node name="DecorationBack" type="Area2D" parent="."]
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
 
+[node name="DecorationPillarDayV_01" type="Sprite2D" parent="DecorationBack"]
+modulate = Color(0.611765, 0.611765, 0.611765, 0.905882)
+position = Vector2(309.333, 180)
+scale = Vector2(1.33333, 1.33333)
+texture = ExtResource("16_no820")
+
+[node name="DecorationPillarDayV_02" type="Sprite2D" parent="DecorationBack"]
+modulate = Color(0.611765, 0.611765, 0.611765, 0.905882)
+position = Vector2(2236, -88)
+scale = Vector2(1.33333, 1.33333)
+texture = ExtResource("16_no820")
+
+[node name="Panel" parent="." instance=ExtResource("4_8s7ul")]
+position = Vector2(-1, 339)
+scale = Vector2(0.75, 0.75)
+tile_set = SubResource("TileSet_vfyhx")
+layer_0/tile_data = PackedInt32Array(589845, 7, 3, 589846, 65543, 3, 589847, 131079, 3, 589848, 196615, 3, 589849, 262151, 3, 589850, 327687, 3, 589851, 393223, 3, 589852, 458759, 3, 589844, 458759, 3, 589829, 393223, 3, 589830, 458759, 3, 589831, 131079, 3, 655359, 7, 3, 589824, 65543, 3, 589825, 131079, 3, 589826, 196615, 3, 589827, 262151, 3, 589828, 327687, 3, 655380, 196615, 3, 655381, 196615, 3, 655382, 196615, 3, 655383, 196615, 3, 655384, 196615, 3, 655385, 196615, 3, 655386, 196615, 3, 655387, 196615, 3, 655388, 196615, 3, 720895, 196615, 3, 655360, 196615, 3, 655361, 196615, 3, 655362, 196615, 3, 655363, 196615, 3, 655364, 196615, 3, 655365, 196615, 3, 655366, 196615, 3, 655367, 196615, 3, 393236, 327687, 3, 458772, 327687, 3, 524308, 327687, 3, 393237, 327687, 3, 458773, 327687, 3, 524309, 327687, 3, 393238, 327687, 3, 458774, 327687, 3, 524310, 327687, 3, 393239, 327687, 3, 458775, 327687, 3, 524311, 327687, 3, 393240, 327687, 3, 458776, 327687, 3, 524312, 327687, 3, 393241, 327687, 3, 458777, 327687, 3, 524313, 327687, 3, 393242, 327687, 3, 458778, 327687, 3, 524314, 327687, 3, 393243, 327687, 3, 458779, 327687, 3, 524315, 327687, 3, 393244, 327687, 3, 458780, 327687, 3, 524316, 327687, 3, -262139, 196615, 3, -196603, 196615, 3, -131067, 196615, 3, 3, 196615, 3, 2, 196615, 3, 1, 196615, 3, 0, 196615, 3, -65536, 196615, 3, -65535, 196615, 3, -65534, 196615, 3, -65533, 196615, 3, -65532, 196615, 3, -131068, 196615, 3, -131069, 196615, 3, -131070, 196615, 3, -131071, 196615, 3, -131072, 196615, 3, -196607, 196615, 3, -196606, 196615, 3, -196605, 196615, 3, -196604, 196615, 3, -262140, 196615, 3, -262141, 196615, 3, -262142, 196615, 3, -262143, 196615, 3, -262144, 196615, 3, -196608, 196615, 3, -262138, 196615, 3, -196602, 196615, 3, -131066, 196615, 3, -327674, 65541, 3, -327675, 196615, 3, -327676, 196615, 3, -327677, 196615, 3, -327678, 196615, 3, -327679, 196615, 3, -327680, 196615, 3, -327673, 65541, 3, -327672, 65541, 3, -327671, 65541, 3, -327670, 65541, 3, -327669, 65541, 3, -327668, 65541, 3, -327667, 65541, 3, -327666, 65541, 3, -327665, 65541, 3, -327664, 65541, 3, -327663, 65541, 3, -327662, 65541, 3, -327661, 65541, 3, -327660, 65541, 3, -327659, 65541, 3, -327658, 65541, 3, -327657, 65541, 3, -327656, 65541, 3, -327655, 65541, 3, -327654, 65541, 3, -327653, 65541, 3, 4, 196615, 3, -65531, 196615, 3, 327689, 2, 0, 393225, 2, 0, 327690, 2, 0, 393226, 2, 0, 327691, 2, 0, 393227, 2, 0, 327692, 2, 0, 393228, 2, 0, 65551, 2, 0, 131087, 2, 0, 196623, 2, 0, 65552, 2, 0, 131088, 2, 0, 196624, 2, 0, 65553, 2, 0, 131089, 2, 0, 196625, 2, 0, 65554, 2, 0, 131090, 2, 0, 196626, 2, 0, 65555, 2, 0, 131091, 2, 0, 196627, 2, 0, 65556, 2, 0, 131092, 2, 0, 196628, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 327693, 2, 0, 393229, 2, 0, 458765, 2, 0, 262159, 2, 0, 262160, 2, 0, 262161, 2, 0, 262162, 2, 0, 262163, 2, 0, 262164, 2, 0, 65557, 2, 0, 131093, 2, 0, 196629, 2, 0, 262165, 2, 0)
+
+[node name="Outline" parent="Panel" instance=ExtResource("4_8s7ul")]
+position = Vector2(45, 44)
+tile_set = SubResource("TileSet_vfyhx")
+layer_0/tile_data = PackedInt32Array(327699, 1, 0, 327700, 196609, 0, 327701, 196609, 0, 327702, 196609, 0, 327703, 196609, 0, 327704, 196609, 0, 327705, 196609, 0, 327706, 196609, 0, 327707, 196609, 0, 327708, 196609, 0, 393235, 1, 2, 458771, 1, 2, 524307, 1, 2, 589843, 1, 2, 655379, 1, 2, 720915, 1, 2, 524295, 327681, 0, 589831, 327681, 1, 655367, 327681, 1, 720903, 327681, 1, 524294, 262145, 0, 524293, 262145, 0, 524292, 262145, 0, 524291, 262145, 0, 524290, 262145, 0, 524289, 262145, 0, 524288, 262145, 0, 589823, 262145, 0, -327674, 327681, 1, -262138, 327681, 1, -196602, 327681, 1, -131066, 327681, 1, 4, 196609, 5, 3, 196609, 5, 2, 196609, 5, 1, 196609, 5, 0, 196609, 5, 65535, 196609, 5, 393224, 1, 2, 262156, 196609, 0, 196622, 1, 2, 20, 196609, 0, 262152, 1, 0, 327688, 1, 2, 458760, 1, 5, 262153, 196609, 0, 458761, 196609, 5, 262154, 196609, 0, 458762, 196609, 5, 262155, 196609, 0, 458763, 196609, 5, 458764, 196609, 5, 262157, 327681, 0, 327693, 327681, 1, 393229, 327681, 1, 458765, 327681, 5, 14, 1, 0, 65550, 1, 2, 131086, 1, 2, 262158, 1, 5, 15, 196609, 0, 262159, 196609, 5, 16, 196609, 0, 262160, 196609, 5, 17, 196609, 0, 262161, 196609, 5, 18, 196609, 0, 262162, 196609, 5, 19, 196609, 0, 262163, 196609, 5, 262164, 196609, 5, 21, 327681, 0, 65557, 327681, 1, 131093, 327681, 1, 196629, 327681, 1, 262165, 327681, 5)
+
 [node name="Player" parent="." instance=ExtResource("15_xcuam")]
 position = Vector2(1796, 631)
 
+[node name="NPC" type="Area2D" parent="."]
+scale = Vector2(0.7, 0.7)
+
+[node name="CharMedjedIdleV_01" type="Sprite2D" parent="NPC"]
+modulate = Color(0.76, 0.76, 0.76, 1)
+position = Vector2(1738.56, 738.571)
+texture = ExtResource("16_8sm3u")
+
+[node name="CharMedjedIdleV_02" type="Sprite2D" parent="NPC"]
+modulate = Color(0.76, 0.76, 0.76, 1)
+position = Vector2(978.56, 1140)
+scale = Vector2(-0.744, -0.744)
+texture = ExtResource("16_8sm3u")
+
 [node name="DecorationFront" type="Area2D" parent="."]
-visible = false
 z_index = 20
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
-
-[node name="DecorationPillarDayV_02" type="Sprite2D" parent="DecorationFront"]
-modulate = Color(0, 0.0627451, 0.215686, 0.811765)
-position = Vector2(1236, 282.667)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("16_no820")
 
 [node name="UI" parent="." instance=ExtResource("17_d6lof")]
 z_index = 50
@@ -305,6 +327,7 @@ z_index = 50
 script = ExtResource("18_avjnk")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("19_f60ni")]
+visible = false
 offset_left = -171.0
 offset_top = 561.0
 offset_right = -131.0
@@ -320,9 +343,8 @@ offset_top = 9.0
 offset_right = 1922.0
 offset_bottom = 1089.0
 
-[node name="draggablePanel" parent="." instance=ExtResource("22_ucwgr")]
-position = Vector2(699, 419)
-scale = Vector2(0.824081, 0.824081)
+[node name="StuckablePanel" parent="." instance=ExtResource("22_eqjfw")]
+position = Vector2(504, 373)
 
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
 
@@ -336,14 +358,72 @@ position = Vector2(129, 1061)
 scale = Vector2(41.625, -11.128)
 
 [node name="StaticPanelCollision2" parent="PanelCollsionContainer" instance=ExtResource("23_slt2c")]
-position = Vector2(179, 192)
+position = Vector2(43, 192)
 rotation = 3.14159
 scale = Vector2(28.8165, -21.0708)
 
 [node name="StaticPanelCollision4" parent="PanelCollsionContainer" instance=ExtResource("23_slt2c")]
-position = Vector2(368, 395)
+position = Vector2(189, 48)
 rotation = 3.14159
-scale = Vector2(10.4457, -21.071)
+scale = Vector2(28.8165, -21.0708)
+
+[node name="StaticPanelCollision5" parent="PanelCollsionContainer" instance=ExtResource("23_slt2c")]
+position = Vector2(1248, 544)
+rotation = 3.14159
+scale = Vector2(24.989, -13.738)
+
+[node name="StaticPanelCollision6" parent="PanelCollsionContainer" instance=ExtResource("23_slt2c")]
+position = Vector2(778, 789)
+rotation = 3.14159
+scale = Vector2(17.721, -12.077)
+
+[node name="Glitching2" parent="." instance=ExtResource("24_eqjfw")]
+offset_left = 320.0
+offset_top = 397.0
+offset_right = 377.0
+offset_bottom = 422.0
+
+[node name="Glitching3" parent="." instance=ExtResource("24_eqjfw")]
+offset_left = 287.0
+offset_top = 364.0
+offset_right = 344.0
+offset_bottom = 389.0
+
+[node name="Glitching4" parent="." instance=ExtResource("24_eqjfw")]
+offset_left = 317.0
+offset_top = 326.0
+offset_right = 374.0
+offset_bottom = 351.0
+
+[node name="Glitching5" parent="." instance=ExtResource("24_eqjfw")]
+offset_left = 454.0
+offset_top = 266.0
+offset_right = 511.0
+offset_bottom = 291.0
+
+[node name="Glitching6" parent="." instance=ExtResource("24_eqjfw")]
+offset_left = 499.0
+offset_top = 276.0
+offset_right = 556.0
+offset_bottom = 301.0
+
+[node name="Glitching7" parent="." instance=ExtResource("24_eqjfw")]
+offset_left = 435.0
+offset_top = 223.0
+offset_right = 492.0
+offset_bottom = 248.0
+
+[node name="Glitching8" parent="." instance=ExtResource("24_eqjfw")]
+offset_left = 131.0
+offset_top = 323.0
+offset_right = 264.0
+offset_bottom = 361.0
+
+[node name="Glitching9" parent="." instance=ExtResource("24_eqjfw")]
+offset_left = 23.0
+offset_top = 385.0
+offset_right = 156.0
+offset_bottom = 423.0
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
