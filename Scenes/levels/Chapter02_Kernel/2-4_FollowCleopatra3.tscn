@@ -242,7 +242,7 @@ sources/8 = SubResource("TileSetAtlasSource_cnskw")
 sources/9 = SubResource("TileSetAtlasSource_wxuhn")
 sources/1 = SubResource("TileSetAtlasSource_pvje2")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kohfg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_63hlo"]
 texture = ExtResource("5_6g67h")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -262,7 +262,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0is3s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ooetf"]
 texture = ExtResource("6_o5h20")
 texture_region_size = Vector2i(90, 90)
 0:0/0 = 0
@@ -286,12 +286,12 @@ texture_region_size = Vector2i(90, 90)
 4:5/0 = 0
 5:5/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rq0pp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kohfg"]
 texture = ExtResource("7_lu76l")
 texture_region_size = Vector2i(90, 90)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dd1tr"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0is3s"]
 texture = ExtResource("8_63hlo")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -311,7 +311,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2s17"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rq0pp"]
 texture = ExtResource("9_ooetf")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -331,7 +331,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rsa80"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dd1tr"]
 texture = ExtResource("10_kohfg")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -351,7 +351,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ub45j"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2s17"]
 texture = ExtResource("11_0is3s")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -371,7 +371,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cmh7a"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rsa80"]
 texture = ExtResource("12_rq0pp")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -391,7 +391,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g7cr"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ub45j"]
 texture = ExtResource("13_dd1tr")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -411,7 +411,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g0pcj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cmh7a"]
 texture = ExtResource("14_o2s17")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
@@ -434,16 +434,16 @@ texture_region_size = Vector2i(90, 90)
 [sub_resource type="TileSet" id="TileSet_e52at"]
 tile_size = Vector2i(90, 90)
 physics_layer_0/collision_layer = 4
-sources/0 = SubResource("TileSetAtlasSource_kohfg")
-sources/2 = SubResource("TileSetAtlasSource_rq0pp")
-sources/3 = SubResource("TileSetAtlasSource_dd1tr")
-sources/4 = SubResource("TileSetAtlasSource_o2s17")
-sources/5 = SubResource("TileSetAtlasSource_rsa80")
-sources/6 = SubResource("TileSetAtlasSource_ub45j")
-sources/7 = SubResource("TileSetAtlasSource_cmh7a")
-sources/8 = SubResource("TileSetAtlasSource_2g7cr")
-sources/9 = SubResource("TileSetAtlasSource_g0pcj")
-sources/1 = SubResource("TileSetAtlasSource_0is3s")
+sources/0 = SubResource("TileSetAtlasSource_63hlo")
+sources/2 = SubResource("TileSetAtlasSource_kohfg")
+sources/3 = SubResource("TileSetAtlasSource_0is3s")
+sources/4 = SubResource("TileSetAtlasSource_rq0pp")
+sources/5 = SubResource("TileSetAtlasSource_dd1tr")
+sources/6 = SubResource("TileSetAtlasSource_o2s17")
+sources/7 = SubResource("TileSetAtlasSource_rsa80")
+sources/8 = SubResource("TileSetAtlasSource_ub45j")
+sources/9 = SubResource("TileSetAtlasSource_cmh7a")
+sources/1 = SubResource("TileSetAtlasSource_ooetf")
 
 [node name="2-4_FollowCleopatra3" type="Node2D"]
 
@@ -547,6 +547,74 @@ layer_0/tile_data = PackedInt32Array(589822, 196609, 0, 589823, 196609, 0, 52428
 [node name="Player" parent="." instance=ExtResource("15_rsa80")]
 position = Vector2(1794, 832)
 
+[node name="GlitchEffect" type="Area2D" parent="."]
+
+[node name="Glitching2" parent="GlitchEffect" instance=ExtResource("29_63hlo")]
+offset_left = 855.0
+offset_top = 228.0
+offset_right = 912.0
+offset_bottom = 253.0
+
+[node name="Glitching3" parent="GlitchEffect" instance=ExtResource("29_63hlo")]
+offset_left = 710.0
+offset_top = 506.0
+offset_right = 767.0
+offset_bottom = 531.0
+
+[node name="Glitching5" parent="GlitchEffect" instance=ExtResource("29_63hlo")]
+offset_left = 861.0
+offset_top = 311.0
+offset_right = 922.0
+offset_bottom = 410.0
+
+[node name="Glitching8" parent="GlitchEffect" instance=ExtResource("29_63hlo")]
+offset_left = 853.0
+offset_top = 420.0
+offset_right = 946.0
+offset_bottom = 458.0
+
+[node name="Glitching9" parent="GlitchEffect" instance=ExtResource("29_63hlo")]
+offset_left = 852.0
+offset_top = 451.0
+offset_right = 985.0
+offset_bottom = 489.0
+
+[node name="Glitching6" parent="GlitchEffect" instance=ExtResource("29_63hlo")]
+offset_left = 1195.0
+offset_top = 211.0
+offset_right = 1252.0
+offset_bottom = 236.0
+
+[node name="Glitching7" parent="GlitchEffect" instance=ExtResource("29_63hlo")]
+offset_left = 1045.0
+offset_top = 332.0
+offset_right = 1102.0
+offset_bottom = 357.0
+
+[node name="Glitching10" parent="GlitchEffect" instance=ExtResource("29_63hlo")]
+offset_left = 1403.0
+offset_top = 492.0
+offset_right = 1460.0
+offset_bottom = 547.0
+
+[node name="Glitching11" parent="GlitchEffect" instance=ExtResource("29_63hlo")]
+offset_left = 1389.0
+offset_top = 249.0
+offset_right = 1429.0
+offset_bottom = 451.0
+
+[node name="Glitching12" parent="GlitchEffect" instance=ExtResource("29_63hlo")]
+offset_left = 1179.0
+offset_top = 390.0
+offset_right = 1275.0
+offset_bottom = 428.0
+
+[node name="Glitching13" parent="GlitchEffect" instance=ExtResource("29_63hlo")]
+offset_left = 1530.0
+offset_top = 340.0
+offset_right = 1597.0
+offset_bottom = 403.0
+
 [node name="untouchablePanle" parent="." instance=ExtResource("21_ph7ac")]
 position = Vector2(803, 217)
 scale = Vector2(0.728, 4.623)
@@ -557,15 +625,22 @@ scale = Vector2(0.728, 4.623)
 
 [node name="untouchablePanle3" parent="." instance=ExtResource("21_ph7ac")]
 position = Vector2(1481, 217)
-scale = Vector2(0.728, 4.623)
+scale = Vector2(0.728, -4.623)
 
 [node name="NPC" type="Area2D" parent="."]
 scale = Vector2(0.7, 0.7)
 
 [node name="CharMedjedIdleV_01" type="Sprite2D" parent="NPC"]
-position = Vector2(75.3217, 711.438)
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.42857, 667.143)
 rotation = 0.764454
 scale = Vector2(-1.01816, 1.09258)
+texture = ExtResource("20_ooetf")
+
+[node name="CharMedjedIdleV_02" type="Sprite2D" parent="NPC"]
+position = Vector2(75.3217, 711.438)
+rotation = -2.37714
+scale = Vector2(1.01816, -1.09258)
 texture = ExtResource("20_ooetf")
 
 [node name="Hitbox" parent="NPC" instance=ExtResource("4_l6i7s")]
@@ -634,72 +709,6 @@ offset_left = 12.0
 offset_top = 9.0
 offset_right = 1932.0
 offset_bottom = 1089.0
-
-[node name="Glitching2" parent="." instance=ExtResource("29_63hlo")]
-offset_left = 854.0
-offset_top = 209.0
-offset_right = 911.0
-offset_bottom = 234.0
-
-[node name="Glitching3" parent="." instance=ExtResource("29_63hlo")]
-offset_left = 868.0
-offset_top = 249.0
-offset_right = 925.0
-offset_bottom = 274.0
-
-[node name="Glitching5" parent="." instance=ExtResource("29_63hlo")]
-offset_left = 860.0
-offset_top = 292.0
-offset_right = 921.0
-offset_bottom = 391.0
-
-[node name="Glitching8" parent="." instance=ExtResource("29_63hlo")]
-offset_left = 852.0
-offset_top = 401.0
-offset_right = 945.0
-offset_bottom = 439.0
-
-[node name="Glitching9" parent="." instance=ExtResource("29_63hlo")]
-offset_left = 852.0
-offset_top = 451.0
-offset_right = 985.0
-offset_bottom = 489.0
-
-[node name="Glitching6" parent="." instance=ExtResource("29_63hlo")]
-offset_left = 1195.0
-offset_top = 211.0
-offset_right = 1252.0
-offset_bottom = 236.0
-
-[node name="Glitching7" parent="." instance=ExtResource("29_63hlo")]
-offset_left = 1045.0
-offset_top = 332.0
-offset_right = 1102.0
-offset_bottom = 357.0
-
-[node name="Glitching10" parent="." instance=ExtResource("29_63hlo")]
-offset_left = 1403.0
-offset_top = 492.0
-offset_right = 1460.0
-offset_bottom = 547.0
-
-[node name="Glitching11" parent="." instance=ExtResource("29_63hlo")]
-offset_left = 1382.0
-offset_top = 294.0
-offset_right = 1439.0
-offset_bottom = 496.0
-
-[node name="Glitching12" parent="." instance=ExtResource("29_63hlo")]
-offset_left = 1179.0
-offset_top = 390.0
-offset_right = 1275.0
-offset_bottom = 428.0
-
-[node name="Glitching13" parent="." instance=ExtResource("29_63hlo")]
-offset_left = 1530.0
-offset_top = 340.0
-offset_right = 1597.0
-offset_bottom = 403.0
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

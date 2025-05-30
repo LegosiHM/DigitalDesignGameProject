@@ -51,6 +51,10 @@ func _process(_delta):
 
 	# TEMP: Manual test trigger
 	if Input.is_key_pressed(KEY_P):
+		if transitioning or my_scene.is_empty() or disable_on_default:
+			return  # Abort if already transitioning, no scene set, or disabled
+
+		transitioning = true
 		start_scene_transition()
 
 # ------------------------------------------------------------------------------
