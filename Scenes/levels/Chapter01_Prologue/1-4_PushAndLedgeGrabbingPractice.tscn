@@ -88,7 +88,7 @@ scale = Vector2(9, 0.239999)
 my_scene = "res://Scenes/levels/Chapter01_Prologue/1-5_Combine.tscn"
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
-position = Vector2(8.77778, -666.669)
+position = Vector2(8.77778, -529.168)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("9_jgpn4")

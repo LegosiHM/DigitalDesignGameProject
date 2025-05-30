@@ -97,6 +97,9 @@ var input_enabled: bool = true # If false, input is ignored (used for respawn de
 var walk_input_started := false # Used to trigger walk start SFX only once
 var was_dragging_panel := false # Used to track dragging state change for SFX
 
+var was_on_floor := false
+
+
 # ------------------------------------------------------------------------------
 # ENERGY SYSTEM
 # ------------------------------------------------------------------------------
@@ -126,15 +129,21 @@ func _physics_process(delta: float) -> void:
 	# ------------------------------------------------------------------------------
 	# WALK START SOUND (IMMEDIATE ON INPUT)
 	# ------------------------------------------------------------------------------
+	if is_on_floor():
+		if not walk_input_started and (Input.is_action_pressed("left") or Input.is_action_pressed("right")):
+			if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
+				audio_walk_start.play()
+				walk_input_started = true
 
-	if not walk_input_started and is_on_floor():
-		if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
-			audio_walk_start.play()
-			walk_input_started = true
-
-	if Input.is_action_just_released("left") or Input.is_action_just_released("right"):
-		# Reset so the next walk can play again
-		walk_input_started = false
+		if walk_input_started and is_on_floor() and not (Input.is_action_pressed("left") or Input.is_action_pressed("right")):
+			audio_walk_start.stop()
+			walk_input_started = false
+	
+	else:
+		# In air: make sure walk sound is not playing
+		if walk_input_started:
+			audio_walk_start.stop()
+			walk_input_started = false
 
 
 	var inputs: Dictionary = get_inputs()
@@ -148,18 +157,24 @@ func _physics_process(delta: float) -> void:
 			platform_velocity = platform_velocity.clamp(Vector2(-62, -62), Vector2(62, 62))
 			velocity += platform_velocity
 			break
-
+	
 	move_and_slide()
-
+	# ✅ Detect landing and check for ongoing walk input
+	if is_on_floor() and not was_on_floor:
+		if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+			if not walk_input_started:
+				audio_walk_start.play()
+				walk_input_started = true
+	
 	if is_on_solid_ground():
 		if is_slowFalling:
 			is_slowFalling = false
 			audio_slow_fall.stop()
 		if velocity.x == 0:
 			play_anim("default")
-
+	
 	_check_fall_behavior()
-
+	
 	# Handle ledge grab logic
 	if is_grabbing:
 		velocity = Vector2.ZERO
@@ -176,7 +191,7 @@ func _physics_process(delta: float) -> void:
 			audio_slow_fall.stop()
 			return
 		return
-
+	
 	# Handle slow fall logic
 	elif is_slowFalling:
 		velocity = Vector2.ZERO
@@ -193,14 +208,16 @@ func _physics_process(delta: float) -> void:
 			audio_slow_fall.stop()
 			return
 		return
-
+	
 	# Update facing direction
 	if velocity.x > 0:
 		facing_direction = 1
 	elif velocity.x < 0:
 		facing_direction = -1
-
+	
 	current_platform_velocity = Vector2.ZERO
+	
+	was_on_floor = is_on_floor()
 
 # ------------------------------------------------------------------------------
 # INPUT HELPERS

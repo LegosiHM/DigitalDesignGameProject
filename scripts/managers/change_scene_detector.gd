@@ -73,11 +73,14 @@ func _on_body_entered(_body: PhysicsBody2D) -> void:
 # ------------------------------------------------------------------------------
 
 func start_scene_transition():
+	Global.is_changing_scene = true
+	
 	if not transition_rect or not transition_rect.material:
 		push_error("ERROR: Cannot animate transition, ColorRect or material is missing!")
 		get_tree().change_scene_to_file(my_scene)  # Fallback to instant switch
 		return
-
+		
+	
 	var tween = create_tween()
 
 	# Fade in effect using custom shader (fade 0 → 1)
@@ -97,6 +100,8 @@ func start_scene_transition():
 	var player = get_tree().current_scene.get_node("Player")
 	player.audio_changescene.play()
 	await player.audio_changescene.finished
+	if player.audio_game_over.playing:
+		player.audio_game_over.stop()
 	get_tree().change_scene_to_file(my_scene)
 
 # ------------------------------------------------------------------------------

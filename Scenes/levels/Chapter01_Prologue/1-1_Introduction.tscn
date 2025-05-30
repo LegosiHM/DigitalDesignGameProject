@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="16_tjq7w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wm84s"]
-size = Vector2(3257.5, 167)
+size = Vector2(4199, 167)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lab36"]
 size = Vector2(183, 1209)
@@ -32,7 +32,7 @@ script = ExtResource("2_tjq7w")
 respawn_position = Vector2(388, 318)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(946.25, 157)
+position = Vector2(527.5, 157)
 shape = SubResource("RectangleShape2D_wm84s")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]

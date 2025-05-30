@@ -17,7 +17,7 @@
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="15_18b3w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8bya"]
-size = Vector2(1922, 196)
+size = Vector2(3118, 196)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcltj"]
 size = Vector2(204.5, 371)
@@ -47,7 +47,7 @@ script = ExtResource("3_18b3w")
 respawn_position = Vector2(1603, 96)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(285, 26)
+position = Vector2(-313, 26)
 shape = SubResource("RectangleShape2D_t8bya")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]

@@ -43,6 +43,9 @@ func _process(_delta: float) -> void:
 # ------------------------------------------------------------------------------
 
 func respawn_with_effect():
+	if Global.is_changing_scene:
+		return  # ✅ Don't run if a scene change is active
+	
 	effect_running = true  # Block further triggers
 
 	var player = get_tree().current_scene.get_node("Player")  # Get the player node
@@ -77,6 +80,10 @@ func respawn_with_effect():
 
 func respawn_timer():
 	var player = get_tree().current_scene.get_node("Player")
-	player.audio_game_over.play()
-	await get_tree().create_timer(0.5).timeout  # Delay actual teleport slightly for visual sync
-	player.global_position = respawn_position  # Teleport the player to the designated point
+
+	# ✅ Only play Game Over sound if not changing scene
+	if not Global.is_changing_scene:
+		player.audio_game_over.play()
+
+	await get_tree().create_timer(0.5).timeout  # Delay actual teleport
+	player.global_position = respawn_position

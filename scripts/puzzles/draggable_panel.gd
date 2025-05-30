@@ -82,10 +82,13 @@ func _process(delta: float) -> void:
 		# ------------------------------------------------------------------------------
 		# PLAY ILLEGAL DRAG SOUND FROM PLAYER (When over forbidden area)
 		# ------------------------------------------------------------------------------
-		if collide and not player.audio_illegal_drag.playing:
-			player.audio_illegal_drag.play()
-		elif not collide and player.audio_illegal_drag.playing:
-			player.audio_illegal_drag.stop()
+		if dragging and collide:
+			if not player.audio_illegal_drag.playing:
+				player.audio_illegal_drag.play()
+		else:
+			# Stop when not dragging or not colliding
+			if player.audio_illegal_drag.playing:
+				player.audio_illegal_drag.stop()
 
 	# ------------------------------------------------------------------------------
 	# RETURNING LOGIC
@@ -109,6 +112,11 @@ func _process(delta: float) -> void:
 			returning = false
 			global_position = original_position
 			velocity = Vector2.ZERO
+	
+	# ✅ Ensure illegal drag SFX stops if dragging has ended
+	if not dragging and player.audio_illegal_drag.playing:
+		player.audio_illegal_drag.stop()
+
 
 # ------------------------------------------------------------------------------
 # BUTTON SIGNALS: Drag Start and End

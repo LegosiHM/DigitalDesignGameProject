@@ -375,11 +375,11 @@
 [ext_resource type="Texture2D" uid="uid://6b3qt4e7m8ch" path="res://Animation/Jewelry/Run/RunwithHj_17.png" id="368_phb7l"]
 [ext_resource type="Texture2D" uid="uid://ghbiyl2kvulq" path="res://Animation/Jewelry/Run/RunwithHj_18.png" id="369_e8w4b"]
 [ext_resource type="Texture2D" uid="uid://by8ikn0fat3gr" path="res://Animation/Jewelry/Run/RunwithHj_19.png" id="370_swy83"]
-[ext_resource type="Texture2D" uid="uid://caefyyl2rv25c" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ1.png" id="376_5btt3"]
-[ext_resource type="Texture2D" uid="uid://djppqijmfxvl3" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ2.png" id="377_5wu6c"]
-[ext_resource type="Texture2D" uid="uid://km8y74kqlnye" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ3.png" id="378_k5hpy"]
-[ext_resource type="Texture2D" uid="uid://c5mvtmqd6i1qf" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ4.png" id="379_kg8cp"]
-[ext_resource type="Texture2D" uid="uid://b0mf6e6x7jikh" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ5.png" id="380_13glq"]
+[ext_resource type="Texture2D" uid="uid://blh7ic0d3cwf8" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ1.png" id="376_5btt3"]
+[ext_resource type="Texture2D" uid="uid://beafq8vu8cciu" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ2.png" id="377_5wu6c"]
+[ext_resource type="Texture2D" uid="uid://bhu4svg4abbgr" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ3.png" id="378_k5hpy"]
+[ext_resource type="Texture2D" uid="uid://gk2qn3kyk41y" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ4.png" id="379_kg8cp"]
+[ext_resource type="Texture2D" uid="uid://cap0i3062052c" path="res://Animation/Jewelry/SlowFall/catslowfallwithHJ5.png" id="380_13glq"]
 [ext_resource type="AudioStream" uid="uid://bp7u6eulaexlc" path="res://assets/SFX/CatSFX/SFX_Cat_Jump_v01.mp3" id="381_5wu6c"]
 [ext_resource type="AudioStream" uid="uid://mf1bgqwr8bec" path="res://assets/SFX/CatSFX/SFX_Cat_Land_v01.mp3" id="382_k5hpy"]
 [ext_resource type="AudioStream" uid="uid://7acjhwt3yy3g" path="res://assets/SFX/CatSFX/SFX_Cat_LedgeGrab_v01.mp3" id="383_13glq"]
@@ -1667,8 +1667,7 @@ position = Vector2(0, -3.5)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_7105b")
 animation = &"slow_fallingHJ"
-frame = 2
-frame_progress = 0.229841
+frame_progress = 0.560423
 
 [node name="AudioManager" type="Node2D" parent="."]
 

@@ -19,7 +19,7 @@
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="17_5geg3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npypg"]
-size = Vector2(1911, 172)
+size = Vector2(2612, 172)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27b4b"]
 size = Vector2(194, 448)
@@ -51,7 +51,7 @@ script = ExtResource("1_d1sdk")
 respawn_position = Vector2(1786, 752)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(279.5, 38)
+position = Vector2(-71, 38)
 shape = SubResource("RectangleShape2D_npypg")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]

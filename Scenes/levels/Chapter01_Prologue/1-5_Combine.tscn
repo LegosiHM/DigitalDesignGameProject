@@ -29,7 +29,7 @@
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="27_barcx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlp3"]
-size = Vector2(1995, 154)
+size = Vector2(2565, 154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8uvc"]
 size = Vector2(203.5, 1487)
@@ -38,7 +38,7 @@ size = Vector2(203.5, 1487)
 size = Vector2(1924, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtlif"]
-size = Vector2(178, 776)
+size = Vector2(1741, 776)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aavoo"]
 shader = ExtResource("4_c00ox")
@@ -270,7 +270,7 @@ script = ExtResource("19_ibnw7")
 respawn_position = Vector2(1555, 835)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(253.5, 47)
+position = Vector2(359.5, 47)
 shape = SubResource("RectangleShape2D_gnlp3")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
@@ -282,7 +282,7 @@ position = Vector2(288, -1425)
 shape = SubResource("RectangleShape2D_bmmmy")
 
 [node name="Detector04" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(1338, -261)
+position = Vector2(2125.5, -261)
 shape = SubResource("RectangleShape2D_jtlif")
 
 [node name="Background" type="Sprite2D" parent="."]

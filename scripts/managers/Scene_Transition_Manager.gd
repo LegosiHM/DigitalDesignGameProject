@@ -26,6 +26,7 @@ const POSITION_END := 1.0     # Off-screen (revealed)
 # ------------------------------------------------------------------------------
 
 func _ready():
+	Global.is_changing_scene = false
 	# If transition_rect or its shader material is missing, report error
 	if transition_rect and transition_rect.material:
 		# Set the initial shader state to cover the screen fully

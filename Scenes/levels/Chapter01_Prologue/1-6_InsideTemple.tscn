@@ -286,7 +286,7 @@ shader_parameter/add_margins = true
 size = Vector2(1927, 154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqvpi"]
-size = Vector2(203.5, 841)
+size = Vector2(1043, 571)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqu7t"]
 size = Vector2(1924, 178)
@@ -462,7 +462,7 @@ position = Vector2(287.5, 47)
 shape = SubResource("RectangleShape2D_mtye2")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(-834, -295.5)
+position = Vector2(-1194.5, -160.5)
 shape = SubResource("RectangleShape2D_jqvpi")
 
 [node name="Detector03" type="CollisionShape2D" parent="RespawnDetector"]
