@@ -1698,14 +1698,17 @@ max_distance = 4096.0
 
 [node name="Audio_DragEnd" type="AudioStreamPlayer2D" parent="AudioManager"]
 stream = ExtResource("387_yilp0")
+volume_db = -80.0
 max_distance = 4096.0
 
 [node name="Audio_DragThreshold" type="AudioStreamPlayer2D" parent="AudioManager"]
 stream = ExtResource("388_nc2j5")
+volume_db = -80.0
 max_distance = 4096.0
 
 [node name="Audio_DragFullyReplenish" type="AudioStreamPlayer2D" parent="AudioManager"]
 stream = ExtResource("389_7ot4o")
+volume_db = -80.0
 max_distance = 4096.0
 
 [node name="Audio_IllegalDrag" type="AudioStreamPlayer2D" parent="AudioManager"]
