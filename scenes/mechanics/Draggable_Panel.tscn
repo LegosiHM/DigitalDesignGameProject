@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bwct7nede7txs"]
+[gd_scene load_steps=38 format=3 uid="uid://bwct7nede7txs"]
 
 [ext_resource type="Script" uid="uid://pme7x8bbaxyf" path="res://scripts/puzzles/draggable_panel.gd" id="1_tyfft"]
 [ext_resource type="PackedScene" uid="uid://bjw6twys1thrm" path="res://Scenes/environments/Draggable_Platform_Panel.tscn" id="2_aeyka"]
@@ -423,6 +423,13 @@ sources/8 = SubResource("TileSetAtlasSource_ubqb1")
 sources/9 = SubResource("TileSetAtlasSource_53fio")
 sources/1 = SubResource("TileSetAtlasSource_p803j")
 
+[sub_resource type="Environment" id="Environment_aeyka"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 0.95
+glow_blend_mode = 0
+
 [node name="draggablePanel" type="Node2D" groups=["draggable_panels"]]
 
 [node name="Area2D2" type="Area2D" parent="." groups=["draggable_panels"]]
@@ -455,7 +462,10 @@ layer_0/tile_data = PackedInt32Array(131069, 131072, 3, 131070, 131072, 3, 13107
 [node name="Outline" parent="Area2D2/TileMap" instance=ExtResource("13_aeyka")]
 position = Vector2(-45.8333, -45)
 tile_set = SubResource("TileSet_et774")
-layer_0/tile_data = PackedInt32Array(196605, 1, 5, 196606, 65537, 5, 196607, 65537, 5, 131072, 65537, 5, 131073, 65537, 5, 131075, 327681, 5, 131074, 131073, 5, 131069, 1, 3, 65533, 1, 3, -3, 1, 3, 65539, 327681, 3, 3, 327681, 3, -65533, 327681, 3, -65539, 1, 0, -65538, 131073, 0, -65537, 131073, 0, -131072, 131073, 0, -131071, 131073, 0, -131070, 131073, 0, -131069, 327681, 0)
+layer_0/tile_data = PackedInt32Array(-65533, 327681, 3, 196607, 65537, 5, 131073, 65537, 5, 131072, 65537, 5, 131074, 131073, 5, 131075, 327681, 5, 65539, 327681, 3, 3, 327681, 3, 196605, 1, 5, 196606, 65537, 5, 131069, 1, 3, 65533, 1, 3, -3, 1, 3, -65539, 1, 0, -65538, 131073, 0, -65537, 131073, 0, -131072, 131073, 0, -131071, 131073, 0, -131070, 131073, 0, -131069, 327681, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_aeyka")
 
 [connection signal="button_down" from="Area2D2/Button" to="Area2D2" method="_on_button_button_down"]
 [connection signal="button_up" from="Area2D2/Button" to="Area2D2" method="_on_button_button_up"]

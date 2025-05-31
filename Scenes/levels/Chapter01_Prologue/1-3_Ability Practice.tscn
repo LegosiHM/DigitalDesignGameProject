@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://csxm21t4vk04j"]
+[gd_scene load_steps=28 format=3 uid="uid://csxm21t4vk04j"]
 
 [ext_resource type="Texture2D" uid="uid://wfm1ss684p7i" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Priest_v.03.png" id="2_w0t8t"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="3_4tmjt"]
@@ -52,6 +52,13 @@ shader_parameter/width = 18.0
 shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
+
+[sub_resource type="Environment" id="Environment_4uv5w"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 0.95
+glow_blend_mode = 0
 
 [node name="1-3_Ability Practice" type="Node2D"]
 
@@ -174,7 +181,7 @@ scale = Vector2(0.75, 0.75)
 [node name="PlatformPanel" parent="." instance=ExtResource("3_4tmjt")]
 position = Vector2(0, 228)
 scale = Vector2(0.75, 0.75)
-layer_0/tile_data = PackedInt32Array(589825, 262148, 3, 589826, 262148, 3, 589827, 262148, 3, 589824, 262148, 3, 655359, 262148, 3, 589850, 262148, 3, 589851, 262148, 3, 589852, 262148, 3, 589849, 262148, 3, 589848, 262148, 3, 589847, 262148, 3, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 458755, 2, 0, 393219, 2, 0, 393218, 2, 0, 393217, 2, 0, 393216, 2, 0, 458751, 2, 0, 524287, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 524311, 2, 0, 524312, 2, 0, 524313, 2, 0, 524314, 2, 0, 524315, 2, 0, 524316, 2, 0, 458780, 2, 0, 393244, 2, 0, 393243, 2, 0, 393242, 2, 0, 393241, 2, 0, 393240, 2, 0, 393239, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 458778, 2, 0, 458779, 2, 0, 589846, 262148, 3, 589845, 262148, 3, 524310, 2, 0, 524309, 2, 0, 458773, 2, 0, 458774, 2, 0, 393238, 2, 0, 393237, 2, 0, 589844, 262148, 3, 524308, 2, 0, 458772, 2, 0, 393236, 2, 0, 589853, 262148, 3)
+layer_0/tile_data = PackedInt32Array(393237, 2, 0, 393238, 2, 0, 393239, 2, 0, 393240, 2, 0, 393242, 2, 0, 393241, 2, 0, 393243, 2, 0, 589825, 262148, 3, 589826, 262148, 3, 589827, 262148, 3, 589824, 262148, 3, 655359, 262148, 3, 589850, 262148, 3, 589851, 262148, 3, 589852, 262148, 3, 589849, 262148, 3, 589848, 262148, 3, 589847, 262148, 3, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 458755, 2, 0, 393219, 2, 0, 393218, 2, 0, 393217, 2, 0, 393216, 2, 0, 458751, 2, 0, 524287, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 524311, 2, 0, 524312, 2, 0, 524313, 2, 0, 524314, 2, 0, 524315, 2, 0, 524316, 2, 0, 458780, 2, 0, 393244, 2, 0, 458775, 2, 0, 458776, 2, 0, 458777, 2, 0, 458778, 2, 0, 458779, 2, 0, 589846, 262148, 3, 589845, 262148, 3, 524310, 2, 0, 524309, 2, 0, 458773, 2, 0, 458774, 2, 0, 589844, 262148, 3, 524308, 2, 0, 458772, 2, 0, 393236, 2, 0, 589853, 262148, 3)
 
 [node name="Outline" parent="PlatformPanel" instance=ExtResource("3_4tmjt")]
 position = Vector2(45, 44)
@@ -187,7 +194,7 @@ layer_0/tile_data = PackedInt32Array(-655351, 3, 3, -655352, 196611, 3, -655353,
 [node name="Outline" parent="WallPanel" instance=ExtResource("3_4tmjt")]
 position = Vector2(43.9998, -45.0002)
 rotation = -1.5708
-layer_0/tile_data = PackedInt32Array(131080, 1, 0, 131082, 327681, 0, 131081, 131073, 0, 524298, 327681, 1, 458762, 327681, 1, 393226, 327681, 1, 327690, 327681, 1, 262154, 327681, 1, 196618, 327681, 1, 196616, 1, 1, 262152, 1, 1, 327688, 1, 1, 393224, 1, 1, 458760, 1, 1, 524296, 1, 1, 589832, 1, 5, 589834, 327681, 5, 589833, 196609, 5)
+layer_0/tile_data = PackedInt32Array(196616, 1, 1, 131081, 131073, 0, 131080, 1, 0, 131082, 327681, 0, 524298, 327681, 1, 458762, 327681, 1, 393226, 327681, 1, 327690, 327681, 1, 262154, 327681, 1, 196618, 327681, 1, 262152, 1, 1, 327688, 1, 1, 393224, 1, 1, 458760, 1, 1, 524296, 1, 1, 589832, 1, 5, 589834, 327681, 5, 589833, 196609, 5)
 
 [node name="UI" parent="." instance=ExtResource("7_xqdrk")]
 
@@ -295,6 +302,9 @@ theme_override_fonts/normal_font = ExtResource("18_4uv5w")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "Click [wave amp=50.0 freq=5.0 connected=1] [color=darkred]Left Mouse Button [/color][/wave] to [shake rate=50 level = 50 connected = 1] [color=darkblue]Interact[/color][/shake] with [shake rate=50 level = 50 connected = 1] [color=darkblue]all of them[/color][/shake] and [shake rate=50 level = 50 connected = 1] [color=purple]something might happen..."
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4uv5w")
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
