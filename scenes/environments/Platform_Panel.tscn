@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dgo1on3kcjgef"]
+[gd_scene load_steps=44 format=3 uid="uid://dgo1on3kcjgef"]
 
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="1_2e87h"]
 [ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="2_ekp64"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://k1r6jaopnu31" path="res://assets/sprites/chapter 2/tilesets/IMG_2785.png" id="10_reee5"]
 [ext_resource type="Texture2D" uid="uid://dqr6l2ou0ifqx" path="res://assets/sprites/chapter 2/tilesets/IMG_2786.png" id="11_7ybon"]
 [ext_resource type="Texture2D" uid="uid://blbco7o1jxv8j" path="res://assets/sprites/chapter 2/tilesets/IMG_3222 (1).png" id="12_jk00w"]
+[ext_resource type="Texture2D" uid="uid://botob07objnwc" path="res://assets/sprites/chapter 1/tileset/Illustration13 (1).png" id="14_wm30e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_slfln"]
 texture = ExtResource("1_2e87h")
@@ -331,6 +332,28 @@ texture = ExtResource("3_bk65m")
 texture_region_size = Vector2i(90, 90)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fr46q"]
+texture = ExtResource("14_wm30e")
+texture_region_size = Vector2i(90, 90)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46haf"]
 texture = ExtResource("4_vslod")
 texture_region_size = Vector2i(90, 90)
@@ -494,6 +517,7 @@ sources/16 = SubResource("TileSetAtlasSource_nocwe")
 sources/17 = SubResource("TileSetAtlasSource_yp55a")
 sources/18 = SubResource("TileSetAtlasSource_pe6by")
 sources/19 = SubResource("TileSetAtlasSource_lwfb2")
+sources/20 = SubResource("TileSetAtlasSource_fr46q")
 
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_cklnn")

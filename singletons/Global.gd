@@ -9,3 +9,4 @@ extends Node
 var has_hj_power: bool = false
 var is_changing_scene := false
 var current_level: String = ""
+var master_volume_db = 0.0

@@ -14,6 +14,7 @@ func save_game():
 	var data = {
 		"Has_HJ_Power": Global.has_hj_power,
 		"current_level": Global.current_level,
+		"master_volume_db": Global.master_volume_db,
 	}
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(data, "\t"))
@@ -27,3 +28,5 @@ func load_game():
 		if typeof(data) == TYPE_DICTIONARY:
 			Global.has_hj_power = data.get("Has_HJ_Power", false)
 			Global.current_level = data.get("current_level", "")
+			Global.master_volume_db = data.get("master_volume_db", 0)
+			AudioServer.set_bus_volume_db(0, Global.master_volume_db)

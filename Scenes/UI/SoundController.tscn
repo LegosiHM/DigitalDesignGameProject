@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://by0xmffvlcwmo"]
+
+[ext_resource type="Script" uid="uid://edduv1re3qf6" path="res://scripts/UI/sound_controller.gd" id="1_j1thn"]
+
+[node name="MasterVolumeController" type="HSlider"]
+offset_right = 480.0
+offset_bottom = 16.0
+min_value = -80.0
+max_value = 0.0
+script = ExtResource("1_j1thn")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]
