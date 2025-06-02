@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu6446fo7y1t1"]
+
+[ext_resource type="Script" uid="uid://djkvpaduvisan" path="res://scripts/UI/pause_menu.gd" id="1_8rf44"]
+[ext_resource type="Shader" uid="uid://cian5q6fubwkx" path="res://scripts/shaders/BlurEffect.gdshader" id="1_rrvs5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rf44"]
+shader = ExtResource("1_rrvs5")
+shader_parameter/blur_radius = 16
+shader_parameter/blur_scale = 3.0
+shader_parameter/darkness = 0.25
+shader_parameter/fade_direction = 0
+shader_parameter/fade_cutoff = 1.0
+shader_parameter/fade_intensity = 2.0
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_8rf44")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_8rf44")
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -33.0
+offset_right = 35.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Resume"
+
+[node name="ExitButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]

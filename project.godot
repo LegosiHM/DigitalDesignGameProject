@@ -22,6 +22,8 @@ DialogManager="*res://singletons/DialogManager.gd"
 CursorManager="*res://scripts/UI/Cursor_Manager.gd"
 Global="*res://singletons/Global.gd"
 BGMManager="*res://singletons/BGMManager.tscn"
+PauseMenu="*res://Scenes/UI/pause_menu.tscn"
+SaveManager="*res://singletons/SaveManager.gd"
 
 [display]
 

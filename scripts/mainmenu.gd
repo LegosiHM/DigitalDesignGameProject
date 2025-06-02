@@ -41,8 +41,19 @@ func _on_new_game_button_mouse_exited():
 func _on_new_game_button_pressed() -> void:
 	audio_click.play()
 	await audio_click.finished
+	Global.has_hj_power = false
+	Global.current_level = "res://Scenes/levels/Chapter01_Prologue/1-1_Introduction.tscn"
+	SaveManager.save_game()
 	get_tree().change_scene_to_file(target_scene)
 
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_load_button_pressed() -> void:
+	SaveManager.load_game()
+	audio_click.play()
+	await audio_click.finished
+	if Global.current_level != "":
+		get_tree().change_scene_to_file(Global.current_level)

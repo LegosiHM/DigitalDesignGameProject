@@ -377,8 +377,8 @@ scale = Vector2(10, 10)
 visible = false
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("20_4owhp")]
-offset_top = 9.0
-offset_bottom = 1089.0
+offset_top = 1.0
+offset_bottom = 1081.0
 
 [node name="untouchablePanle" parent="." instance=ExtResource("21_cv01p")]
 position = Vector2(643, 528)
