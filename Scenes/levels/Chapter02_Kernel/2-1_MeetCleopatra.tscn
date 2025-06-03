@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ds0gsv8ejjbvj"]
+[gd_scene load_steps=45 format=3 uid="uid://ds0gsv8ejjbvj"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_k0cyx"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_3cwxj"]
@@ -27,7 +27,8 @@
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="22_uyec8"]
 [ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="23_sip0b"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="24_qtcmh"]
-[ext_resource type="Texture2D" uid="uid://cdcdiy428svmp" path="res://assets/sprites/chapter 3/character/Char_Cleopatra_Idle_v.01.png" id="25_3cwxj"]
+[ext_resource type="Texture2D" uid="uid://cdcdiy428svmp" path="res://assets/sprites/character/Char_Cleopatra_Idle_v.01.png" id="25_3cwxj"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="29_gn0lh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -339,8 +340,8 @@ texture = ExtResource("25_3cwxj")
 [node name="Cleopatra" type="Node2D" parent="NPC"]
 position = Vector2(1920, 1080)
 script = ExtResource("19_j0fav")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(250, 400)])
+dialog_lines = Array[String](["Fascinating!", "New weird cat to my COLLECTION!"])
+dialog_position_Array = Array[Vector2]([Vector2(250, 400), Vector2(250, 400)])
 
 [node name="CharCleopatraIdleV_01" type="Sprite2D" parent="NPC/Cleopatra"]
 position = Vector2(-962.857, 1.43018)
@@ -364,7 +365,7 @@ texture = ExtResource("17_k0cyx")
 [node name="Maid01" type="Node2D" parent="NPC"]
 position = Vector2(1920, 1080)
 script = ExtResource("19_j0fav")
-dialog_lines = Array[String](["asd"])
+dialog_lines = Array[String](["\"If you say so, my queen...\""])
 dialog_position_Array = Array[Vector2]([Vector2(950, 400)])
 
 [node name="CharMaidIdleV_01" type="Sprite2D" parent="NPC/Maid01"]
@@ -386,10 +387,10 @@ scale = Vector2(1.319, 1.319)
 texture = ExtResource("18_3cwxj")
 
 [node name="Maid02" type="Node2D" parent="NPC"]
-position = Vector2(1920, 1080)
+position = Vector2(1924.29, 1072.86)
 script = ExtResource("19_j0fav")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(1200, 400)])
+dialog_lines = Array[String](["fat cat...", "how can a cat be that fat..."])
+dialog_position_Array = Array[Vector2]([Vector2(1200, 400), Vector2(1200, 400)])
 
 [node name="CharMaidIdleV_02" type="Sprite2D" parent="NPC/Maid02"]
 position = Vector2(-228.18, 23.2502)
@@ -444,6 +445,31 @@ texture = ExtResource("15_ps56u")
 [node name="UI" parent="." instance=ExtResource("21_axvgs")]
 z_index = 50
 
+[node name="Chapter" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 1295.0
+offset_top = 6.0
+offset_right = 1500.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("29_gn0lh")
+theme_override_font_sizes/font_size = 50
+text = "CH.2"
+
+[node name="Scene" type="Label" parent="UI/Chapter"]
+layout_mode = 0
+offset_left = 117.0
+offset_right = 409.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("29_gn0lh")
+theme_override_font_sizes/font_size = 50
+text = "Let Meow Pawple Go!"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("22_uyec8")
 
@@ -459,6 +485,36 @@ scale = Vector2(10, 10)
 visible = false
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("24_qtcmh")]
+
+[node name="Tutorial" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 445.0
+offset_top = 318.0
+offset_right = 1464.0
+offset_bottom = 442.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("29_gn0lh")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] [color=purple]Aha![/color][/wave] Now you [shake rate=50 level = 50 connected = 1] [color=darkred]stuck[/color][/shake] in the [wave amp=50.0 freq=5.0 connected=1] [color=purple]BOOK!"
+scroll_active = false
+
+[node name="Tutorial2" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 274.0
+offset_top = 421.0
+offset_right = 1681.0
+offset_bottom = 545.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("29_gn0lh")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "They are [wave amp=50.0 freq=5.0 connected=1] [color=purple]REAL[/color][/wave]  now. You [shake rate=50 level = 50 connected = 1] [color=darkred]can't just walk past[/color][/shake] them like usual..."
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://da21mawp1nj8m"]
+[gd_scene load_steps=66 format=3 uid="uid://da21mawp1nj8m"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_57csm"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_1jj2f"]
@@ -33,7 +33,8 @@
 [ext_resource type="Texture2D" uid="uid://cxdurm80hpojo" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothRoof_v.01.PNG" id="21_onb5q"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="22_1jj2f"]
 [ext_resource type="Texture2D" uid="uid://ju2cd8ddk7jy" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_Door_v.01.PNG" id="23_512wy"]
-[ext_resource type="Texture2D" uid="uid://b3c6pbwlq74mb" path="res://assets/sprites/chapter 3/character/Char_MaleMerchant_Idle_v.01.png" id="23_xcc3l"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="23_gyouh"]
+[ext_resource type="Texture2D" uid="uid://b3c6pbwlq74mb" path="res://assets/sprites/character/Char_MaleMerchant_Idle_v.01.png" id="23_xcc3l"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="24_wokg6"]
 [ext_resource type="Texture2D" uid="uid://d02qbf5ulqm1h" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothBase_v.01.PNG" id="25_dko4j"]
 [ext_resource type="Texture2D" uid="uid://b2gpffs4sj8x4" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothProduce_v.01.PNG" id="29_d122h"]
@@ -597,6 +598,30 @@ layer_0/tile_data = PackedInt32Array(393237, 65546, 1, 393238, 65546, 1, 393239,
 [node name="UI" parent="." instance=ExtResource("18_jb087")]
 z_index = 4
 
+[node name="Chapter" type="Label" parent="UI"]
+offset_left = 1295.0
+offset_top = 6.0
+offset_right = 1500.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("23_gyouh")
+theme_override_font_sizes/font_size = 50
+text = "CH.2"
+
+[node name="Scene" type="Label" parent="UI/Chapter"]
+layout_mode = 0
+offset_left = 117.0
+offset_right = 409.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("23_gyouh")
+theme_override_font_sizes/font_size = 50
+text = "Let Meow Pawple Go!"
+
 [node name="Player" parent="." instance=ExtResource("16_8mdnm")]
 position = Vector2(162, 837)
 
@@ -611,10 +636,9 @@ texture = ExtResource("18_cseyx")
 
 [node name="Merchant1" type="Node2D" parent="NPC"]
 position = Vector2(1920, 1080)
-scale = Vector2(1, 1)
 script = ExtResource("24_wokg6")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(600, 375)])
+dialog_lines = Array[String](["I should've fired her since yesterday."])
+dialog_position_Array = Array[Vector2]([Vector2(600, 350)])
 
 [node name="CharMarcIdleV_02" type="Sprite2D" parent="NPC/Merchant1"]
 position = Vector2(-734.1, 42.6001)
@@ -643,10 +667,9 @@ texture = ExtResource("23_xcc3l")
 
 [node name="MaleMerchant" type="Node2D" parent="NPC"]
 position = Vector2(1920, 1080)
-scale = Vector2(1, 1)
 script = ExtResource("24_wokg6")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(1500, 375)])
+dialog_lines = Array[String](["The couple that just walked by seems rich...", "I should follow them."])
+dialog_position_Array = Array[Vector2]([Vector2(1500, 375), Vector2(1500, 375)])
 
 [node name="CharMaleMerchantIdleV_02" type="Sprite2D" parent="NPC/MaleMerchant"]
 position = Vector2(189.291, -2.85986)
@@ -712,8 +735,8 @@ texture = ExtResource("19_xbb8v")
 position = Vector2(1793.33, 556)
 scale = Vector2(0.933333, 0.933333)
 script = ExtResource("24_wokg6")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(350, 375)])
+dialog_lines = Array[String](["I wondered if the queen go well with that Marc guy."])
+dialog_position_Array = Array[Vector2]([Vector2(150, 350)])
 
 [node name="CharMarcIdleV_04" type="Sprite2D" parent="DecorationFront/Merchant2"]
 position = Vector2(-1058.17, 29.3369)

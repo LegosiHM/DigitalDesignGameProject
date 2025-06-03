@@ -1061,8 +1061,8 @@ layer_0/tile_data = PackedInt32Array(589845, 327689, 3, 589846, 393225, 3, 58984
 position = Vector2(1793.33, 556)
 scale = Vector2(0.933333, 0.933333)
 script = ExtResource("19_0i00n")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(1300, 350)])
+dialog_lines = Array[String](["Good~", "Very good~", "Here's the reward for following my advice~"])
+dialog_position_Array = Array[Vector2]([Vector2(1300, 350), Vector2(1300, 350), Vector2(1300, 350)])
 will_reveal_object = true
 reveal_panel = NodePath("../../StuckablePanel")
 

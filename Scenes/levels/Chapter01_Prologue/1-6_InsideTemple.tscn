@@ -546,7 +546,7 @@ text = "A Cat In Time"
 z_index = 5
 offset_left = 139.0
 offset_top = 6.0
-offset_right = 1796.0
+offset_right = 1808.0
 offset_bottom = 130.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -555,6 +555,7 @@ theme_override_fonts/normal_font = ExtResource("28_b0y6l")
 theme_override_font_sizes/normal_font_size = 84
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1] [color=purple]Oopsie![/color][/wave] Did you just [shake rate=50 level = 50 connected = 1] [color=darkred]STOLE...THAT THING?!"
+scroll_active = false
 
 [connection signal="body_entered" from="Jewelry" to="Jewelry" method="_on_body_entered"]
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]

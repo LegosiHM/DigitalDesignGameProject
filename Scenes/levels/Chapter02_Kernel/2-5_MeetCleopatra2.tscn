@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bs0me3xlw6uwk"]
+[gd_scene load_steps=57 format=3 uid="uid://bs0me3xlw6uwk"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_hb2ge"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_qgh2b"]
@@ -28,7 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="22_hb2ge"]
 [ext_resource type="Texture2D" uid="uid://chq88igfc15id" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_PlantPot_v.02.PNG" id="22_ixm6k"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="22_jyofi"]
-[ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/chapter 3/character/Char_Medjed_Idle_v.01.png" id="22_ovp2p"]
+[ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/character/Char_Medjed_Idle_v.01.png" id="22_ovp2p"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="26_jb2q7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -608,10 +609,9 @@ texture = ExtResource("17_qgh2b")
 
 [node name="Cleopatra" type="Node2D" parent="NPC" node_paths=PackedStringArray("reveal_path")]
 position = Vector2(1920, 1080)
-scale = Vector2(1, 1)
 script = ExtResource("22_jyofi")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(1000, 375)])
+dialog_lines = Array[String](["Here comes the cat~", "...", "Are you actually a cat?", "You are...", "different.", "...", "The head priest told me that...", "you are not from---", "Sorry to interrupt, your majesty!", "But don't let sir Marc wait for too long.", "...Seems like I have to go.", "Rest well in this room, little fellow.", "I'll be back..."])
+dialog_position_Array = Array[Vector2]([Vector2(1000, 375), Vector2(1000, 375), Vector2(1000, 375), Vector2(1000, 375), Vector2(1000, 375), Vector2(1000, 375), Vector2(1000, 375), Vector2(1000, 375), Vector2(500, 375), Vector2(500, 375), Vector2(1000, 375), Vector2(1000, 375), Vector2(1000, 375)])
 will_reveal_object = true
 reveal_path = NodePath("../../ChangeSceneDetector")
 
@@ -726,6 +726,31 @@ texture = ExtResource("22_ixm6k")
 
 [node name="UI" parent="." instance=ExtResource("18_bd42e")]
 z_index = 50
+
+[node name="Chapter" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 1295.0
+offset_top = 6.0
+offset_right = 1500.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("26_jb2q7")
+theme_override_font_sizes/font_size = 50
+text = "CH.2"
+
+[node name="Scene" type="Label" parent="UI/Chapter"]
+layout_mode = 0
+offset_left = 117.0
+offset_right = 409.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("26_jb2q7")
+theme_override_font_sizes/font_size = 50
+text = "Let Meow Pawple Go!"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("19_tq82g")

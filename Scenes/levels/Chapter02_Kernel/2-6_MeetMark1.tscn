@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://crkmdj7uvde0w"]
+[gd_scene load_steps=58 format=3 uid="uid://crkmdj7uvde0w"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_ahp4s"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_7usnc"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="21_14plh"]
 [ext_resource type="Texture2D" uid="uid://chq88igfc15id" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_PlantPot_v.02.PNG" id="21_ac6gj"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="22_7usnc"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="26_lnrjg"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="28_rabgs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
@@ -495,7 +496,7 @@ scale = Vector2(0.75, 0.75)
 [node name="Door" type="Node2D" parent="DecorationBack" node_paths=PackedStringArray("reveal_panel", "reveal_path")]
 position = Vector2(1920, 1080)
 script = ExtResource("5_2y8vu")
-dialog_lines = Array[String](["asd"])
+dialog_lines = Array[String](["Obviously..."])
 dialog_position_Array = Array[Vector2]([Vector2(500, 250)])
 will_reveal_object = true
 reveal_panel = NodePath("../DecorationOpenedDoorNightV_01")
@@ -747,6 +748,31 @@ texture = ExtResource("21_ac6gj")
 [node name="UI" parent="." instance=ExtResource("18_b0laj")]
 z_index = 50
 
+[node name="Chapter" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 1295.0
+offset_top = 6.0
+offset_right = 1500.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("26_lnrjg")
+theme_override_font_sizes/font_size = 50
+text = "CH.2"
+
+[node name="Scene" type="Label" parent="UI/Chapter"]
+layout_mode = 0
+offset_left = 117.0
+offset_right = 409.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("26_lnrjg")
+theme_override_font_sizes/font_size = 50
+text = "Let Meow Pawple Go!"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("19_h27ln")
 
@@ -850,6 +876,76 @@ offset_left = 648.0
 offset_top = 420.0
 offset_right = 779.0
 offset_bottom = 448.0
+
+[node name="Tutorial2" type="RichTextLabel" parent="."]
+offset_left = 544.0
+offset_top = 626.0
+offset_right = 677.0
+offset_bottom = 680.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_lnrjg")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] [color=darkblue]KNOCK![/color][/wave]"
+scroll_active = false
+
+[node name="Tutorial3" type="RichTextLabel" parent="."]
+offset_left = 533.0
+offset_top = 452.0
+offset_right = 723.0
+offset_bottom = 524.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_lnrjg")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] [color=darkblue]KNOCK![/color][/wave]"
+scroll_active = false
+
+[node name="Tutorial4" type="RichTextLabel" parent="."]
+offset_left = 539.0
+offset_top = 523.0
+offset_right = 672.0
+offset_bottom = 577.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_lnrjg")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] [color=darkblue]KNOCK![/color][/wave]"
+scroll_active = false
+
+[node name="Tutorial5" type="RichTextLabel" parent="."]
+offset_left = 544.0
+offset_top = 575.0
+offset_right = 677.0
+offset_bottom = 629.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_lnrjg")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] [color=darkblue]KNOCK![/color][/wave]"
+scroll_active = false
+
+[node name="Tutorial7" type="RichTextLabel" parent="."]
+offset_left = 272.0
+offset_top = 354.0
+offset_right = 536.0
+offset_bottom = 409.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_lnrjg")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] [color=darkred]OPEN THE DOOR[/color][/wave]"
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

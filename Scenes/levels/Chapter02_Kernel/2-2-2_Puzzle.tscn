@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cd1diokytbunw"]
+[gd_scene load_steps=59 format=3 uid="uid://cd1diokytbunw"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_5v6dv"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_dmghs"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://c4hm6pp78ao00" path="res://Scenes/mechanics/CH2_Stuckable_Draggable_Panel.tscn" id="23_5v6dv"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="23_pyxs3"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="26_jvi4t"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="32_aqc5b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -621,8 +622,8 @@ texture = ExtResource("17_ceax8")
 [node name="Maid03" type="Node2D" parent="NPC"]
 position = Vector2(1920, 1080)
 script = ExtResource("22_af48b")
-dialog_lines = Array[String](["asd", "sdf"])
-dialog_position_Array = Array[Vector2]([Vector2(100, 200), Vector2(500, 200)])
+dialog_lines = Array[String](["Brother!", "Did the queen just walk past us?", "Impossible brother!", "The queen has an important meeting today!", "But...!", "Shut up brother!", "...", "Just kidd--", "sorry brother.", "The queen did actaully walk past us recently...", "Wait? Really?!"])
+dialog_position_Array = Array[Vector2]([Vector2(100, 200), Vector2(100, 200), Vector2(500, 200), Vector2(500, 200), Vector2(100, 200), Vector2(500, 200), Vector2(500, 200), Vector2(100, 200), Vector2(500, 200), Vector2(500, 200), Vector2(100, 200)])
 
 [node name="CharMaidIdleV_04" type="Sprite2D" parent="NPC/Maid03"]
 position = Vector2(-1349.43, -205.143)
@@ -681,6 +682,31 @@ texture = ExtResource("21_xhtuj")
 
 [node name="UI" parent="." instance=ExtResource("17_bxrud")]
 z_index = 50
+
+[node name="Chapter" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 1295.0
+offset_top = 6.0
+offset_right = 1500.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("32_aqc5b")
+theme_override_font_sizes/font_size = 50
+text = "CH.2"
+
+[node name="Scene" type="Label" parent="UI/Chapter"]
+layout_mode = 0
+offset_left = 117.0
+offset_right = 409.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("32_aqc5b")
+theme_override_font_sizes/font_size = 50
+text = "Let Meow Pawple Go!"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_h3tot")
@@ -767,6 +793,22 @@ offset_left = 85.0
 offset_top = 637.0
 offset_right = 218.0
 offset_bottom = 675.0
+
+[node name="Tutorial" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 973.0
+offset_top = 165.0
+offset_right = 2019.0
+offset_bottom = 425.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("32_aqc5b")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Such an[wave amp=50.0 freq=5.0 connected=1] [color=purple]UNSTABLE[/color][/wave] device.
+There's another[shake rate=50 level = 50 connected = 1] [color=darkred]GLITCHY[/color][/shake] one..."
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
