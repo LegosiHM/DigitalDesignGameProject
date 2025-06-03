@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dssxt02bs1m7t"]
+[gd_scene load_steps=56 format=3 uid="uid://dssxt02bs1m7t"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_pkaw3"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_d0md4"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="20_pal3c"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="21_3mv7l"]
 [ext_resource type="PackedScene" uid="uid://b8t5wpi35pset" path="res://Scenes/mechanics/CH2_Draggable_Panel.tscn" id="22_36nbm"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="22_gbomp"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="23_38624"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="24_d0md4"]
 
@@ -552,8 +553,8 @@ texture = ExtResource("18_pal3c")
 [node name="Maid02" type="Node2D" parent="NPC"]
 position = Vector2(1920, 1080)
 script = ExtResource("20_pal3c")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(900, 200)])
+dialog_lines = Array[String](["Hmmm...?", "I feel a weird presence around here..."])
+dialog_position_Array = Array[Vector2]([Vector2(900, 200), Vector2(900, 200)])
 
 [node name="CharMaidIdleV_03" type="Sprite2D" parent="NPC/Maid02"]
 position = Vector2(-48.1796, -252.466)
@@ -603,6 +604,31 @@ texture = ExtResource("16_mmpor")
 
 [node name="UI" parent="." instance=ExtResource("17_yo5en")]
 z_index = 50
+
+[node name="Chapter" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 1295.0
+offset_top = 6.0
+offset_right = 1500.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("22_gbomp")
+theme_override_font_sizes/font_size = 50
+text = "CH.2"
+
+[node name="Scene" type="Label" parent="UI/Chapter"]
+layout_mode = 0
+offset_left = 117.0
+offset_right = 409.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("22_gbomp")
+theme_override_font_sizes/font_size = 50
+text = "Let Meow Pawple Go!"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_1r1sl")
@@ -679,6 +705,21 @@ offset_left = 905.0
 offset_top = 409.0
 offset_right = 962.0
 offset_bottom = 434.0
+
+[node name="Tutorial2" type="RichTextLabel" parent="."]
+offset_left = 594.0
+offset_top = 235.0
+offset_right = 1752.0
+offset_bottom = 383.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("22_gbomp")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "This is the[wave amp=50.0 freq=5.0 connected=1] [color=darkblue]DRAGGABLE PANEL[/color][/wave] you're familiar with.
+It just seems... [shake rate=50 level = 50 connected = 1] [color=darkred]GLITCHY[/color][/shake]"
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

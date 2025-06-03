@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cafb56wud3d0x"]
+[gd_scene load_steps=59 format=3 uid="uid://cafb56wud3d0x"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_jqfqv"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_3j5q7"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="22_3j5q7"]
 [ext_resource type="Texture2D" uid="uid://c3q7c5j432kv" path="res://assets/sprites/character/Char_Maid_Idle_v.03.png" id="22_o5h20"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="23_ooetf"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="28_0is3s"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="29_63hlo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
@@ -653,7 +654,7 @@ texture = ExtResource("20_ooetf")
 [node name="Medjed" type="Node2D" parent="NPC" node_paths=PackedStringArray("reveal_panel", "reveal_path")]
 position = Vector2(1920, 1080)
 script = ExtResource("23_ooetf")
-dialog_lines = Array[String](["asd"])
+dialog_lines = Array[String](["Good boy~"])
 dialog_position_Array = Array[Vector2]([Vector2(200, 150)])
 will_reveal_object = true
 reveal_panel = NodePath("../../DecorationBack/DecorationOpenedDoorNightV_02")
@@ -689,7 +690,7 @@ texture = ExtResource("18_lu76l")
 [node name="Maid01" type="Node2D" parent="NPC"]
 position = Vector2(1920, 1080)
 script = ExtResource("23_ooetf")
-dialog_lines = Array[String](["asd"])
+dialog_lines = Array[String](["-INTERACTION PROHIBITED BY ENTITY42MEDJED"])
 dialog_position_Array = Array[Vector2]([Vector2(850, 375)])
 
 [node name="CharMaidIdleV_01" type="Sprite2D" parent="NPC/Maid01"]
@@ -713,8 +714,8 @@ texture = ExtResource("19_63hlo")
 [node name="Maid02" type="Node2D" parent="NPC"]
 position = Vector2(1920, 1080)
 script = ExtResource("23_ooetf")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(1150, 375)])
+dialog_lines = Array[String](["-INTERACTION PROHIBITED BY ENTITY42MEDJED", "\"Talk to me, little guy.\""])
+dialog_position_Array = Array[Vector2]([Vector2(1150, 375), Vector2(1150, 375)])
 
 [node name="CharMaidIdleV_02" type="Sprite2D" parent="NPC/Maid02"]
 position = Vector2(-286.749, 36.1104)
@@ -737,8 +738,8 @@ texture = ExtResource("22_o5h20")
 [node name="Maid03" type="Node2D" parent="NPC"]
 position = Vector2(1920, 1080)
 script = ExtResource("23_ooetf")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(1500, 375)])
+dialog_lines = Array[String](["-INTERACTION PROHIBITED BY ENTITY36JTITOR", "\"Wait?\"", "\"What year is it?\""])
+dialog_position_Array = Array[Vector2]([Vector2(1500, 375), Vector2(1500, 375), Vector2(1500, 375)])
 
 [node name="CharMaidIdleV_03" type="Sprite2D" parent="NPC/Maid03"]
 position = Vector2(206.101, 38.9703)
@@ -760,6 +761,31 @@ scale = Vector2(0.75, 0.75)
 [node name="UI" parent="." instance=ExtResource("17_cmh7a")]
 z_index = 50
 
+[node name="Chapter" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 1295.0
+offset_top = 6.0
+offset_right = 1500.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("28_0is3s")
+theme_override_font_sizes/font_size = 50
+text = "CH.2"
+
+[node name="Scene" type="Label" parent="UI/Chapter"]
+layout_mode = 0
+offset_left = 117.0
+offset_right = 409.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("28_0is3s")
+theme_override_font_sizes/font_size = 50
+text = "Let Meow Pawple Go!"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_2g7cr")
 
@@ -775,6 +801,20 @@ scale = Vector2(10, 10)
 visible = false
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("20_e52at")]
+
+[node name="Tutorial2" type="RichTextLabel" parent="."]
+offset_left = 40.0
+offset_top = 259.0
+offset_right = 715.0
+offset_bottom = 338.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("28_0is3s")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] [color=darkblue]TALK[/color][/wave] to me to [shake rate=50 level = 50 connected = 1] [color=darkred]OPEN[/color][/shake] the door."
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

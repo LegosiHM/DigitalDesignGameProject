@@ -1039,7 +1039,7 @@ texture = ExtResource("27_y67aj")
 position = Vector2(1793.33, 556)
 scale = Vector2(0.933333, 0.933333)
 script = ExtResource("30_1f60w")
-dialog_lines = Array[String](["asd"])
+dialog_lines = Array[String](["Why did I have to be with him again..."])
 dialog_position_Array = Array[Vector2]([Vector2(1400, 350)])
 
 [node name="CharGuardsIdleV_04" type="Sprite2D" parent="NPC/Guard1"]
@@ -1064,8 +1064,8 @@ texture = ExtResource("27_1x70y")
 position = Vector2(1793.33, 556)
 scale = Vector2(0.933333, 0.933333)
 script = ExtResource("30_1f60w")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(1200, 350)])
+dialog_lines = Array[String](["~Never gonna give you up", "~Never gonna let you down", "~Never gonna run around", "~And hurt you"])
+dialog_position_Array = Array[Vector2]([Vector2(1200, 350), Vector2(1200, 350), Vector2(1200, 350), Vector2(1200, 350)])
 
 [node name="CharGuardsIdleV_02" type="Sprite2D" parent="NPC/Guard2"]
 position = Vector2(494.429, 602.754)

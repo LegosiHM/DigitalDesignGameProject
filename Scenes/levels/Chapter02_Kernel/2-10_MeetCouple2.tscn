@@ -1091,7 +1091,7 @@ texture = ExtResource("30_f88xn")
 position = Vector2(1793.33, 556)
 scale = Vector2(0.933333, 0.933333)
 script = ExtResource("39_savnx")
-dialog_lines = Array[String](["asd"])
+dialog_lines = Array[String](["The town is quite lively..."])
 dialog_position_Array = Array[Vector2]([Vector2(400, 300)])
 
 [node name="CharMarcIdleV_02" type="Sprite2D" parent="DecorationFront/Marc"]
@@ -1116,7 +1116,7 @@ texture = ExtResource("33_fdv8w")
 position = Vector2(1793.33, 556)
 scale = Vector2(0.933333, 0.933333)
 script = ExtResource("39_savnx")
-dialog_lines = Array[String](["asd"])
+dialog_lines = Array[String](["How did no one remember us...?"])
 dialog_position_Array = Array[Vector2]([Vector2(750, 400)])
 
 [node name="CharMarcIdleV_04" type="Sprite2D" parent="DecorationFront/Cleopatra"]
@@ -1169,8 +1169,8 @@ texture = ExtResource("31_k0bth")
 position = Vector2(1793.33, 556)
 scale = Vector2(0.933333, 0.933333)
 script = ExtResource("39_savnx")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(250, 300)])
+dialog_lines = Array[String](["Lucky me.", "This couple is actually rich!", "...But the woman looks familiar"])
+dialog_position_Array = Array[Vector2]([Vector2(250, 250), Vector2(250, 250), Vector2(250, 250)])
 
 [node name="CharMaleMerchantIdleV_02" type="Sprite2D" parent="NPC/Merchant2"]
 position = Vector2(-1303.71, 561.429)

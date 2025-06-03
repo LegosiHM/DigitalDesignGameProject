@@ -1043,8 +1043,8 @@ z_index = 4
 visible = false
 position = Vector2(2676, 1152)
 script = ExtResource("33_boj0w")
-dialog_lines = Array[String](["Oh..."])
-dialog_position_Array = Array[Vector2]([Vector2(1100, 750)])
+dialog_lines = Array[String](["Stop messing with the holy timeline...", "\"False God...\"", "\"...Medjed\""])
+dialog_position_Array = Array[Vector2]([Vector2(1100, 750), Vector2(1100, 750), Vector2(1100, 750)])
 will_reveal_object = true
 reveal_path = NodePath("../ChangeSceneDetector")
 
@@ -1069,8 +1069,8 @@ texture = ExtResource("34_ujasl")
 visible = false
 position = Vector2(2657, 1124)
 script = ExtResource("33_boj0w")
-dialog_lines = Array[String](["I knew it! You...Basta--BONKERS!"])
-dialog_position_Array = Array[Vector2]([Vector2(1075, 725)])
+dialog_lines = Array[String](["It's time to go...", "Go back to where you've been."])
+dialog_position_Array = Array[Vector2]([Vector2(1075, 725), Vector2(1075, 725)])
 will_reveal_object = true
 reveal_panel = NodePath("../Panel_Ritual")
 
@@ -1094,8 +1094,8 @@ texture = ExtResource("36_n8h7l")
 visible = false
 position = Vector2(2340, 1008)
 script = ExtResource("33_boj0w")
-dialog_lines = Array[String](["Forgive me Jesu--I mean Isis! Our queen!"])
-dialog_position_Array = Array[Vector2]([Vector2(950, 300)])
+dialog_lines = Array[String](["It is not yours.", "You are not belong here."])
+dialog_position_Array = Array[Vector2]([Vector2(950, 300), Vector2(950, 300)])
 will_reveal_object = true
 reveal_panel = NodePath("../Panel_Yell")
 
@@ -1122,8 +1122,8 @@ visible = false
 position = Vector2(2016, 620)
 scale = Vector2(0.7, 0.7)
 script = ExtResource("33_boj0w")
-dialog_lines = Array[String](["Stop there you little shot!"])
-dialog_position_Array = Array[Vector2]([Vector2(300, 300)])
+dialog_lines = Array[String](["Remember this?", "The thing you stole."])
+dialog_position_Array = Array[Vector2]([Vector2(300, 300), Vector2(300, 300)])
 will_reveal_object = true
 reveal_panel = NodePath("../Panel_Pray")
 
@@ -1167,8 +1167,8 @@ texture = ExtResource("28_mhaeh")
 position = Vector2(1793.33, 556)
 scale = Vector2(0.933333, 0.933333)
 script = ExtResource("33_boj0w")
-dialog_lines = Array[String](["asd"])
-dialog_position_Array = Array[Vector2]([Vector2(650, 350)])
+dialog_lines = Array[String](["We meet again...", "\"Cat\"", "or should I call you...", "\"Time Traveller\""])
+dialog_position_Array = Array[Vector2]([Vector2(650, 350), Vector2(650, 350), Vector2(650, 350), Vector2(650, 350)])
 will_reveal_object = true
 reveal_panel = NodePath("../../Panel_Run")
 
