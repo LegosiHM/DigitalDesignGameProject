@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://fn01f38daqgr"]
 
-[ext_resource type="Shader" path="res://scripts/shaders/Respawn_Effect.gdshader" id="1_0d35e"]
+[ext_resource type="Shader" uid="uid://tsbktc7k3rsm" path="res://scripts/shaders/Respawn_Effect.gdshader" id="1_0d35e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gf6i2"]
 shader = ExtResource("1_0d35e")

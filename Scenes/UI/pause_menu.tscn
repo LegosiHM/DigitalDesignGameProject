@@ -54,10 +54,10 @@ text = "Exit"
 
 [node name="MasterVolumeController" parent="ColorRect" instance=ExtResource("3_r2i2h")]
 layout_mode = 0
-offset_left = 712.0
-offset_top = 464.0
-offset_right = 1192.0
-offset_bottom = 480.0
+offset_left = 741.0
+offset_top = 399.0
+offset_right = 1221.0
+offset_bottom = 499.0
 
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]
