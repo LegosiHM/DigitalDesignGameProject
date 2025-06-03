@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmqrgklvsr373"]
+
+[ext_resource type="Script" uid="uid://wngy33jlcw4" path="res://scripts/UI/credit.gd" id="1_n8sek"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="2_thl1k"]
+[ext_resource type="Texture2D" uid="uid://jry7alt74aa1" path="res://assets/UI/IMG_3445.PNG" id="2_v1m8n"]
+[ext_resource type="Texture2D" uid="uid://blhe8sws0njxs" path="res://assets/UI/IMG_3448.PNG" id="4_v1m8n"]
+[ext_resource type="Texture2D" uid="uid://b66d1q8cojbj5" path="res://assets/UI/UI_ReminderLabel_v.1.png" id="5_q62j7"]
+[ext_resource type="Texture2D" uid="uid://l1lo8csjn6x0" path="res://assets/UI/UI_LeftClick.png" id="6_a6qjm"]
+
+[node name="Credit" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_n8sek")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1925.0
+offset_bottom = 1083.0
+texture = ExtResource("2_v1m8n")
+
+[node name="Credit" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Credit"]
+offset_left = 275.0
+offset_top = 510.0
+offset_right = 2013.0
+offset_bottom = 922.0
+pivot_offset = Vector2(295, 63)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_thl1k")
+theme_override_font_sizes/font_size = 50
+text = "Game Producer/ Programmer 
+Game Director
+2D Artist 
+Animator 
+Environment Artist "
+
+[node name="Label2" type="Label" parent="Credit"]
+offset_left = 1105.0
+offset_top = 510.0
+offset_right = 2843.0
+offset_bottom = 922.0
+pivot_offset = Vector2(295, 63)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_thl1k")
+theme_override_font_sizes/font_size = 50
+text = "Nattachai Chujeen
+Veerapaj Rajsakij
+Katenipa Anusavakorn
+Lalin Onthong
+Apasssanan Limpatanagul"
+
+[node name="Img3448" type="Sprite2D" parent="Credit"]
+position = Vector2(947, 259)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_v1m8n")
+
+[node name="Reminder" type="Node2D" parent="."]
+position = Vector2(0, 107)
+
+[node name="ReminderLabel" type="Sprite2D" parent="Reminder"]
+position = Vector2(1785, 904)
+texture = ExtResource("5_q62j7")
+
+[node name="UiLeftClick" type="Sprite2D" parent="Reminder"]
+position = Vector2(1615, 903)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_a6qjm")

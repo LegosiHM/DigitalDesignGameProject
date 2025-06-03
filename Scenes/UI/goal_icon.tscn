@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=3 uid="uid://dtkqxugs7ggro"]
+
+[ext_resource type="Shader" uid="uid://hafbr2i311c0" path="res://scripts/shaders/Bouncing.gdshader" id="1_ldhbw"]
+[ext_resource type="Texture2D" uid="uid://b6oayinavmd50" path="res://assets/UI/arrow4.png" id="2_337oo"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="3_337oo"]
+[ext_resource type="Texture2D" uid="uid://panyu3ckkco5" path="res://assets/UI/arrow3.png" id="3_g2x2p"]
+[ext_resource type="Texture2D" uid="uid://dmia2jpn71fxd" path="res://assets/UI/test.png" id="4_e2j65"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejw8u"]
+shader = ExtResource("1_ldhbw")
+shader_parameter/do_abs = true
+shader_parameter/do_quantize = true
+shader_parameter/quantize_to = 1.0
+shader_parameter/sine_amplitude = Vector2(1, 20)
+shader_parameter/sine_speed = Vector2(1, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2x2p"]
+shader = ExtResource("1_ldhbw")
+shader_parameter/do_abs = true
+shader_parameter/do_quantize = true
+shader_parameter/quantize_to = 1.0
+shader_parameter/sine_amplitude = Vector2(1, 20)
+shader_parameter/sine_speed = Vector2(1, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pisah"]
+shader = ExtResource("1_ldhbw")
+shader_parameter/do_abs = true
+shader_parameter/do_quantize = false
+shader_parameter/quantize_to = 1.0
+shader_parameter/sine_amplitude = Vector2(1, -20)
+shader_parameter/sine_speed = Vector2(1, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8vdw"]
+shader = ExtResource("1_ldhbw")
+shader_parameter/do_abs = true
+shader_parameter/do_quantize = true
+shader_parameter/quantize_to = 1.0
+shader_parameter/sine_amplitude = Vector2(1, 20)
+shader_parameter/sine_speed = Vector2(1, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ldhbw"]
+shader = ExtResource("1_ldhbw")
+shader_parameter/do_abs = true
+shader_parameter/do_quantize = false
+shader_parameter/quantize_to = 1.0
+shader_parameter/sine_amplitude = Vector2(1, -20)
+shader_parameter/sine_speed = Vector2(1, 2)
+
+[node name="GoalIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ejw8u")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_337oo")
+
+[node name="Label" type="Label" parent="TextureRect"]
+material = SubResource("ShaderMaterial_g2x2p")
+layout_mode = 0
+offset_left = 176.0
+offset_top = 260.0
+offset_right = 1768.0
+offset_bottom = 575.0
+theme_override_fonts/font = ExtResource("3_337oo")
+theme_override_font_sizes/font_size = 170
+text = "To be continued..."
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_pisah")
+offset_left = 400.0
+offset_top = 45.0
+offset_right = 655.0
+offset_bottom = 478.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_g2x2p")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_n8vdw")
+offset_left = 420.0
+offset_top = 45.0
+offset_right = 675.0
+offset_bottom = 478.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_e2j65")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ldhbw")
+offset_left = 490.0
+offset_top = 45.0
+offset_right = 745.0
+offset_bottom = 478.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_g2x2p")

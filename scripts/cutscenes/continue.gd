@@ -12,4 +12,4 @@ func _ready():
 
 	# Wait for the tween to finish, then change scene
 	await tween.finished
-	get_tree().change_scene_to_file("res://Scenes/Mainmenu.tscn")  # Change path to your main menu
+	get_tree().change_scene_to_file("res://Scenes/cutscenes/Credit.tscn")  # Change path to your main menu

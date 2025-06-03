@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://c2uha3sy1b15v"]
 
 [ext_resource type="Script" uid="uid://kuj43c6cuhor" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_2.gd" id="1_3r1wt"]
-[ext_resource type="Texture2D" uid="uid://bwc3jst7tahvd" path="res://assets/sprites/PaperTexture.jpg" id="2_4s635"]
+[ext_resource type="Texture2D" uid="uid://didc0ovfjpqsl" path="res://assets/sprites/IMG_3321.PNG" id="2_d7w80"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="3_oqqvh"]
 [ext_resource type="Texture2D" uid="uid://cldxl3l5jgw2r" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_06.PNG" id="4_xng8m"]
 [ext_resource type="Texture2D" uid="uid://b6xeovoiklyny" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_07.PNG" id="5_4uw36"]
@@ -59,7 +59,8 @@ Panel3 = Vector2(80, 525)
 Panel4 = Vector2(690, 525)
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("2_4s635")
+position = Vector2(960, 540)
+texture = ExtResource("2_d7w80")
 
 [node name="PanelContainer" type="Control" parent="."]
 anchors_preset = 0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dqysrlab1520p"]
 
 [ext_resource type="Script" uid="uid://copttklwub58o" path="res://scripts/cutscenes/chapter_2_comic_cutscene_4.gd" id="1_vbs2a"]
-[ext_resource type="Texture2D" uid="uid://bwc3jst7tahvd" path="res://assets/sprites/PaperTexture.jpg" id="2_vbs2a"]
+[ext_resource type="Texture2D" uid="uid://didc0ovfjpqsl" path="res://assets/sprites/IMG_3321.PNG" id="2_257k1"]
 [ext_resource type="Texture2D" uid="uid://bwcxxejcnpew6" path="res://assets/sprites/chapter 1-2 transition/Cutscene_04.png" id="3_3io3p"]
 [ext_resource type="Texture2D" uid="uid://cekqddq324lxp" path="res://assets/sprites/chapter 1-2 transition/Cutscene_05.png" id="4_815xc"]
 [ext_resource type="Texture2D" uid="uid://cvn11k7g1vipv" path="res://assets/UI/Ellipse 1.png" id="5_815xc"]
@@ -20,7 +20,8 @@ grow_vertical = 2
 script = ExtResource("1_vbs2a")
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("2_vbs2a")
+position = Vector2(960, 540)
+texture = ExtResource("2_257k1")
 
 [node name="PanelContainer" type="Control" parent="."]
 anchors_preset = 0
