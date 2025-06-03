@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 @onready var pause_panel = $ColorRect
-@onready var resume_button = $CenterContainer/VBoxContainer/ResumeButton
-@onready var exit_button = $CenterContainer/VBoxContainer/ExitButton
+@onready var resume_button = get_node_or_null("CenterContainer/VBoxContainer/ResumeButton")
+@onready var exit_button = get_node_or_null("CenterContainer/VBoxContainer/ExitButton")
 
 var allowed_scenes := [
 	"1-1_Introduction",

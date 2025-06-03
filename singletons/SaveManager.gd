@@ -22,11 +22,29 @@ func save_game():
 
 func load_game():
 	if FileAccess.file_exists(SAVE_PATH):
+		print("📂 Save file found at", SAVE_PATH)
+		
 		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		var content = file.get_as_text()
+		print("📄 Save File Contents:\n", content)
+		
 		var data = JSON.parse_string(file.get_as_text())
 		file.close()
+		
 		if typeof(data) == TYPE_DICTIONARY:
 			Global.has_hj_power = data.get("Has_HJ_Power", false)
 			Global.current_level = data.get("current_level", "")
 			Global.master_volume_db = data.get("master_volume_db", 0)
 			AudioServer.set_bus_volume_db(0, Global.master_volume_db)
+		else:
+			print("❌ No save file found.")
+
+func has_save() -> bool:
+	return FileAccess.file_exists(SAVE_PATH)
+
+func delete_save():
+	if FileAccess.file_exists(SAVE_PATH):
+		DirAccess.remove_absolute(SAVE_PATH)
+		print("🗑️ Save file deleted.")
+	else:
+		print("❌ No save file to delete.")

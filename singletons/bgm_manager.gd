@@ -96,24 +96,24 @@ func _update_bgm(scene_name: String):
 		# Same song already playing
 		return
 
-	var stream = load(bgm_path)
-	if stream is AudioStream:
+	var bgm_stream = load(bgm_path)
+	if bgm_stream is AudioStream:
 		current_bgm = bgm_path
 	
-		if stream is AudioStreamOggVorbis or stream is AudioStreamMP3 or stream is AudioStreamWAV:
-			stream.loop = true
+		if bgm_stream is AudioStreamOggVorbis or bgm_stream is AudioStreamMP3 or bgm_stream is AudioStreamWAV:
+			bgm_stream.loop = true
 	
-		_fade_to(stream)
+		_fade_to(bgm_stream)
 		print("🎶 Playing BGM:", bgm_path)
 	else:
 		push_error("❌ Failed to load BGM: " + bgm_path)
 
-func _fade_to(stream: AudioStream):
+func _fade_to(new_stream: AudioStream):
 	var tween := create_tween()
 	tween.tween_property(self, "volume_db", -40.0, 1.0)
 	tween.tween_callback(func():
 		self.stop()
-		self.stream = stream
+		self.stream = new_stream
 		self.play()
 		self.volume_db = -40.0
 	)

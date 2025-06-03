@@ -16,8 +16,8 @@ var respawn_scene: PackedScene
 
 # This function allows setting the respawn location and target scene
 # Typically called by a checkpoint or trigger volume
-func set_respawn_position(position: Vector2, scene: PackedScene) -> void:
-	respawn_position = position  # Set the target position for the respawn
+func set_respawn_position(pos: Vector2, scene: PackedScene) -> void:
+	respawn_position = pos  # Set the target position for the respawn
 	respawn_scene = scene  # Set the target scene the player should be respawned to
 
 # ------------------------------------------------------------------------------
