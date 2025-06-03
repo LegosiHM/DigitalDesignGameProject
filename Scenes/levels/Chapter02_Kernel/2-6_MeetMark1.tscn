@@ -1,14 +1,16 @@
-[gd_scene load_steps=54 format=3 uid="uid://crkmdj7uvde0w"]
+[gd_scene load_steps=57 format=3 uid="uid://crkmdj7uvde0w"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_ahp4s"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_7usnc"]
 [ext_resource type="Texture2D" uid="uid://baro3ju7rliib" path="res://assets/sprites/chapter 2/backgrounds/Background_Corridor_Night_v.01.PNG" id="3_yxeqf"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_cqnne"]
 [ext_resource type="Texture2D" uid="uid://bwd6j7fjmsg53" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_OpenedDoor_Night_v.01.PNG" id="4_sfoej"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="5_2y8vu"]
 [ext_resource type="Texture2D" uid="uid://dpb5ccumdcnjt" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Pillar_Night_v.01.PNG" id="5_ac6gj"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_sfoej"]
 [ext_resource type="Texture2D" uid="uid://klptx4rkjejo" path="res://assets/sprites/chapter 2/assets/Palace/IMG_3229.PNG" id="6_1eso7"]
 [ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="6_ac6gj"]
+[ext_resource type="Texture2D" uid="uid://cwdkg5b3dg1df" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_ClosedDoor_Night_v.01.PNG" id="6_lnrjg"]
 [ext_resource type="Texture2D" uid="uid://d0ghbyaweujm2" path="res://assets/sprites/chapter 1/tileset/Panel_Background_v01.PNG" id="7_1eso7"]
 [ext_resource type="Texture2D" uid="uid://bot5cunar1i68" path="res://assets/sprites/chapter 2/assets/Palace/IMG_3226.PNG" id="7_rabgs"]
 [ext_resource type="Texture2D" uid="uid://c73runr0lcx7j" path="res://assets/sprites/chapter 2/assets/Palace/IMG_3232.PNG" id="8_hdrr6"]
@@ -37,6 +39,9 @@ size = Vector2(2259, 137.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ne1c2"]
 size = Vector2(199, 1115.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxuuk"]
+size = Vector2(523.953, 808.738)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oe17k"]
 texture = ExtResource("5_sfoej")
@@ -449,7 +454,7 @@ sources/1 = SubResource("TileSetAtlasSource_hdrr6")
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)
 script = ExtResource("1_ahp4s")
-respawn_position = Vector2(1605, 820)
+respawn_position = Vector2(1408, 820)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
 position = Vector2(278, 157)
@@ -467,11 +472,13 @@ shape = SubResource("RectangleShape2D_ne1c2")
 position = Vector2(-806, -526)
 shape = SubResource("RectangleShape2D_ne1c2")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_7usnc")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_7usnc")]
 z_index = 10
 position = Vector2(397, 863)
 scale = Vector2(1.80741, 0.669431)
 my_scene = "res://Scenes/levels/Chapter02_Kernel/2-7_MeetMark2.tscn"
+disable_on_default = true
+portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(-3.04303, -205.707)
@@ -485,7 +492,29 @@ texture = ExtResource("3_yxeqf")
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
 
+[node name="Door" type="Node2D" parent="DecorationBack" node_paths=PackedStringArray("reveal_panel", "reveal_path")]
+position = Vector2(1920, 1080)
+script = ExtResource("5_2y8vu")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(500, 250)])
+will_reveal_object = true
+reveal_panel = NodePath("../DecorationOpenedDoorNightV_01")
+reveal_path = NodePath("../../ChangeSceneDetector")
+
+[node name="DecorationOpenedDoorNightV_02" type="Sprite2D" parent="DecorationBack/Door"]
+position = Vector2(-1386.67, -626.667)
+scale = Vector2(1.33333, 1.33333)
+texture = ExtResource("6_lnrjg")
+
+[node name="Area2D" type="Area2D" parent="DecorationBack/Door"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorationBack/Door/Area2D"]
+position = Vector2(-1385.98, -624.369)
+shape = SubResource("RectangleShape2D_mxuuk")
+
 [node name="DecorationOpenedDoorNightV_01" type="Sprite2D" parent="DecorationBack"]
+visible = false
 position = Vector2(533.333, 453.333)
 scale = Vector2(1.33333, 1.33333)
 texture = ExtResource("4_sfoej")
@@ -580,7 +609,7 @@ position = Vector2(45, 44)
 tile_set = SubResource("TileSet_vfyhx")
 
 [node name="Player" parent="." instance=ExtResource("16_pfqmi")]
-position = Vector2(1605, 820)
+position = Vector2(1408, 820)
 
 [node name="NPC" type="Area2D" parent="."]
 scale = Vector2(0.7, 0.7)
@@ -722,6 +751,7 @@ z_index = 50
 script = ExtResource("19_h27ln")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("20_bloc0")]
+visible = false
 offset_left = 201.0
 offset_top = 558.0
 offset_right = 241.0

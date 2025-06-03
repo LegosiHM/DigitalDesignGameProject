@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://cupeohudb3vtm"]
+[gd_scene load_steps=94 format=3 uid="uid://cupeohudb3vtm"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_vt0ip"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_wewhh"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://chvaips52w3rf" path="res://assets/sprites/chapter 1/story panel/StoryPaneL InsideTemple_Insulting v.01.PNG" id="36_n8h7l"]
 [ext_resource type="Texture2D" uid="uid://d0dw64crmklry" path="res://assets/sprites/chapter 1/story panel/StoryPanel _InsideTemple_CatStatue _v.01.PNG" id="37_ctllk"]
 [ext_resource type="Texture2D" uid="uid://b8lt6hngw6nyn" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_Chasing_v.01.PNG" id="38_rtgj4"]
+[ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="39_ujasl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -964,6 +965,9 @@ sources/8 = SubResource("TileSetAtlasSource_f6mla")
 sources/9 = SubResource("TileSetAtlasSource_64dov")
 sources/1 = SubResource("TileSetAtlasSource_hysqu")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boj0w"]
+size = Vector2(172.143, 492.143)
+
 [node name="2-12_InTemple1" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
@@ -983,10 +987,13 @@ shape = SubResource("RectangleShape2D_l45ed")
 position = Vector2(-806, -526)
 shape = SubResource("RectangleShape2D_ne1c2")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_wewhh")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_wewhh")]
 z_index = 10
-position = Vector2(1934, 1387)
+position = Vector2(1628, 1468)
+scale = Vector2(4.4, 1)
 my_scene = "res://Scenes/levels/Chapter02_PartitionToEpilogue/2-13_Blood.tscn"
+disable_on_default = true
+portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(13, -867)
@@ -1011,7 +1018,7 @@ modulate = Color(0.77, 0.77, 0.77, 1)
 position = Vector2(-271, 611)
 scale = Vector2(0.75, 0.75)
 tile_set = SubResource("TileSet_f6mla")
-layer_0/tile_data = PackedInt32Array(327682, 65546, 0, 393218, 65546, 1, 458754, 65546, 1, 327683, 65546, 0, 393219, 65546, 1, 458755, 65546, 1, 327684, 65546, 0, 393220, 65546, 1, 458756, 65546, 1, 327685, 65546, 0, 393221, 65546, 1, 458757, 65546, 1, 327686, 65546, 0, 393222, 65546, 1, 458758, 65546, 1, 327687, 65546, 0, 393223, 65546, 1, 458759, 65546, 1, 327688, 65546, 0, 393224, 65546, 1, 458760, 65546, 1, 327689, 65546, 0, 393225, 65546, 1, 458761, 65546, 1, 327690, 65546, 0, 393226, 65546, 1, 458762, 65546, 1, 327691, 65546, 0, 393227, 65546, 1, 458763, 65546, 1, 327692, 65546, 0, 393228, 65546, 1, 458764, 65546, 1, 327693, 65546, 0, 393229, 65546, 1, 458765, 65546, 1, 327694, 131082, 0, 393230, 131082, 1, 458766, 131082, 1)
+layer_0/tile_data = PackedInt32Array(327682, 65546, 0, 393218, 65546, 1, 458754, 65546, 1, 327683, 65546, 0, 393219, 65546, 1, 458755, 65546, 1, 327684, 65546, 0, 393220, 65546, 1, 458756, 65546, 1, 327685, 65546, 0, 393221, 65546, 1, 458757, 65546, 1, 327686, 65546, 0, 393222, 65546, 1, 458758, 65546, 1, 327687, 65546, 0, 393223, 65546, 1, 458759, 65546, 1, 327688, 65546, 0, 393224, 65546, 1, 458760, 65546, 1, 327689, 65546, 0, 393225, 65546, 1, 458761, 65546, 1, 327690, 65546, 0, 393226, 65546, 1, 458762, 65546, 1, 327691, 65546, 0, 393227, 65546, 1, 458763, 65546, 1, 327692, 65546, 0, 393228, 65546, 1, 458764, 65546, 1, 327693, 65546, 0, 393229, 65546, 1, 458765, 65546, 1, 327694, 131082, 0, 393230, 131082, 1, 458766, 131082, 1, 196630, 65550, 0, 196632, 131087, 0, 196631, 65552, 0, 262168, 131088, 1, 262167, 131087, 2, 262166, 65550, 1, 196628, 14, 0, 262164, 15, 1, 196629, 65552, 0, 262165, 65552, 1, 393236, 65550, 2, 393237, 65552, 1, 393238, 131088, 1, 393239, 131086, 1, 393240, 16, 1, 458772, 16, 2, 458773, 131088, 2, 458774, 14, 2, 458775, 131087, 2, 458776, 131086, 2, 327699, 65550, 2, 327700, 65552, 1, 327701, 131088, 1, 327702, 131086, 1, 327703, 16, 1)
 
 [node name="DecorationBack" type="Area2D" parent="."]
 position = Vector2(-1, 339)
@@ -1032,14 +1039,14 @@ texture = ExtResource("15_diu0g")
 [node name="UI" parent="." instance=ExtResource("16_8ow6m")]
 z_index = 4
 
-[node name="Panel_Ritual" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
-position = Vector2(2423, 1109)
+[node name="Panel_Ritual" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+visible = false
+position = Vector2(2676, 1152)
 script = ExtResource("33_boj0w")
-dialog_lines = Array[String](["Oh...", "My...", "...Cat?!", "But how?", "Is it even a cat...?", "Oh Isis...Forgive us..."])
-dialog_position_Array = Array[Vector2]([Vector2(700, 700), Vector2(1400, 700), Vector2(900, 150), Vector2(1500, 150), Vector2(1000, 750), Vector2(1100, 150)])
-cooldown_time = 10000.0
+dialog_lines = Array[String](["Oh..."])
+dialog_position_Array = Array[Vector2]([Vector2(1100, 750)])
 will_reveal_object = true
-reveal_panel = NodePath("../Panel_Yell")
+reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="StroyPanel_Ritual" type="Sprite2D" parent="Panel_Ritual"]
 z_index = 1
@@ -1060,13 +1067,12 @@ texture = ExtResource("34_ujasl")
 
 [node name="Panel_Yell" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
 visible = false
-position = Vector2(2588, 1143)
+position = Vector2(2657, 1124)
 script = ExtResource("33_boj0w")
 dialog_lines = Array[String](["I knew it! You...Basta--BONKERS!"])
-dialog_position_Array = Array[Vector2]([Vector2(700, 200)])
-cooldown_time = 10000.0
+dialog_position_Array = Array[Vector2]([Vector2(1075, 725)])
 will_reveal_object = true
-reveal_panel = NodePath("../Panel_Pray")
+reveal_panel = NodePath("../Panel_Ritual")
 
 [node name="StoryPanelInsideTempleInsultingV_01" type="Sprite2D" parent="Panel_Yell"]
 z_index = 1
@@ -1086,13 +1092,12 @@ texture = ExtResource("36_n8h7l")
 
 [node name="Panel_Pray" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
 visible = false
-position = Vector2(2512, 1023)
+position = Vector2(2340, 1008)
 script = ExtResource("33_boj0w")
 dialog_lines = Array[String](["Forgive me Jesu--I mean Isis! Our queen!"])
-dialog_position_Array = Array[Vector2]([Vector2(650, 600)])
-cooldown_time = 10000.0
+dialog_position_Array = Array[Vector2]([Vector2(950, 300)])
 will_reveal_object = true
-reveal_panel = NodePath("../Panel_Run")
+reveal_panel = NodePath("../Panel_Yell")
 
 [node name="StoryPanelInsideTempleCatStatueV_01" type="Sprite2D" parent="Panel_Pray"]
 z_index = 1
@@ -1112,13 +1117,15 @@ position = Vector2(-1436, -234)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("37_ctllk")
 
-[node name="Panel_Run" type="Node2D" parent="."]
+[node name="Panel_Run" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
 visible = false
-position = Vector2(2606, 910)
+position = Vector2(2016, 620)
+scale = Vector2(0.7, 0.7)
 script = ExtResource("33_boj0w")
 dialog_lines = Array[String](["Stop there you little shot!"])
-dialog_position_Array = Array[Vector2]([Vector2(300, 400)])
-cooldown_time = 10000.0
+dialog_position_Array = Array[Vector2]([Vector2(300, 300)])
+will_reveal_object = true
+reveal_panel = NodePath("../Panel_Pray")
 
 [node name="StoryPanelInsideTempleChasingV_01" type="Sprite2D" parent="Panel_Run"]
 z_index = 1
@@ -1156,20 +1163,36 @@ position = Vector2(880.742, 1099.31)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("28_mhaeh")
 
-[node name="CharGuardsIdleV_04" type="Sprite2D" parent="NPC"]
-position = Vector2(856.457, 1096.46)
-scale = Vector2(1.2, 1.2)
+[node name="Priest" type="Node2D" parent="NPC" node_paths=PackedStringArray("reveal_panel")]
+position = Vector2(1793.33, 556)
+scale = Vector2(0.933333, 0.933333)
+script = ExtResource("33_boj0w")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(650, 350)])
+will_reveal_object = true
+reveal_panel = NodePath("../../Panel_Run")
+
+[node name="CharGuardsIdleV_04" type="Sprite2D" parent="NPC/Priest"]
+position = Vector2(-1003.8, 579.065)
+scale = Vector2(1.28571, 1.28571)
 texture = ExtResource("28_mhaeh")
+
+[node name="Area2D" type="Area2D" parent="NPC/Priest"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Priest/Area2D"]
+position = Vector2(-1015.31, 611.939)
+shape = SubResource("RectangleShape2D_boj0w")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_ujasl")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("19_6ffo7")]
 visible = false
-offset_left = 201.0
-offset_top = 558.0
-offset_right = 241.0
-offset_bottom = 598.0
+offset_left = 1510.0
+offset_top = 458.0
+offset_right = 1550.0
+offset_bottom = 498.0
 scale = Vector2(10, 10)
 
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("21_omwve")]
@@ -1180,6 +1203,42 @@ offset_left = 1.0
 offset_top = 9.0
 offset_right = 1921.0
 offset_bottom = 1089.0
+
+[node name="Glitching2" parent="." instance=ExtResource("39_ujasl")]
+offset_left = 1058.0
+offset_top = 1008.0
+offset_right = 1126.0
+offset_bottom = 1043.0
+
+[node name="Glitching3" parent="." instance=ExtResource("39_ujasl")]
+offset_left = 1365.0
+offset_top = 930.0
+offset_right = 1433.0
+offset_bottom = 965.0
+
+[node name="Glitching4" parent="." instance=ExtResource("39_ujasl")]
+offset_left = 1078.0
+offset_top = 894.0
+offset_right = 1146.0
+offset_bottom = 914.0
+
+[node name="Glitching5" parent="." instance=ExtResource("39_ujasl")]
+offset_left = 1325.0
+offset_top = 805.0
+offset_right = 1393.0
+offset_bottom = 838.0
+
+[node name="Glitching6" parent="." instance=ExtResource("39_ujasl")]
+offset_left = 1029.0
+offset_top = 936.0
+offset_right = 1097.0
+offset_bottom = 969.0
+
+[node name="Glitching7" parent="." instance=ExtResource("39_ujasl")]
+offset_left = 1321.0
+offset_top = 993.0
+offset_right = 1389.0
+offset_bottom = 1026.0
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

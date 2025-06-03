@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cd1diokytbunw"]
+[gd_scene load_steps=58 format=3 uid="uid://cd1diokytbunw"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_5v6dv"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_dmghs"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="20_jvicm"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="21_qt3vt"]
 [ext_resource type="Texture2D" uid="uid://dhm4jbctr36x3" path="res://assets/sprites/chapter 2/assets/Palace/IMG_3227.PNG" id="21_xhtuj"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="22_af48b"]
 [ext_resource type="PackedScene" uid="uid://c4hm6pp78ao00" path="res://Scenes/mechanics/CH2_Stuckable_Draggable_Panel.tscn" id="23_5v6dv"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="23_pyxs3"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="26_jvi4t"]
@@ -446,6 +447,9 @@ sources/8 = SubResource("TileSetAtlasSource_fxn8x")
 sources/9 = SubResource("TileSetAtlasSource_bxrud")
 sources/1 = SubResource("TileSetAtlasSource_af48b")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqc5b"]
+size = Vector2(258.572, 375.715)
+
 [node name="2-2-2_Puzzle" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
@@ -608,20 +612,34 @@ modulate = Color(0, 0, 0, 0.486275)
 position = Vector2(590.571, 887.714)
 texture = ExtResource("17_ceax8")
 
-[node name="CharMaidIdleV_03" type="Sprite2D" parent="NPC"]
-position = Vector2(570.571, 874.857)
-texture = ExtResource("17_ceax8")
-
 [node name="CharMaidIdleV_03Shadow2" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 0.486275)
 position = Vector2(711.143, 888.286)
 scale = Vector2(-1, 1)
 texture = ExtResource("17_ceax8")
 
-[node name="CharMaidIdleV_04" type="Sprite2D" parent="NPC"]
-position = Vector2(691.143, 875.429)
-scale = Vector2(-1, 1)
+[node name="Maid03" type="Node2D" parent="NPC"]
+position = Vector2(1920, 1080)
+script = ExtResource("22_af48b")
+dialog_lines = Array[String](["asd", "sdf"])
+dialog_position_Array = Array[Vector2]([Vector2(100, 200), Vector2(500, 200)])
+
+[node name="CharMaidIdleV_04" type="Sprite2D" parent="NPC/Maid03"]
+position = Vector2(-1349.43, -205.143)
 texture = ExtResource("17_ceax8")
+
+[node name="CharMaidIdleV_05" type="Sprite2D" parent="NPC/Maid03"]
+position = Vector2(-1228.86, -204.571)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("17_ceax8")
+
+[node name="Area2D" type="Area2D" parent="NPC/Maid03"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Maid03/Area2D"]
+position = Vector2(-1290, -202.143)
+shape = SubResource("RectangleShape2D_aqc5b")
 
 [node name="DecorationFront" type="Area2D" parent="."]
 z_index = 20
@@ -697,6 +715,11 @@ scale = Vector2(63.1365, -21.0708)
 
 [node name="StaticPanelCollision4" parent="PanelCollsionContainer" instance=ExtResource("23_pyxs3")]
 position = Vector2(438, 691)
+rotation = 3.14159
+scale = Vector2(9.4457, -21.071)
+
+[node name="StaticPanelCollision6" parent="PanelCollsionContainer" instance=ExtResource("23_pyxs3")]
+position = Vector2(-13.9999, 679)
 rotation = 3.14159
 scale = Vector2(9.4457, -21.071)
 
