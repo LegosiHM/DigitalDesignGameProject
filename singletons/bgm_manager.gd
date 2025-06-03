@@ -15,7 +15,7 @@ var SCENE_BGM_MAP: Dictionary = {
 	"1-7_Flee1": "res://assets/SFX/BGM/BGM_Chapter_CH1Prologue_v01.mp3",
 	"1-8_Flee2": "res://assets/SFX/BGM/BGM_Chapter_CH1Prologue_v01.mp3",
 	"1-9_Flee3": "res://assets/SFX/BGM/BGM_Chapter_CH1Prologue_v01.mp3",
-	"1-12_Flee4": "res://assets/SFX/BGM/BGM_Chapter_CH1Prologue_v01.mp3",
+	"1-12_Flee4": "",
 
 	# Chapter 2
 	"2-1_MeetCleopatra": "res://assets/SFX/BGM/BGM_Chapter_CH2_v01.mp3",
@@ -48,8 +48,6 @@ var SCENE_BGM_MAP: Dictionary = {
 	# Medjed Dim
 	"1-10_MeetMedjed1": "res://assets/SFX/BGM/BGM_Chapter_MedjedDimension_v01.mp3",
 	"1-11_MeetMedjed2": "res://assets/SFX/BGM/BGM_Chapter_MedjedDimension_v01.mp3",
-	#End Epilogue
-	#"SceneName": res://assets/SFX/BGM/BGM_Cutscene_EndEpilogue_v01.mp3
 	
 	# Cutscenes
 	"Chapter-1_Comic_Cutscene_1": "res://assets/SFX/BGM/BGM_Cutscene_Start_v01.mp3",
@@ -64,7 +62,13 @@ var SCENE_BGM_MAP: Dictionary = {
 	"Chapter-2_Comic_Cutscene_5": "res://assets/SFX/BGM/BGM_Cutscene_EndPrologue_v01.mp3",
 
 	# Main Menu
-	"MainMenu": "res://assets/SFX/BGM/BGM_Menu_MainMenu_v01.mp3"
+	"MainMenu": "res://assets/SFX/BGM/BGM_Menu_MainMenu_v01.mp3",
+	
+	#End Epilogue
+	"Chapter-3_Comic_Cutscene_1": "res://assets/SFX/BGM/BGM_Cutscene_EndEpilogue_v01.mp3",
+	"Chapter-3_Comic_Cutscene_2": "res://assets/SFX/BGM/BGM_Cutscene_EndEpilogue_v01.mp3",
+	"Credit": "res://assets/SFX/BGM/BGM_Cutscene_EndEpilogue_v01.mp3",
+	"TheEnd": "res://assets/SFX/BGM/BGM_Cutscene_EndEpilogue_v01.mp3"
 	}
 
 func _ready():

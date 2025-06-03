@@ -21,10 +21,10 @@ texture = ExtResource("2_v1m8n")
 [node name="Credit" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="Credit"]
-offset_left = 275.0
-offset_top = 510.0
-offset_right = 2013.0
-offset_bottom = 922.0
+offset_left = 270.0
+offset_top = 440.0
+offset_right = 2008.0
+offset_bottom = 852.0
 pivot_offset = Vector2(295, 63)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_thl1k")
@@ -36,10 +36,10 @@ Animator
 Environment Artist "
 
 [node name="Label2" type="Label" parent="Credit"]
-offset_left = 1105.0
-offset_top = 510.0
-offset_right = 2843.0
-offset_bottom = 922.0
+offset_left = 1100.0
+offset_top = 440.0
+offset_right = 2838.0
+offset_bottom = 852.0
 pivot_offset = Vector2(295, 63)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_thl1k")
@@ -51,7 +51,7 @@ Lalin Onthong
 Apasssanan Limpatanagul"
 
 [node name="Img3448" type="Sprite2D" parent="Credit"]
-position = Vector2(947, 259)
+position = Vector2(950, 260)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_v1m8n")
 
