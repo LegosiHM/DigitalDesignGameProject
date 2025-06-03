@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c8qsv6lh4yiwv" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_12_v1.png" id="3_abyf6"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="4_m0hhn"]
 [ext_resource type="Texture2D" uid="uid://d3me73s7gpvwd" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_13.PNG" id="5_i4e8i"]
-[ext_resource type="Texture2D" uid="uid://cvn11k7g1vipv" path="res://assets/UI/Ellipse 1.png" id="7_puxec"]
+[ext_resource type="Texture2D" uid="uid://cvn11k7g1vipv" path="res://assets/UI/(Temp) Ellipse 1.png" id="7_puxec"]
 [ext_resource type="Texture2D" uid="uid://b66d1q8cojbj5" path="res://assets/UI/UI_ReminderLabel_v.1.png" id="8_hw21p"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="8_rri2e"]
 [ext_resource type="Texture2D" uid="uid://l1lo8csjn6x0" path="res://assets/UI/UI_LeftClick.png" id="9_88rdi"]

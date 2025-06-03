@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://burfug55c0meb"]
 
 [ext_resource type="Script" uid="uid://cjrn5setdo6ke" path="res://scripts/cutscenes/chapter_2_comic_cutscene_3.gd" id="1_fcpgv"]
-[ext_resource type="Texture2D" uid="uid://didc0ovfjpqsl" path="res://assets/sprites/IMG_3321.PNG" id="2_s0eer"]
+[ext_resource type="Texture2D" uid="uid://didc0ovfjpqsl" path="res://assets/sprites/BG_Cutscene_v.01.PNG" id="2_s0eer"]
 [ext_resource type="Texture2D" uid="uid://0y4sr7w8b3u7" path="res://assets/sprites/chapter 1-2 transition/Cutscene_03.png" id="3_fcpgv"]
-[ext_resource type="Texture2D" uid="uid://cvn11k7g1vipv" path="res://assets/UI/Ellipse 1.png" id="5_recd7"]
+[ext_resource type="Texture2D" uid="uid://cvn11k7g1vipv" path="res://assets/UI/(Temp) Ellipse 1.png" id="5_recd7"]
 [ext_resource type="Texture2D" uid="uid://b66d1q8cojbj5" path="res://assets/UI/UI_ReminderLabel_v.1.png" id="6_4ykxc"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="6_v1ibm"]
 [ext_resource type="Texture2D" uid="uid://l1lo8csjn6x0" path="res://assets/UI/UI_LeftClick.png" id="7_s0eer"]

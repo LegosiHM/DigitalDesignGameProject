@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://dtkqxugs7ggro"]
 
 [ext_resource type="Shader" uid="uid://hafbr2i311c0" path="res://scripts/shaders/Bouncing.gdshader" id="1_ldhbw"]
-[ext_resource type="Texture2D" uid="uid://b6oayinavmd50" path="res://assets/UI/arrow4.png" id="2_337oo"]
+[ext_resource type="Texture2D" uid="uid://b6oayinavmd50" path="res://assets/UI/UI_GoalBody_V.01.png" id="2_337oo"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="3_337oo"]
-[ext_resource type="Texture2D" uid="uid://panyu3ckkco5" path="res://assets/UI/arrow3.png" id="3_g2x2p"]
-[ext_resource type="Texture2D" uid="uid://dmia2jpn71fxd" path="res://assets/UI/test.png" id="4_e2j65"]
+[ext_resource type="Texture2D" uid="uid://panyu3ckkco5" path="res://assets/UI/UI_GoalTail1_v.01.png" id="3_g2x2p"]
+[ext_resource type="Texture2D" uid="uid://dmia2jpn71fxd" path="res://assets/UI/UI_GoalTail2_v.01.png" id="4_e2j65"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ejw8u"]
 shader = ExtResource("1_ldhbw")
@@ -75,6 +75,7 @@ text = "To be continued..."
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_pisah")
+layout_mode = 0
 offset_left = 400.0
 offset_top = 45.0
 offset_right = 655.0
@@ -84,6 +85,7 @@ texture = ExtResource("3_g2x2p")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_n8vdw")
+layout_mode = 0
 offset_left = 420.0
 offset_top = 45.0
 offset_right = 675.0
@@ -93,6 +95,7 @@ texture = ExtResource("4_e2j65")
 
 [node name="TextureRect4" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_ldhbw")
+layout_mode = 0
 offset_left = 490.0
 offset_top = 45.0
 offset_right = 745.0

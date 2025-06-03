@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://3w0av5vuulbf"
+path="res://.godot/imported/Tileset_Stepup_v.01.png-ff7509bff1d135d90fb52f3107b5de97.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/sprites/chapter 2/tilesets/Tileset_Stepup_v.01.png"
+dest_files=["res://.godot/imported/Tileset_Stepup_v.01.png-ff7509bff1d135d90fb52f3107b5de97.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

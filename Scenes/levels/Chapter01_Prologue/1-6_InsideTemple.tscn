@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c6ujdl4ss5orw" path="res://assets/sprites/chapter 1/story panel/StoryPanel_ InsideTemple_Ritual _v.01.PNG" id="4_rrse1"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="5_x8ipv"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="6_m15tn"]
-[ext_resource type="Texture2D" uid="uid://botob07objnwc" path="res://assets/sprites/chapter 1/tileset/Illustration13 (1).png" id="7_ab6w5"]
+[ext_resource type="Texture2D" uid="uid://botob07objnwc" path="res://assets/sprites/chapter 1/tileset/Tileset_Platform_v.01.png" id="7_ab6w5"]
 [ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="7_mtye2"]
 [ext_resource type="Texture2D" uid="uid://d0ghbyaweujm2" path="res://assets/sprites/chapter 1/tileset/Panel_Background_v01.PNG" id="8_jqvpi"]
 [ext_resource type="Texture2D" uid="uid://x465pcsbne4k" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v01.PNG" id="9_gqu7t"]

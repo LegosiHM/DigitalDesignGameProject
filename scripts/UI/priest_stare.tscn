@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://omahiloqir8t"]
+
+[ext_resource type="Script" uid="uid://wbk5ogw3gi1y" path="res://scripts/UI/priest_stare.gd" id="1_d4imw"]
+[ext_resource type="Texture2D" uid="uid://c62dspgcynmbe" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_PriestGlaring_v.03_Back.png" id="2_ck04e"]
+[ext_resource type="Texture2D" uid="uid://0d56x1dv704k" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_PriestGlaring_v.03_Eye.png" id="3_5jb7w"]
+[ext_resource type="Texture2D" uid="uid://dtkvvgslousc8" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_PriestGlaring_v.03_Front.png" id="4_5pr10"]
+
+[node name="PriestStare" type="Node2D"]
+script = ExtResource("1_d4imw")
+
+[node name="StoryPanelBazaarPriestGlaringV_03Back" type="Sprite2D" parent="."]
+position = Vector2(317, 219)
+texture = ExtResource("2_ck04e")
+
+[node name="StoryPanelBazaarPriestGlaringV_03Eye" type="Sprite2D" parent="."]
+position = Vector2(390, 183)
+texture = ExtResource("3_5jb7w")
+
+[node name="StoryPanelBazaarPriestGlaringV_03Front" type="Sprite2D" parent="."]
+position = Vector2(308, 220)
+texture = ExtResource("4_5pr10")

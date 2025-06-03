@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://csxm21t4vk04j"]
+[gd_scene load_steps=29 format=3 uid="uid://csxm21t4vk04j"]
 
 [ext_resource type="Texture2D" uid="uid://wfm1ss684p7i" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Priest_v.03.png" id="2_w0t8t"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="3_4tmjt"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="6_72u40"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="7_xqdrk"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="8_ovjq7"]
+[ext_resource type="PackedScene" uid="uid://omahiloqir8t" path="res://scripts/UI/priest_stare.tscn" id="9_cu5vx"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="9_ko52n"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="10_6dl1h"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="11_auadr"]
@@ -156,6 +157,7 @@ will_reveal_object = true
 reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="StoryPanel_PriestGlaring" type="Sprite2D" parent="Panel_PriestGlare"]
+visible = false
 z_index = 1
 position = Vector2(-305, -674)
 scale = Vector2(0.9, 0.9)
@@ -172,6 +174,11 @@ material = SubResource("ShaderMaterial_dgnu4")
 position = Vector2(-305, -674)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_h202d")
+
+[node name="PriestStare" parent="Panel_PriestGlare" node_paths=PackedStringArray("player_node") instance=ExtResource("9_cu5vx")]
+position = Vector2(-582, -872)
+scale = Vector2(0.9, 0.9)
+player_node = NodePath("../../Player")
 
 [node name="Draggable_Panel" parent="." instance=ExtResource("5_gmthw")]
 z_index = 5

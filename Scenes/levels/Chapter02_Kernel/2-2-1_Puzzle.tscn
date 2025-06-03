@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="13_tfgfw"]
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="14_rpk40"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="15_xcuam"]
-[ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/character/Char_Medjed_Idle_v.01.png" id="16_8sm3u"]
+[ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/chapter 3/character/Char_Medjed_Idle_v.01.png" id="16_8sm3u"]
 [ext_resource type="Texture2D" uid="uid://b8uu3geiv8sd0" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Pillar_Day_v.01.PNG" id="16_no820"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="17_d6lof"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="18_avjnk"]
