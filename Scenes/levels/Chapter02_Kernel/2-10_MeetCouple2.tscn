@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://cvi40hpjsiwdk"]
+[gd_scene load_steps=92 format=3 uid="uid://cvi40hpjsiwdk"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_knvr1"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_dq6fq"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://b2gpffs4sj8x4" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothProduce_v.01.PNG" id="31_u6ccj"]
 [ext_resource type="Texture2D" uid="uid://cdcdiy428svmp" path="res://assets/sprites/character/Char_Cleopatra_Idle_v.01.png" id="33_fdv8w"]
 [ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/character/Char_Medjed_Idle_v.01.png" id="33_u6ccj"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="39_savnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -730,6 +731,9 @@ sources/17 = SubResource("TileSetAtlasSource_symob")
 sources/18 = SubResource("TileSetAtlasSource_otws5")
 sources/19 = SubResource("TileSetAtlasSource_xt5oo")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y7tg"]
+size = Vector2(172.143, 492.143)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7k1u4"]
 texture = ExtResource("5_lfa1a")
 texture_region_size = Vector2i(90, 90)
@@ -1083,10 +1087,24 @@ position = Vector2(768, 534.667)
 scale = Vector2(1.13773, 1.13773)
 texture = ExtResource("30_f88xn")
 
-[node name="CharMarcIdleV_02" type="Sprite2D" parent="DecorationFront"]
-position = Vector2(749.148, 544.863)
-scale = Vector2(1.13773, 1.13773)
+[node name="Marc" type="Node2D" parent="DecorationFront"]
+position = Vector2(1793.33, 556)
+scale = Vector2(0.933333, 0.933333)
+script = ExtResource("39_savnx")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(400, 300)])
+
+[node name="CharMarcIdleV_02" type="Sprite2D" parent="DecorationFront/Marc"]
+position = Vector2(-1118.77, -11.9324)
+scale = Vector2(1.219, 1.219)
 texture = ExtResource("30_f88xn")
+
+[node name="Area2D" type="Area2D" parent="DecorationFront/Marc"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorationFront/Marc/Area2D"]
+position = Vector2(-1125.71, -17.1427)
+shape = SubResource("RectangleShape2D_8y7tg")
 
 [node name="CharMarcIdleV_03" type="Sprite2D" parent="DecorationFront"]
 modulate = Color(0, 0, 0, 0.701961)
@@ -1094,10 +1112,25 @@ position = Vector2(905.671, 573.431)
 scale = Vector2(-1.138, 1.13773)
 texture = ExtResource("33_fdv8w")
 
-[node name="CharMarcIdleV_04" type="Sprite2D" parent="DecorationFront"]
-position = Vector2(886.819, 583.627)
-scale = Vector2(-1.138, 1.13773)
+[node name="Cleopatra" type="Node2D" parent="DecorationFront"]
+position = Vector2(1793.33, 556)
+scale = Vector2(0.933333, 0.933333)
+script = ExtResource("39_savnx")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(750, 400)])
+
+[node name="CharMarcIdleV_04" type="Sprite2D" parent="DecorationFront/Cleopatra"]
+position = Vector2(-971.266, 29.6005)
+rotation = 3.14159
+scale = Vector2(1.21929, -1.219)
 texture = ExtResource("33_fdv8w")
+
+[node name="Area2D" type="Area2D" parent="DecorationFront/Cleopatra"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorationFront/Cleopatra/Area2D"]
+position = Vector2(-941.429, -17.1427)
+shape = SubResource("RectangleShape2D_8y7tg")
 
 [node name="DecorationBoothProduceV_03" type="Sprite2D" parent="DecorationFront"]
 modulate = Color(0, 0, 0, 1)
@@ -1132,10 +1165,25 @@ position = Vector2(590.11, 1082.86)
 scale = Vector2(-1.299, 1.35154)
 texture = ExtResource("31_k0bth")
 
-[node name="CharMaleMerchantIdleV_02" type="Sprite2D" parent="NPC"]
-position = Vector2(576.54, 1080)
-scale = Vector2(-1.299, 1.35154)
+[node name="Merchant2" type="Node2D" parent="NPC"]
+position = Vector2(1793.33, 556)
+scale = Vector2(0.933333, 0.933333)
+script = ExtResource("39_savnx")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(250, 300)])
+
+[node name="CharMaleMerchantIdleV_02" type="Sprite2D" parent="NPC/Merchant2"]
+position = Vector2(-1303.71, 561.429)
+rotation = 3.14159
+scale = Vector2(1.39179, -1.44808)
 texture = ExtResource("31_k0bth")
+
+[node name="Area2D" type="Area2D" parent="NPC/Merchant2"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Merchant2/Area2D"]
+position = Vector2(-1301.53, 529.286)
+shape = SubResource("RectangleShape2D_8y7tg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_k0bth")

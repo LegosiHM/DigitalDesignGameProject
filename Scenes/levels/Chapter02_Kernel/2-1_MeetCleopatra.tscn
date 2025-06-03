@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ds0gsv8ejjbvj"]
+[gd_scene load_steps=44 format=3 uid="uid://ds0gsv8ejjbvj"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_k0cyx"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_3cwxj"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cpcrktwgdqsmt" path="res://assets/sprites/character/Char_Maid_Idle_v.01.png" id="17_k0cyx"]
 [ext_resource type="Texture2D" uid="uid://eomvimlgxiwm" path="res://assets/sprites/character/Char_Maid_Idle_v.02.png" id="18_3cwxj"]
 [ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/character/Char_Medjed_Idle_v.01.png" id="19_3cwxj"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="19_j0fav"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="20_qtwna"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="21_axvgs"]
 [ext_resource type="Texture2D" uid="uid://bot5cunar1i68" path="res://assets/sprites/chapter 2/assets/Palace/IMG_3226.PNG" id="21_thhe0"]
@@ -240,6 +241,9 @@ sources/8 = SubResource("TileSetAtlasSource_5815m")
 sources/9 = SubResource("TileSetAtlasSource_v1v8d")
 sources/1 = SubResource("TileSetAtlasSource_j0fav")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gn0lh"]
+size = Vector2(258.572, 528.572)
+
 [node name="2-1_MeetCleopatra" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
@@ -332,11 +336,24 @@ rotation = -3.14159
 scale = Vector2(1.33333, -1.33333)
 texture = ExtResource("25_3cwxj")
 
-[node name="CharCleopatraIdleV_01" type="Sprite2D" parent="NPC"]
-position = Vector2(957.143, 1081.43)
+[node name="Cleopatra" type="Node2D" parent="NPC"]
+position = Vector2(1920, 1080)
+script = ExtResource("19_j0fav")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(250, 400)])
+
+[node name="CharCleopatraIdleV_01" type="Sprite2D" parent="NPC/Cleopatra"]
+position = Vector2(-962.857, 1.43018)
 rotation = 3.14159
 scale = Vector2(1.33333, -1.33333)
 texture = ExtResource("25_3cwxj")
+
+[node name="Area2D" type="Area2D" parent="NPC/Cleopatra"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Cleopatra/Area2D"]
+position = Vector2(-962.143, 1.42847)
+shape = SubResource("RectangleShape2D_gn0lh")
 
 [node name="CharMaidIdleV_01_Shadow" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 0.34902)
@@ -344,10 +361,23 @@ position = Vector2(1351.82, 1127.53)
 scale = Vector2(1.319, 1.319)
 texture = ExtResource("17_k0cyx")
 
-[node name="CharMaidIdleV_01" type="Sprite2D" parent="NPC"]
-position = Vector2(1320, 1106.11)
+[node name="Maid01" type="Node2D" parent="NPC"]
+position = Vector2(1920, 1080)
+script = ExtResource("19_j0fav")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(950, 400)])
+
+[node name="CharMaidIdleV_01" type="Sprite2D" parent="NPC/Maid01"]
+position = Vector2(-600, 26.1102)
 scale = Vector2(1.319, 1.319)
 texture = ExtResource("17_k0cyx")
+
+[node name="Area2D" type="Area2D" parent="NPC/Maid01"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Maid01/Area2D"]
+position = Vector2(-607.143, 1.42847)
+shape = SubResource("RectangleShape2D_gn0lh")
 
 [node name="CharMaidIdleV_02_Shadow" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 0.34902)
@@ -355,10 +385,23 @@ position = Vector2(1723.64, 1124.68)
 scale = Vector2(1.319, 1.319)
 texture = ExtResource("18_3cwxj")
 
-[node name="CharMaidIdleV_02" type="Sprite2D" parent="NPC"]
-position = Vector2(1691.82, 1103.25)
+[node name="Maid02" type="Node2D" parent="NPC"]
+position = Vector2(1920, 1080)
+script = ExtResource("19_j0fav")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(1200, 400)])
+
+[node name="CharMaidIdleV_02" type="Sprite2D" parent="NPC/Maid02"]
+position = Vector2(-228.18, 23.2502)
 scale = Vector2(1.319, 1.319)
 texture = ExtResource("18_3cwxj")
+
+[node name="Area2D" type="Area2D" parent="NPC/Maid02"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Maid02/Area2D"]
+position = Vector2(-230, 1.42847)
+shape = SubResource("RectangleShape2D_gn0lh")
 
 [node name="CharMedjedIdleV_01" type="Sprite2D" parent="NPC"]
 modulate = Color(0.760784, 0.760784, 0.760784, 0.0156863)

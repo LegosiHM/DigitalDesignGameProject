@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://da21mawp1nj8m"]
+[gd_scene load_steps=65 format=3 uid="uid://da21mawp1nj8m"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_57csm"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_1jj2f"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="22_1jj2f"]
 [ext_resource type="Texture2D" uid="uid://ju2cd8ddk7jy" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_Door_v.01.PNG" id="23_512wy"]
 [ext_resource type="Texture2D" uid="uid://b3c6pbwlq74mb" path="res://assets/sprites/character/Char_MaleMerchant_Idle_v.01.png" id="23_xcc3l"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="24_wokg6"]
 [ext_resource type="Texture2D" uid="uid://d02qbf5ulqm1h" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothBase_v.01.PNG" id="25_dko4j"]
 [ext_resource type="Texture2D" uid="uid://b2gpffs4sj8x4" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothProduce_v.01.PNG" id="29_d122h"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="37_ly0a6"]
@@ -249,6 +250,9 @@ sources/7 = SubResource("TileSetAtlasSource_qarcb")
 sources/8 = SubResource("TileSetAtlasSource_cnskw")
 sources/9 = SubResource("TileSetAtlasSource_wxuhn")
 sources/1 = SubResource("TileSetAtlasSource_pvje2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyouh"]
+size = Vector2(258.572, 492.143)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ly0a6"]
 texture = ExtResource("5_dko4j")
@@ -605,17 +609,31 @@ position = Vector2(1157.23, 1109.95)
 scale = Vector2(1.219, 1.219)
 texture = ExtResource("18_cseyx")
 
-[node name="CharMarcIdleV_02" type="Sprite2D" parent="NPC"]
-position = Vector2(1185.9, 1122.6)
+[node name="Merchant1" type="Node2D" parent="NPC"]
+position = Vector2(1920, 1080)
+scale = Vector2(1, 1)
+script = ExtResource("24_wokg6")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(600, 375)])
+
+[node name="CharMarcIdleV_02" type="Sprite2D" parent="NPC/Merchant1"]
+position = Vector2(-734.1, 42.6001)
 scale = Vector2(1.219, 1.219)
 texture = ExtResource("18_cseyx")
+
+[node name="Area2D" type="Area2D" parent="NPC/Merchant1"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Merchant1/Area2D"]
+position = Vector2(-718.571, 34.2861)
+shape = SubResource("RectangleShape2D_gyouh")
 
 [node name="Hitbox" parent="NPC" instance=ExtResource("4_hnqrq")]
 visible = false
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
 tile_set = SubResource("TileSet_ly0a6")
-layer_0/tile_data = PackedInt32Array(524305, 131072, 3, 589841, 131072, 3, 655377, 131072, 3, 720913, 131072, 3, 786449, 131072, 3, 851985, 131072, 3, 917521, 131072, 3, 917522, 131072, 3, 851986, 131072, 3, 786450, 131072, 3, 720914, 131072, 3, 655378, 131072, 3, 589842, 131072, 3, 524306, 131072, 3, 458760, 196608, 3, 458761, 196608, 3, 458762, 196608, 3, 458763, 196608, 3, 458764, 196608, 3, 458765, 196608, 3, 458766, 196608, 3, 458767, 196608, 3, 458768, 196608, 3, 458769, 196608, 3, 458770, 196608, 3, 458771, 196608, 3, 458772, 196608, 3, 458773, 196608, 3)
+layer_0/tile_data = PackedInt32Array(524305, 131072, 3, 589841, 131072, 3, 655377, 131072, 3, 720913, 131072, 3, 786449, 196608, 3, 851985, 196608, 3, 917521, 196608, 3, 917522, 196608, 3, 851986, 196608, 3, 786450, 196608, 3, 720914, 131072, 3, 655378, 131072, 3, 589842, 131072, 3, 524306, 131072, 3, 458760, 196608, 3, 458761, 196608, 3, 458762, 196608, 3, 458763, 196608, 3, 458764, 196608, 3, 458765, 196608, 3, 458766, 196608, 3, 458767, 196608, 3, 458768, 196608, 3, 458769, 196608, 3, 458770, 196608, 3, 458771, 196608, 3, 458772, 196608, 3, 458773, 196608, 3, 917513, 196608, 3, 851977, 196608, 3, 851989, 196608, 3, 917525, 196608, 3, 917524, 196608, 3, 917523, 196608, 3, 917520, 196608, 3, 917519, 196608, 3, 917518, 196608, 3, 917517, 196608, 3, 917516, 196608, 3, 917515, 196608, 3, 851978, 196608, 3, 851979, 196608, 3, 851980, 196608, 3, 851981, 196608, 3, 851982, 196608, 3, 851983, 196608, 3, 851984, 196608, 3, 851987, 196608, 3, 851988, 196608, 3, 589854, 196608, 3, 655390, 196608, 3, 720926, 196608, 3, 786462, 196608, 3, 851998, 196608, 3, 917534, 196608, 3, 917535, 196608, 3, 851999, 196608, 3, 786463, 196608, 3, 720927, 196608, 3, 655391, 196608, 3, 589855, 196608, 3, 589856, 196608, 3, 524320, 196608, 3, 458784, 196608, 3, 458783, 196608, 3, 524319, 196608, 3, 524318, 196608, 3, 458782, 196608, 3)
 
 [node name="CharMaleMerchantIdleV_01" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 1)
@@ -623,10 +641,24 @@ position = Vector2(2122.86, 1080)
 scale = Vector2(1.29902, 1.35154)
 texture = ExtResource("23_xcc3l")
 
-[node name="CharMaleMerchantIdleV_02" type="Sprite2D" parent="NPC"]
-position = Vector2(2109.29, 1077.14)
+[node name="MaleMerchant" type="Node2D" parent="NPC"]
+position = Vector2(1920, 1080)
+scale = Vector2(1, 1)
+script = ExtResource("24_wokg6")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(1500, 375)])
+
+[node name="CharMaleMerchantIdleV_02" type="Sprite2D" parent="NPC/MaleMerchant"]
+position = Vector2(189.291, -2.85986)
 scale = Vector2(1.29902, 1.35154)
 texture = ExtResource("23_xcc3l")
+
+[node name="Area2D" type="Area2D" parent="NPC/MaleMerchant"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/MaleMerchant/Area2D"]
+position = Vector2(194.286, 34.2861)
+shape = SubResource("RectangleShape2D_gyouh")
 
 [node name="DecorationFront" type="Area2D" parent="."]
 z_index = 20
@@ -676,10 +708,25 @@ position = Vector2(777.035, 572.715)
 scale = Vector2(-1.219, 1.219)
 texture = ExtResource("19_xbb8v")
 
-[node name="CharMarcIdleV_04" type="Sprite2D" parent="DecorationFront"]
-position = Vector2(805.709, 583.381)
-scale = Vector2(-1.219, 1.219)
+[node name="Merchant2" type="Node2D" parent="DecorationFront"]
+position = Vector2(1793.33, 556)
+scale = Vector2(0.933333, 0.933333)
+script = ExtResource("24_wokg6")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(350, 375)])
+
+[node name="CharMarcIdleV_04" type="Sprite2D" parent="DecorationFront/Merchant2"]
+position = Vector2(-1058.17, 29.3369)
+rotation = 3.14159
+scale = Vector2(1.30607, -1.30607)
 texture = ExtResource("19_xbb8v")
+
+[node name="Area2D" type="Area2D" parent="DecorationFront/Merchant2"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorationFront/Merchant2/Area2D"]
+position = Vector2(-1052.86, 34.2861)
+shape = SubResource("RectangleShape2D_gyouh")
 
 [node name="DecorationBoothProduceV_04" type="Sprite2D" parent="DecorationFront"]
 modulate = Color(0, 0, 0, 1)

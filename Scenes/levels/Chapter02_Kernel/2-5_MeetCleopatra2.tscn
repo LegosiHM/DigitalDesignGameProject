@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bs0me3xlw6uwk"]
+[gd_scene load_steps=56 format=3 uid="uid://bs0me3xlw6uwk"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_hb2ge"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_qgh2b"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="21_xrotw"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="22_hb2ge"]
 [ext_resource type="Texture2D" uid="uid://chq88igfc15id" path="res://assets/sprites/chapter 2/assets/Palace/IMG_3233.PNG" id="22_ixm6k"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="22_jyofi"]
 [ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/character/Char_Medjed_Idle_v.01.png" id="22_ovp2p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
@@ -444,6 +445,9 @@ sources/8 = SubResource("TileSetAtlasSource_kwsdh")
 sources/9 = SubResource("TileSetAtlasSource_0vucb")
 sources/1 = SubResource("TileSetAtlasSource_jyofi")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb2q7"]
+size = Vector2(258.572, 492.143)
+
 [node name="2-5_MeetCleopatra2" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
@@ -467,14 +471,16 @@ shape = SubResource("RectangleShape2D_ne1c2")
 position = Vector2(-806, -526)
 shape = SubResource("RectangleShape2D_ne1c2")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_qgh2b")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_qgh2b")]
 z_index = 10
-position = Vector2(397, 863)
-scale = Vector2(1.80741, 0.669431)
+position = Vector2(884, 344)
+scale = Vector2(4.48741, 0.189431)
 my_scene = "res://Scenes/levels/Chapter02_Kernel/2-6_MeetMark1.tscn"
+disable_on_default = true
+portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
-position = Vector2(-3.04303, -205.707)
+position = Vector2(6.63934, -203.158)
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
@@ -600,11 +606,26 @@ rotation = -3.14159
 scale = Vector2(-1.333, -1.333)
 texture = ExtResource("17_qgh2b")
 
-[node name="CharCleopatraIdleV_01" type="Sprite2D" parent="NPC"]
-position = Vector2(2029.14, 1074.79)
-rotation = 3.14159
-scale = Vector2(-1.333, -1.333)
+[node name="Cleopatra" type="Node2D" parent="NPC" node_paths=PackedStringArray("reveal_path")]
+position = Vector2(1920, 1080)
+scale = Vector2(1, 1)
+script = ExtResource("22_jyofi")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(1000, 375)])
+will_reveal_object = true
+reveal_path = NodePath("../../ChangeSceneDetector")
+
+[node name="CharCleopatraIdleV_01" type="Sprite2D" parent="NPC/Cleopatra"]
+position = Vector2(109.14, -5.20984)
+scale = Vector2(1.333, 1.333)
 texture = ExtResource("17_qgh2b")
+
+[node name="Area2D" type="Area2D" parent="NPC/Cleopatra"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Cleopatra/Area2D"]
+position = Vector2(117.143, 11.4288)
+shape = SubResource("RectangleShape2D_jb2q7")
 
 [node name="CharMedjedIdleV_03" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 1)
@@ -710,10 +731,11 @@ z_index = 50
 script = ExtResource("19_tq82g")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("20_mg82f")]
-offset_left = 201.0
-offset_top = 558.0
-offset_right = 241.0
-offset_bottom = 598.0
+visible = false
+offset_left = 703.0
+offset_top = 99.0
+offset_right = 743.0
+offset_bottom = 139.0
 scale = Vector2(10, 10)
 
 [node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("22_hb2ge")]

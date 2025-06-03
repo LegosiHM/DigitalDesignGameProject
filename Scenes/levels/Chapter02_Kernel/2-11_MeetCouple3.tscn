@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://0ew4v68aj6a8"]
+[gd_scene load_steps=86 format=3 uid="uid://0ew4v68aj6a8"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_7242q"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_vivsh"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bwsmokf5163np" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_StraightPillar_v.01.PNG" id="25_y67aj"]
 [ext_resource type="Texture2D" uid="uid://ctl6ahu80rd0t" path="res://assets/sprites/character/Char_Guards_Idle_v.01.png" id="27_1x70y"]
 [ext_resource type="Texture2D" uid="uid://nlvgwxi1xvsr" path="res://assets/sprites/character/Char_Guards_Idle_v.02.png" id="27_y67aj"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="30_1f60w"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="36_nq60f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
@@ -927,6 +928,9 @@ sources/8 = SubResource("TileSetAtlasSource_kfvfh")
 sources/9 = SubResource("TileSetAtlasSource_xudw7")
 sources/1 = SubResource("TileSetAtlasSource_1f60w")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dqhw"]
+size = Vector2(172.143, 492.143)
+
 [node name="2-11_MeetCouple3" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
@@ -1031,10 +1035,24 @@ position = Vector2(2483.37, 1121.43)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("27_y67aj")
 
-[node name="CharGuardsIdleV_04" type="Sprite2D" parent="NPC"]
-position = Vector2(2459.09, 1118.57)
-scale = Vector2(1.2, 1.2)
+[node name="Guard1" type="Node2D" parent="NPC"]
+position = Vector2(1793.33, 556)
+scale = Vector2(0.933333, 0.933333)
+script = ExtResource("30_1f60w")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(1400, 350)])
+
+[node name="CharGuardsIdleV_04" type="Sprite2D" parent="NPC/Guard1"]
+position = Vector2(713.311, 602.754)
+scale = Vector2(1.28571, 1.28571)
 texture = ExtResource("27_y67aj")
+
+[node name="Area2D" type="Area2D" parent="NPC/Guard1"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Guard1/Area2D"]
+position = Vector2(737.245, 615)
+shape = SubResource("RectangleShape2D_0dqhw")
 
 [node name="CharGuardsIdleV_01" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 0.607843)
@@ -1042,10 +1060,24 @@ position = Vector2(2279.09, 1121.43)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("27_1x70y")
 
-[node name="CharGuardsIdleV_02" type="Sprite2D" parent="NPC"]
-position = Vector2(2254.8, 1118.57)
-scale = Vector2(1.2, 1.2)
+[node name="Guard2" type="Node2D" parent="NPC"]
+position = Vector2(1793.33, 556)
+scale = Vector2(0.933333, 0.933333)
+script = ExtResource("30_1f60w")
+dialog_lines = Array[String](["asd"])
+dialog_position_Array = Array[Vector2]([Vector2(1200, 350)])
+
+[node name="CharGuardsIdleV_02" type="Sprite2D" parent="NPC/Guard2"]
+position = Vector2(494.429, 602.754)
+scale = Vector2(1.28571, 1.28571)
 texture = ExtResource("27_1x70y")
+
+[node name="Area2D" type="Area2D" parent="NPC/Guard2"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Guard2/Area2D"]
+position = Vector2(507.654, 611.939)
+shape = SubResource("RectangleShape2D_0dqhw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_1f60w")
