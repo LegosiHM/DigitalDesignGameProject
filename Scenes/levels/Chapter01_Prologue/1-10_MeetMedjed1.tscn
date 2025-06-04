@@ -109,6 +109,7 @@ position = Vector2(1786, 752)
 script = ExtResource("7_iyibb")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("8_5geg3")]
+visible = false
 offset_left = -201.0
 offset_top = 560.0
 offset_right = -161.0

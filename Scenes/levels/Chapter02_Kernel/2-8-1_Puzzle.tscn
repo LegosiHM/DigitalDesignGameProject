@@ -1190,8 +1190,6 @@ scale = Vector2(10, 10)
 visible = false
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("31_fitkb")]
-offset_left = -2.0
-offset_right = 1918.0
 
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
 

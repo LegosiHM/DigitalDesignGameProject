@@ -748,12 +748,12 @@ rotation = 3.14159
 scale = Vector2(63.1365, -21.0708)
 
 [node name="StaticPanelCollision4" parent="PanelCollsionContainer" instance=ExtResource("23_pyxs3")]
-position = Vector2(438, 691)
+position = Vector2(464, 691)
 rotation = 3.14159
 scale = Vector2(9.4457, -21.071)
 
 [node name="StaticPanelCollision6" parent="PanelCollsionContainer" instance=ExtResource("23_pyxs3")]
-position = Vector2(-13.9999, 679)
+position = Vector2(-48, 677)
 rotation = 3.14159
 scale = Vector2(9.4457, -21.071)
 
