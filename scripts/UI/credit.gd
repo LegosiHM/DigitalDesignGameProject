@@ -31,6 +31,8 @@ func _ready():
 	current_opacity = 0.0
 	set_process(true)  # Needed for _process to run
 	await wait_for_click()
+	
+	SaveManager.delete_save()
 
 	# Transition to main menu
 	get_tree().change_scene_to_file(main_menu_scene)
