@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c2uha3sy1b15v"]
+[gd_scene load_steps=16 format=3 uid="uid://c2uha3sy1b15v"]
 
 [ext_resource type="Script" uid="uid://kuj43c6cuhor" path="res://scripts/cutscenes/Chapter-1_Comic_Cutscene_2.gd" id="1_3r1wt"]
 [ext_resource type="Texture2D" uid="uid://didc0ovfjpqsl" path="res://assets/sprites/BG_Cutscene_v.01.PNG" id="2_d7w80"]
@@ -7,10 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b6xeovoiklyny" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_07.PNG" id="5_4uw36"]
 [ext_resource type="Texture2D" uid="uid://drjy1qggto88l" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_08.PNG" id="6_8xql8"]
 [ext_resource type="Texture2D" uid="uid://ccirv0yytjta4" path="res://assets/sprites/chapter 1/cutscenes/Cutscene_09.PNG" id="7_r6ypr"]
-[ext_resource type="Texture2D" uid="uid://cvn11k7g1vipv" path="res://assets/UI/(Temp) Ellipse 1.png" id="9_511ak"]
-[ext_resource type="Texture2D" uid="uid://b66d1q8cojbj5" path="res://assets/UI/UI_ReminderLabel_v.1.png" id="10_d7w80"]
+[ext_resource type="Texture2D" uid="uid://2ly85pa7gvcf" path="res://assets/UI/IMG_6488 (1).png" id="8_d7w80"]
+[ext_resource type="Texture2D" uid="uid://bfaiejfs1vnh4" path="res://assets/UI/IMG_6487.png" id="10_d7w80"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="10_suhqb"]
-[ext_resource type="Texture2D" uid="uid://l1lo8csjn6x0" path="res://assets/UI/UI_LeftClick.png" id="11_3bj65"]
 [ext_resource type="AudioStream" uid="uid://boytlvw6hlk1o" path="res://assets/SFX/UISFX/SFX_UI_ClickCutscene_v01.mp3" id="12_d7w80"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dryie"]
@@ -105,14 +104,15 @@ texture = ExtResource("7_r6ypr")
 
 [node name="SkipRing" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 1741.0
-offset_top = 29.0
-offset_right = 1791.0
-offset_bottom = 79.0
+offset_left = 1732.0
+offset_top = 22.0
+offset_right = 1792.0
+offset_bottom = 82.0
 max_value = 2.0
 step = 0.01
+value = 2.0
 fill_mode = 5
-texture_progress = ExtResource("9_511ak")
+texture_progress = ExtResource("8_d7w80")
 tint_under = Color(0, 0, 0, 1)
 
 [node name="SkipLabel" type="Label" parent="."]
@@ -121,8 +121,9 @@ offset_left = 1797.0
 offset_top = 14.0
 offset_right = 1900.0
 offset_bottom = 94.0
-theme_override_colors/font_color = Color(0.385493, 0.385492, 0.385492, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("10_suhqb")
 theme_override_font_sizes/font_size = 50
 text = "SKIP"
@@ -130,13 +131,8 @@ text = "SKIP"
 [node name="Reminder" type="Node2D" parent="."]
 
 [node name="ReminderLabel" type="Sprite2D" parent="Reminder"]
-position = Vector2(1785, 904)
+position = Vector2(1785, 990)
 texture = ExtResource("10_d7w80")
-
-[node name="UiLeftClick" type="Sprite2D" parent="Reminder"]
-position = Vector2(1615, 903)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_3bj65")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_d7w80")

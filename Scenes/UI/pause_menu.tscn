@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu6446fo7y1t1"]
+[gd_scene load_steps=7 format=3 uid="uid://bu6446fo7y1t1"]
 
 [ext_resource type="Script" uid="uid://djkvpaduvisan" path="res://scripts/UI/pause_menu.gd" id="1_8rf44"]
 [ext_resource type="Shader" uid="uid://cian5q6fubwkx" path="res://scripts/shaders/BlurEffect.gdshader" id="1_rrvs5"]
 [ext_resource type="PackedScene" uid="uid://by0xmffvlcwmo" path="res://Scenes/UI/SoundController.tscn" id="3_r2i2h"]
+[ext_resource type="Texture2D" uid="uid://rabke7vj3qsl" path="res://assets/UI/IMG_6486.png" id="4_kdnb7"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="5_702e2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8rf44"]
 shader = ExtResource("1_rrvs5")
@@ -21,43 +23,116 @@ script = ExtResource("1_8rf44")
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_8rf44")
-offset_right = 1920.0
-offset_bottom = 1080.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+[node name="MasterVolumeController" parent="ColorRect" instance=ExtResource("3_r2i2h")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -33.0
-offset_right = 35.0
-offset_bottom = 33.0
+offset_left = -240.0
+offset_top = -137.0
+offset_right = 240.0
+offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
-layout_mode = 2
-
-[node name="ResumeButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="ColorRect"]
 process_mode = 3
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -21.5
+offset_right = 141.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
+text = "
+"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/ResumeButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -20.0
+offset_right = 142.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kdnb7")
+region_rect = Rect2(-0.605347, 0.111719, 240.605, 59.7762)
+
+[node name="Label" type="Label" parent="ColorRect/ResumeButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -24.0
+offset_right = 54.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_702e2")
+theme_override_font_sizes/font_size = 30
 text = "Resume"
 
-[node name="ExitButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="ColorRect"]
 process_mode = 3
-layout_mode = 2
-text = "Exit"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = 44.0
+offset_right = 140.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="MasterVolumeController" parent="ColorRect" instance=ExtResource("3_r2i2h")]
-layout_mode = 0
-offset_left = 741.0
-offset_top = 399.0
-offset_right = 1221.0
-offset_bottom = 499.0
+[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/ExitButton"]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 285.0
+offset_bottom = 42.0
+texture = ExtResource("4_kdnb7")
+region_rect = Rect2(-0.605347, 0.111719, 240.605, 59.7762)
 
-[connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]
+[node name="Label" type="Label" parent="ColorRect/ExitButton"]
+offset_left = 23.0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_702e2")
+theme_override_font_sizes/font_size = 30
+text = "Exit to Main Menu"
+
+[connection signal="pressed" from="ColorRect/ResumeButton" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ColorRect/ExitButton" to="." method="_on_exit_pressed"]

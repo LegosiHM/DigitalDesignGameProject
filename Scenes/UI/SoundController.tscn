@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://tt6pk5g0qrgp" path="res://assets/UI/IMG_6484 (1).png" id="1_civsj"]
 [ext_resource type="Script" uid="uid://edduv1re3qf6" path="res://scripts/UI/sound_controller.gd" id="1_j1thn"]
-[ext_resource type="Texture2D" uid="uid://cyuuqu2jrg3q2" path="res://assets/UI/MainMenu/Untitled_design (1).png" id="2_a2l1s"]
+[ext_resource type="Texture2D" uid="uid://cyuuqu2jrg3q2" path="res://assets/UI/Untitled_design (1).png" id="2_a2l1s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_abuoe"]
 texture = ExtResource("2_a2l1s")
