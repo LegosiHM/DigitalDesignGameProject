@@ -1,29 +1,29 @@
-[gd_scene load_steps=40 format=3 uid="uid://b6oqo5ww0bhle"]
+[gd_scene load_steps=40 format=3 uid="uid://d2v2r4h1cuhci"]
 
-[ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_8ujrl"]
-[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_jumhi"]
-[ext_resource type="Texture2D" uid="uid://cgx71tum7x2vc" path="res://assets/sprites/chapter 1/background/BG_Temple_Day_v01.PNG" id="3_al6nc"]
-[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_7u1uy"]
-[ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_l2vrq"]
-[ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="6_ay32w"]
-[ext_resource type="Texture2D" uid="uid://d0ghbyaweujm2" path="res://assets/sprites/chapter 1/tileset/Panel_Background_v01.PNG" id="7_8ko78"]
-[ext_resource type="Texture2D" uid="uid://x465pcsbne4k" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v01.PNG" id="8_4joen"]
-[ext_resource type="Texture2D" uid="uid://orvpm0ri6hum" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v01.PNG" id="9_bbxxt"]
-[ext_resource type="Texture2D" uid="uid://dxkb0i8a7738a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v02.PNG" id="10_chvt2"]
-[ext_resource type="Texture2D" uid="uid://c0rgci0dd5se2" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v03.PNG" id="11_acsg7"]
-[ext_resource type="Texture2D" uid="uid://cs024ords13eo" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v04.PNG" id="12_6ww3s"]
-[ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="13_axm66"]
-[ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="14_wvjh2"]
-[ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="15_2rn1a"]
-[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="16_lcyo1"]
-[ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="17_id6hv"]
-[ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="18_h4obr"]
-[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="19_4x2j8"]
-[ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="19_yumb7"]
-[ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="20_bpgdk"]
-[ext_resource type="Texture2D" uid="uid://dcjljk66n2chm" path="res://assets/sprites/chapter 3/panel/StoryPanel_CanonEventBook_v.01.png" id="21_tdbvo"]
-[ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="22_itr4e"]
-[ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/chapter 3/character/Char_Medjed_Idle_v.01.png" id="23_wj2i8"]
+[ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_dyj8c"]
+[ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_aoxvn"]
+[ext_resource type="Texture2D" uid="uid://cgx71tum7x2vc" path="res://assets/sprites/chapter 1/background/BG_Temple_Day_v01.PNG" id="3_fk46f"]
+[ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_vbf0w"]
+[ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_6udja"]
+[ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="6_s7v3k"]
+[ext_resource type="Texture2D" uid="uid://d0ghbyaweujm2" path="res://assets/sprites/chapter 1/tileset/Panel_Background_v01.PNG" id="7_xphq6"]
+[ext_resource type="Texture2D" uid="uid://x465pcsbne4k" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v01.PNG" id="8_f1hay"]
+[ext_resource type="Texture2D" uid="uid://orvpm0ri6hum" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v01.PNG" id="9_xtqpp"]
+[ext_resource type="Texture2D" uid="uid://dxkb0i8a7738a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v02.PNG" id="10_xdtf8"]
+[ext_resource type="Texture2D" uid="uid://c0rgci0dd5se2" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v03.PNG" id="11_3f4mw"]
+[ext_resource type="Texture2D" uid="uid://cs024ords13eo" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_PalaceTiles_v04.PNG" id="12_ikjob"]
+[ext_resource type="Texture2D" uid="uid://dttpm8hypsa6v" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_SandStoneRoad_v01.PNG" id="13_0x6q3"]
+[ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="14_tej5f"]
+[ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="15_jj2fk"]
+[ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="16_e7t72"]
+[ext_resource type="Texture2D" uid="uid://dcjljk66n2chm" path="res://assets/sprites/chapter 3/panel/StoryPanel_CanonEventBook_v.01.png" id="17_3e3g0"]
+[ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="18_ui1uj"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="19_rm5py"]
+[ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/chapter 3/character/Char_Medjed_Idle_v.01.png" id="20_iexwr"]
+[ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="21_ndyac"]
+[ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="22_gak1v"]
+[ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="23_el7k4"]
+[ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="24_m6lsi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bacl"]
 size = Vector2(1921, 167)
@@ -35,7 +35,7 @@ size = Vector2(2259, 137.25)
 size = Vector2(199, 1115.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_un642"]
-texture = ExtResource("5_l2vrq")
+texture = ExtResource("5_6udja")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -55,7 +55,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d6tir"]
-texture = ExtResource("6_ay32w")
+texture = ExtResource("6_s7v3k")
 texture_region_size = Vector2i(90, 90)
 0:0/0 = 0
 1:0/0 = 0
@@ -79,12 +79,12 @@ texture_region_size = Vector2i(90, 90)
 5:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0coy"]
-texture = ExtResource("7_8ko78")
+texture = ExtResource("7_xphq6")
 texture_region_size = Vector2i(90, 90)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kw55w"]
-texture = ExtResource("8_4joen")
+texture = ExtResource("8_f1hay")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -104,7 +104,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oq0b"]
-texture = ExtResource("9_bbxxt")
+texture = ExtResource("9_xtqpp")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -124,7 +124,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnej4"]
-texture = ExtResource("10_chvt2")
+texture = ExtResource("10_xdtf8")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -144,7 +144,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tba6x"]
-texture = ExtResource("11_acsg7")
+texture = ExtResource("11_3f4mw")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -164,7 +164,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6sgik"]
-texture = ExtResource("12_6ww3s")
+texture = ExtResource("12_ikjob")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -184,7 +184,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57t7d"]
-texture = ExtResource("13_axm66")
+texture = ExtResource("13_0x6q3")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -204,7 +204,7 @@ texture_region_size = Vector2i(90, 90)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0ep0"]
-texture = ExtResource("14_wvjh2")
+texture = ExtResource("14_tej5f")
 texture_region_size = Vector2i(90, 90)
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
@@ -244,8 +244,8 @@ size = Vector2(172.143, 246.072)
 
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)
-script = ExtResource("1_8ujrl")
-respawn_position = Vector2(276, 906)
+script = ExtResource("1_dyj8c")
+respawn_position = Vector2(1607, 906)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
 position = Vector2(278, 157)
@@ -263,10 +263,10 @@ shape = SubResource("RectangleShape2D_okbg1")
 position = Vector2(1372, -526)
 shape = SubResource("RectangleShape2D_okbg1")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_jumhi")]
+[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_aoxvn")]
 z_index = 10
-position = Vector2(1082, 806)
-my_scene = "res://Scenes/levels/Chapter03_Epilogue/3-2_CleopatraDeath.tscn"
+position = Vector2(610, 806)
+my_scene = "res://Scenes/levels/Chapter03_Epilogue/3-4_MarcDeath.tscn"
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(57, -273)
@@ -275,9 +275,9 @@ scale = Vector2(0.920002, 0.956803)
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(100, 100, 100, 1)
 position = Vector2(958, 540)
-texture = ExtResource("3_al6nc")
+texture = ExtResource("3_fk46f")
 
-[node name="PanelHitbox" parent="." instance=ExtResource("4_7u1uy")]
+[node name="PanelHitbox" parent="." instance=ExtResource("4_vbf0w")]
 visible = false
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
 position = Vector2(-1, 339)
@@ -285,82 +285,82 @@ scale = Vector2(0.5, 0.5)
 tile_set = SubResource("TileSet_sqcuw")
 layer_0/tile_data = PackedInt32Array(917520, 65539, 3, 917521, 65539, 3, 917522, 65539, 3, 917523, 65539, 3, 917524, 65539, 3, 917525, 65539, 3, 917526, 65539, 3, 917527, 65539, 3, 917528, 65539, 3, 917529, 65539, 3, 917530, 65539, 3, 983056, 65539, 3, 983057, 65539, 3, 983058, 65539, 3, 983059, 65539, 3, 983060, 65539, 3, 983061, 65539, 3, 983062, 65539, 3, 983063, 65539, 3, 983064, 65539, 3, 983065, 65539, 3, 983066, 65539, 3, 917536, 65539, 3, 917535, 65539, 3, 917534, 65539, 3, 917533, 65539, 3, 917532, 65539, 3, 917531, 65539, 3, 917519, 65539, 3, 917518, 65539, 3, 917517, 65539, 3, 917516, 65539, 3, 917515, 65539, 3, 917514, 65539, 3, 917513, 65539, 3, 917512, 65539, 3, 917511, 65539, 3, 917510, 65539, 3, 917509, 65539, 3, 917508, 65539, 3, 917507, 65539, 3, 917506, 65539, 3, 917505, 65539, 3, 917537, 65539, 3, 917538, 65539, 3, 917539, 65539, 3, 917540, 65539, 3, 917541, 65539, 3, 917542, 65539, 3, 917543, 65539, 3, 917544, 65539, 3, 917545, 65539, 3, 983081, 65539, 3, 983080, 65539, 3, 983079, 65539, 3, 983078, 65539, 3, 983077, 65539, 3, 983076, 65539, 3, 983075, 65539, 3, 983074, 65539, 3, 983073, 65539, 3, 983072, 65539, 3, 983071, 65539, 3, 983070, 65539, 3, 983069, 65539, 3, 983068, 65539, 3, 983067, 65539, 3, 983055, 65539, 3, 983054, 65539, 3, 983053, 65539, 3, 983052, 65539, 3, 983051, 65539, 3, 983050, 65539, 3, 983049, 65539, 3, 983048, 65539, 3, 983047, 65539, 3, 983046, 65539, 3, 983045, 65539, 3, 983044, 65539, 3, 983043, 65539, 3, 983042, 65539, 3, 983041, 65539, 3)
 
-[node name="UI" parent="." instance=ExtResource("15_2rn1a")]
+[node name="UI" parent="." instance=ExtResource("15_jj2fk")]
 z_index = 4
 
-[node name="Player" parent="." instance=ExtResource("16_lcyo1")]
-position = Vector2(276, 906)
+[node name="Player" parent="." instance=ExtResource("16_e7t72")]
+position = Vector2(1607, 906)
 scale = Vector2(1.5, 1.5)
 
 [node name="StoryPanelCanonEventBookV_01" type="Sprite2D" parent="."]
 position = Vector2(958, 527)
-texture = ExtResource("21_tdbvo")
+texture = ExtResource("17_3e3g0")
 
-[node name="Glitching7" parent="." instance=ExtResource("22_itr4e")]
-offset_left = 994.0
+[node name="Glitching7" parent="." instance=ExtResource("18_ui1uj")]
+offset_left = 392.0
 offset_top = 158.0
-offset_right = 1523.0
+offset_right = 921.0
 offset_bottom = 898.0
 
-[node name="Glitching8" parent="." instance=ExtResource("22_itr4e")]
+[node name="Glitching8" parent="." instance=ExtResource("18_ui1uj")]
 offset_left = 326.0
 offset_top = 771.0
 offset_right = 471.0
 offset_bottom = 806.0
 
-[node name="Glitching9" parent="." instance=ExtResource("22_itr4e")]
+[node name="Glitching9" parent="." instance=ExtResource("18_ui1uj")]
 offset_left = 813.0
 offset_top = 204.0
 offset_right = 958.0
 offset_bottom = 239.0
 
-[node name="Glitching10" parent="." instance=ExtResource("22_itr4e")]
+[node name="Glitching10" parent="." instance=ExtResource("18_ui1uj")]
 offset_left = 845.0
 offset_top = 422.0
 offset_right = 926.0
 offset_bottom = 443.0
 
-[node name="Glitching11" parent="." instance=ExtResource("22_itr4e")]
+[node name="Glitching11" parent="." instance=ExtResource("18_ui1uj")]
 offset_left = 22.0
 offset_top = 894.0
 offset_right = 103.0
 offset_bottom = 915.0
 
-[node name="Glitching12" parent="." instance=ExtResource("22_itr4e")]
+[node name="Glitching12" parent="." instance=ExtResource("18_ui1uj")]
 offset_left = 1741.0
 offset_top = 161.0
 offset_right = 1822.0
 offset_bottom = 182.0
 
-[node name="Glitching13" parent="." instance=ExtResource("22_itr4e")]
+[node name="Glitching13" parent="." instance=ExtResource("18_ui1uj")]
 offset_left = 1492.0
 offset_top = 470.0
 offset_right = 1573.0
 offset_bottom = 491.0
 
-[node name="Glitching14" parent="." instance=ExtResource("22_itr4e")]
+[node name="Glitching14" parent="." instance=ExtResource("18_ui1uj")]
 offset_left = 176.0
 offset_top = 161.0
 offset_right = 257.0
 offset_bottom = 182.0
 
-[node name="Glitching15" parent="." instance=ExtResource("22_itr4e")]
+[node name="Glitching15" parent="." instance=ExtResource("18_ui1uj")]
 offset_left = 1777.0
 offset_top = 937.0
 offset_right = 1858.0
 offset_bottom = 958.0
 
 [node name="Medjed" type="Node2D" parent="."]
-position = Vector2(1645, 556)
+position = Vector2(1804, 556)
 scale = Vector2(0.933333, 0.933333)
-script = ExtResource("19_4x2j8")
+script = ExtResource("19_rm5py")
 dialog_lines = Array[String](["How did no one remember us...?"])
-dialog_position_Array = Array[Vector2]([Vector2(500, 500)])
+dialog_position_Array = Array[Vector2]([Vector2(800, 500)])
 
 [node name="CharMedjedIdleV_01" type="Sprite2D" parent="Medjed"]
 position = Vector2(-809.282, 319.286)
-scale = Vector2(0.535715, 0.535715)
-texture = ExtResource("23_wj2i8")
+scale = Vector2(-0.536, 0.536)
+texture = ExtResource("20_iexwr")
 
 [node name="Area2D" type="Area2D" parent="Medjed"]
 z_index = 2
@@ -370,19 +370,19 @@ position = Vector2(-810.354, 313.036)
 shape = SubResource("RectangleShape2D_cpp52")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("17_id6hv")
+script = ExtResource("21_ndyac")
 
-[node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("18_h4obr")]
+[node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("22_gak1v")]
 offset_left = 2466.0
 offset_top = 429.0
 offset_right = 2506.0
 offset_bottom = 469.0
 scale = Vector2(10, 10)
 
-[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("19_yumb7")]
+[node name="Respawn_Effect" parent="CanvasLayer" instance=ExtResource("23_el7k4")]
 visible = false
 
-[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("20_bpgdk")]
+[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("24_m6lsi")]
 offset_left = 1.0
 offset_top = 9.0
 offset_right = 1921.0

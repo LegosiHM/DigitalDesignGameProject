@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://da4s6kv7eu4j3"]
+[gd_scene load_steps=39 format=3 uid="uid://da4s6kv7eu4j3"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_blyob"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_4hjsd"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="21_4tjnx"]
 [ext_resource type="PackedScene" uid="uid://bplrto1l5k51m" path="res://Scenes/mechanics/7PlaguesPanel/Frog_Stuckable_Panel.tscn" id="23_iuadc"]
 [ext_resource type="PackedScene" uid="uid://c4hm6pp78ao00" path="res://Scenes/mechanics/CH2_Stuckable_Draggable_Panel.tscn" id="23_ubqn8"]
+[ext_resource type="Texture2D" uid="uid://mc4pxf411qx1" path="res://assets/sprites/chapter 1/story panel/StoryPanel_MedjedIntroduction_v.04.png" id="24_ubqn8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(2488, 167)
@@ -259,6 +260,10 @@ shape = SubResource("RectangleShape2D_ne1c2")
 position = Vector2(1442, -524)
 shape = SubResource("RectangleShape2D_ne1c2")
 
+[node name="Detector07" type="CollisionShape2D" parent="RespawnDetector"]
+position = Vector2(1248, -1023)
+shape = SubResource("RectangleShape2D_ne1c2")
+
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("2_4hjsd")]
 z_index = 10
 position = Vector2(1934, 1387)
@@ -269,8 +274,9 @@ position = Vector2(-1646, -1084)
 scale = Vector2(1, 0.28)
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(100, 100, 100, 1)
+modulate = Color(0.42, 0.2268, 0.40712, 1)
 position = Vector2(958, 540)
+scale = Vector2(-1, -1)
 texture = ExtResource("3_4tjnx")
 
 [node name="PanelHitbox" parent="." instance=ExtResource("4_iuadc")]
@@ -284,15 +290,14 @@ layer_0/tile_data = PackedInt32Array(786464, 65536, 3, 852000, 65536, 3, 917536,
 position = Vector2(32.75, 374)
 scale = Vector2(0.75, 0.75)
 tile_set = SubResource("TileSet_vfyhx")
-layer_0/tile_data = PackedInt32Array(-131054, 1, 3, -65518, 1, 3, 18, 1, 3, 65554, 1, 3, 131090, 1, 3, 196626, 1, 3, 262162, 1, 3, 327698, 1, 3, 393234, 1, 5, 393236, 327681, 5, 327700, 327681, 4, 262164, 327681, 4, 196628, 327681, 4, 131092, 327681, 4, 65556, 327681, 4, 20, 327681, 4, -65516, 327681, 4, -131052, 327681, 4, -262124, 327681, 0, -262126, 1, 0, -196590, 1, 2, -262125, 131073, 0, -196588, 327681, 2, 393235, 196609, 5, -65530, 1, 2, 6, 1, 3, 65542, 1, 3, 131078, 1, 3, 196614, 1, 3, 262150, 1, 3, 327686, 1, 3, 393222, 1, 3, 458758, 1, 3, 524294, 1, 5, -65528, 327681, 2, 8, 327681, 4, 65544, 327681, 4, 131080, 327681, 4, 196616, 327681, 4, 262152, 327681, 4, 327688, 327681, 4, 393224, 327681, 4, 458760, 327681, 4, 524296, 327681, 5, -131066, 1, 0, -131065, 131073, 0, 524295, 196609, 5, -131064, 327681, 0, 196629, 1, 0, 262165, 1, 3, 196634, 327681, 0, 262170, 327681, 3, 327701, 1, 5, 196630, 196609, 0, 327702, 131073, 5, 196631, 196609, 0, 327703, 131073, 5, 196632, 196609, 0, 327704, 131073, 5, 196633, 196609, 0, 327705, 131073, 5, 327706, 327681, 5)
+layer_0/tile_data = PackedInt32Array(196626, 1, 0, 262162, 1, 5, 262164, 327681, 5, 196628, 327681, 0, -65530, 1, 2, 6, 1, 3, 65542, 1, 3, 131078, 1, 3, 196614, 1, 3, 262150, 1, 3, 327686, 1, 3, 393222, 1, 3, 458758, 1, 3, 524294, 1, 5, -65528, 327681, 2, 8, 327681, 4, 65544, 327681, 4, 131080, 327681, 4, 196616, 327681, 4, 262152, 327681, 4, 327688, 327681, 4, 393224, 327681, 4, 458760, 327681, 4, 524296, 327681, 5, -131066, 1, 0, -131065, 131073, 0, 524295, 196609, 5, -131064, 327681, 0, 196629, 1, 0, 262165, 1, 5, 196634, 131073, 0, 262170, 131073, 5, 196630, 131073, 0, 196631, 131073, 0, 196632, 131073, 0, 196633, 131073, 0, 524306, 1, 0, 196627, 131073, 0, 262163, 262145, 5, 196635, 131073, 0, 196636, 131073, 0, 262166, 131073, 5, 262167, 131073, 5, 262168, 131073, 5, 262169, 131073, 5, 262171, 131073, 5, 262172, 131073, 5, -262126, 1, 0, -262124, 327681, 0, -262125, 196609, 0, 131090, 1, 5, 131092, 327681, 5, 131091, 262145, 5, 65556, 327681, 2, 20, 327681, 2, -65516, 327681, 2, -131052, 327681, 2, -196588, 327681, 2, -196590, 1, 2, -131054, 1, 2, -65518, 1, 2, 18, 1, 2, 65554, 1, 2)
 
 [node name="PanelVisual" parent="." instance=ExtResource("4_iuadc")]
-visible = false
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
 tile_set = SubResource("TileSet_vfyhx")
-layer_0/tile_data = PackedInt32Array(720895, 2, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 589832, 2, 0, 655368, 2, 0, 589833, 2, 0, 655369, 2, 0, 655359, 2, 0, 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0)
+layer_0/tile_data = PackedInt32Array(589843, 2, 0, 655379, 2, 0, 589844, 2, 0, 589845, 2, 0, 589846, 2, 0, 589847, 2, 0, 589848, 2, 0, 589849, 2, 0, 589850, 2, 0, 589851, 2, 0, 589852, 2, 0, 589853, 2, 0, 655389, 2, 0, 655388, 2, 0, 655387, 2, 0, 655386, 2, 0, 655385, 2, 0, 655384, 2, 0, 655383, 2, 0, 655382, 2, 0, 655381, 2, 0, 655380, 2, 0, 720915, 2, 0, 720916, 2, 0, 720917, 2, 0, 720918, 2, 0, 720919, 2, 0, 720920, 2, 0, 720921, 2, 0, 720922, 2, 0, 720923, 2, 0, 720924, 2, 0, 720925, 2, 0, 524317, 2, 0, 458781, 2, 0, 393245, 2, 0, 327709, 2, 0, 262173, 2, 0, 262172, 2, 0, 262171, 2, 0, 262170, 2, 0, 262169, 2, 0, 262168, 2, 0, 262167, 2, 0, 262166, 2, 0, 262163, 2, 0, 262164, 2, 0)
 
 [node name="UI" parent="." instance=ExtResource("15_b6qyw")]
 z_index = 4
@@ -309,6 +314,7 @@ boost_decay_speed = 1.0
 script = ExtResource("17_gdfj5")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("18_03fv6")]
+visible = false
 offset_left = 5.0
 offset_top = 79.0
 offset_right = 45.0
@@ -352,6 +358,11 @@ position = Vector2(234, 849)
 [node name="StuckablePanel" parent="." instance=ExtResource("23_ubqn8")]
 position = Vector2(1807, 240)
 scale = Vector2(0.440002, 1)
+
+[node name="StoryPanelMedjedIntroductionV_04" type="Sprite2D" parent="."]
+position = Vector2(260, 284)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("24_ubqn8")
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

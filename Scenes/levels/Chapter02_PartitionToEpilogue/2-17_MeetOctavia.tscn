@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dsvmexqwvy3bu"]
+[gd_scene load_steps=36 format=3 uid="uid://dsvmexqwvy3bu"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_piyhr"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_jysn7"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="18_nw0jt"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="19_6iiyh"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="20_gkaa0"]
+[ext_resource type="Texture2D" uid="uid://co6g6s86pr0xm" path="res://assets/sprites/chapter 3/panel/StoryPanel_EvilPlan_v.01.PNG" id="21_dtevm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bacl"]
 size = Vector2(1921, 167)
@@ -258,7 +259,8 @@ shape = SubResource("RectangleShape2D_okbg1")
 
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("2_jysn7")]
 z_index = 10
-position = Vector2(1934, 1387)
+position = Vector2(9280, 3844)
+scale = Vector2(5.89506, 2.69308)
 my_scene = "res://Scenes/levels/Chapter03_Epilogue/3-1_BookHub_Boil.tscn"
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
@@ -271,19 +273,22 @@ position = Vector2(958, 540)
 texture = ExtResource("3_ouo7i")
 
 [node name="PanelHitbox" parent="." instance=ExtResource("4_vbgyw")]
+visible = false
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
 tile_set = SubResource("TileSet_sqcuw")
-layer_0/tile_data = PackedInt32Array(720895, 327680, 3, 655360, 327680, 3, 655361, 327680, 3, 655362, 327680, 3, 655363, 327680, 3, 655364, 327680, 3, 655365, 327680, 3, 655366, 327680, 3, 655367, 327680, 3, 589832, 327680, 3, 655368, 327680, 3, 589833, 327680, 3, 655369, 327680, 3, 655359, 327680, 3, 589824, 327680, 3, 589825, 327680, 3, 589826, 327680, 3, 589827, 327680, 3, 589828, 327680, 3, 589829, 327680, 3, 589830, 327680, 3, 589831, 327680, 3, -65528, 196613, 3, 8, 196613, 3, 65544, 196613, 3, 131080, 196613, 3, -65527, 196613, 3, 9, 196613, 3, 65545, 196613, 3, 131081, 196613, 3)
+layer_0/tile_data = PackedInt32Array(720895, 327680, 3, 655360, 327680, 3, 655361, 327680, 3, 655362, 327680, 3, 655363, 327680, 3, 655364, 327680, 3, 655365, 327680, 3, 655366, 327680, 3, 655367, 327680, 3, 589832, 327680, 3, 655368, 327680, 3, 589833, 327680, 3, 655369, 327680, 3, 655359, 327680, 3, 589824, 327680, 3, 589825, 327680, 3, 589826, 327680, 3, 589827, 327680, 3, 589828, 327680, 3, 589829, 327680, 3, 589830, 327680, 3, 589831, 327680, 3, 655376, 65536, 3, 589840, 65536, 3, 524304, 65536, 3, 458768, 65536, 3, 393232, 65536, 3, 327696, 65536, 3, 262160, 65536, 3, 196624, 65536, 3, 131088, 65536, 3, 327686, 65536, 3, 327685, 65536, 3, 327684, 65536, 3, 393215, 131072, 3, 327679, 131072, 3, 262143, 131072, 3, 196607, 131072, 3, 131071, 131072, 3, 65543, 131072, 3, 65544, 131072, 3, 65545, 131072, 3, 65546, 131072, 3, 65547, 131072, 3, 65548, 131072, 3, 65549, 131072, 3, 65550, 131072, 3, 65551, 131072, 3, 65552, 131072, 3, 10, 196608, 3, 65535, 65536, 3, -1, 65536, 3, -65537, 65536, 3, -131073, 65536, 3, -196609, 65536, 3)
 
 [node name="Outline" parent="." instance=ExtResource("4_vbgyw")]
+visible = false
 position = Vector2(32.75, 374)
 scale = Vector2(0.75, 0.75)
 tile_set = SubResource("TileSet_sqcuw")
-layer_0/tile_data = PackedInt32Array(524296, 65537, 0, 524295, 65537, 0, 524294, 65537, 0, 524293, 65537, 0, 524292, 65537, 0, 524291, 65537, 0, 524290, 65537, 0, 524289, 65537, 0, 524288, 65537, 0, 589823, 65537, 0, 589822, 65537, 0, 524297, 327681, 0, 589833, 327681, 2, 655369, 327681, 2, -196590, 1, 3, 589842, 1, 5, 458770, 1, 3, 524306, 1, 3, 393234, 1, 3, 327698, 1, 3, 262162, 1, 3, 196626, 1, 3, 131090, 1, 3, 65554, 1, 3, 18, 1, 3, -65518, 1, 3, -131054, 1, 3, -262126, 1, 0, -262125, 131073, 0, -262124, 131073, 0, -262123, 131073, 0, -262122, 131073, 0, -262121, 131073, 0, -262120, 131073, 0, -262119, 131073, 0, -262118, 131073, 0, -262117, 131073, 0, -262116, 131073, 0, -262115, 131073, 0, 589843, 196609, 5, 589844, 196609, 5, 589845, 196609, 5, 589846, 196609, 5, 589847, 196609, 5, 589848, 196609, 5, 589849, 196609, 5, 589850, 196609, 5, 589851, 196609, 5, 589852, 196609, 5, 589853, 196609, 5)
+layer_0/tile_data = PackedInt32Array(-196590, 1, 3, 589842, 1, 5, 458770, 1, 3, 524306, 1, 3, 393234, 1, 3, 327698, 1, 3, 262162, 1, 3, 196626, 1, 3, 131090, 1, 3, 65554, 1, 3, 18, 1, 3, -65518, 1, 3, -131054, 1, 3, -262126, 1, 0, -262125, 131073, 0, -262124, 131073, 0, -262123, 131073, 0, -262122, 131073, 0, -262121, 131073, 0, -262120, 131073, 0, -262119, 131073, 0, -262118, 131073, 0, -262117, 131073, 0, -262116, 131073, 0, -262115, 131073, 0, 589843, 196609, 5, 589844, 196609, 5, 589845, 196609, 5, 589846, 196609, 5, 589847, 196609, 5, 589848, 196609, 5, 589849, 196609, 5, 589850, 196609, 5, 589851, 196609, 5, 589852, 196609, 5, 589853, 196609, 5)
 
 [node name="PanelVisual" parent="." instance=ExtResource("4_vbgyw")]
+visible = false
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
@@ -300,6 +305,7 @@ position = Vector2(162, 837)
 script = ExtResource("17_obee6")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("18_nw0jt")]
+visible = false
 offset_left = 405.0
 offset_top = -11.9999
 offset_right = 445.0
@@ -316,6 +322,11 @@ offset_right = 1921.0
 offset_bottom = 1089.0
 
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
+
+[node name="StoryPanelEvilPlanV_01" type="Sprite2D" parent="."]
+position = Vector2(1591, 576)
+scale = Vector2(1.0881, 1.0881)
+texture = ExtResource("21_dtevm")
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

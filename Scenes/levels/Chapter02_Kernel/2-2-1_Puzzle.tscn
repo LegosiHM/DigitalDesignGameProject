@@ -311,7 +311,6 @@ scale = Vector2(0.7, 0.7)
 
 [node name="Medjed" type="Node2D" parent="NPC"]
 position = Vector2(1920, 1080)
-scale = Vector2(1, 1)
 script = ExtResource("17_otkhj")
 dialog_lines = Array[String](["Please...", "Tell your owner to fix this Time Machine...", "or...", "...", "nevermind..."])
 dialog_position_Array = Array[Vector2]([Vector2(800, 600), Vector2(800, 600), Vector2(800, 600), Vector2(800, 600), Vector2(800, 600)])
@@ -319,7 +318,6 @@ dialog_position_Array = Array[Vector2]([Vector2(800, 600), Vector2(800, 600), Ve
 [node name="CharMedjedIdleV_01" type="Sprite2D" parent="NPC/Medjed"]
 modulate = Color(0.76, 0.76, 0.76, 1)
 position = Vector2(-181.44, -341.429)
-scale = Vector2(1, 1)
 texture = ExtResource("16_8sm3u")
 
 [node name="Area2D" type="Area2D" parent="NPC/Medjed"]

@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="14_u4y18"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="15_gvx7g"]
 [ext_resource type="Texture2D" uid="uid://b8uu3geiv8sd0" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Pillar_Day_v.01.PNG" id="16_l0yg5"]
-[ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/character/Char_Medjed_Idle_v.01.png" id="16_p5qmr"]
+[ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/chapter 3/character/Char_Medjed_Idle_v.01.png" id="16_p5qmr"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="17_st42i"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="17_vmkr5"]
 [ext_resource type="Texture2D" uid="uid://dtac63irnsm06" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Vase_v.05.PNG" id="18_1og61"]
@@ -333,14 +333,12 @@ scale = Vector2(0.7, 0.7)
 
 [node name="Medjed" type="Node2D" parent="NPC"]
 position = Vector2(1920, 1080)
-scale = Vector2(1, 1)
 script = ExtResource("17_st42i")
 dialog_lines = Array[String](["I'm dead serious...", "This device needs to be fixed as soon as possible."])
 dialog_position_Array = Array[Vector2]([Vector2(800, 600), Vector2(800, 600)])
 
 [node name="CharMedjedIdleV_02" type="Sprite2D" parent="NPC/Medjed"]
 position = Vector2(-680, -262.857)
-scale = Vector2(1, 1)
 texture = ExtResource("16_p5qmr")
 
 [node name="Area2D" type="Area2D" parent="NPC/Medjed"]

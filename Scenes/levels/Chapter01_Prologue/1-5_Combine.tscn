@@ -384,7 +384,7 @@ scale = Vector2(-108.784, 7.4829)
 
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("24_py2tp")]
 z_index = 5
-position = Vector2(2008, 123)
+position = Vector2(2050, 378)
 rotation = -1.5708
 scale = Vector2(5.487, 0.229998)
 my_scene = "res://Scenes/levels/Chapter01_Prologue/1-6_InsideTemple.tscn"

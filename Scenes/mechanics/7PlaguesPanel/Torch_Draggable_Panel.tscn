@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://553gitplqhlb"]
+
+[ext_resource type="Script" uid="uid://pme7x8bbaxyf" path="res://scripts/puzzles/draggable_panel.gd" id="1_tgo1f"]
+[ext_resource type="Texture2D" uid="uid://cw176vbf271f" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Torch_v.01.PNG" id="2_fl2b2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onjbf"]
+size = Vector2(86, 220)
+
+[node name="draggablePanel" type="Node2D" groups=["draggable_panels"]]
+
+[node name="Area2D2" type="Area2D" parent="." groups=["draggable_panels"]]
+collision_layer = 24
+collision_mask = 6
+script = ExtResource("1_tgo1f")
+return_speed = 0.0
+illegalDragging_speed = 100.0
+energyConsumption = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+light_mask = 9
+visibility_layer = 8
+position = Vector2(1, 9)
+shape = SubResource("RectangleShape2D_onjbf")
+
+[node name="DecorationTorchV_01" type="Sprite2D" parent="Area2D2"]
+position = Vector2(5.96046e-08, 0)
+scale = Vector2(0.742105, 0.742105)
+texture = ExtResource("2_fl2b2")
+
+[node name="Button" type="Button" parent="Area2D2"]
+modulate = Color(0, 0, 0, 0)
+offset_left = -70.0
+offset_top = -104.0
+offset_right = 250.0
+offset_bottom = 113.0
+scale = Vector2(0.43974, 1.06857)
+focus_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Area2D2/Button" to="Area2D2" method="_on_button_button_down"]
+[connection signal="button_up" from="Area2D2/Button" to="Area2D2" method="_on_button_button_up"]

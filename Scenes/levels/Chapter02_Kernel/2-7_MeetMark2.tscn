@@ -713,6 +713,7 @@ texture = ExtResource("21_d4d8o")
 z_index = 50
 
 [node name="Chapter" type="Label" parent="UI"]
+layout_mode = 0
 offset_left = 1295.0
 offset_top = 6.0
 offset_right = 1500.0

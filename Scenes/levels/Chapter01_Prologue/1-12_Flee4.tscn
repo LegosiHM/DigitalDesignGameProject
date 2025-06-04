@@ -75,8 +75,8 @@ shape = SubResource("RectangleShape2D_vaeto")
 
 [node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_dy6oq")]
 z_index = 10
-position = Vector2(-3, -3)
-scale = Vector2(1.80741, 1.50943)
+position = Vector2(474, -3)
+scale = Vector2(0.60741, 1.50943)
 my_scene = "res://Scenes/cutscenes/Chapter-2_Comic_Cutscene_1.tscn"
 disable_on_default = true
 portal_visual = NodePath("../CanvasLayer/Radial_Stripes")

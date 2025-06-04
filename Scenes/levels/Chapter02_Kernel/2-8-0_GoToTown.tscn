@@ -34,7 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="22_1jj2f"]
 [ext_resource type="Texture2D" uid="uid://ju2cd8ddk7jy" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_Door_v.01.PNG" id="23_512wy"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="23_gyouh"]
-[ext_resource type="Texture2D" uid="uid://b3c6pbwlq74mb" path="res://assets/sprites/character/Char_MaleMerchant_Idle_v.01.png" id="23_xcc3l"]
+[ext_resource type="Texture2D" uid="uid://b3c6pbwlq74mb" path="res://assets/sprites/chapter 3/character/Char_MaleMerchant_Idle_v.01.png" id="23_xcc3l"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="24_wokg6"]
 [ext_resource type="Texture2D" uid="uid://d02qbf5ulqm1h" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothBase_v.01.PNG" id="25_dko4j"]
 [ext_resource type="Texture2D" uid="uid://b2gpffs4sj8x4" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothProduce_v.01.PNG" id="29_d122h"]
@@ -599,6 +599,7 @@ layer_0/tile_data = PackedInt32Array(393237, 65546, 1, 393238, 65546, 1, 393239,
 z_index = 4
 
 [node name="Chapter" type="Label" parent="UI"]
+layout_mode = 0
 offset_left = 1295.0
 offset_top = 6.0
 offset_right = 1500.0
