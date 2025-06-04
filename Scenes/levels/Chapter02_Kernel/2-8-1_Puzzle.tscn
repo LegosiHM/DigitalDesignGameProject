@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://cq0nu2ql6tcsl"]
+[gd_scene load_steps=89 format=3 uid="uid://cq0nu2ql6tcsl"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_68dat"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_f7eqx"]
@@ -40,6 +40,7 @@
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="32_v6xka"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="34_y87jl"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="39_0i00n"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="41_fej4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -1364,6 +1365,13 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[shake rate=50 level = 50 connected = 1][color=darkred]Don't go this way!"
 scroll_active = false
+
+[node name="GoalIcon" parent="." instance=ExtResource("41_fej4b")]
+offset_left = 1869.0
+offset_top = 156.0
+offset_right = 1869.0
+offset_bottom = 156.0
+scale = Vector2(-0.5, 0.375)
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

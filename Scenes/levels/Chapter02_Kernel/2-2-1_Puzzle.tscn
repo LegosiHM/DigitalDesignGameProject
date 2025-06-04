@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bu0d8t6kgod2"]
+[gd_scene load_steps=44 format=3 uid="uid://bu0d8t6kgod2"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_emypd"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_eqjfw"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="14_rpk40"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="15_xcuam"]
 [ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/chapter 3/character/Char_Medjed_Idle_v.01.png" id="16_8sm3u"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="16_d23gv"]
 [ext_resource type="Texture2D" uid="uid://b8uu3geiv8sd0" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Pillar_Day_v.01.PNG" id="16_no820"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="17_d6lof"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="17_otkhj"]
@@ -302,6 +303,13 @@ layer_0/tile_data = PackedInt32Array(-65536, 196615, 3, -65535, 196615, 3, -6553
 position = Vector2(45, 44)
 tile_set = SubResource("TileSet_vfyhx")
 layer_0/tile_data = PackedInt32Array(65535, 196609, 5, 0, 196609, 5, 1, 196609, 5, 2, 196609, 5, 3, 196609, 5, 4, 196609, 5, 14, 1, 0, 65550, 1, 2, 131086, 1, 2, 196622, 1, 2, 17, 196609, 0, 262158, 1, 5, 262159, 196609, 5, 262160, 196609, 5, 262161, 196609, 5, 262163, 196609, 5, 19, 196609, 0, 262165, 327681, 5, 327699, 1, 0, 327700, 196609, 0, 327701, 196609, 0, 327702, 196609, 0, 327703, 196609, 0, 327704, 196609, 0, 327705, 196609, 0, 327706, 196609, 0, 327707, 196609, 0, 327708, 196609, 0, 393235, 1, 2, 458771, 1, 2, 524307, 1, 2, 589843, 1, 2, 655379, 1, 2, 720915, 1, 2, 524295, 327681, 0, 589831, 327681, 1, 655367, 327681, 1, 720903, 327681, 1, 524294, 262145, 0, 524293, 262145, 0, 524292, 262145, 0, 524291, 262145, 0, 524290, 262145, 0, 524289, 262145, 0, 524288, 262145, 0, 589823, 262145, 0, -327674, 327681, 1, -262138, 327681, 1, -196602, 327681, 1, -131066, 327681, 1, 393224, 1, 2, 262156, 196609, 0, 20, 196609, 0, 262152, 1, 0, 327688, 1, 2, 458760, 1, 5, 262153, 196609, 0, 458761, 196609, 5, 262154, 196609, 0, 458762, 196609, 5, 262155, 196609, 0, 458763, 196609, 5, 458764, 196609, 5, 262157, 327681, 0, 327693, 327681, 1, 393229, 327681, 1, 458765, 327681, 5, 15, 196609, 0, 16, 196609, 0, 18, 196609, 0, 262162, 196609, 5, 262164, 196609, 5, 21, 327681, 0, 65557, 327681, 1, 131093, 327681, 1, 196629, 327681, 1)
+
+[node name="GoalIcon" parent="." instance=ExtResource("16_d23gv")]
+offset_left = 91.0
+offset_top = 667.0
+offset_right = 91.0
+offset_bottom = 667.0
+scale = Vector2(0.5, 0.375)
 
 [node name="Player" parent="." instance=ExtResource("15_xcuam")]
 position = Vector2(1796, 631)

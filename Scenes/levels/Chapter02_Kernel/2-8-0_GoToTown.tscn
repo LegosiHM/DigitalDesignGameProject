@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://da21mawp1nj8m"]
+[gd_scene load_steps=67 format=3 uid="uid://da21mawp1nj8m"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_57csm"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_1jj2f"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://d02qbf5ulqm1h" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothBase_v.01.PNG" id="25_dko4j"]
 [ext_resource type="Texture2D" uid="uid://b2gpffs4sj8x4" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothProduce_v.01.PNG" id="29_d122h"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="37_ly0a6"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="40_1o8hc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -622,6 +623,13 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("23_gyouh")
 theme_override_font_sizes/font_size = 50
 text = "Let Meow Pawple Go!"
+
+[node name="GoalIcon" parent="." instance=ExtResource("40_1o8hc")]
+offset_left = 1859.0
+offset_top = 753.0
+offset_right = 1859.0
+offset_bottom = 753.0
+scale = Vector2(-0.5, 0.375)
 
 [node name="Player" parent="." instance=ExtResource("16_8mdnm")]
 position = Vector2(162, 837)

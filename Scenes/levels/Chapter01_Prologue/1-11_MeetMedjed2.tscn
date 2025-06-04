@@ -150,6 +150,7 @@ script = ExtResource("13_71ltb")
 dialog_lines = Array[String](["The relic on your neck, that's me. Medjed~", "Which is my real form? Guess~ Ahehehe~", "Whatever~ Just know that I'll be with you from now on~", "Nice to know you~ From YOUR BELOVED NARRATOR~"])
 dialog_position_Array = Array[Vector2]([Vector2(200, 300), Vector2(250, 250), Vector2(300, 200), Vector2(350, 150)])
 cooldown_time = 10000.0
+will_reveal_object = true
 reveal_panel = NodePath("../draggablePanel")
 
 [node name="StoryPanel_Priest" type="Sprite2D" parent="Panel_Medjed1"]
