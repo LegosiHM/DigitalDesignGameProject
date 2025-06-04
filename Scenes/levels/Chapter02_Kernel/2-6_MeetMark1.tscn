@@ -788,10 +788,6 @@ scale = Vector2(10, 10)
 visible = false
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("21_14plh")]
-offset_left = 1.0
-offset_top = 9.0
-offset_right = 1921.0
-offset_bottom = 1089.0
 
 [node name="Glitching2" parent="." instance=ExtResource("28_rabgs")]
 offset_left = 41.0

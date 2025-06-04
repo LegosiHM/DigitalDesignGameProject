@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_51iw3"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="3_18b3w"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_tdeq0"]
-[ext_resource type="Texture2D" uid="uid://dcsbgglf7cj7v" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_TempleWall_v.02.png" id="5_v6ad5"]
+[ext_resource type="Texture2D" uid="uid://dunregyvgta58" path="res://assets/sprites/chapter 1/story panel/Untitled_Artwork (9).png" id="5_18b3w"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="6_ou123"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="7_3sgoj"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="8_m2ank"]
@@ -72,7 +72,7 @@ layer_0/tile_data = PackedInt32Array(196613, 1, 4, 65545, 65537, 0, 65541, 1, 0,
 
 [node name="Panel_TempleWall" type="Sprite2D" parent="."]
 position = Vector2(1168, 495)
-texture = ExtResource("5_v6ad5")
+texture = ExtResource("5_18b3w")
 
 [node name="UI" parent="." instance=ExtResource("6_ou123")]
 

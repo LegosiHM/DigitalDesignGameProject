@@ -382,7 +382,7 @@ func coyote_time() -> void:
 # APEX MODIFIER (Optional Boost at Jump Apex)
 # ------------------------------------------------------------------------------
 
-func apply_apex_modifier(_delta: float) -> void:
+func apply_apex_modifier(delta: float) -> void:
 	if not apex_active and abs(velocity.y) < 10:
 		apex_active = true
 		velocity.x *= apex_speed_boost

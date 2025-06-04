@@ -50,7 +50,7 @@ func _ready() -> void:
 # PROCESS: Main logic each frame
 # ------------------------------------------------------------------------------
 
-func _process(delta: float) -> void:
+func _physics_process(delta) -> void:
 	check_overlap_area()
 
 	var _player_position = player.global_position
@@ -175,7 +175,7 @@ func respawn_timer():
 func get_velocity() -> Vector2:
 	return velocity
 
-func get_motion_delta(_delta: float) -> Vector2:
+func get_motion_delta(delta: float) -> Vector2:
 	var motion = global_position - last_position
 	last_position = global_position
 	return motion

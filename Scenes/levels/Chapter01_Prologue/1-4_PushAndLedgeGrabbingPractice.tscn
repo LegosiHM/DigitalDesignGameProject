@@ -121,8 +121,6 @@ offset_bottom = 945.0
 visible = false
 
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("10_hwt45")]
-offset_top = -1.0
-offset_bottom = 1079.0
 
 [node name="Chapter" type="Label" parent="."]
 offset_left = 1385.0
