@@ -112,6 +112,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_uk3yw")
 stream = ExtResource("8_uk3yw")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 70.0
 offset_top = 63.0
