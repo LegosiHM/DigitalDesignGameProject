@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://sw38nit1qrgo"]
+[gd_scene load_steps=75 format=3 uid="uid://sw38nit1qrgo"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_ji4vj"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_yo4oc"]
@@ -33,7 +33,11 @@
 [ext_resource type="Texture2D" uid="uid://dqr6l2ou0ifqx" path="res://assets/sprites/chapter 2/tilesets/Tileset_Stuck_v.03.png" id="23_6gx4e"]
 [ext_resource type="PackedScene" uid="uid://bplrto1l5k51m" path="res://Scenes/mechanics/7PlaguesPanel/Frog_Stuckable_Panel.tscn" id="23_yo4oc"]
 [ext_resource type="Texture2D" uid="uid://blbco7o1jxv8j" path="res://assets/sprites/chapter 2/tilesets/Tileset_Scaffold_v.01.png" id="24_stcua"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="26_b7pak"]
 [ext_resource type="Texture2D" uid="uid://dy1070urkrhar" path="res://assets/sprites/chapter 1/story panel/StoryPanel_MedjedIntroduction_v.02.png" id="26_wan40"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="27_xdsuf"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="29_xdsuf"]
+[ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="38_tc0j4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -721,6 +725,9 @@ sources/17 = SubResource("TileSetAtlasSource_cnqvw")
 sources/18 = SubResource("TileSetAtlasSource_wy776")
 sources/19 = SubResource("TileSetAtlasSource_818xb")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tc0j4"]
+size = Vector2(340, 318)
+
 [node name="2-14_Frog" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
@@ -744,11 +751,13 @@ shape = SubResource("RectangleShape2D_ne1c2")
 position = Vector2(1372, -526)
 shape = SubResource("RectangleShape2D_ne1c2")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_yo4oc")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_yo4oc")]
 z_index = 10
 position = Vector2(2422, 1359)
 scale = Vector2(2.62, 1)
 my_scene = "res://Scenes/levels/Chapter02_PartitionToEpilogue/2-15_Lice.tscn"
+disable_on_default = true
+portal_visual = NodePath("../UI/GoalIcon")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(-263, -1117)
@@ -759,6 +768,18 @@ modulate = Color(0.1458, 0.54, 0.34947, 1)
 position = Vector2(958, 540)
 scale = Vector2(-1, -1)
 texture = ExtResource("3_yo4oc")
+
+[node name="Tutorial31" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0.223529)
+offset_left = 12.0
+offset_top = 106.0
+offset_right = 1399.0
+offset_bottom = 708.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[color=darkgreen]Then the Lord said to Moses, “Go in to Pharaoh and say to him, ‘Thus says the Lord, “Let my people go, that they may serve me. But if you refuse to let them go, behold, I will plague all your country with frogs. The Nile shall swarm with frogs that shall come up into your house and into your bedroom and on your bed and into the houses of your servants and your people,and into your ovens and your kneading bowls. The frogs shall come up on you and on your people and on all your servants.”’”  And the Lord said to Moses, “Say to Aaron, ‘Stretch out your hand with your staff over the rivers, over the canals and over the pools, and make frogs come up on the land of Egypt!’” So Aaron stretched out his hand over the waters of Egypt, and the frogs came up and covered the land of Egypt. But the magicians did the same by their secret arts and made frogs come up on the land of Egypt. Then Pharaoh called Moses and Aaron and said, “Plead with the Lord to take away the frogs from me and from my people, and I will let the people go to sacrifice to the Lord.” Moses said to Pharaoh, “Be pleased to command me when I am to plead for you and for your servants and for your people, that the frogs be cut off from you and your houses and be left only in the Nile.” And he said, “Tomorrow.” Moses said, “Be it as you say, so that you may know that there is no one like the Lord our God. The frogs shall go away from you and your houses and your servants and your people. They shall be left only in the Nile.” So Moses and Aaron went out from Pharaoh, and Moses cried to the Lord about the frogs, as he had agreed with Pharaoh. And the Lord did according to the word of Moses. The frogs died out in the houses, the courtyards, and the fields. And they gathered them together in heaps, and the land stank. But when Pharaoh saw that there was a respite, he hardened his heart and would not listen to them, as the Lord had said."
+scroll_active = false
 
 [node name="PanelHitbox" parent="." instance=ExtResource("4_uhre8")]
 visible = false
@@ -784,13 +805,54 @@ layer_0/tile_data = PackedInt32Array(393233, 2, 0, 327697, 2, 0, 262161, 2, 0, 1
 [node name="UI" parent="." instance=ExtResource("15_b7pak")]
 z_index = 4
 
+[node name="Tutorial32" type="RichTextLabel" parent="UI"]
+offset_left = 1568.0
+offset_top = 3.0
+offset_right = 1904.0
+offset_bottom = 86.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_b7pak")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Exodus 8:1-15 "
+scroll_active = false
+
+[node name="GoalIcon" parent="UI" instance=ExtResource("27_xdsuf")]
+visible = false
+layout_mode = 1
+offset_left = 1546.0
+offset_top = 182.0
+offset_right = 1546.0
+offset_bottom = 182.0
+scale = Vector2(-1, 0.75)
+
 [node name="StoryPanelMedjedIntroductionV_03" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(1745, 264)
 scale = Vector2(0.84, 0.84)
 texture = ExtResource("26_wan40")
 
-[node name="StoryPanelMedjedIntroductionV_02" type="Sprite2D" parent="."]
+[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+script = ExtResource("29_xdsuf")
+dialog_lines = Array[String](["Now is the \"Plague of Frogs\"", "Frog will be everywhere...", "And only frogs can jump...", "You are not the frog, right?"])
+dialog_position_Array = Array[Vector2]([Vector2(1200, 100), Vector2(1200, 100), Vector2(1200, 100), Vector2(1200, 100)])
+will_reveal_object = true
+reveal_path = NodePath("../ChangeSceneDetector")
+
+[node name="StoryPanelMedjedIntroductionV_03" type="Sprite2D" parent="Medjed"]
+position = Vector2(1725, 246)
+scale = Vector2(0.84, 0.84)
+texture = ExtResource("26_wan40")
+
+[node name="Area2D" type="Area2D" parent="Medjed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Medjed/Area2D"]
+position = Vector2(1734, 248)
+shape = SubResource("RectangleShape2D_tc0j4")
+
+[node name="StoryPanelMedjedIntroductionV_04" type="Sprite2D" parent="Medjed"]
 position = Vector2(1725, 246)
 scale = Vector2(0.84, 0.84)
 texture = ExtResource("26_wan40")
@@ -844,6 +906,38 @@ position = Vector2(239, 641)
 
 [node name="draggablePanel3" parent="." instance=ExtResource("23_yo4oc")]
 position = Vector2(232, 883)
+
+[node name="Tutorial32" type="RichTextLabel" parent="."]
+offset_left = 858.0
+offset_top = 671.0
+offset_right = 1423.0
+offset_bottom = 747.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_b7pak")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]You are unable to JUMP"
+scroll_active = false
+
+[node name="Glitching12" parent="." instance=ExtResource("38_tc0j4")]
+offset_left = 776.0
+offset_top = 758.0
+offset_right = 974.0
+offset_bottom = 820.0
+
+[node name="Glitching13" parent="." instance=ExtResource("38_tc0j4")]
+offset_left = 540.0
+offset_top = 949.0
+offset_right = 738.0
+offset_bottom = 1011.0
+
+[node name="Glitching14" parent="." instance=ExtResource("38_tc0j4")]
+offset_left = -59.0
+offset_top = 338.0
+offset_right = 139.0
+offset_bottom = 400.0
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

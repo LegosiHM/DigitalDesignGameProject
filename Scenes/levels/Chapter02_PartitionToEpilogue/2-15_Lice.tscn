@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://vjcgwkppcgs6"]
+[gd_scene load_steps=73 format=3 uid="uid://vjcgwkppcgs6"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_46fp3"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_qrc21"]
@@ -32,6 +32,10 @@
 [ext_resource type="Texture2D" uid="uid://k1r6jaopnu31" path="res://assets/sprites/chapter 2/tilesets/Tileset_Stuck_v.02.png" id="22_wq3ir"]
 [ext_resource type="Texture2D" uid="uid://dqr6l2ou0ifqx" path="res://assets/sprites/chapter 2/tilesets/Tileset_Stuck_v.03.png" id="23_ywbjb"]
 [ext_resource type="Texture2D" uid="uid://blbco7o1jxv8j" path="res://assets/sprites/chapter 2/tilesets/Tileset_Scaffold_v.01.png" id="24_cjbv4"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="26_yk8nf"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="27_3jbsq"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="34_3jbsq"]
+[ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="36_p5v5s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -719,6 +723,9 @@ sources/17 = SubResource("TileSetAtlasSource_8bbjs")
 sources/18 = SubResource("TileSetAtlasSource_vbml8")
 sources/19 = SubResource("TileSetAtlasSource_kolj2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5v5s"]
+size = Vector2(340, 318)
+
 [node name="2-15_Lice" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
@@ -742,11 +749,13 @@ shape = SubResource("RectangleShape2D_ne1c2")
 position = Vector2(1442, -524)
 shape = SubResource("RectangleShape2D_ne1c2")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_qrc21")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_qrc21")]
 z_index = 10
 position = Vector2(2044, 2033)
 scale = Vector2(1.18484, 1.5683)
 my_scene = "res://Scenes/levels/Chapter02_PartitionToEpilogue/2-16_WildAnimal.tscn"
+disable_on_default = true
+portal_visual = NodePath("../UI/GoalIcon")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(-263, -1117)
@@ -759,6 +768,19 @@ rotation = -0.345575
 scale = Vector2(1.78, 1.78)
 skew = -0.546288
 texture = ExtResource("3_wns8d")
+
+[node name="Tutorial31" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0.462745)
+offset_left = 83.0
+offset_top = 576.0
+offset_right = 1684.0
+offset_bottom = 1125.0
+rotation = -0.366519
+theme_override_fonts/normal_font = ExtResource("26_yk8nf")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[color=brown]Then the Lord said to Moses, “Say to Aaron, ‘Stretch out your staff and strike the dust of the earth, so that it may become gnats in all the land of Egypt.’” And they did so. Aaron stretched out his hand with his staff and struck the dust of the earth, and there were gnats on man and beast. All the dust of the earth became gnats in all the land of Egypt. The magicians tried by their secret arts to produce gnats, but they could not. So there were gnats on man and beast. Then the magicians said to Pharaoh, “This is the finger of God.” But Pharaoh's heart was hardened, and he would not listen to them, as the Lord had said."
+scroll_active = false
 
 [node name="PanelHitbox" parent="." instance=ExtResource("4_fggk2")]
 visible = false
@@ -789,6 +811,30 @@ tile_set = SubResource("TileSet_0wibo")
 
 [node name="UI" parent="." instance=ExtResource("15_i2wmy")]
 z_index = 4
+
+[node name="Tutorial32" type="RichTextLabel" parent="UI"]
+offset_left = 1568.0
+offset_top = 3.0
+offset_right = 1904.0
+offset_bottom = 86.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_yk8nf")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Exodus 8:16-19
+ "
+scroll_active = false
+
+[node name="GoalIcon" parent="UI" instance=ExtResource("27_3jbsq")]
+visible = false
+layout_mode = 1
+offset_left = 1612.0
+offset_top = 106.0
+offset_right = 1612.0
+offset_bottom = 106.0
+scale = Vector2(-1, 0.75)
 
 [node name="Player" parent="." instance=ExtResource("16_pxlg5")]
 position = Vector2(1762, 771)
@@ -826,9 +872,64 @@ scale = Vector2(1, 6.56)
 [node name="untouchablePanle2" parent="." instance=ExtResource("21_wns8d")]
 position = Vector2(1065, 349)
 
-[node name="StoryPanelMedjedIntroductionV_03" type="Sprite2D" parent="."]
+[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+script = ExtResource("34_3jbsq")
+dialog_lines = Array[String](["\"Plague of Gnats\"", "These little guys will crawl on you,", "crawl on me,", "and on anything...", "It's annoying, so come FAST!", "I don't want to be here any longer..."])
+dialog_position_Array = Array[Vector2]([Vector2(1100, 100), Vector2(1100, 100), Vector2(1100, 100), Vector2(1100, 100), Vector2(1100, 100), Vector2(1100, 100)])
+will_reveal_object = true
+reveal_path = NodePath("../ChangeSceneDetector")
+
+[node name="StoryPanelMedjedIntroductionV_05" type="Sprite2D" parent="Medjed"]
 position = Vector2(1693, 275)
 texture = ExtResource("22_07ir5")
+
+[node name="Area2D" type="Area2D" parent="Medjed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Medjed/Area2D"]
+position = Vector2(1699, 270)
+shape = SubResource("RectangleShape2D_p5v5s")
+
+[node name="StoryPanelMedjedIntroductionV_06" type="Sprite2D" parent="Medjed"]
+position = Vector2(1693, 275)
+texture = ExtResource("22_07ir5")
+
+[node name="Tutorial32" type="RichTextLabel" parent="."]
+offset_left = 1306.0
+offset_top = 890.0
+offset_right = 1871.0
+offset_bottom = 966.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_yk8nf")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]You will move VERY FAST"
+scroll_active = false
+
+[node name="Glitching12" parent="." instance=ExtResource("36_p5v5s")]
+offset_left = 462.0
+offset_top = 803.0
+offset_right = 1543.0
+offset_bottom = 829.0
+
+[node name="Glitching13" parent="." instance=ExtResource("36_p5v5s")]
+offset_left = 288.0
+offset_top = 711.0
+offset_right = 1369.0
+offset_bottom = 737.0
+
+[node name="Glitching14" parent="." instance=ExtResource("36_p5v5s")]
+offset_left = 592.0
+offset_top = 424.0
+offset_right = 1673.0
+offset_bottom = 450.0
+
+[node name="Glitching15" parent="." instance=ExtResource("36_p5v5s")]
+offset_left = 285.0
+offset_top = 300.0
+offset_right = 1366.0
+offset_bottom = 326.0
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://d2v2r4h1cuhci"]
+[gd_scene load_steps=42 format=3 uid="uid://d2v2r4h1cuhci"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_dyj8c"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_aoxvn"]
@@ -16,7 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="14_tej5f"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="15_jj2fk"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="16_e7t72"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="16_fk46f"]
 [ext_resource type="Texture2D" uid="uid://dcjljk66n2chm" path="res://assets/sprites/chapter 3/panel/StoryPanel_CanonEventBook_v.01.png" id="17_3e3g0"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="17_vbf0w"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="18_ui1uj"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="19_rm5py"]
 [ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/chapter 3/character/Char_Medjed_Idle_v.01.png" id="20_iexwr"]
@@ -263,10 +265,12 @@ shape = SubResource("RectangleShape2D_okbg1")
 position = Vector2(1372, -526)
 shape = SubResource("RectangleShape2D_okbg1")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_aoxvn")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_aoxvn")]
 z_index = 10
 position = Vector2(610, 806)
 my_scene = "res://Scenes/levels/Chapter03_Epilogue/3-4_MarcDeath.tscn"
+disable_on_default = true
+portal_visual = NodePath("../UI/GoalIcon")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(57, -273)
@@ -287,6 +291,30 @@ layer_0/tile_data = PackedInt32Array(917520, 65539, 3, 917521, 65539, 3, 917522,
 
 [node name="UI" parent="." instance=ExtResource("15_jj2fk")]
 z_index = 4
+
+[node name="Tutorial32" type="RichTextLabel" parent="UI"]
+offset_left = 1568.0
+offset_top = 3.0
+offset_right = 1904.0
+offset_bottom = 86.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("16_fk46f")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Exodus 9:8-12
+ "
+scroll_active = false
+
+[node name="GoalIcon" parent="UI" instance=ExtResource("17_vbf0w")]
+visible = false
+layout_mode = 1
+offset_left = 772.0
+offset_top = 645.0
+offset_right = 772.0
+offset_bottom = 645.0
+scale = Vector2(1, 0.75)
 
 [node name="Player" parent="." instance=ExtResource("16_e7t72")]
 position = Vector2(1607, 906)
@@ -350,12 +378,14 @@ offset_top = 937.0
 offset_right = 1858.0
 offset_bottom = 958.0
 
-[node name="Medjed" type="Node2D" parent="."]
+[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
 position = Vector2(1804, 556)
 scale = Vector2(0.933333, 0.933333)
 script = ExtResource("19_rm5py")
-dialog_lines = Array[String](["How did no one remember us...?"])
-dialog_position_Array = Array[Vector2]([Vector2(800, 500)])
+dialog_lines = Array[String](["This is the final page...", "\"The Suicide of Mark Antony\"", "Just like in Romeo and Juliet...", "Haha...", "Quite tragic isn't it..."])
+dialog_position_Array = Array[Vector2]([Vector2(800, 500), Vector2(800, 500), Vector2(800, 500), Vector2(800, 500), Vector2(800, 500)])
+will_reveal_object = true
+reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="CharMedjedIdleV_01" type="Sprite2D" parent="Medjed"]
 position = Vector2(-809.282, 319.286)
