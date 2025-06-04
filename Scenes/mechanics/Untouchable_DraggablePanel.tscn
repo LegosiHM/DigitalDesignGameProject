@@ -453,3 +453,5 @@ visible = false
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="button_down" from="Area2D/Button" to="Area2D" method="_on_button_button_down"]
 [connection signal="button_up" from="Area2D/Button" to="Area2D" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Area2D/Button" to="Area2D" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D/Button" to="Area2D" method="_on_button_mouse_exited"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://553gitplqhlb"]
+[gd_scene load_steps=5 format=3 uid="uid://553gitplqhlb"]
 
 [ext_resource type="Script" uid="uid://pme7x8bbaxyf" path="res://scripts/puzzles/draggable_panel.gd" id="1_tgo1f"]
 [ext_resource type="Texture2D" uid="uid://cw176vbf271f" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Torch_v.01.PNG" id="2_fl2b2"]
+[ext_resource type="Texture2D" uid="uid://ciaiaebtkiff2" path="res://assets/UI/MainMenu/Outline_v.06.png" id="2_ydlxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onjbf"]
 size = Vector2(86, 220)
@@ -15,6 +16,12 @@ script = ExtResource("1_tgo1f")
 return_speed = 0.0
 illegalDragging_speed = 100.0
 energyConsumption = 0
+
+[node name="Outline" type="Sprite2D" parent="Area2D2"]
+visible = false
+position = Vector2(-5, -13)
+scale = Vector2(0.185, 0.185)
+texture = ExtResource("2_ydlxn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 light_mask = 9
@@ -39,3 +46,5 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="Area2D2/Button" to="Area2D2" method="_on_button_button_down"]
 [connection signal="button_up" from="Area2D2/Button" to="Area2D2" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Area2D2/Button" to="Area2D2" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D2/Button" to="Area2D2" method="_on_button_mouse_exited"]
