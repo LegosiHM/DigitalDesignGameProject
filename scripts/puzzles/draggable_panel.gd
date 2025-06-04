@@ -123,6 +123,7 @@ func _process(delta: float) -> void:
 # ------------------------------------------------------------------------------
 
 func _on_button_button_down() -> void:
+	$Outline.visible = false
 	if player.current_energy < player.threshold_energy:
 		return  # Player doesn't have enough energy to begin drag
 
@@ -178,3 +179,11 @@ func get_motion_delta(_delta: float) -> Vector2:
 	var motion = global_position - last_position
 	last_position = global_position
 	return motion
+
+
+func _on_button_mouse_entered() -> void:
+	$Outline.visible = true
+
+
+func _on_button_mouse_exited() -> void:
+	$Outline.visible = false

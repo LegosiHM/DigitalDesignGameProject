@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://burfug55c0meb"]
+[gd_scene load_steps=10 format=3 uid="uid://burfug55c0meb"]
 
 [ext_resource type="Script" uid="uid://cjrn5setdo6ke" path="res://scripts/cutscenes/chapter_2_comic_cutscene_3.gd" id="1_fcpgv"]
 [ext_resource type="Texture2D" uid="uid://didc0ovfjpqsl" path="res://assets/sprites/BG_Cutscene_v.01.PNG" id="2_s0eer"]
-[ext_resource type="Texture2D" uid="uid://0y4sr7w8b3u7" path="res://assets/sprites/chapter 1-2 transition/Cutscene_03.png" id="3_fcpgv"]
+[ext_resource type="Texture2D" uid="uid://cp8tvflpfv8c3" path="res://assets/sprites/chapter 1-2 transition/Cutscene-3.1.png" id="3_4ykxc"]
 [ext_resource type="Texture2D" uid="uid://2ly85pa7gvcf" path="res://assets/UI/IMG_6488 (1).png" id="4_s0eer"]
+[ext_resource type="Texture2D" uid="uid://c68l5jnpbp2t8" path="res://assets/sprites/chapter 1-2 transition/Cutscene-3.2.png" id="4_thsdo"]
+[ext_resource type="Texture2D" uid="uid://bh35ccitk2ayd" path="res://assets/sprites/chapter 1-2 transition/Cutscene-3.3.png" id="5_thsdo"]
 [ext_resource type="Texture2D" uid="uid://bfaiejfs1vnh4" path="res://assets/UI/IMG_6487.png" id="6_4ykxc"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="6_v1ibm"]
 [ext_resource type="AudioStream" uid="uid://boytlvw6hlk1o" path="res://assets/SFX/UISFX/SFX_UI_ClickCutscene_v01.mp3" id="8_s0eer"]
@@ -16,6 +18,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fcpgv")
+Panel2 = Vector2(245, 0)
+Panel3 = Vector2(730, 0)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -28,10 +32,24 @@ offset_bottom = 40.0
 
 [node name="Panel1" type="TextureRect" parent="PanelContainer"]
 layout_mode = 0
-offset_right = 1920.0
+offset_right = 244.0
 offset_bottom = 1080.0
 pivot_offset = Vector2(593, 912)
-texture = ExtResource("3_fcpgv")
+texture = ExtResource("3_4ykxc")
+
+[node name="Panel2" type="TextureRect" parent="PanelContainer"]
+offset_left = 245.0
+offset_right = 730.0
+offset_bottom = 1080.0
+pivot_offset = Vector2(593, 912)
+texture = ExtResource("4_thsdo")
+
+[node name="Panel3" type="TextureRect" parent="PanelContainer"]
+offset_left = 730.0
+offset_right = 1917.0
+offset_bottom = 1080.0
+pivot_offset = Vector2(593, 912)
+texture = ExtResource("5_thsdo")
 
 [node name="SkipRing" type="TextureProgressBar" parent="."]
 layout_mode = 0

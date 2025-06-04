@@ -7,8 +7,8 @@
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="5_cdni2"]
 [ext_resource type="Texture2D" uid="uid://dxbly0klrh03i" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Merchants_v.03.png" id="6_ml2dw"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="7_4nq8k"]
+[ext_resource type="Texture2D" uid="uid://88kesl4x0au3" path="res://assets/sprites/chapter 1/story panel/Untitled_Artwork (10).png" id="7_8gt2d"]
 [ext_resource type="Shader" uid="uid://ray55c0pgeoq" path="res://scripts/shaders/Outliner_Shadow.gdshader" id="8_a2fcq"]
-[ext_resource type="Texture2D" uid="uid://dlqr73td56cy5" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_CrowdedGate_v.02.PNG" id="9_nx3yu"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="10_72gyj"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="11_1t237"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="12_y3hpj"]
@@ -124,8 +124,7 @@ reveal_path = NodePath("../ChangeSceneDetector")
 [node name="Panel_Bazaar" type="Sprite2D" parent="Bazaar"]
 z_index = 1
 position = Vector2(565.5, 748)
-scale = Vector2(1.63778, 1.47407)
-texture = ExtResource("9_nx3yu")
+texture = ExtResource("7_8gt2d")
 
 [node name="Area2D" type="Area2D" parent="Bazaar"]
 
@@ -135,9 +134,8 @@ shape = SubResource("RectangleShape2D_8jxsg")
 
 [node name="Panel_Bazaar2" type="Sprite2D" parent="Bazaar"]
 material = SubResource("ShaderMaterial_qq3qd")
-position = Vector2(565.5, 748)
-scale = Vector2(1.63778, 1.47407)
-texture = ExtResource("9_nx3yu")
+position = Vector2(564.5, 748)
+texture = ExtResource("7_8gt2d")
 
 [node name="Panel" parent="." instance=ExtResource("7_4nq8k")]
 position = Vector2(-1, 339)

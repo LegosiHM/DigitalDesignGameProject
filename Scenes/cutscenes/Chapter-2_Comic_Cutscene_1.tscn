@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8jqamedge2r6" path="res://scripts/cutscenes/chapter_2_comic_cutscene_1.gd" id="1_5gloq"]
 [ext_resource type="Texture2D" uid="uid://didc0ovfjpqsl" path="res://assets/sprites/BG_Cutscene_v.01.PNG" id="2_ycq1f"]
-[ext_resource type="Texture2D" uid="uid://bwl7j51xubke" path="res://assets/sprites/chapter 1-2 transition/Cutscene_01.png" id="3_5gloq"]
+[ext_resource type="Texture2D" uid="uid://blf7sbyexkcw7" path="res://assets/sprites/chapter 1-2 transition/Untitled_Artwork (11).png" id="3_y23xc"]
 [ext_resource type="Texture2D" uid="uid://2ly85pa7gvcf" path="res://assets/UI/IMG_6488 (1).png" id="4_ycq1f"]
 [ext_resource type="Texture2D" uid="uid://bfaiejfs1vnh4" path="res://assets/UI/IMG_6487.png" id="6_y23xc"]
 [ext_resource type="AudioStream" uid="uid://boytlvw6hlk1o" path="res://assets/SFX/UISFX/SFX_UI_ClickCutscene_v01.mp3" id="8_ycq1f"]
@@ -16,7 +16,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5gloq")
-Panel1 = Vector2(400, -350)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -28,13 +27,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Panel1" type="TextureRect" parent="PanelContainer"]
-layout_mode = 0
-offset_left = 400.0
-offset_top = -350.0
-offset_right = 1480.0
-offset_bottom = 1570.0
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
 pivot_offset = Vector2(593, 912)
-texture = ExtResource("3_5gloq")
+texture = ExtResource("3_y23xc")
 
 [node name="SkipRing" type="TextureProgressBar" parent="."]
 layout_mode = 0

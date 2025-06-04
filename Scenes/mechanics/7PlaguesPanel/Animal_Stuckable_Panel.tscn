@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://dvielj7ibg1hs"]
+[gd_scene load_steps=38 format=3 uid="uid://dvielj7ibg1hs"]
 
 [ext_resource type="Script" uid="uid://pme7x8bbaxyf" path="res://scripts/puzzles/draggable_panel.gd" id="1_8mgs1"]
+[ext_resource type="Texture2D" uid="uid://dcs240hav7pb3" path="res://assets/UI/MainMenu/Outline_v.02.png" id="1_iyg4r"]
 [ext_resource type="PackedScene" uid="uid://bjw6twys1thrm" path="res://Scenes/environments/Draggable_Platform_Panel.tscn" id="2_iyg4r"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="3_yc8uw"]
 [ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="4_k15js"]
@@ -432,6 +433,12 @@ collision_mask = 6
 script = ExtResource("1_8mgs1")
 stuckOnCollider = true
 
+[node name="Outline" type="Sprite2D" parent="Area2D2"]
+visible = false
+position = Vector2(-5, 48)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("1_iyg4r")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 light_mask = 9
 visibility_layer = 8
@@ -472,3 +479,5 @@ layer_0/tile_data = PackedInt32Array(131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 6
 
 [connection signal="button_down" from="Area2D2/Button" to="Area2D2" method="_on_button_button_down"]
 [connection signal="button_up" from="Area2D2/Button" to="Area2D2" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Area2D2/Button" to="Area2D2" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D2/Button" to="Area2D2" method="_on_button_mouse_exited"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=38 format=3 uid="uid://bwct7nede7txs"]
+[gd_scene load_steps=39 format=3 uid="uid://bwct7nede7txs"]
 
+[ext_resource type="Texture2D" uid="uid://vsr37f67dv8s" path="res://assets/UI/MainMenu/DraggablePanel_Outline_v.01.png" id="1_stuo6"]
 [ext_resource type="Script" uid="uid://pme7x8bbaxyf" path="res://scripts/puzzles/draggable_panel.gd" id="1_tyfft"]
 [ext_resource type="PackedScene" uid="uid://bjw6twys1thrm" path="res://Scenes/environments/Draggable_Platform_Panel.tscn" id="2_aeyka"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="3_ggyqp"]
@@ -438,6 +439,12 @@ collision_mask = 6
 script = ExtResource("1_tyfft")
 return_speed = 400.0
 
+[node name="Outline" type="Sprite2D" parent="Area2D2"]
+visible = false
+position = Vector2(-14, 10)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("1_stuo6")
+
 [node name="Button" type="Button" parent="Area2D2"]
 offset_left = -166.0
 offset_top = -104.0
@@ -469,3 +476,5 @@ environment = SubResource("Environment_aeyka")
 
 [connection signal="button_down" from="Area2D2/Button" to="Area2D2" method="_on_button_button_down"]
 [connection signal="button_up" from="Area2D2/Button" to="Area2D2" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Area2D2/Button" to="Area2D2" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D2/Button" to="Area2D2" method="_on_button_mouse_exited"]

@@ -12,13 +12,15 @@ extends Control
 # -------------------------------
 # PANEL POSITION EXPORTS
 # -------------------------------
-@export var Panel1: Vector2  # You can add more Panel2, Panel3, etc. if needed
+@export var Panel1: Vector2 
+@export var Panel2: Vector2  
+@export var Panel3: Vector2  
 
 # -------------------------------
 # PANEL ENTRY DIRECTION EXPORT
 # -1 = enter from left, 1 = enter from right
 # -------------------------------
-@export var entry_directions: Array[int] = [-1]
+@export var entry_directions: Array[int] = [-1,-1,-1]
 
 # -------------------------------
 # IDLE REMINDER SETTINGS
@@ -67,7 +69,7 @@ func _ready():
 	var screen_width = get_viewport_rect().size.x
 
 	# Add your exported positions manually (currently just Panel1)
-	target_positions = [Panel1]
+	target_positions = [Panel1,Panel2,Panel3]
 
 	# Ensure the exported directions match panel count
 	if entry_directions.size() != panels.size():

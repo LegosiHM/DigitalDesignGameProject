@@ -1,6 +1,7 @@
-[gd_scene load_steps=56 format=3 uid="uid://b8t5wpi35pset"]
+[gd_scene load_steps=57 format=3 uid="uid://b8t5wpi35pset"]
 
 [ext_resource type="Script" uid="uid://pme7x8bbaxyf" path="res://scripts/puzzles/draggable_panel.gd" id="1_8tmmn"]
+[ext_resource type="Texture2D" uid="uid://c87l3f7f0vvn5" path="res://assets/UI/MainMenu/Outline_v.03.png" id="1_op5ha"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="2_bmqqx"]
 [ext_resource type="PackedScene" uid="uid://bjw6twys1thrm" path="res://Scenes/environments/Draggable_Platform_Panel.tscn" id="2_bmu8b"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="3_ebnmq"]
@@ -567,6 +568,12 @@ collision_mask = 6
 script = ExtResource("1_8tmmn")
 return_speed = 400.0
 
+[node name="Outline" type="Sprite2D" parent="Area2D2"]
+visible = false
+position = Vector2(-15, -1)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("1_op5ha")
+
 [node name="Button" type="Button" parent="Area2D2"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -166.0
@@ -636,3 +643,5 @@ offset_bottom = -82.0
 
 [connection signal="button_down" from="Area2D2/Button" to="Area2D2" method="_on_button_button_down"]
 [connection signal="button_up" from="Area2D2/Button" to="Area2D2" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Area2D2/Button" to="Area2D2" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D2/Button" to="Area2D2" method="_on_button_mouse_exited"]

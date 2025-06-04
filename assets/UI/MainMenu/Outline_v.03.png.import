@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfn1caw0u1mgf"
-path="res://.godot/imported/Cutscene_11.png-70692eab7c569f747766a5bbca944ca9.ctex"
+uid="uid://c87l3f7f0vvn5"
+path="res://.godot/imported/Outline_v.03.png-a81677e406968dcf889fae6237e096dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chapter 1/cutscenes/Cutscene_11.png"
-dest_files=["res://.godot/imported/Cutscene_11.png-70692eab7c569f747766a5bbca944ca9.ctex"]
+source_file="res://assets/UI/MainMenu/Outline_v.03.png"
+dest_files=["res://.godot/imported/Outline_v.03.png-a81677e406968dcf889fae6237e096dd.ctex"]
 
 [params]
 
