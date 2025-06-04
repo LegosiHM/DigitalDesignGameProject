@@ -80,7 +80,7 @@ position = Vector2(474, -3)
 scale = Vector2(0.60741, 1.50943)
 my_scene = "res://Scenes/cutscenes/Chapter-2_Comic_Cutscene_1.tscn"
 disable_on_default = true
-portal_visual = NodePath("../GoalIcon")
+portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]

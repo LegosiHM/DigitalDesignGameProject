@@ -271,10 +271,12 @@ shape = SubResource("RectangleShape2D_ne1c2")
 position = Vector2(1248, -1023)
 shape = SubResource("RectangleShape2D_ne1c2")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_4hjsd")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_4hjsd")]
 z_index = 10
 position = Vector2(1934, 1387)
 my_scene = "res://Scenes/levels/Chapter02_PartitionToEpilogue/2-17_MeetOctavia.tscn"
+disable_on_default = true
+portal_visual = NodePath("../UI/GoalIcon")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(-1646, -1084)

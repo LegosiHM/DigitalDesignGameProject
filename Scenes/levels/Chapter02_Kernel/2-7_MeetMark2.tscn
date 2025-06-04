@@ -478,7 +478,7 @@ position = Vector2(1250, 284)
 scale = Vector2(4.362, 0.218)
 my_scene = "res://Scenes/levels/Chapter02_Kernel/2-8-0_GoToTown.tscn"
 disable_on_default = true
-portal_visual = NodePath("../GoalIcon")
+portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(-3.04303, -205.707)
