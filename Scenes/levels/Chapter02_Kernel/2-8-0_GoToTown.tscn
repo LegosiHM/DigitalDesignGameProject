@@ -768,6 +768,20 @@ position = Vector2(950.667, 345.054)
 scale = Vector2(1.239, 1.849)
 texture = ExtResource("21_onb5q")
 
+[node name="Tutorial4" type="RichTextLabel" parent="DecorationFront"]
+offset_left = 658.667
+offset_top = 657.333
+offset_right = 2076.67
+offset_bottom = 772.333
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("23_gyouh")
+theme_override_font_sizes/normal_font_size = 78
+bbcode_enabled = true
+text = "Time to follow our new [shake rate=50 level = 50 connected = 1] [color=pink]POWER COUPLE"
+scroll_active = false
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("19_onb5q")
 
@@ -884,6 +898,20 @@ offset_left = 1208.0
 offset_top = 242.0
 offset_right = 1357.0
 offset_bottom = 270.0
+
+[node name="Tutorial3" type="RichTextLabel" parent="."]
+offset_left = 32.0
+offset_top = 94.0
+offset_right = 722.0
+offset_bottom = 363.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("23_gyouh")
+theme_override_font_sizes/normal_font_size = 78
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] [color=darkblue]Good Morning![/color] [color=darkred] Alexandria[/color][/wave]"
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

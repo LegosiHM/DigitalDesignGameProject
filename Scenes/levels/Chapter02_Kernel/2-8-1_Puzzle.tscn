@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://cq0nu2ql6tcsl"]
+[gd_scene load_steps=88 format=3 uid="uid://cq0nu2ql6tcsl"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_68dat"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_f7eqx"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="31_fitkb"]
 [ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/chapter 3/character/Char_Medjed_Idle_v.01.png" id="31_jtvfh"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="32_gwjqb"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="32_v6xka"]
 [ext_resource type="PackedScene" uid="uid://c28falcim1erc" path="res://Scenes/environments/Panel_Collision.tscn" id="34_y87jl"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="39_0i00n"]
 
@@ -1110,6 +1111,31 @@ layer_0/tile_data = PackedInt32Array(393237, 65546, 1, 393238, 65546, 1, 393239,
 [node name="UI" parent="." instance=ExtResource("27_slkrp")]
 z_index = 4
 
+[node name="Chapter" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 1295.0
+offset_top = 6.0
+offset_right = 1500.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("32_v6xka")
+theme_override_font_sizes/font_size = 50
+text = "CH.2"
+
+[node name="Scene" type="Label" parent="UI/Chapter"]
+layout_mode = 0
+offset_left = 117.0
+offset_right = 409.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.454525, 0.454524, 0.454524, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("32_v6xka")
+theme_override_font_sizes/font_size = 50
+text = "Let Meow Pawple Go!"
+
 [node name="Player" parent="." instance=ExtResource("28_vtop5")]
 position = Vector2(162, 837)
 
@@ -1198,6 +1224,146 @@ offset_left = 1345.0
 offset_top = 339.0
 offset_right = 1651.0
 offset_bottom = 435.0
+
+[node name="Tutorial3" type="RichTextLabel" parent="."]
+offset_left = 599.0
+offset_top = 664.0
+offset_right = 1852.0
+offset_bottom = 933.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("32_v6xka")
+theme_override_font_sizes/normal_font_size = 78
+bbcode_enabled = true
+text = "I'll help you through this [shake rate=50 level = 50 connected = 1] (˶˃ ᵕ ˂˶)"
+scroll_active = false
+
+[node name="Tutorial2" type="RichTextLabel" parent="."]
+offset_left = 599.0
+offset_top = 198.0
+offset_right = 963.0
+offset_bottom = 302.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("32_v6xka")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] [color=darkblue]TALK[/color][/wave] to me"
+scroll_active = false
+
+[node name="Tutorial4" type="RichTextLabel" parent="."]
+offset_left = 1616.0
+offset_top = 531.0
+offset_right = 1822.0
+offset_bottom = 569.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("32_v6xka")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Don't go this way!"
+scroll_active = false
+
+[node name="Tutorial5" type="RichTextLabel" parent="."]
+offset_left = 1521.0
+offset_top = 573.0
+offset_right = 1727.0
+offset_bottom = 611.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("32_v6xka")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Don't go this way!"
+scroll_active = false
+
+[node name="Tutorial6" type="RichTextLabel" parent="."]
+offset_left = 1566.0
+offset_top = 806.0
+offset_right = 1772.0
+offset_bottom = 844.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("32_v6xka")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Don't go this way!"
+scroll_active = false
+
+[node name="Tutorial7" type="RichTextLabel" parent="."]
+offset_left = 1441.0
+offset_top = 894.0
+offset_right = 1647.0
+offset_bottom = 932.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("32_v6xka")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Don't go this way!"
+scroll_active = false
+
+[node name="Tutorial8" type="RichTextLabel" parent="."]
+offset_left = 1319.0
+offset_top = 822.0
+offset_right = 1525.0
+offset_bottom = 860.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("32_v6xka")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Don't go this way!"
+scroll_active = false
+
+[node name="Tutorial9" type="RichTextLabel" parent="."]
+offset_left = 1536.0
+offset_top = 631.0
+offset_right = 1742.0
+offset_bottom = 669.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("32_v6xka")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Don't go this way!"
+scroll_active = false
+
+[node name="Tutorial10" type="RichTextLabel" parent="."]
+offset_left = 1412.0
+offset_top = 456.0
+offset_right = 1618.0
+offset_bottom = 494.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("32_v6xka")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Don't go this way!"
+scroll_active = false
+
+[node name="Tutorial11" type="RichTextLabel" parent="."]
+offset_left = 1707.0
+offset_top = 470.0
+offset_right = 1913.0
+offset_bottom = 508.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("32_v6xka")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Don't go this way!"
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

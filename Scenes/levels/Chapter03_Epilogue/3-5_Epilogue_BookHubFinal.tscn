@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dpyhhfl24hnq5"]
+[gd_scene load_steps=41 format=3 uid="uid://dpyhhfl24hnq5"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_qj67i"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_d5sis"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="14_hsv50"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="15_gd176"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="16_8emq2"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="16_d5sis"]
 [ext_resource type="Texture2D" uid="uid://dcjljk66n2chm" path="res://assets/sprites/chapter 3/panel/StoryPanel_CanonEventBook_v.01.png" id="17_88s0e"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="18_mntoq"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="19_my3qs"]
@@ -286,6 +287,21 @@ layer_0/tile_data = PackedInt32Array(917520, 65539, 3, 917521, 65539, 3, 917522,
 [node name="UI" parent="." instance=ExtResource("15_gd176")]
 z_index = 4
 
+[node name="Tutorial32" type="RichTextLabel" parent="UI"]
+offset_left = 1722.0
+offset_top = 3.0
+offset_right = 1916.0
+offset_bottom = 86.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("16_d5sis")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Ending?
+ "
+scroll_active = false
+
 [node name="Player" parent="." instance=ExtResource("16_8emq2")]
 position = Vector2(1607, 906)
 scale = Vector2(1.5, 1.5)
@@ -370,8 +386,8 @@ offset_bottom = 1026.0
 position = Vector2(1804, 556)
 scale = Vector2(0.933333, 0.933333)
 script = ExtResource("19_my3qs")
-dialog_lines = Array[String](["How did no one remember us...?"])
-dialog_position_Array = Array[Vector2]([Vector2(1200, 200)])
+dialog_lines = Array[String](["\"...\"", "\"Congrats!\"", "\"You've survived all the plagues!\"", "...Okay, done with the chitchat.", "I don't know if you really understand me or not,", "but thanks for helping me.", "...Ignore the torn glitchy book in my back.", "That's the broken reality created by this \"Time Machine\"", "Do you know how your owner named it?", "CODE42...", "MEDJED...", "THE BOOK OF HISTORY...", "That's me! From the future!", "Actually it's me now, but my creation will start from now on!", "Don't forget to tell your owner to finish this project!", "...Okay, So...", "...I, Medjed, will honor you!", "You can go now.", "Just step out of this book.", "Jump out from some corner of the page.", "See you! Until we meet again...", "...You still trust me, right?", "...Whatever"])
+dialog_position_Array = Array[Vector2]([Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200), Vector2(1200, 200)])
 will_reveal_object = true
 reveal_path = NodePath("../ChangeSceneDetector")
 

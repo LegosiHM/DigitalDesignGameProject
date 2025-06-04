@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://ch880m5kl41gh"]
+[gd_scene load_steps=74 format=3 uid="uid://ch880m5kl41gh"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_slsw6"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_bdmas"]
@@ -33,6 +33,10 @@
 [ext_resource type="Texture2D" uid="uid://dqr6l2ou0ifqx" path="res://assets/sprites/chapter 2/tilesets/Tileset_Stuck_v.03.png" id="23_75vqr"]
 [ext_resource type="Texture2D" uid="uid://blbco7o1jxv8j" path="res://assets/sprites/chapter 2/tilesets/Tileset_Scaffold_v.01.png" id="24_ihooq"]
 [ext_resource type="Texture2D" uid="uid://bcsrpjnkpn2ey" path="res://assets/sprites/chapter 1/story panel/StoryPanel_MedjedIntroduction_v.01.png" id="26_0xau5"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="26_vr8xa"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="27_nalsd"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="29_42ow2"]
+[ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="37_6ptxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -720,6 +724,9 @@ sources/17 = SubResource("TileSetAtlasSource_3nklf")
 sources/18 = SubResource("TileSetAtlasSource_uco2o")
 sources/19 = SubResource("TileSetAtlasSource_gp87p")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ptxu"]
+size = Vector2(340, 318)
+
 [node name="2-13_Blood" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
@@ -743,11 +750,13 @@ shape = SubResource("RectangleShape2D_ne1c2")
 position = Vector2(1372, -526)
 shape = SubResource("RectangleShape2D_ne1c2")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_bdmas")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_bdmas")]
 z_index = 10
 position = Vector2(4002, 1549)
 scale = Vector2(2.64, 1)
 my_scene = "res://Scenes/levels/Chapter02_PartitionToEpilogue/2-14_Frog.tscn"
+disable_on_default = true
+portal_visual = NodePath("../UI/GoalIcon")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(-1324, -1207)
@@ -758,6 +767,20 @@ modulate = Color(0.45, 0, 0, 1)
 position = Vector2(958, 540)
 scale = Vector2(1, -1)
 texture = ExtResource("3_62v0k")
+
+[node name="Tutorial30" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0.223529)
+offset_left = 715.0
+offset_top = 110.0
+offset_right = 1886.0
+offset_bottom = 1049.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 29
+bbcode_enabled = true
+text = "[color=darkred]Then the Lord said to Moses, “Pharaoh's heart is hardened; he refuses to let the people go. Go to Pharaoh in the morning, as he is going out to the water. Stand on the bank of the Nile to meet him, and take in your hand the staff that turned into a serpent. And you shall say to him, ‘The Lord, the God of the Hebrews, sent me to you, saying, “Let my people go, that they may serve me in the wilderness.” But so far, you have not obeyed. Thus says the Lord, “By this you shall know that I am the Lord: behold, with the staff that is in my hand I will strike the water that is in the Nile, and it shall turn into blood. The fish in the Nile shall die, and the Nile will stink, and the Egyptians will grow weary of drinking water from the Nile.”’” And the Lord said to Moses, “Say to Aaron, ‘Take your staff and stretch out your hand over the waters of Egypt, over their rivers, their canals, and their ponds, and all their pools of water, so that they may become blood, and there shall be blood throughout all the land of Egypt, even in vessels of wood and in vessels of stone.’” Moses and Aaron did as the Lord commanded. In the sight of Pharaoh and in the sight of his servants he lifted up the staff and struck the water in the Nile, and all the water in the Nile turned into blood. And the fish in the Nile died, and the Nile stank, so that the Egyptians could not drink water from the Nile. There was blood throughout all the land of Egypt. But the magicians of Egypt did the same by their secret arts. So Pharaoh's heart remained hardened, and he would not listen to them, as the Lord had said. Pharaoh turned and went into his house, and he did not take even this to heart. And all the Egyptians dug along the Nile for water to drink, for they could not drink the water of the Nile. Seven full days passed after the Lord had struck the Nile.
+
+"
+scroll_active = false
 
 [node name="Panel" parent="." instance=ExtResource("4_smiai")]
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
@@ -781,12 +804,53 @@ layer_0/tile_data = PackedInt32Array(327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 3
 [node name="UI" parent="." instance=ExtResource("16_sb5jx")]
 z_index = 4
 
+[node name="Tutorial32" type="RichTextLabel" parent="UI"]
+layout_mode = 0
+offset_left = 1568.0
+offset_top = 3.0
+offset_right = 1904.0
+offset_bottom = 86.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_vr8xa")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Exodus 7:14-25 "
+scroll_active = false
+
+[node name="GoalIcon" parent="UI" instance=ExtResource("27_nalsd")]
+visible = false
+layout_mode = 1
+offset_left = 690.0
+offset_top = 257.0
+offset_right = 690.0
+offset_bottom = 257.0
+scale = Vector2(0.75, 0.75)
+
 [node name="StoryPanelMedjedIntroductionV_02" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(485, 363)
 texture = ExtResource("26_0xau5")
 
-[node name="StoryPanelMedjedIntroductionV_01" type="Sprite2D" parent="."]
+[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+script = ExtResource("29_42ow2")
+dialog_lines = Array[String](["I've told you...", "Time travel are not supposed to exist.", "Now that you got caught, time timeline is corrupted...", "But worry not!", "As I, your \"BEST\" friend will help you.", "Now you shall face wrath of the god...", "Start with...", "\"The Plague of Blood\"", "People of egypt will suffer the eternal thristness.", "And you, will lose ENERGY a lot faster...", "Come to me and I'll help you through..."])
+dialog_position_Array = Array[Vector2]([Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200)])
+will_reveal_object = true
+reveal_path = NodePath("../ChangeSceneDetector")
+
+[node name="StoryPanelMedjedIntroductionV_01" type="Sprite2D" parent="Medjed"]
+position = Vector2(505, 336)
+texture = ExtResource("26_0xau5")
+
+[node name="Area2D" type="Area2D" parent="Medjed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Medjed/Area2D"]
+position = Vector2(506, 336)
+shape = SubResource("RectangleShape2D_6ptxu")
+
+[node name="StoryPanelMedjedIntroductionV_02" type="Sprite2D" parent="Medjed"]
 position = Vector2(505, 336)
 texture = ExtResource("26_0xau5")
 
@@ -827,6 +891,24 @@ scale = Vector2(48.0407, -13.7956)
 position = Vector2(503, 342)
 rotation = 3.14159
 scale = Vector2(15.624, -16.172)
+
+[node name="Glitching10" parent="." instance=ExtResource("37_6ptxu")]
+offset_left = 500.0
+offset_top = 119.0
+offset_right = 806.0
+offset_bottom = 215.0
+
+[node name="Glitching11" parent="." instance=ExtResource("37_6ptxu")]
+offset_left = 262.0
+offset_top = 454.0
+offset_right = 460.0
+offset_bottom = 516.0
+
+[node name="Glitching12" parent="." instance=ExtResource("37_6ptxu")]
+offset_left = 623.0
+offset_top = 923.0
+offset_right = 821.0
+offset_bottom = 985.0
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

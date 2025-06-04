@@ -14,14 +14,6 @@ shader_parameter/quantize_to = 1.0
 shader_parameter/sine_amplitude = Vector2(1, 20)
 shader_parameter/sine_speed = Vector2(1, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2x2p"]
-shader = ExtResource("1_ldhbw")
-shader_parameter/do_abs = true
-shader_parameter/do_quantize = true
-shader_parameter/quantize_to = 1.0
-shader_parameter/sine_amplitude = Vector2(1, 20)
-shader_parameter/sine_speed = Vector2(1, 2)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pisah"]
 shader = ExtResource("1_ldhbw")
 shader_parameter/do_abs = true
@@ -46,6 +38,14 @@ shader_parameter/quantize_to = 1.0
 shader_parameter/sine_amplitude = Vector2(1, -20)
 shader_parameter/sine_speed = Vector2(1, 2)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2x2p"]
+shader = ExtResource("1_ldhbw")
+shader_parameter/do_abs = true
+shader_parameter/do_quantize = true
+shader_parameter/quantize_to = 1.0
+shader_parameter/sine_amplitude = Vector2(1, 20)
+shader_parameter/sine_speed = Vector2(1, 2)
+
 [node name="GoalIcon" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -53,6 +53,50 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_ejw8u")
+layout_mode = 0
+offset_left = 7.0
+offset_top = 27.0
+offset_right = 1578.0
+offset_bottom = 808.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_337oo")
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_pisah")
+layout_mode = 0
+offset_left = 407.0
+offset_top = 72.0
+offset_right = 662.0
+offset_bottom = 505.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_g2x2p")
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_n8vdw")
+layout_mode = 0
+offset_left = 427.0
+offset_top = 72.0
+offset_right = 682.0
+offset_bottom = 505.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_e2j65")
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_ldhbw")
+layout_mode = 0
+offset_left = 497.0
+offset_top = 72.0
+offset_right = 752.0
+offset_bottom = 505.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_g2x2p")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_ejw8u")
@@ -63,15 +107,17 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_337oo")
 
 [node name="Label" type="Label" parent="TextureRect"]
+visible = false
 material = SubResource("ShaderMaterial_g2x2p")
 layout_mode = 0
-offset_left = 176.0
-offset_top = 260.0
-offset_right = 1768.0
-offset_bottom = 575.0
+offset_left = 192.0
+offset_top = 192.0
+offset_right = 1497.0
+offset_bottom = 633.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_337oo")
-theme_override_font_sizes/font_size = 170
-text = "To be continued..."
+theme_override_font_sizes/font_size = 280
+text = "This way..."
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_pisah")

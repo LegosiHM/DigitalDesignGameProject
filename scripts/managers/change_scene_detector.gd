@@ -6,7 +6,7 @@ extends Area2D
 
 @export var my_scene: String  # File path to the target scene to load
 @export var disable_on_default := false  # If true, disables this portal and hides it
-@export var portal_visual: ColorRect  # Optional visual indicator for the portal
+@export var portal_visual: Control  # Optional visual indicator for the portal
 
 # ------------------------------------------------------------------------------
 # NODE REFERENCES

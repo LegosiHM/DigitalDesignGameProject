@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dsvmexqwvy3bu"]
+[gd_scene load_steps=41 format=3 uid="uid://dsvmexqwvy3bu"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_piyhr"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_jysn7"]
@@ -16,11 +16,15 @@
 [ext_resource type="Texture2D" uid="uid://capkwmepqty8s" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_Sand_v01.PNG" id="14_kenpv"]
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="15_ycj3e"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="16_4bjv8"]
+[ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="16_n642c"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="17_obee6"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="17_okbg1"]
 [ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="18_nw0jt"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="19_6iiyh"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="20_gkaa0"]
+[ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="21_c3215"]
 [ext_resource type="Texture2D" uid="uid://co6g6s86pr0xm" path="res://assets/sprites/chapter 3/panel/StoryPanel_EvilPlan_v.01.PNG" id="21_dtevm"]
+[ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="25_okbg1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bacl"]
 size = Vector2(1921, 167)
@@ -234,6 +238,9 @@ sources/8 = SubResource("TileSetAtlasSource_57t7d")
 sources/9 = SubResource("TileSetAtlasSource_j0ep0")
 sources/1 = SubResource("TileSetAtlasSource_d6tir")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un642"]
+size = Vector2(974, 840)
+
 [node name="2-17_MeetOctavia" type="Node2D"]
 
 [node name="RespawnDetector" type="Area2D" parent="."]
@@ -257,11 +264,13 @@ shape = SubResource("RectangleShape2D_okbg1")
 position = Vector2(1372, -526)
 shape = SubResource("RectangleShape2D_okbg1")
 
-[node name="ChangeSceneDetector" parent="." instance=ExtResource("2_jysn7")]
+[node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_jysn7")]
 z_index = 10
-position = Vector2(9280, 3844)
+position = Vector2(9582, 3844)
 scale = Vector2(5.89506, 2.69308)
 my_scene = "res://Scenes/levels/Chapter03_Epilogue/3-1_BookHub_Boil.tscn"
+disable_on_default = true
+portal_visual = NodePath("../UI/GoalIcon")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(-1324, -1207)
@@ -298,6 +307,30 @@ layer_0/tile_data = PackedInt32Array(720895, 2, 0, 655360, 2, 0, 655361, 2, 0, 6
 [node name="UI" parent="." instance=ExtResource("15_ycj3e")]
 z_index = 4
 
+[node name="Tutorial32" type="RichTextLabel" parent="UI"]
+offset_left = 1568.0
+offset_top = 3.0
+offset_right = 1904.0
+offset_bottom = 86.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("16_n642c")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]Exodus 9:1-7
+ "
+scroll_active = false
+
+[node name="GoalIcon" parent="UI" instance=ExtResource("17_okbg1")]
+visible = false
+layout_mode = 1
+offset_left = 1321.0
+offset_top = 111.0
+offset_right = 1321.0
+offset_bottom = 111.0
+scale = Vector2(-1, 0.75)
+
 [node name="Player" parent="." instance=ExtResource("16_4bjv8")]
 position = Vector2(162, 837)
 
@@ -323,10 +356,166 @@ offset_bottom = 1089.0
 
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
 
-[node name="StoryPanelEvilPlanV_01" type="Sprite2D" parent="."]
+[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+script = ExtResource("21_c3215")
+dialog_lines = Array[String](["About the plan...", "Marcus will...", "And Egypt...", "---", "--", "-INTERACTION INTERFERED BY ENTITY42MEDJED", "\"Hey!\"", "\"These people in the book are getting real!\"", "\"No time to waste. I found the way out!\"", "\"Come here! Through the invisible platform!\""])
+dialog_position_Array = Array[Vector2]([Vector2(800, 150), Vector2(800, 150), Vector2(800, 150), Vector2(800, 150), Vector2(800, 150), Vector2(800, 150), Vector2(300, 500), Vector2(300, 500), Vector2(300, 500), Vector2(300, 500)])
+will_reveal_object = true
+reveal_path = NodePath("../ChangeSceneDetector")
+
+[node name="StoryPanelEvilPlanV_01" type="Sprite2D" parent="Medjed"]
 position = Vector2(1591, 576)
 scale = Vector2(1.0881, 1.0881)
 texture = ExtResource("21_dtevm")
+
+[node name="Area2D" type="Area2D" parent="Medjed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Medjed/Area2D"]
+position = Vector2(1589, 574)
+shape = SubResource("RectangleShape2D_un642")
+
+[node name="StoryPanelEvilPlanV_02" type="Sprite2D" parent="Medjed"]
+position = Vector2(1591, 576)
+scale = Vector2(1.0881, 1.0881)
+texture = ExtResource("21_dtevm")
+
+[node name="Tutorial32" type="RichTextLabel" parent="."]
+offset_left = 46.0
+offset_top = 100.0
+offset_right = 914.0
+offset_bottom = 321.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("16_n642c")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "This supposed to be the...[shake rate=50 level = 50 connected = 1][color=darkred] \"Plague of Pestilence\"
+ "
+scroll_active = false
+
+[node name="Tutorial33" type="RichTextLabel" parent="."]
+offset_left = 47.0
+offset_top = 291.0
+offset_right = 962.0
+offset_bottom = 504.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("16_n642c")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "but seems like the device is error again...
+ "
+scroll_active = false
+
+[node name="Tutorial34" type="RichTextLabel" parent="."]
+offset_left = 48.0
+offset_top = 333.0
+offset_right = 916.0
+offset_bottom = 554.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("16_n642c")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "This place ...is[shake rate=50 level = 50 connected = 1][color=darkred] \"NOT EGYPT\"
+ "
+scroll_active = false
+
+[node name="Tutorial35" type="RichTextLabel" parent="."]
+offset_left = 800.0
+offset_top = 919.0
+offset_right = 1209.0
+offset_bottom = 990.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("16_n642c")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=darkred] Don't go this way
+ "
+scroll_active = false
+
+[node name="Glitching14" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 814.0
+offset_top = 935.0
+offset_right = 919.0
+offset_bottom = 966.0
+
+[node name="Glitching15" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1738.0
+offset_top = 939.0
+offset_right = 2152.0
+offset_bottom = 1028.0
+
+[node name="Glitching16" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1823.0
+offset_top = 815.0
+offset_right = 2237.0
+offset_bottom = 904.0
+
+[node name="Glitching17" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1743.0
+offset_top = 666.0
+offset_right = 2157.0
+offset_bottom = 755.0
+
+[node name="Glitching18" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1849.0
+offset_top = 434.0
+offset_right = 2263.0
+offset_bottom = 523.0
+
+[node name="Glitching19" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1760.0
+offset_top = 259.0
+offset_right = 2174.0
+offset_bottom = 348.0
+
+[node name="Glitching20" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1841.0
+offset_top = 123.0
+offset_right = 2255.0
+offset_bottom = 212.0
+
+[node name="Glitching21" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1790.0
+offset_top = 216.0
+offset_right = 2204.0
+offset_bottom = 245.0
+
+[node name="Glitching22" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1857.0
+offset_top = 383.0
+offset_right = 2271.0
+offset_bottom = 412.0
+
+[node name="Glitching23" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1800.0
+offset_top = 550.0
+offset_right = 2214.0
+offset_bottom = 579.0
+
+[node name="Glitching24" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1857.0
+offset_top = 608.0
+offset_right = 2271.0
+offset_bottom = 637.0
+
+[node name="Glitching25" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1752.0
+offset_top = 775.0
+offset_right = 2166.0
+offset_bottom = 804.0
+
+[node name="Glitching26" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 1802.0
+offset_top = 918.0
+offset_right = 2216.0
+offset_bottom = 947.0
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
