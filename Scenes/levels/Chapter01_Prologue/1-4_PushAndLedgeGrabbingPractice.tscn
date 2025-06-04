@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bm82hrowymhds"]
+[gd_scene load_steps=21 format=3 uid="uid://bm82hrowymhds"]
 
 [ext_resource type="Texture2D" uid="uid://dy3juqpq2g1h5" path="res://assets/sprites/chapter 1/background/BG_Suburb_Evening_v02.PNG" id="1_adg2g"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_0gfru"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dh0uqfiqyaaub" path="res://Scenes/UI/Interface.tscn" id="5_ece1k"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="6_h2l7a"]
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="8_7yqwk"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="9_fkfsg"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="9_jgpn4"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="10_hwt45"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="11_a88ds"]
@@ -82,6 +83,14 @@ position = Vector2(1174, 543)
 rotation = 3.14159
 scale = Vector2(62.836, 34.2066)
 
+[node name="GoalIcon" parent="PanelCollsionContainer" instance=ExtResource("9_fkfsg")]
+offset_left = 1596.0
+offset_top = 71.0
+offset_right = 1596.0
+offset_bottom = 71.0
+rotation = -1.5708
+scale = Vector2(-1, 0.75)
+
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("2_0gfru")]
 position = Vector2(1327, -96)
 scale = Vector2(9, 0.239999)
@@ -94,6 +103,7 @@ position = Vector2(8.77778, -529.168)
 script = ExtResource("9_jgpn4")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("11_omgn5")]
+visible = false
 offset_left = 1363.0
 offset_top = -199.0
 offset_right = 1403.0
@@ -141,8 +151,8 @@ text = "A Cat In Time"
 [node name="Tutorial" type="RichTextLabel" parent="."]
 offset_left = 303.0
 offset_top = 276.0
-offset_right = 1675.0
-offset_bottom = 380.0
+offset_right = 1598.0
+offset_bottom = 366.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
@@ -150,19 +160,21 @@ theme_override_fonts/normal_font = ExtResource("15_ml5d1")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "If a Panel [shake rate=50 level = 50 connected = 1] [color=darkred]collide[/color][/shake] with another Panel, it will move[wave amp=50.0 freq=5.0 connected=1] [color=purple] SLOWER"
+scroll_active = false
 
 [node name="Tutorial2" type="RichTextLabel" parent="."]
 offset_left = 437.0
 offset_top = 586.0
-offset_right = 1809.0
-offset_bottom = 756.0
+offset_right = 1548.0
+offset_bottom = 706.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("15_ml5d1")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "And you will [wave amp=50.0 freq=5.0 connected=1] [color=purple]SLOW FALL[/color][/wave] when trying to grab the  [shake rate=50 level = 50 connected = 1] [color=darkred]Draggable Panel"
+text = "And you will [wave amp=50.0 freq=5.0 connected=1] [color=purple]SLOW FALL[/color][/wave] when trying to grab the  [shake rate=50 level = 50 connected = 1] [color=darkred]Draggable Panel.[/color][/shake] You can jump again while SLOWFALL or LEDGE GRAB"
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

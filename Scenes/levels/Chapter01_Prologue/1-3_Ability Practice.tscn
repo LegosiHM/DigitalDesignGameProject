@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://csxm21t4vk04j"]
+[gd_scene load_steps=30 format=3 uid="uid://csxm21t4vk04j"]
 
 [ext_resource type="Texture2D" uid="uid://wfm1ss684p7i" path="res://assets/sprites/chapter 1/story panel/StoryPanel_Bazaar_Priest_v.03.png" id="2_w0t8t"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="3_4tmjt"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="10_6dl1h"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="11_auadr"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="12_jhf7a"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="12_ovkkt"]
 [ext_resource type="PackedScene" uid="uid://be2bvkjuygkfy" path="res://Scenes/shaders/radial_stripes.tscn" id="13_282pf"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="14_irrcm"]
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="16_qrlb0"]
@@ -89,7 +90,7 @@ position = Vector2(2001, 656)
 scale = Vector2(2, 2)
 my_scene = "res://Scenes/levels/Chapter01_Prologue/1-4_PushAndLedgeGrabbingPractice.tscn"
 disable_on_default = true
-portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
+portal_visual = NodePath("../PlatformPanel/GoalIcon")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(8.75, 21.5)
@@ -194,6 +195,14 @@ layer_0/tile_data = PackedInt32Array(393237, 2, 0, 393238, 2, 0, 393239, 2, 0, 3
 position = Vector2(45, 44)
 layer_0/tile_data = PackedInt32Array(589827, 327681, 5, 589852, 327681, 5, 589851, 196609, 5, 589850, 196609, 5, 589849, 196609, 5, 589848, 196609, 5, 589847, 196609, 5, 589826, 196609, 5, 589825, 196609, 5, 589824, 196609, 5, 655359, 196609, 5, 655358, 1, 5, 589822, 1, 4, 524286, 1, 4, 458750, 1, 4, 393214, 1, 0, 327683, 327681, 0, 393215, 196609, 0, 327680, 196609, 0, 327681, 196609, 0, 327682, 196609, 0, 393219, 327681, 2, 458755, 327681, 2, 524291, 327681, 2, 327708, 327681, 0, 393244, 327681, 1, 458780, 327681, 1, 524316, 327681, 1, 327703, 131073, 0, 327704, 131073, 0, 327705, 262145, 0, 327706, 262145, 0, 327707, 262145, 0, 589845, 65537, 5, 589846, 65537, 5, 589844, 196609, 5, 327700, 196609, 0, 327701, 131073, 0, 327702, 131073, 0, 327699, 1, 0, 589843, 1, 5, 393235, 1, 3, 458771, 1, 3, 524307, 1, 3)
 
+[node name="GoalIcon" parent="PlatformPanel" instance=ExtResource("12_ovkkt")]
+visible = false
+offset_left = 2533.33
+offset_top = 449.333
+offset_right = 2533.33
+offset_bottom = 449.333
+scale = Vector2(-1, 0.75)
+
 [node name="WallPanel" parent="." instance=ExtResource("3_4tmjt")]
 rotation = 1.5708
 layer_0/tile_data = PackedInt32Array(-655351, 3, 3, -655352, 196611, 3, -655353, 3, 3, -655354, 196611, 3, -655355, 3, 3, -655356, 196611, 3, -655357, 393219, 3, -720887, 2, 0, -720888, 2, 0, -720889, 2, 0, -720890, 2, 0, -720891, 2, 0, -720892, 2, 0, -720893, 2, 0)
@@ -212,6 +221,7 @@ position = Vector2(165, 757)
 script = ExtResource("11_auadr")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("13_282pf")]
+visible = false
 offset_left = 1762.0
 offset_top = 557.0
 offset_right = 1802.0

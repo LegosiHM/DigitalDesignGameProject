@@ -813,6 +813,7 @@ tile_set = SubResource("TileSet_0wibo")
 z_index = 4
 
 [node name="Tutorial32" type="RichTextLabel" parent="UI"]
+layout_mode = 0
 offset_left = 1568.0
 offset_top = 3.0
 offset_right = 1904.0

@@ -323,6 +323,7 @@ layer_0/tile_data = PackedInt32Array(589843, 2, 0, 655379, 2, 0, 589844, 2, 0, 5
 z_index = 4
 
 [node name="Tutorial32" type="RichTextLabel" parent="UI"]
+layout_mode = 0
 offset_left = 1568.0
 offset_top = 3.0
 offset_right = 1904.0

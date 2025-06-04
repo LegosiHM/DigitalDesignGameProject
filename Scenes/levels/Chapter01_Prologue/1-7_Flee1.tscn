@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dbgvqum1nn1t0"]
+[gd_scene load_steps=49 format=3 uid="uid://dbgvqum1nn1t0"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_xcup5"]
 [ext_resource type="Texture2D" uid="uid://d11pmosyoyoot" path="res://assets/sprites/chapter 1/background/BG_Temple_Evening_v01.PNG" id="2_s7mpu"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="25_hvujx"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="26_lhn2i"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="27_2lkux"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="29_h66sr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlp3"]
 size = Vector2(1693.5, 154)
@@ -413,7 +414,7 @@ scale = Vector2(-108.784, 7.4829)
 
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("22_pxot3")]
 z_index = 5
-position = Vector2(1712, 1233)
+position = Vector2(1712, 1360)
 rotation = -1.5708
 scale = Vector2(1.727, 1.87)
 my_scene = "res://Scenes/levels/Chapter01_Prologue/1-8_Flee2.tscn"
@@ -422,6 +423,7 @@ my_scene = "res://Scenes/levels/Chapter01_Prologue/1-8_Flee2.tscn"
 script = ExtResource("23_fffq3")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("24_rfiy1")]
+visible = false
 offset_left = 1246.0
 offset_top = 814.0
 offset_right = 1286.0
@@ -471,6 +473,14 @@ theme_override_fonts/normal_font = ExtResource("27_2lkux")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = " [shake rate=50 level = 50 connected = 1][color=purple]Ahem![/color][/shake] Don't you think it's weird that [wave amp=50.0 freq=5.0 connected=1]  [color=darkred]Egyptians can speak modern English?"
+
+[node name="GoalIcon" parent="." instance=ExtResource("29_h66sr")]
+offset_left = 1486.0
+offset_top = 1076.0
+offset_right = 1486.0
+offset_bottom = 1076.0
+rotation = -1.5708
+scale = Vector2(0.69, -0.517)
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

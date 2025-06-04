@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://62p0cy78mww3"]
+[gd_scene load_steps=25 format=3 uid="uid://62p0cy78mww3"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_lup6q"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_26fxu"]
 [ext_resource type="Texture2D" uid="uid://s6ijtbtnvx4k" path="res://assets/sprites/chapter 1/background/BG_Suburb_Night_v02.PNG" id="3_71ltb"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_ujr4f"]
+[ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="5_jmmhg"]
 [ext_resource type="PackedScene" uid="uid://d3ad0muthw2u2" path="res://Scenes/characters/player.tscn" id="5_nttja"]
 [ext_resource type="PackedScene" uid="uid://bwct7nede7txs" path="res://Scenes/mechanics/Draggable_Panel.tscn" id="6_jmmhg"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="7_8cpil"]
@@ -62,7 +63,7 @@ shape = SubResource("RectangleShape2D_m0y2c")
 position = Vector2(-126, 424)
 scale = Vector2(2, 2)
 my_scene = "res://Scenes/levels/Chapter01_Prologue/1-12_Flee4.tscn"
-portal_visual = NodePath("../CanvasLayer/Radial_Stripes")
+portal_visual = NodePath("../GoalIcon")
 
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(5.5, 47.75)
@@ -82,6 +83,13 @@ layer_0/tile_data = PackedInt32Array(131087, 196608, 3, 196623, 327680, 3, 26215
 position = Vector2(45, 44)
 layer_0/tile_data = PackedInt32Array(65550, 1, 0, 131086, 1, 1, 131087, 327681, 2, 196622, 1, 2, 196623, 327681, 2, 262158, 1, 2, 262159, 327681, 2, 262160, 1, 0, 262161, 131073, 0, 262163, 131073, 0, 262165, 131073, 0, 262166, 131073, 0, 393243, 327681, 4, 589838, 1, 5, 589839, 327681, 5, 589840, 1, 5, 589841, 65537, 5, 589842, 65537, 5, 589843, 65537, 5, 589844, 65537, 5, 393230, 1, 2, 458766, 1, 2, 524302, 1, 2, 589845, 65537, 5, 589846, 65537, 5, 589847, 65537, 5, 589848, 65537, 5, 589849, 65537, 5, 589850, 65537, 5, 589851, 327681, 5, 524315, 327681, 4, 458779, 327681, 4, 327680, 131073, 0, 589824, 65537, 5, 327681, 131073, 0, 589825, 65537, 5, 327682, 131073, 0, 589826, 65537, 5, 327683, 131073, 0, 589827, 65537, 5, 327684, 327681, 0, 393220, 327681, 2, 458756, 327681, 2, 524292, 327681, 4, 589828, 327681, 5, 655359, 131073, 5, 655358, 131073, 5, 393215, 65537, 0, 393214, 65537, 0, 327694, 1, 2, 262171, 327681, 0, 327707, 327681, 3, 327695, 327681, 2, 393231, 327681, 2, 458767, 327681, 2, 524303, 327681, 2, 524304, 1, 4, 458768, 1, 4, 393232, 1, 4, 327696, 1, 4, 65551, 327681, 0, 262162, 131073, 0, 262164, 131073, 0, 262167, 131073, 0, 262168, 131073, 0, 262169, 131073, 0, 262170, 131073, 0)
 
+[node name="GoalIcon" parent="." instance=ExtResource("5_jmmhg")]
+offset_left = 42.0
+offset_top = 712.0
+offset_right = 42.0
+offset_bottom = 712.0
+scale = Vector2(0.5, 0.375)
+
 [node name="Player" parent="." instance=ExtResource("5_nttja")]
 position = Vector2(1802, 752)
 
@@ -94,6 +102,7 @@ position = Vector2(541, 288)
 script = ExtResource("9_wr0fr")
 
 [node name="Radial_Stripes" parent="CanvasLayer" instance=ExtResource("10_5yh5s")]
+visible = false
 offset_left = -226.0
 offset_top = 563.0
 offset_right = -186.0
@@ -135,15 +144,13 @@ position = Vector2(158, 764)
 rotation = 3.14159
 scale = Vector2(20.9045, 12.096)
 
-[node name="Panel_Medjed1" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel", "reveal_path")]
+[node name="Panel_Medjed1" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel")]
 position = Vector2(1943, 1083)
 script = ExtResource("13_71ltb")
 dialog_lines = Array[String](["The relic on your neck, that's me. Medjed~", "Which is my real form? Guess~ Ahehehe~", "Whatever~ Just know that I'll be with you from now on~", "Nice to know you~ From YOUR BELOVED NARRATOR~"])
 dialog_position_Array = Array[Vector2]([Vector2(200, 300), Vector2(250, 250), Vector2(300, 200), Vector2(350, 150)])
 cooldown_time = 10000.0
-will_reveal_object = true
 reveal_panel = NodePath("../draggablePanel")
-reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="StoryPanel_Priest" type="Sprite2D" parent="Panel_Medjed1"]
 z_index = 1
@@ -175,6 +182,7 @@ theme_override_fonts/normal_font = ExtResource("17_ujr4f")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1][color=darkred]Nice to know you~"
+scroll_active = false
 
 [node name="Tutorial2" type="RichTextLabel" parent="."]
 z_index = 5
@@ -189,6 +197,7 @@ theme_override_fonts/normal_font = ExtResource("17_ujr4f")
 theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1][color=black]Trust me~"
+scroll_active = false
 
 [node name="Tutorial3" type="RichTextLabel" parent="."]
 z_index = 5
@@ -203,6 +212,7 @@ theme_override_fonts/normal_font = ExtResource("17_ujr4f")
 theme_override_font_sizes/normal_font_size = 72
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1][color=black]Trust me~"
+scroll_active = false
 
 [node name="Tutorial4" type="RichTextLabel" parent="."]
 z_index = 5
@@ -217,6 +227,7 @@ theme_override_fonts/normal_font = ExtResource("17_ujr4f")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1][color=black]Trust me~"
+scroll_active = false
 
 [node name="Tutorial5" type="RichTextLabel" parent="."]
 z_index = 11
@@ -231,6 +242,7 @@ theme_override_fonts/normal_font = ExtResource("17_ujr4f")
 theme_override_font_sizes/normal_font_size = 72
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1][color=darkred]I'm your BELOVED NARRATOR~"
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
