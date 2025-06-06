@@ -472,14 +472,13 @@ offset_top = 822.0
 offset_right = 1926.0
 offset_bottom = 966.0
 
-[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel", "reveal_path")]
+[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
 position = Vector2(2350, 794.286)
 scale = Vector2(1.33333, 1.33333)
 script = ExtResource("19_gr8wu")
 dialog_lines = Array[String](["-INTERACTION INTERFERED BY ENTITY42MEDJED", "\"And...Finally!\"", "\"The last two plagues.\" ", "\"...Darkness and Death of the Firstborn.\"", "\"...\"", "\"Use the TORCH to guide you through the way.\"", "\"If the torch move SLOWER, don't go that way.\"", "\"Trust me...\""])
 dialog_position_Array = Array[Vector2]([Vector2(1100, 250), Vector2(1100, 250), Vector2(1100, 250), Vector2(1100, 250), Vector2(1100, 250), Vector2(1100, 250), Vector2(1100, 250), Vector2(1100, 250)])
 will_reveal_object = true
-reveal_panel = NodePath("../PanelHitbox")
 reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="CharMarcIdleV_01" type="Sprite2D" parent="Medjed"]
