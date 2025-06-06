@@ -1,19 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://by0xmffvlcwmo"]
+[gd_scene load_steps=6 format=3 uid="uid://by0xmffvlcwmo"]
 
 [ext_resource type="Texture2D" uid="uid://tt6pk5g0qrgp" path="res://assets/UI/IMG_6484 (1).png" id="1_civsj"]
 [ext_resource type="Script" uid="uid://edduv1re3qf6" path="res://scripts/UI/sound_controller.gd" id="1_j1thn"]
 [ext_resource type="Texture2D" uid="uid://cyuuqu2jrg3q2" path="res://assets/UI/Untitled_design (1).png" id="2_a2l1s"]
+[ext_resource type="Texture2D" uid="uid://dlowp86ds8hj8" path="res://assets/UI/IMG_6502.png" id="4_a2l1s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_abuoe"]
 texture = ExtResource("2_a2l1s")
-expand_margin_left = 20.0
-expand_margin_top = 100.0
-expand_margin_right = 20.0
-expand_margin_bottom = 100.0
+expand_margin_left = 15.0
+expand_margin_top = 25.0
+expand_margin_right = 15.0
+expand_margin_bottom = 25.0
 
 [node name="MasterVolumeController" type="HSlider"]
 offset_right = 480.0
-offset_bottom = 16.0
+offset_bottom = 100.0
 theme_override_icons/grabber = ExtResource("1_civsj")
 theme_override_icons/grabber_highlight = ExtResource("1_civsj")
 theme_override_icons/grabber_disabled = ExtResource("1_civsj")
@@ -21,5 +22,10 @@ theme_override_styles/slider = SubResource("StyleBoxTexture_abuoe")
 min_value = -80.0
 max_value = 0.0
 script = ExtResource("1_j1thn")
+
+[node name="Img6502" type="Sprite2D" parent="."]
+position = Vector2(-50, 51)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_a2l1s")
 
 [connection signal="value_changed" from="." to="." method="_on_value_changed"]

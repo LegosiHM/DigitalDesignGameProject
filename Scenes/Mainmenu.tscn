@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwxkixi1awkib"]
+[gd_scene load_steps=14 format=3 uid="uid://dwxkixi1awkib"]
 
 [ext_resource type="Script" uid="uid://c70fygndrafsw" path="res://scripts/mainmenu.gd" id="1_6hnpv"]
 [ext_resource type="Texture2D" uid="uid://coa2a0amgtcgp" path="res://scripts/wap3w.png" id="2_28j1r"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://ciu18o0l5ebuo" path="res://assets/SFX/UISFX/SFX_UI_ClickMenu_v01.mp3" id="8_uk3yw"]
 [ext_resource type="Script" uid="uid://c7v570br6r4fk" path="res://scripts/Managers/Scene_Transition_Manager.gd" id="9_xo3ka"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="10_n8ats"]
+[ext_resource type="PackedScene" uid="uid://by0xmffvlcwmo" path="res://Scenes/UI/SoundController.tscn" id="12_uayj6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uk3yw"]
 texture = ExtResource("7_6a1r1")
@@ -128,6 +129,15 @@ offset_left = 1.0
 offset_top = 9.0
 offset_right = 1921.0
 offset_bottom = 1089.0
+
+[node name="MasterVolumeController" parent="." instance=ExtResource("12_uayj6")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -480.0
+offset_right = 0.0
+grow_horizontal = 0
 
 [connection signal="mouse_entered" from="NewGameButton/Button" to="." method="_on_new_game_button_mouse_entered"]
 [connection signal="mouse_exited" from="NewGameButton/Button" to="." method="_on_new_game_button_mouse_exited"]

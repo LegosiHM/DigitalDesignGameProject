@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://bq1qh555fdfpv"]
+[gd_scene load_steps=97 format=3 uid="uid://bq1qh555fdfpv"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_7huay"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_j3nas"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://djuilohj01i26" path="res://assets/sprites/chapter 1/tileset/Tileset_Brick_v.02.png" id="31_0phdu"]
 [ext_resource type="Texture2D" uid="uid://38n10r7ixtpv" path="res://assets/sprites/chapter 1/tileset/Tileset_Brick_v.03.png" id="32_s0jig"]
 [ext_resource type="Texture2D" uid="uid://dg7brj7rbi242" path="res://assets/sprites/chapter 1/tileset/Tileset_Palace_v.02.png" id="33_cra8x"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="38_wf2fd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -1214,6 +1215,12 @@ z_index = 2
 position = Vector2(-1021.43, -51.9642)
 shape = SubResource("RectangleShape2D_qk70v")
 
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Marc/Area2D"]
+visible = false
+position = Vector2(-861.429, -362.857)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("38_wf2fd")
+
 [node name="Hitbox" parent="NPC" instance=ExtResource("4_pknrm")]
 visible = false
 position = Vector2(-10, 367.143)
@@ -1364,5 +1371,7 @@ scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="NPC/Marc/Area2D" to="NPC/Marc" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Marc/Area2D" to="NPC/Marc" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

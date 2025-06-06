@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://ds0gsv8ejjbvj"]
+[gd_scene load_steps=86 format=3 uid="uid://ds0gsv8ejjbvj"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_k0cyx"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_3cwxj"]
@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="24_qtcmh"]
 [ext_resource type="Texture2D" uid="uid://cdcdiy428svmp" path="res://assets/sprites/chapter 3/character/Char_Cleopatra_Idle_v.01.png" id="25_3cwxj"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="29_gn0lh"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="34_uyec8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -938,6 +939,12 @@ texture = ExtResource("25_3cwxj")
 [node name="Area2D" type="Area2D" parent="NPC/Cleopatra"]
 z_index = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Cleopatra/Area2D"]
+visible = false
+position = Vector2(-770, -238.571)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("34_uyec8")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Cleopatra/Area2D"]
 position = Vector2(-962.143, 1.42847)
 shape = SubResource("RectangleShape2D_gn0lh")
@@ -966,6 +973,12 @@ z_index = 2
 position = Vector2(-607.143, 1.42847)
 shape = SubResource("RectangleShape2D_gn0lh")
 
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Maid01/Area2D"]
+visible = false
+position = Vector2(-434.286, -230)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("34_uyec8")
+
 [node name="CharMaidIdleV_02_Shadow" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 0.34902)
 position = Vector2(1723.64, 1124.68)
@@ -989,6 +1002,12 @@ z_index = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Maid02/Area2D"]
 position = Vector2(-230, 1.42847)
 shape = SubResource("RectangleShape2D_gn0lh")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Maid02/Area2D"]
+visible = false
+position = Vector2(-57.1471, -238.574)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("34_uyec8")
 
 [node name="CharMedjedIdleV_01" type="Sprite2D" parent="NPC"]
 modulate = Color(0.760784, 0.760784, 0.760784, 0.0156863)
@@ -1111,5 +1130,11 @@ scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="NPC/Cleopatra/Area2D" to="NPC/Cleopatra" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Cleopatra/Area2D" to="NPC/Cleopatra" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NPC/Maid01/Area2D" to="NPC/Maid01" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Maid01/Area2D" to="NPC/Maid01" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NPC/Maid02/Area2D" to="NPC/Maid02" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Maid02/Area2D" to="NPC/Maid02" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

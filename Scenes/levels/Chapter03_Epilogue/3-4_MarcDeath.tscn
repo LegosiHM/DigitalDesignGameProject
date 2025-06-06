@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://4ewqjcrls7ho"]
+[gd_scene load_steps=51 format=3 uid="uid://4ewqjcrls7ho"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_g7gon"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_bs7o0"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://fn01f38daqgr" path="res://Scenes/shaders/respawn_effect.tscn" id="23_hx4kv"]
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="24_fd24g"]
 [ext_resource type="Texture2D" uid="uid://cs74qrvl0x8lg" path="res://assets/sprites/chapter 3/character/Char_Marc_Idle_v.01.png" id="24_g7gon"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="28_cw6ym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bacl"]
 size = Vector2(89.25, 143.5)
@@ -493,6 +494,12 @@ texture = ExtResource("24_g7gon")
 position = Vector2(-1027.5, -482.464)
 shape = SubResource("RectangleShape2D_pybha")
 
+[node name="Sprite2D" type="Sprite2D" parent="Medjed/Area2D"]
+visible = false
+position = Vector2(-1150.5, -479.466)
+scale = Vector2(-0.05, 0.05)
+texture = ExtResource("28_cw6ym")
+
 [node name="Glitching11" parent="." instance=ExtResource("18_c4fod")]
 offset_left = 945.0
 offset_top = 112.0
@@ -528,5 +535,7 @@ scroll_active = false
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
 [connection signal="input_event" from="Medjed/Area2D" to="Medjed" method="_on_input_event"]
+[connection signal="mouse_entered" from="Medjed/Area2D" to="Medjed" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Medjed/Area2D" to="Medjed" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

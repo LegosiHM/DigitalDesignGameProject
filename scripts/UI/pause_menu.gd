@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var pause_panel = $ColorRect
 @onready var resume_button = get_node_or_null("CenterContainer/VBoxContainer/ResumeButton")
 @onready var exit_button = get_node_or_null("CenterContainer/VBoxContainer/ExitButton")
+@onready var transition_rect: ColorRect = get_node_or_null("CanvasLayer/Scenes_Transition")
 
 var allowed_scenes := [
 	"1-1_Introduction",
@@ -72,6 +73,22 @@ func _on_exit_pressed():
 	
 	Global.current_level = get_tree().current_scene.scene_file_path
 	SaveManager.save_game()
+	
+	var tween = create_tween()
+
+	# Fade in effect using custom shader (fade 0 → 1)
+	tween.tween_property(
+		transition_rect.material, "shader_parameter/in_out", 
+		1.0, 0.1
+	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+
+	# Slide effect: moves shader to cover screen (1.0 → -1.5)
+	tween.tween_property(
+		transition_rect.material, "shader_parameter/position", 
+		-1.5, 0.5
+	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+
+	await tween.finished  # Wait for animation before changing scenes
 	
 	get_tree().change_scene_to_file("res://Scenes/Mainmenu.tscn")
 

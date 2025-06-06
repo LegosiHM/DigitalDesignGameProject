@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://bs0me3xlw6uwk"]
+[gd_scene load_steps=98 format=3 uid="uid://bs0me3xlw6uwk"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_hb2ge"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_qgh2b"]
@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://djuilohj01i26" path="res://assets/sprites/chapter 1/tileset/Tileset_Brick_v.02.png" id="31_v7k5d"]
 [ext_resource type="Texture2D" uid="uid://38n10r7ixtpv" path="res://assets/sprites/chapter 1/tileset/Tileset_Brick_v.03.png" id="32_b62jy"]
 [ext_resource type="Texture2D" uid="uid://dg7brj7rbi242" path="res://assets/sprites/chapter 1/tileset/Tileset_Palace_v.02.png" id="33_g3hiq"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="38_hspq1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -1222,6 +1223,12 @@ z_index = 2
 position = Vector2(117.143, 11.4288)
 shape = SubResource("RectangleShape2D_jb2q7")
 
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Cleopatra/Area2D"]
+visible = false
+position = Vector2(262.857, -288.571)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("38_hspq1")
+
 [node name="CharMedjedIdleV_03" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(8.57146, 1127.14)
@@ -1378,5 +1385,7 @@ scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="NPC/Cleopatra/Area2D" to="NPC/Cleopatra" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Cleopatra/Area2D" to="NPC/Cleopatra" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

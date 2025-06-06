@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://cupeohudb3vtm"]
+[gd_scene load_steps=96 format=3 uid="uid://cupeohudb3vtm"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_vt0ip"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_wewhh"]
@@ -36,6 +36,7 @@
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="33_boj0w"]
 [ext_resource type="Texture2D" uid="uid://c6ujdl4ss5orw" path="res://assets/sprites/chapter 1/story panel/StoryPanel_ InsideTemple_Ritual _v.01.PNG" id="34_ujasl"]
 [ext_resource type="Shader" uid="uid://tst7m6cjfvrn" path="res://scripts/shaders/Outliner.gdshader" id="35_6ffo7"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="36_ctllk"]
 [ext_resource type="Texture2D" uid="uid://chvaips52w3rf" path="res://assets/sprites/chapter 1/story panel/StoryPaneL InsideTemple_Insulting v.01.PNG" id="36_n8h7l"]
 [ext_resource type="Texture2D" uid="uid://d0dw64crmklry" path="res://assets/sprites/chapter 1/story panel/StoryPanel _InsideTemple_CatStatue _v.01.PNG" id="37_ctllk"]
 [ext_resource type="Texture2D" uid="uid://b8lt6hngw6nyn" path="res://assets/sprites/chapter 1/story panel/StoryPanel_InsideTemple_Chasing_v.01.PNG" id="38_rtgj4"]
@@ -1200,6 +1201,12 @@ z_index = 2
 position = Vector2(-1015.31, 611.939)
 shape = SubResource("RectangleShape2D_boj0w")
 
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Priest/Area2D"]
+visible = false
+position = Vector2(-1313.77, 394.592)
+scale = Vector2(-0.1, 0.1)
+texture = ExtResource("36_ctllk")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_ujasl")
 
@@ -1378,5 +1385,7 @@ offset_bottom = 244.0
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="NPC/Priest/Area2D" to="NPC/Priest" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Priest/Area2D" to="NPC/Priest" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

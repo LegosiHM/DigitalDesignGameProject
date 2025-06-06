@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://da21mawp1nj8m"]
+[gd_scene load_steps=68 format=3 uid="uid://da21mawp1nj8m"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_57csm"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_1jj2f"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://b3c6pbwlq74mb" path="res://assets/sprites/chapter 3/character/Char_MaleMerchant_Idle_v.01.png" id="23_xcc3l"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="24_wokg6"]
 [ext_resource type="Texture2D" uid="uid://d02qbf5ulqm1h" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothBase_v.01.PNG" id="25_dko4j"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="28_q42ey"]
 [ext_resource type="Texture2D" uid="uid://b2gpffs4sj8x4" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothProduce_v.01.PNG" id="29_d122h"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="37_ly0a6"]
 [ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="40_1o8hc"]
@@ -661,6 +662,12 @@ z_index = 2
 position = Vector2(-718.571, 34.2861)
 shape = SubResource("RectangleShape2D_gyouh")
 
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Merchant1/Area2D"]
+visible = false
+position = Vector2(-567.143, -112.857)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("28_q42ey")
+
 [node name="Hitbox" parent="NPC" instance=ExtResource("4_hnqrq")]
 visible = false
 position = Vector2(-1, 339)
@@ -691,6 +698,12 @@ z_index = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/MaleMerchant/Area2D"]
 position = Vector2(194.286, 34.2861)
 shape = SubResource("RectangleShape2D_gyouh")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC/MaleMerchant/Area2D"]
+visible = false
+position = Vector2(351.429, -297.143)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("28_q42ey")
 
 [node name="DecorationFront" type="Area2D" parent="."]
 z_index = 20
@@ -759,6 +772,12 @@ z_index = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DecorationFront/Merchant2/Area2D"]
 position = Vector2(-1052.86, 34.2861)
 shape = SubResource("RectangleShape2D_gyouh")
+
+[node name="Sprite2D" type="Sprite2D" parent="DecorationFront/Merchant2/Area2D"]
+visible = false
+position = Vector2(-881.425, -182.857)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("28_q42ey")
 
 [node name="DecorationBoothProduceV_04" type="Sprite2D" parent="DecorationFront"]
 modulate = Color(0, 0, 0, 1)
@@ -923,5 +942,11 @@ scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="NPC/Merchant1/Area2D" to="NPC/Merchant1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Merchant1/Area2D" to="NPC/Merchant1" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NPC/MaleMerchant/Area2D" to="NPC/MaleMerchant" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/MaleMerchant/Area2D" to="NPC/MaleMerchant" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="DecorationFront/Merchant2/Area2D" to="DecorationFront/Merchant2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="DecorationFront/Merchant2/Area2D" to="DecorationFront/Merchant2" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

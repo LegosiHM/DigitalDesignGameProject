@@ -56,6 +56,14 @@ func _process(_delta):
 
 		transitioning = true
 		start_scene_transition()
+	# After portal is re-enabled and visible again
+	if not transitioning and not disable_on_default:
+		var overlapping_bodies = get_overlapping_bodies()
+		for body in overlapping_bodies:
+			if body.name == "Player":  # Or use group check if preferred
+				print("Player already inside portal when re-enabled.")
+				_on_body_entered(body)  # Manually call the handler
+
 
 # ------------------------------------------------------------------------------
 # PHYSICS ENTER: Start transition if a valid body enters
@@ -85,7 +93,7 @@ func start_scene_transition():
 
 	# Fade in effect using custom shader (fade 0 → 1)
 	tween.tween_property(
-		transition_rect.material, "shader_parameter/in_out", 
+		transition_rect.material, "0", 
 		1.0, 0.1
 	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 

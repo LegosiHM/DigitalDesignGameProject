@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://cafb56wud3d0x"]
+[gd_scene load_steps=100 format=3 uid="uid://cafb56wud3d0x"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_jqfqv"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_3j5q7"]
@@ -47,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://djuilohj01i26" path="res://assets/sprites/chapter 1/tileset/Tileset_Brick_v.02.png" id="30_mtwx8"]
 [ext_resource type="Texture2D" uid="uid://38n10r7ixtpv" path="res://assets/sprites/chapter 1/tileset/Tileset_Brick_v.03.png" id="31_phpf3"]
 [ext_resource type="Texture2D" uid="uid://dg7brj7rbi242" path="res://assets/sprites/chapter 1/tileset/Tileset_Palace_v.02.png" id="32_mkluy"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="42_gm4lu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -1269,6 +1270,12 @@ position = Vector2(-1820, -354.286)
 scale = Vector2(1.57143, 1)
 shape = SubResource("RectangleShape2D_kohfg")
 
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Medjed/Area2D"]
+visible = false
+position = Vector2(-1515.71, -535.714)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("42_gm4lu")
+
 [node name="Hitbox" parent="NPC" instance=ExtResource("4_l6i7s")]
 visible = false
 position = Vector2(-1, 339)
@@ -1300,6 +1307,12 @@ z_index = 2
 position = Vector2(-752.857, 42.5004)
 shape = SubResource("RectangleShape2D_kohfg")
 
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Maid01/Area2D"]
+visible = false
+position = Vector2(-585.714, -245.714)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("42_gm4lu")
+
 [node name="CharMaidIdleV_02_Shadow" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 0.34902)
 position = Vector2(1665.07, 1137.54)
@@ -1324,6 +1337,12 @@ z_index = 2
 position = Vector2(-289.999, 45.7146)
 shape = SubResource("RectangleShape2D_kohfg")
 
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Maid02/Area2D"]
+visible = false
+position = Vector2(-107.143, -238.571)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("42_gm4lu")
+
 [node name="CharMaidIdleV_01_Shadow2" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 0.34902)
 position = Vector2(2157.93, 1140.39)
@@ -1347,6 +1366,12 @@ z_index = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Maid03/Area2D"]
 position = Vector2(207.144, 34.2861)
 shape = SubResource("RectangleShape2D_kohfg")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Maid03/Area2D"]
+visible = false
+position = Vector2(377.143, -244.286)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("42_gm4lu")
 
 [node name="DecorationFront" type="Area2D" parent="."]
 z_index = 20
@@ -1413,5 +1438,13 @@ scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="NPC/Medjed/Area2D" to="NPC/Medjed" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Medjed/Area2D" to="NPC/Medjed" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NPC/Maid01/Area2D" to="NPC/Maid01" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Maid01/Area2D" to="NPC/Maid01" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NPC/Maid02/Area2D" to="NPC/Maid02" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Maid02/Area2D" to="NPC/Maid02" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NPC/Maid03/Area2D" to="NPC/Maid03" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Maid03/Area2D" to="NPC/Maid03" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

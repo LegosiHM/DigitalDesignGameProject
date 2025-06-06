@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b6oqo5ww0bhle"]
+[gd_scene load_steps=43 format=3 uid="uid://b6oqo5ww0bhle"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_8ujrl"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_jumhi"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="20_bpgdk"]
 [ext_resource type="Texture2D" uid="uid://dcjljk66n2chm" path="res://assets/sprites/chapter 3/panel/StoryPanel_CanonEventBook_v.01.png" id="21_tdbvo"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="22_itr4e"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="23_bvgbt"]
 [ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/chapter 3/character/Char_Medjed_Idle_v.01.png" id="23_wj2i8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bacl"]
@@ -400,6 +401,12 @@ z_index = 2
 position = Vector2(-810.354, 313.036)
 shape = SubResource("RectangleShape2D_cpp52")
 
+[node name="Sprite2D" type="Sprite2D" parent="Medjed/Area2D"]
+visible = false
+position = Vector2(-673.929, 170.357)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("23_bvgbt")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("17_id6hv")
 
@@ -419,5 +426,7 @@ visible = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="Medjed/Area2D" to="Medjed" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Medjed/Area2D" to="Medjed" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

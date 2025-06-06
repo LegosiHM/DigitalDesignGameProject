@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://cd1diokytbunw"]
+[gd_scene load_steps=100 format=3 uid="uid://cd1diokytbunw"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_5v6dv"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_dmghs"]
@@ -47,6 +47,7 @@
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="32_aqc5b"]
 [ext_resource type="Texture2D" uid="uid://dg7brj7rbi242" path="res://assets/sprites/chapter 1/tileset/Tileset_Palace_v.02.png" id="32_rpab8"]
 [ext_resource type="PackedScene" uid="uid://dtkqxugs7ggro" path="res://Scenes/UI/goal_icon.tscn" id="33_bo5dq"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="38_b38ej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -1235,6 +1236,19 @@ z_index = 2
 position = Vector2(-1290, -202.143)
 shape = SubResource("RectangleShape2D_aqc5b")
 
+[node name="Sprite2D" type="Node2D" parent="NPC/Maid03/Area2D"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Maid03/Area2D/Sprite2D"]
+position = Vector2(-1070, -420)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("38_b38ej")
+
+[node name="Sprite2D2" type="Sprite2D" parent="NPC/Maid03/Area2D/Sprite2D"]
+position = Vector2(-1498.57, -444.286)
+scale = Vector2(-0.1, 0.1)
+texture = ExtResource("38_b38ej")
+
 [node name="DecorationFront" type="Area2D" parent="."]
 z_index = 20
 position = Vector2(-1, 339)
@@ -1400,5 +1414,7 @@ scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="NPC/Maid03/Area2D" to="NPC/Maid03" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Maid03/Area2D" to="NPC/Maid03" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

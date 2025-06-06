@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://p0idhm8l5gv"]
+[gd_scene load_steps=85 format=3 uid="uid://p0idhm8l5gv"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_333m1"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_i20xy"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://djuilohj01i26" path="res://assets/sprites/chapter 1/tileset/Tileset_Brick_v.02.png" id="28_gcpjh"]
 [ext_resource type="Texture2D" uid="uid://38n10r7ixtpv" path="res://assets/sprites/chapter 1/tileset/Tileset_Brick_v.03.png" id="29_akcfl"]
 [ext_resource type="Texture2D" uid="uid://dg7brj7rbi242" path="res://assets/sprites/chapter 1/tileset/Tileset_Palace_v.02.png" id="30_aleba"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="33_5517r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b017c"]
 size = Vector2(1921, 167)
@@ -934,6 +935,12 @@ z_index = 2
 position = Vector2(-686.428, -259.286)
 shape = SubResource("RectangleShape2D_1wcfd")
 
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Medjed/Area2D"]
+visible = false
+position = Vector2(-484.286, -520)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("33_5517r")
+
 [node name="GoalIcon" parent="." instance=ExtResource("19_1wcfd")]
 offset_left = 91.0
 offset_top = 741.0
@@ -1129,5 +1136,7 @@ scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="NPC/Medjed/Area2D" to="NPC/Medjed" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Medjed/Area2D" to="NPC/Medjed" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

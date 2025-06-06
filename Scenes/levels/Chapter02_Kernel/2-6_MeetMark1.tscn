@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://crkmdj7uvde0w"]
+[gd_scene load_steps=99 format=3 uid="uid://crkmdj7uvde0w"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_ahp4s"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_7usnc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dpb5ccumdcnjt" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Pillar_Night_v.01.PNG" id="5_ac6gj"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_sfoej"]
 [ext_resource type="Texture2D" uid="uid://klptx4rkjejo" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Vase_v.04.PNG" id="6_1eso7"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="6_3ogtq"]
 [ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="6_ac6gj"]
 [ext_resource type="Texture2D" uid="uid://cwdkg5b3dg1df" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_ClosedDoor_Night_v.01.PNG" id="6_lnrjg"]
 [ext_resource type="Texture2D" uid="uid://d0ghbyaweujm2" path="res://assets/sprites/chapter 1/tileset/Panel_Background_v01.PNG" id="7_1eso7"]
@@ -1095,6 +1096,12 @@ z_index = 2
 position = Vector2(-1385.98, -624.369)
 shape = SubResource("RectangleShape2D_mxuuk")
 
+[node name="Sprite2D" type="Sprite2D" parent="DecorationBack/Door/Area2D"]
+visible = false
+position = Vector2(-1684, -769.333)
+scale = Vector2(-0.1, 0.1)
+texture = ExtResource("6_3ogtq")
+
 [node name="DecorationOpenedDoorNightV_01" type="Sprite2D" parent="DecorationBack"]
 visible = false
 position = Vector2(533.333, 453.333)
@@ -1540,5 +1547,7 @@ scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="DecorationBack/Door/Area2D" to="DecorationBack/Door" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="DecorationBack/Door/Area2D" to="DecorationBack/Door" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

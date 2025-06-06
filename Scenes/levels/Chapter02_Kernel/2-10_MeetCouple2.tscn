@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://cvi40hpjsiwdk"]
+[gd_scene load_steps=94 format=3 uid="uid://cvi40hpjsiwdk"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_knvr1"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_dq6fq"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://b2gpffs4sj8x4" path="res://assets/sprites/chapter 2/assets/Bazaar/Decoration_BoothProduce_v.01.PNG" id="31_u6ccj"]
 [ext_resource type="Texture2D" uid="uid://cdcdiy428svmp" path="res://assets/sprites/chapter 3/character/Char_Cleopatra_Idle_v.01.png" id="33_fdv8w"]
 [ext_resource type="Texture2D" uid="uid://cjq8f4t2owhom" path="res://assets/sprites/chapter 3/character/Char_Medjed_Idle_v.01.png" id="33_u6ccj"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="35_fdv8w"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="38_8y7tg"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="39_savnx"]
 
@@ -1107,6 +1108,12 @@ z_index = 2
 position = Vector2(-1125.71, -17.1427)
 shape = SubResource("RectangleShape2D_8y7tg")
 
+[node name="Sprite2D" type="Sprite2D" parent="DecorationFront/Marc/Area2D"]
+visible = false
+position = Vector2(-1244.28, -310)
+scale = Vector2(-0.1, 0.1)
+texture = ExtResource("35_fdv8w")
+
 [node name="CharMarcIdleV_03" type="Sprite2D" parent="DecorationFront"]
 modulate = Color(0, 0, 0, 0.701961)
 position = Vector2(905.671, 573.431)
@@ -1132,6 +1139,12 @@ z_index = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DecorationFront/Cleopatra/Area2D"]
 position = Vector2(-941.429, -17.1427)
 shape = SubResource("RectangleShape2D_8y7tg")
+
+[node name="Sprite2D" type="Sprite2D" parent="DecorationFront/Cleopatra/Area2D"]
+visible = false
+position = Vector2(-755.711, -221.429)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("35_fdv8w")
 
 [node name="DecorationBoothProduceV_03" type="Sprite2D" parent="DecorationFront"]
 modulate = Color(0, 0, 0, 1)
@@ -1210,6 +1223,12 @@ z_index = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Merchant2/Area2D"]
 position = Vector2(-1301.53, 529.286)
 shape = SubResource("RectangleShape2D_8y7tg")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Merchant2/Area2D"]
+visible = false
+position = Vector2(-1508.16, 396.123)
+scale = Vector2(-0.1, 0.1)
+texture = ExtResource("35_fdv8w")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_k0bth")
@@ -1325,5 +1344,11 @@ scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="DecorationFront/Marc/Area2D" to="DecorationFront/Marc" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="DecorationFront/Marc/Area2D" to="DecorationFront/Marc" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="DecorationFront/Cleopatra/Area2D" to="DecorationFront/Cleopatra" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="DecorationFront/Cleopatra/Area2D" to="DecorationFront/Cleopatra" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NPC/Merchant2/Area2D" to="NPC/Merchant2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Merchant2/Area2D" to="NPC/Merchant2" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

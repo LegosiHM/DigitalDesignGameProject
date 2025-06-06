@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://0ew4v68aj6a8"]
+[gd_scene load_steps=89 format=3 uid="uid://0ew4v68aj6a8"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_7242q"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_vivsh"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://ctl6ahu80rd0t" path="res://assets/sprites/chapter 3/character/Char_Guards_Idle_v.01.png" id="27_1x70y"]
 [ext_resource type="Texture2D" uid="uid://nlvgwxi1xvsr" path="res://assets/sprites/chapter 3/character/Char_Guards_Idle_v.02.png" id="27_y67aj"]
 [ext_resource type="Script" uid="uid://di0gemil2hft2" path="res://scripts/NPCs/chapter01/dialogue.gd" id="30_1f60w"]
+[ext_resource type="Texture2D" uid="uid://b2fcp0suputmf" path="res://assets/UI/IMG_6501.png" id="33_osfh7"]
 [ext_resource type="PackedScene" uid="uid://dikjq2qsvqnra" path="res://Scenes/shaders/Glitching.tscn" id="36_nq60f"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="39_0dqhw"]
 
@@ -1076,6 +1077,12 @@ z_index = 2
 position = Vector2(737.245, 615)
 shape = SubResource("RectangleShape2D_0dqhw")
 
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Guard1/Area2D"]
+visible = false
+position = Vector2(887.249, 333.368)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("33_osfh7")
+
 [node name="CharGuardsIdleV_01" type="Sprite2D" parent="NPC"]
 modulate = Color(0, 0, 0, 0.607843)
 position = Vector2(2279.09, 1121.43)
@@ -1100,6 +1107,12 @@ z_index = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Guard2/Area2D"]
 position = Vector2(507.654, 611.939)
 shape = SubResource("RectangleShape2D_0dqhw")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC/Guard2/Area2D"]
+visible = false
+position = Vector2(620.922, 288.98)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("33_osfh7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_1f60w")
@@ -1580,5 +1593,9 @@ scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
+[connection signal="mouse_entered" from="NPC/Guard1/Area2D" to="NPC/Guard1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Guard1/Area2D" to="NPC/Guard1" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NPC/Guard2/Area2D" to="NPC/Guard2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPC/Guard2/Area2D" to="NPC/Guard2" method="_on_area_2d_mouse_exited"]
 
 [editable path="ChangeSceneDetector"]

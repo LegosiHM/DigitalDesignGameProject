@@ -102,3 +102,11 @@ func _on_dialog_finished():
 # ------------------------------------------------------------------------------
 func _reset_interaction():
 	can_interact = true
+
+
+func _on_area_2d_mouse_entered() -> void:
+	$Area2D/Sprite2D.visible = true
+
+
+func _on_area_2d_mouse_exited() -> void:
+	$Area2D/Sprite2D.visible = false
