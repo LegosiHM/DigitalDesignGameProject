@@ -390,10 +390,10 @@ visible = false
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("24_fd24g")]
 
 [node name="Tutorial32" type="RichTextLabel" parent="."]
-offset_left = 434.0
-offset_top = 644.0
-offset_right = 1066.0
-offset_bottom = 798.0
+offset_left = 39.0
+offset_top = 616.0
+offset_right = 671.0
+offset_bottom = 770.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
@@ -492,6 +492,30 @@ offset_left = 1006.0
 offset_top = 222.0
 offset_right = 1087.0
 offset_bottom = 243.0
+
+[node name="Glitching14" parent="." instance=ExtResource("18_c4fod")]
+offset_left = -3.0
+offset_top = 376.0
+offset_right = 328.0
+offset_bottom = 512.0
+
+[node name="Glitching15" parent="." instance=ExtResource("18_c4fod")]
+offset_left = 1538.0
+offset_top = 632.0
+offset_right = 1869.0
+offset_bottom = 768.0
+
+[node name="Glitching17" parent="." instance=ExtResource("18_c4fod")]
+offset_left = 1309.0
+offset_top = 261.0
+offset_right = 1433.0
+offset_bottom = 334.0
+
+[node name="Glitching16" parent="." instance=ExtResource("18_c4fod")]
+offset_left = 1441.0
+offset_top = 822.0
+offset_right = 1926.0
+offset_bottom = 966.0
 
 [node name="Tutorial33" type="RichTextLabel" parent="."]
 offset_left = 874.0
