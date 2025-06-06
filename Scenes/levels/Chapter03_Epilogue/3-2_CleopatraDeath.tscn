@@ -936,7 +936,7 @@ position = Vector2(779, 283)
 scale = Vector2(0.5, 0.5)
 
 [node name="untouchablePanle2" parent="." instance=ExtResource("27_iqje3")]
-position = Vector2(1423, 424)
+position = Vector2(1479, 424)
 scale = Vector2(0.5, 0.5)
 
 [node name="untouchablePanle3" parent="." instance=ExtResource("27_iqje3")]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://4ewqjcrls7ho"]
+[gd_scene load_steps=50 format=3 uid="uid://4ewqjcrls7ho"]
 
 [ext_resource type="Script" uid="uid://bs1srs3v1s08y" path="res://scripts/Managers/respawn_detector.gd" id="1_g7gon"]
 [ext_resource type="PackedScene" uid="uid://bsm1jl5axqvgh" path="res://Scenes/managers/change_scene_detector.tscn" id="2_bs7o0"]
-[ext_resource type="Texture2D" uid="uid://cgx71tum7x2vc" path="res://assets/sprites/chapter 1/background/BG_Temple_Day_v01.PNG" id="3_6lgo6"]
 [ext_resource type="PackedScene" uid="uid://dgo1on3kcjgef" path="res://Scenes/environments/Platform_Panel.tscn" id="4_pybha"]
 [ext_resource type="Texture2D" uid="uid://cyv686n4phr6a" path="res://assets/sprites/chapter 1/tileset/Panel_Platform_BrickRoad_v02.PNG" id="5_cw6ym"]
 [ext_resource type="Texture2D" uid="uid://84xcmycoexl3" path="res://assets/sprites/chapter 1/tileset/Panel_Outline_v02.PNG" id="6_q5ggn"]
@@ -240,8 +239,33 @@ sources/8 = SubResource("TileSetAtlasSource_57t7d")
 sources/9 = SubResource("TileSetAtlasSource_j0ep0")
 sources/1 = SubResource("TileSetAtlasSource_d6tir")
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pybha"]
+polygon = PackedVector2Array(46, 970, 46, 1059, 1886, 1062, 1887, 973)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cw6ym"]
+polygon = PackedVector2Array(359, 520, 44, 521, 44, 833, 1123, 834, 1123, 791, 357, 789)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6lgo6"]
+polygon = PackedVector2Array(-533, -170, -533, -126, 636, -128, 635, -169)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q5ggn"]
+polygon = PackedVector2Array(278, 52, 278, 99, 634, 99, 634, 55)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yvka0"]
+polygon = PackedVector2Array(-849, -396, 362, -396, 365, -352, -849, -356)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vrdib"]
+polygon = PackedVector2Array(500, -397, 501, -306, 771, -305, 771, -128, 816, -127, 815, -659, 770, -658, 771, -396)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eifit"]
+polygon = PackedVector2Array(230, -530, 231, -488, 591, -485, 592, -529)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pybha"]
 size = Vector2(221.072, 338.393)
+
+[sub_resource type="Environment" id="Environment_6lgo6"]
+ambient_light_color = Color(0.133333, 0.133333, 0.133333, 1)
+ambient_light_energy = 0.3
 
 [node name="3-1_BookHub_Boil" type="Node2D"]
 
@@ -293,10 +317,10 @@ portal_visual = NodePath("../UI/GoalIcon")
 [node name="CollisionShape2D" parent="ChangeSceneDetector" index="0"]
 position = Vector2(57, -273)
 
-[node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 0.905882)
-position = Vector2(958, 540)
-texture = ExtResource("3_6lgo6")
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1925.0
+offset_bottom = 1083.0
+color = Color(0.111196, 0, 0.00511927, 1)
 
 [node name="PanelHitbox" parent="." instance=ExtResource("4_pybha")]
 visible = false
@@ -305,6 +329,8 @@ position = Vector2(-1, 339)
 scale = Vector2(0.5, 0.5)
 tile_set = SubResource("TileSet_sqcuw")
 layer_0/tile_data = PackedInt32Array(917520, 65539, 3, 917521, 65539, 3, 917522, 65539, 3, 917523, 65539, 3, 917524, 65539, 3, 917525, 65539, 3, 917526, 65539, 3, 917527, 65539, 3, 917528, 65539, 3, 917529, 65539, 3, 917530, 65539, 3, 983056, 65539, 3, 983057, 65539, 3, 983058, 65539, 3, 983059, 65539, 3, 983060, 65539, 3, 983061, 65539, 3, 983062, 65539, 3, 983063, 65539, 3, 983064, 65539, 3, 983065, 65539, 3, 983066, 65539, 3, 917536, 65539, 3, 917535, 65539, 3, 917534, 65539, 3, 917533, 65539, 3, 917532, 65539, 3, 917531, 65539, 3, 917519, 65539, 3, 917518, 65539, 3, 917517, 65539, 3, 917516, 65539, 3, 917515, 65539, 3, 917514, 65539, 3, 917513, 65539, 3, 917512, 65539, 3, 917511, 65539, 3, 917510, 65539, 3, 917509, 65539, 3, 917508, 65539, 3, 917507, 65539, 3, 917506, 65539, 3, 917505, 65539, 3, 917537, 65539, 3, 917538, 65539, 3, 917539, 65539, 3, 917540, 65539, 3, 917541, 65539, 3, 917542, 65539, 3, 917543, 65539, 3, 917544, 65539, 3, 917545, 65539, 3, 983081, 65539, 3, 983080, 65539, 3, 983079, 65539, 3, 983078, 65539, 3, 983077, 65539, 3, 983076, 65539, 3, 983075, 65539, 3, 983074, 65539, 3, 983073, 65539, 3, 983072, 65539, 3, 983071, 65539, 3, 983070, 65539, 3, 983069, 65539, 3, 983068, 65539, 3, 983067, 65539, 3, 983055, 65539, 3, 983054, 65539, 3, 983053, 65539, 3, 983052, 65539, 3, 983051, 65539, 3, 983050, 65539, 3, 983049, 65539, 3, 983048, 65539, 3, 983047, 65539, 3, 983046, 65539, 3, 983045, 65539, 3, 983044, 65539, 3, 983043, 65539, 3, 983042, 65539, 3, 983041, 65539, 3, 655361, 196608, 3, 655362, 196608, 3, 655363, 196608, 3, 655364, 196608, 3, 655365, 196608, 3, 655366, 196608, 3, 655367, 196608, 3, 655368, 196608, 3, 655369, 196608, 3, 655370, 196608, 3, 655371, 196608, 3, 655372, 196608, 3, 655373, 196608, 3, 655374, 196608, 3, 655375, 196608, 3, 655376, 196608, 3, 655377, 196608, 3, 655378, 196608, 3, 655379, 196608, 3, 655380, 196608, 3, 655381, 196608, 3, 655382, 196608, 3, 655383, 196608, 3, 655384, 196608, 3, 655390, 196608, 3, 655391, 196608, 3, 655392, 196608, 3, 655393, 196608, 3, 655394, 196608, 3, 655395, 196608, 3, 655396, 196608, 3, 655397, 196608, 3, 327700, 196608, 3, 327705, 131072, 3, 327706, 196608, 3, 327707, 196608, 3, 327708, 196608, 3, 327709, 196608, 3, 327710, 196608, 3, 327711, 196608, 3, 327712, 196608, 3, 327713, 196608, 3, 327714, 196608, 3, 327715, 196608, 3, 327716, 196608, 3, 327717, 196608, 3, 327721, 196608, 3, 327699, 196608, 3, 327698, 196608, 3, 327697, 196608, 3, 327696, 196608, 3, 327695, 196608, 3, 327694, 196608, 3, 327693, 196608, 3, 327692, 196608, 3, 589831, 196608, 3, 524295, 196608, 3, 458759, 196608, 3, 393223, 196608, 3, 327687, 196608, 3, 262151, 196608, 3, 589825, 196608, 3, 524289, 196608, 3, 458753, 327680, 3, 393217, 327680, 3, 327681, 196608, 3, 262145, 196608, 3, 262150, 196608, 3, 262149, 196608, 3, 262148, 196608, 3, 262147, 196608, 3, 262146, 196608, 3, 6, 196608, 3, 7, 196608, 3, 8, 196608, 3, 9, 196608, 3, 10, 196608, 3, 11, 196608, 3, 12, 196608, 3, 13, 196608, 3, 14, 196608, 3, 15, 196608, 3, 16, 196608, 3, 17, 196608, 3, 18, 196608, 3, 19, 196608, 3, 20, 196608, 3, 21, 196608, 3, 22, 196608, 3, 23, 196608, 3, 24, 196608, 3, 25, 196608, 3, 26, 196608, 3, 27, 196608, 3, 28, 196608, 3, 29, 196608, 3, 30, 196608, 3, 35, 196608, 3, 65571, 196608, 3, -196578, 196608, 3, -196577, 196608, 3, -196576, 196608, 3, -196575, 196608, 3, -196574, 196608, 3, -196573, 196608, 3, -196572, 196608, 3, 36, 196608, 3, 37, 196608, 3, 38, 196608, 3, -196579, 196608, 3, 39, 196608, 3, 40, 196608, 3, 41, 196608, 3, -65495, 196608, 3, -131031, 196608, 3, -196567, 196608, 3, -262103, 196608, 3, -327639, 196608, 3, -393175, 196608, 3, 65577, 196608, 3, 131113, 196608, 3, 196649, 196608, 3, 262185, 196608, 3, 65572, 196608, 3, 65573, 196608, 3, 65574, 196608, 3, 65575, 196608, 3, 65576, 196608, 3, 31, 196608, 3, 327701, 131072, 3, 327702, 131072, 3, 327703, 131072, 3, 327704, 131072, 3, 327682, 327680, 3, 327683, 327680, 3, 327684, 327680, 3, 327685, 327680, 3, 327686, 327680, 3, 393222, 327680, 3, 393221, 327680, 3, 393220, 327680, 3, 458754, 327680, 3, 458755, 327680, 3, 458756, 327680, 3, 458757, 327680, 3, 393219, 327680, 3, 393218, 327680, 3, 458758, 327680, 3, 524293, 327680, 3, 524290, 327680, 3, 524291, 327680, 3, 524292, 327680, 3, 524294, 327680, 3, 589830, 327680, 3, 589829, 327680, 3, 589828, 327680, 3, 589827, 327680, 3, 589826, 327680, 3, 5, 196608, 3)
+
+[node name="Glitching" parent="PanelHitbox" instance=ExtResource("18_c4fod")]
 
 [node name="UI" parent="." instance=ExtResource("15_efu04")]
 z_index = 4
@@ -381,6 +407,29 @@ scroll_active = false
 [node name="draggablePanel" parent="." instance=ExtResource("22_jgjwh")]
 position = Vector2(1073, 735)
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="draggablePanel"]
+position = Vector2(-1073, -735)
+occluder = SubResource("OccluderPolygon2D_pybha")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="draggablePanel"]
+position = Vector2(-1073, -735)
+occluder = SubResource("OccluderPolygon2D_cw6ym")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="draggablePanel"]
+occluder = SubResource("OccluderPolygon2D_6lgo6")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="draggablePanel"]
+occluder = SubResource("OccluderPolygon2D_q5ggn")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="draggablePanel"]
+occluder = SubResource("OccluderPolygon2D_yvka0")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="draggablePanel"]
+occluder = SubResource("OccluderPolygon2D_vrdib")
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="draggablePanel"]
+occluder = SubResource("OccluderPolygon2D_eifit")
+
 [node name="PanelCollsionContainer2" type="Node2D" parent="."]
 
 [node name="StaticPanelCollision6" parent="PanelCollsionContainer2" instance=ExtResource("23_fm60h")]
@@ -444,12 +493,6 @@ offset_top = 222.0
 offset_right = 1087.0
 offset_bottom = 243.0
 
-[node name="Glitching14" parent="." instance=ExtResource("18_c4fod")]
-offset_left = 902.0
-offset_top = 281.0
-offset_right = 983.0
-offset_bottom = 302.0
-
 [node name="Tutorial33" type="RichTextLabel" parent="."]
 offset_left = 874.0
 offset_top = 317.0
@@ -463,6 +506,9 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[shake rate=50 level = 50 connected = 1][color=red]Talk to me FIRST"
 scroll_active = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6lgo6")
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

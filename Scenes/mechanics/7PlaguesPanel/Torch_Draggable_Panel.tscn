@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://553gitplqhlb"]
+[gd_scene load_steps=6 format=3 uid="uid://553gitplqhlb"]
 
 [ext_resource type="Script" uid="uid://pme7x8bbaxyf" path="res://scripts/puzzles/draggable_panel.gd" id="1_tgo1f"]
 [ext_resource type="Texture2D" uid="uid://cw176vbf271f" path="res://assets/sprites/chapter 2/assets/Palace/Decoration_Torch_v.01.PNG" id="2_fl2b2"]
 [ext_resource type="Texture2D" uid="uid://ciaiaebtkiff2" path="res://assets/UI/MainMenu/Outline_v.06.png" id="2_ydlxn"]
+[ext_resource type="Texture2D" uid="uid://bw46ogbpswr5j" path="res://assets/sprites/chapter 3/cutscene/Untitled_Artwork.png" id="4_koapw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onjbf"]
 size = Vector2(23, 30)
@@ -43,6 +44,14 @@ offset_bottom = 113.0
 scale = Vector2(0.43974, 1.06857)
 focus_mode = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Area2D2"]
+position = Vector2(2.50002, -19.5)
+scale = Vector2(8.60937, 5.89063)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_koapw")
+texture_scale = 0.25
 
 [connection signal="button_down" from="Area2D2/Button" to="Area2D2" method="_on_button_button_down"]
 [connection signal="button_up" from="Area2D2/Button" to="Area2D2" method="_on_button_button_up"]
