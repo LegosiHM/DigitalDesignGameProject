@@ -93,7 +93,7 @@ func start_scene_transition():
 
 	# Fade in effect using custom shader (fade 0 → 1)
 	tween.tween_property(
-		transition_rect.material, "0", 
+		transition_rect.material, "shader_parameter/in_out", 
 		1.0, 0.1
 	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 
