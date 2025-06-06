@@ -928,6 +928,34 @@ offset_top = 300.0
 offset_right = 1366.0
 offset_bottom = 326.0
 
+[node name="Tutorial33" type="RichTextLabel" parent="."]
+offset_left = 1491.0
+offset_top = 375.0
+offset_right = 1665.0
+offset_bottom = 423.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_yk8nf")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=red]Talk to me "
+scroll_active = false
+
+[node name="Tutorial34" type="RichTextLabel" parent="."]
+offset_left = 681.0
+offset_top = 735.0
+offset_right = 1411.0
+offset_bottom = 789.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_yk8nf")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=red]Talk to Medjed to be able to go to the next scene"
+scroll_active = false
+
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
 

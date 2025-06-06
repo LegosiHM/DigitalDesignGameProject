@@ -74,7 +74,7 @@ position = Vector2(725, 38)
 shape = SubResource("RectangleShape2D_npypg")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(-774, -571)
+position = Vector2(-817, -571)
 shape = SubResource("RectangleShape2D_27b4b")
 
 [node name="Detector03" type="CollisionShape2D" parent="RespawnDetector"]
@@ -86,7 +86,7 @@ position = Vector2(1345.5, -1077)
 shape = SubResource("RectangleShape2D_ctvnn")
 
 [node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("6_72u40")]
-position = Vector2(2001, 656)
+position = Vector2(2153, 656)
 scale = Vector2(2, 2)
 my_scene = "res://Scenes/levels/Chapter01_Prologue/1-4_PushAndLedgeGrabbingPractice.tscn"
 disable_on_default = true
@@ -150,6 +150,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_w0t8t")
 
 [node name="Panel_PriestGlare" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+visible = false
 position = Vector2(1920, 1080)
 script = ExtResource("5_8tpl8")
 dialog_lines = Array[String](["?! ⍵#0'$ +#€⌈€!"])
@@ -205,7 +206,7 @@ scale = Vector2(-1, 0.75)
 
 [node name="WallPanel" parent="." instance=ExtResource("3_4tmjt")]
 rotation = 1.5708
-layer_0/tile_data = PackedInt32Array(-655351, 3, 3, -655352, 196611, 3, -655353, 3, 3, -655354, 196611, 3, -655355, 3, 3, -655356, 196611, 3, -655357, 393219, 3, -720887, 2, 0, -720888, 2, 0, -720889, 2, 0, -720890, 2, 0, -720891, 2, 0, -720892, 2, 0, -720893, 2, 0)
+layer_0/tile_data = PackedInt32Array(-655351, 131093, 2, -655352, 65557, 2, -655353, 65557, 2, -655354, 65557, 2, -655355, 65557, 2, -655356, 65557, 2, -655357, 21, 2, -720887, 131093, 0, -720888, 65557, 0, -720889, 65557, 0, -720890, 65557, 0, -720891, 65557, 0, -720892, 65557, 0, -720893, 21, 0)
 
 [node name="Outline" parent="WallPanel" instance=ExtResource("3_4tmjt")]
 position = Vector2(43.9998, -45.0002)
@@ -304,17 +305,17 @@ bbcode_enabled = true
 text = "Some panel can be dragged using [shake rate=50 level = 50 connected = 1] [color=blue]Energy"
 
 [node name="Tutorial4" type="RichTextLabel" parent="."]
-offset_left = 1376.0
-offset_top = 652.0
-offset_right = 1931.0
-offset_bottom = 853.0
+offset_left = 1366.0
+offset_top = 656.0
+offset_right = 1920.0
+offset_bottom = 829.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("18_4uv5w")
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "Click [wave amp=50.0 freq=5.0 connected=1] [color=darkred]Left Mouse Button [/color][/wave] to [shake rate=50 level = 50 connected = 1] [color=darkblue]Interact[/color][/shake] with [shake rate=50 level = 50 connected = 1] [color=darkblue]all of them[/color][/shake] and [shake rate=50 level = 50 connected = 1] [color=purple]something might happen..."
+text = "Click [wave amp=50.0 freq=5.0 connected=1] [color=darkred]Left Mouse Button [/color][/wave] to [shake rate=50 level = 50 connected = 1] [color=darkblue]Interact[/color][/shake] with [shake rate=50 level = 50 connected = 1] [color=darkblue]all of them[/color][/shake] and [shake rate=50 level = 50 connected = 1] [color=purple]allow you to go to the next scene"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4uv5w")

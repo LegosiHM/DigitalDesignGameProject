@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ciaiaebtkiff2" path="res://assets/UI/MainMenu/Outline_v.06.png" id="2_ydlxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onjbf"]
-size = Vector2(86, 220)
+size = Vector2(23, 30)
 
 [node name="draggablePanel" type="Node2D" groups=["draggable_panels"]]
 
@@ -13,7 +13,7 @@ size = Vector2(86, 220)
 collision_layer = 24
 collision_mask = 6
 script = ExtResource("1_tgo1f")
-return_speed = 0.0
+return_speed = 500.0
 illegalDragging_speed = 100.0
 energyConsumption = 0
 
@@ -26,7 +26,7 @@ texture = ExtResource("2_ydlxn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 light_mask = 9
 visibility_layer = 8
-position = Vector2(1, 9)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_onjbf")
 
 [node name="DecorationTorchV_01" type="Sprite2D" parent="Area2D2"]

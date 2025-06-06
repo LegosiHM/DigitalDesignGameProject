@@ -753,7 +753,7 @@ shape = SubResource("RectangleShape2D_ne1c2")
 
 [node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("2_yo4oc")]
 z_index = 10
-position = Vector2(2422, 1359)
+position = Vector2(2502, 1359)
 scale = Vector2(2.62, 1)
 my_scene = "res://Scenes/levels/Chapter02_PartitionToEpilogue/2-15_Lice.tscn"
 disable_on_default = true
@@ -835,11 +835,12 @@ position = Vector2(1745, 264)
 scale = Vector2(0.84, 0.84)
 texture = ExtResource("26_wan40")
 
-[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel", "reveal_path")]
 script = ExtResource("29_xdsuf")
-dialog_lines = Array[String](["Now is the \"Plague of Frogs\"", "Frog will be everywhere...", "And only frogs can jump...", "You are not the frog, right?"])
+dialog_lines = Array[String](["Now is the \"Plague of Frogs\"", "Frog will be everywhere...", "And only frogs can jump high...", "You are not the frog, right?"])
 dialog_position_Array = Array[Vector2]([Vector2(1200, 100), Vector2(1200, 100), Vector2(1200, 100), Vector2(1200, 100)])
 will_reveal_object = true
+reveal_panel = NodePath("../draggablePanel")
 reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="StoryPanelMedjedIntroductionV_03" type="Sprite2D" parent="Medjed"]
@@ -860,7 +861,7 @@ texture = ExtResource("26_wan40")
 
 [node name="Player" parent="." instance=ExtResource("16_xdsuf")]
 position = Vector2(1147, 586)
-jump_force = 0.0
+jump_force = 800.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("17_tc0j4")
@@ -896,6 +897,7 @@ rotation = 3.14159
 scale = Vector2(-27.1109, -32.706)
 
 [node name="draggablePanel" parent="." instance=ExtResource("22_ji4vj")]
+visible = false
 position = Vector2(242, 241)
 
 [node name="draggablePanel2" parent="." instance=ExtResource("23_yo4oc")]
@@ -915,7 +917,7 @@ theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("26_b7pak")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
-text = "[shake rate=50 level = 50 connected = 1][color=darkred]You are unable to JUMP"
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]You will JUMP very LOW"
 scroll_active = false
 
 [node name="Glitching12" parent="." instance=ExtResource("38_tc0j4")]
@@ -935,6 +937,34 @@ offset_left = -59.0
 offset_top = 338.0
 offset_right = 139.0
 offset_bottom = 400.0
+
+[node name="Tutorial33" type="RichTextLabel" parent="."]
+offset_left = 1497.0
+offset_top = 350.0
+offset_right = 1671.0
+offset_bottom = 398.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_b7pak")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=red]Talk to me "
+scroll_active = false
+
+[node name="Tutorial34" type="RichTextLabel" parent="."]
+offset_left = 83.0
+offset_top = 421.0
+offset_right = 669.0
+offset_bottom = 475.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_b7pak")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=red]Talk to Medjed to reveal a hidden Panel"
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

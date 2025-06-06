@@ -38,7 +38,7 @@ position = Vector2(476, 47)
 shape = SubResource("RectangleShape2D_lu41b")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(-726, -482.25)
+position = Vector2(-748, -482.25)
 shape = SubResource("RectangleShape2D_htmvp")
 
 [node name="Detector03" type="CollisionShape2D" parent="RespawnDetector"]
@@ -50,7 +50,7 @@ position = Vector2(1334, -958.5)
 shape = SubResource("RectangleShape2D_m0y2c")
 
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("3_i4q5w")]
-position = Vector2(1975, 630)
+position = Vector2(2158, 630)
 scale = Vector2(2, 2)
 my_scene = "res://Scenes/levels/Chapter01_Prologue/1-3_Ability Practice.tscn"
 

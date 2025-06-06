@@ -283,11 +283,11 @@ texture = ExtResource("3_ouo7i")
 
 [node name="PanelHitbox" parent="." instance=ExtResource("4_vbgyw")]
 visible = false
-modulate = Color(0.803922, 0.803922, 0.803922, 1)
+modulate = Color(0, 0, 0, 1)
 position = Vector2(-1, 339)
 scale = Vector2(0.75, 0.75)
 tile_set = SubResource("TileSet_sqcuw")
-layer_0/tile_data = PackedInt32Array(720895, 327680, 3, 655360, 327680, 3, 655361, 327680, 3, 655362, 327680, 3, 655363, 327680, 3, 655364, 327680, 3, 655365, 327680, 3, 655366, 327680, 3, 655367, 327680, 3, 589832, 327680, 3, 655368, 327680, 3, 589833, 327680, 3, 655369, 327680, 3, 655359, 327680, 3, 589824, 327680, 3, 589825, 327680, 3, 589826, 327680, 3, 589827, 327680, 3, 589828, 327680, 3, 589829, 327680, 3, 589830, 327680, 3, 589831, 327680, 3, 655376, 65536, 3, 589840, 65536, 3, 524304, 65536, 3, 458768, 65536, 3, 393232, 65536, 3, 327696, 65536, 3, 262160, 65536, 3, 196624, 65536, 3, 131088, 65536, 3, 327686, 65536, 3, 327685, 65536, 3, 327684, 65536, 3, 393215, 131072, 3, 327679, 131072, 3, 262143, 131072, 3, 196607, 131072, 3, 131071, 131072, 3, 65543, 131072, 3, 65544, 131072, 3, 65545, 131072, 3, 65546, 131072, 3, 65547, 131072, 3, 65548, 131072, 3, 65549, 131072, 3, 65550, 131072, 3, 65551, 131072, 3, 65552, 131072, 3, 10, 196608, 3, 65535, 65536, 3, -1, 65536, 3, -65537, 65536, 3, -131073, 65536, 3, -196609, 65536, 3)
+layer_0/tile_data = PackedInt32Array(720895, 327680, 3, 655360, 327680, 3, 655361, 327680, 3, 655362, 327680, 3, 655363, 327680, 3, 655364, 327680, 3, 655365, 327680, 3, 655366, 327680, 3, 655367, 327680, 3, 589832, 327680, 3, 655368, 327680, 3, 589833, 327680, 3, 655369, 327680, 3, 655359, 327680, 3, 589824, 327680, 3, 589825, 327680, 3, 589826, 327680, 3, 589827, 327680, 3, 589828, 327680, 3, 589829, 327680, 3, 589830, 327680, 3, 589831, 327680, 3, 327686, 65536, 3, 327685, 65536, 3, 327684, 65536, 3, 393215, 131072, 3, 327679, 131072, 3, 262143, 131072, 3, 196607, 131072, 3, 131071, 131072, 3, 65543, 131072, 3, 65544, 131072, 3, 65545, 131072, 3, 65546, 131072, 3, 65547, 131072, 3, 65548, 131072, 3, 65549, 131072, 3, 65550, 131072, 3, 65551, 131072, 3, 65552, 131072, 3, 65535, 65536, 3, -1, 65536, 3, -65537, 65536, 3, -131073, 65536, 3, -196609, 65536, 3, 131089, 65536, 3, 196625, 65536, 3, 262161, 65536, 3, 327697, 65536, 3, 393233, 65536, 3, 458769, 65536, 3, 524305, 65536, 3, 589841, 65536, 3, 655377, 65536, 3)
 
 [node name="Outline" parent="." instance=ExtResource("4_vbgyw")]
 visible = false
@@ -353,11 +353,12 @@ visible = false
 
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
 
-[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel", "reveal_path")]
 script = ExtResource("21_c3215")
 dialog_lines = Array[String](["About the plan...", "Marcus will...", "And Egypt...", "---", "--", "-INTERACTION INTERFERED BY ENTITY42MEDJED", "\"Hey!\"", "\"These people in the book are getting real!\"", "\"No time to waste. I found the way out!\"", "\"Come here! Through the invisible platform!\""])
 dialog_position_Array = Array[Vector2]([Vector2(800, 150), Vector2(800, 150), Vector2(800, 150), Vector2(800, 150), Vector2(800, 150), Vector2(800, 150), Vector2(300, 500), Vector2(300, 500), Vector2(300, 500), Vector2(300, 500)])
 will_reveal_object = true
+reveal_panel = NodePath("../PanelHitbox")
 reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="StoryPanelEvilPlanV_01" type="Sprite2D" parent="Medjed"]
@@ -437,18 +438,17 @@ text = "[shake rate=50 level = 50 connected = 1][color=darkred] Don't go this wa
 scroll_active = false
 
 [node name="Tutorial36" type="RichTextLabel" parent="."]
-offset_left = 146.0
-offset_top = 593.0
-offset_right = 748.0
-offset_bottom = 743.0
+offset_left = 73.0
+offset_top = 548.0
+offset_right = 1165.0
+offset_bottom = 615.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("16_n642c")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
-text = "[shake rate=50 level = 50 connected = 1][color=darkred] Try to move a lot to find INVISIBLE PLATFORMs
- "
+text = "[shake rate=50 level = 50 connected = 1][color=darkred] Talk to Octavia to reveal the insvisible platform"
 scroll_active = false
 
 [node name="Glitching14" parent="." instance=ExtResource("25_okbg1")]
@@ -456,6 +456,12 @@ offset_left = 814.0
 offset_top = 935.0
 offset_right = 919.0
 offset_bottom = 966.0
+
+[node name="Glitching30" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 241.0
+offset_top = 560.0
+offset_right = 407.0
+offset_bottom = 615.0
 
 [node name="Glitching15" parent="." instance=ExtResource("25_okbg1")]
 offset_left = 1738.0
@@ -528,6 +534,30 @@ offset_left = 1802.0
 offset_top = 918.0
 offset_right = 2216.0
 offset_bottom = 947.0
+
+[node name="Glitching27" parent="." instance=ExtResource("25_okbg1")]
+offset_left = -67.0
+offset_top = 952.0
+offset_right = 673.0
+offset_bottom = 1094.0
+
+[node name="Glitching28" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 266.0
+offset_top = 675.0
+offset_right = 472.0
+offset_bottom = 747.0
+
+[node name="Glitching29" parent="." instance=ExtResource("25_okbg1")]
+offset_left = -205.0
+offset_top = 74.0
+offset_right = 1.0
+offset_bottom = 743.0
+
+[node name="Glitching31" parent="." instance=ExtResource("25_okbg1")]
+offset_left = 474.0
+offset_top = 411.0
+offset_right = 1162.0
+offset_bottom = 473.0
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

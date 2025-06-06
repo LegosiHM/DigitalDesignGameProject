@@ -37,7 +37,7 @@ texture = ExtResource("1_g62pi")
 
 [node name="ChangeSceneDetector" parent="." instance=ExtResource("2_51iw3")]
 z_index = 5
-position = Vector2(-47, 679)
+position = Vector2(-154, 899)
 rotation = -1.5708
 scale = Vector2(5.647, 0.189998)
 my_scene = "res://Scenes/levels/Chapter01_Prologue/1-9_Flee3.tscn"

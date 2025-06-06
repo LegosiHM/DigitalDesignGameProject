@@ -396,17 +396,19 @@ rotation = 3.14159
 scale = Vector2(-17.448, 7.5)
 
 [node name="draggablePanel2" parent="." instance=ExtResource("23_iuadc")]
+visible = false
 position = Vector2(234, 849)
 
 [node name="StuckablePanel" parent="." instance=ExtResource("23_ubqn8")]
 position = Vector2(1807, 240)
 scale = Vector2(0.440002, 1)
 
-[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel", "reveal_path")]
 script = ExtResource("26_56at4")
 dialog_lines = Array[String](["Ugh! Insects again!", "This is \"Plague of Flies\"", "It destroys everything, but not me and you.", "They're annoying nontheless,", "So come fast!"])
 dialog_position_Array = Array[Vector2]([Vector2(450, 150), Vector2(450, 150), Vector2(450, 150), Vector2(450, 150), Vector2(450, 150)])
 will_reveal_object = true
+reveal_panel = NodePath("../draggablePanel2")
 reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="StoryPanelMedjedIntroductionV_04" type="Sprite2D" parent="Medjed"]
@@ -426,17 +428,17 @@ scale = Vector2(0.58, 0.58)
 texture = ExtResource("24_ubqn8")
 
 [node name="Tutorial32" type="RichTextLabel" parent="."]
-offset_left = 1297.0
-offset_top = 951.0
-offset_right = 1862.0
-offset_bottom = 1027.0
+offset_left = 1303.0
+offset_top = 616.0
+offset_right = 1895.0
+offset_bottom = 760.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("16_pwciu")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
-text = "[shake rate=50 level = 50 connected = 1][color=darkred]You will move VERY FAST"
+text = "[shake rate=50 level = 50 connected = 1][color=darkred]You will move VERY FAST and jump VERY FAR"
 scroll_active = false
 
 [node name="Glitching12" parent="." instance=ExtResource("28_i7a8s")]
@@ -468,6 +470,34 @@ offset_left = 337.0
 offset_top = 595.0
 offset_right = 553.0
 offset_bottom = 626.0
+
+[node name="Tutorial33" type="RichTextLabel" parent="."]
+offset_left = 304.0
+offset_top = 409.0
+offset_right = 478.0
+offset_bottom = 457.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("16_pwciu")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=red]Talk to me "
+scroll_active = false
+
+[node name="Tutorial34" type="RichTextLabel" parent="."]
+offset_left = 662.0
+offset_top = 585.0
+offset_right = 1243.0
+offset_bottom = 628.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("16_pwciu")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=red]Talk to Medjed to reveal a hidden Panel"
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]

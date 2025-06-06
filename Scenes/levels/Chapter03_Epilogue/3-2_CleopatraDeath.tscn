@@ -609,7 +609,7 @@ scale = Vector2(0.80597, 0.80597)
 texture = ExtResource("7_nncqf")
 
 [node name="BackgroundCorridorNightV_01" type="Sprite2D" parent="Panel/DecorationPanel"]
-position = Vector2(626.963, -43.4597)
+position = Vector2(628.297, -43.4597)
 scale = Vector2(0.470988, 0.530263)
 texture = ExtResource("3_5ou4l")
 region_enabled = true
@@ -632,7 +632,7 @@ region_rect = Rect2(0, 0, 1920, 873.054)
 
 [node name="DecorationVaseV_04" type="Sprite2D" parent="Panel/DecorationPanel"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(1034.67, 98.6667)
+position = Vector2(1034.67, 104)
 scale = Vector2(1.19154, 1.19154)
 texture = ExtResource("7_nncqf")
 region_enabled = true
@@ -686,9 +686,15 @@ region_enabled = true
 region_rect = Rect2(0, 0, 480, 438.506)
 
 [node name="DecorationBuildingV_01" type="Sprite2D" parent="Panel/DecorationPanel"]
-modulate = Color(0, 0, 0, 0.85098)
+modulate = Color(0, 0, 0, 0.435294)
 position = Vector2(1527.5, 91)
 scale = Vector2(0.937018, 0.184108)
+texture = ExtResource("21_fxcs8")
+
+[node name="DecorationBuildingV_06" type="Sprite2D" parent="Panel/DecorationPanel"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1158.67, 21.3333)
+scale = Vector2(0.22922, 0.0465114)
 texture = ExtResource("21_fxcs8")
 
 [node name="DecorationBuildingV_03" type="Sprite2D" parent="Panel/DecorationPanel"]
@@ -737,10 +743,18 @@ position = Vector2(582.667, 531.919)
 scale = Vector2(1.01042, 1.11069)
 texture = ExtResource("23_g6kak")
 
+[node name="GoalIcon2" parent="Panel" instance=ExtResource("30_l6ddr")]
+modulate = Color(0.86, 0, 0, 1)
+offset_left = 962.667
+offset_top = -114.667
+offset_right = 962.667
+offset_bottom = -114.667
+scale = Vector2(-0.5, 0.375)
+
 [node name="Outline" parent="Panel" instance=ExtResource("9_kjo8d")]
 position = Vector2(45, 44)
 tile_set = SubResource("TileSet_vfyhx")
-layer_0/tile_data = PackedInt32Array(-262143, 1, 0, 65537, 1, 5, 65547, 327681, 5, -262133, 327681, 0, -262142, 196609, 0, -262141, 196609, 0, -262140, 196609, 0, -262139, 196609, 0, -262138, 196609, 0, -262137, 196609, 0, -262136, 196609, 0, -262135, 196609, 0, -262134, 196609, 0, -196597, 327681, 2, -131061, 327681, 2, -65525, 327681, 2, 11, 327681, 2, 65538, 131073, 5, 65539, 131073, 5, 65540, 131073, 5, 65541, 131073, 5, 65542, 131073, 5, 65543, 131073, 5, 65544, 131073, 5, 65545, 131073, 5, 65546, 131073, 5, 1, 1, 4, -65535, 1, 4, -131071, 1, 4, -196607, 1, 4, 65548, 1, 5, 12, 1, 4, -65524, 1, 4, -131060, 1, 4, -196596, 1, 4, -262132, 1, 0, -262131, 196609, 0, -262130, 196609, 0, -262129, 196609, 0, -262128, 196609, 0, -262127, 196609, 0, -262126, 196609, 0, -262125, 196609, 0, -262124, 196609, 0, -262123, 196609, 0, 65549, 131073, 5, 65550, 131073, 5, 65551, 131073, 5, 65552, 131073, 5, 65553, 131073, 5, 65554, 131073, 5, 65555, 131073, 5, 65556, 131073, 5, 65557, 131073, 5, -262122, 327681, 0, -196586, 327681, 2, -131050, 327681, 2, -65514, 327681, 2, 22, 327681, 2, 65558, 327681, 5, 131073, 1, 0, 196609, 1, 4, 262145, 1, 4, 327681, 1, 4, 393217, 1, 4, 458753, 1, 5, 131074, 196609, 0, 458754, 131073, 5, 131075, 196609, 0, 458755, 131073, 5, 131076, 196609, 0, 458756, 131073, 5, 131077, 196609, 0, 458757, 131073, 5, 131078, 196609, 0, 458758, 131073, 5, 131079, 196609, 0, 458759, 131073, 5, 131080, 196609, 0, 458760, 131073, 5, 131081, 196609, 0, 458761, 131073, 5, 131082, 196609, 0, 458762, 131073, 5, 131083, 327681, 0, 196619, 327681, 2, 262155, 327681, 2, 327691, 327681, 2, 393227, 327681, 2, 458763, 327681, 5, 131084, 1, 0, 196620, 1, 4, 262156, 1, 4, 327692, 1, 4, 393228, 1, 4, 458764, 1, 5, 131085, 196609, 0, 458765, 131073, 5, 131086, 196609, 0, 458766, 131073, 5, 131087, 196609, 0, 458767, 131073, 5, 131088, 196609, 0, 458768, 131073, 5, 131089, 196609, 0, 458769, 131073, 5, 131090, 196609, 0, 458770, 131073, 5, 131091, 196609, 0, 458771, 131073, 5, 131092, 196609, 0, 458772, 131073, 5, 131093, 196609, 0, 458773, 131073, 5, 393238, 327681, 2, 458774, 327681, 5, 131094, 327681, 0)
+layer_0/tile_data = PackedInt32Array(-262143, 1, 0, 65537, 1, 5, 65547, 327681, 5, -262142, 196609, 0, -262141, 196609, 0, -262140, 196609, 0, -262139, 196609, 0, -262138, 196609, 0, -262137, 196609, 0, -262136, 196609, 0, -262135, 196609, 0, -262134, 196609, 0, 11, 327681, 2, 65538, 131073, 5, 65539, 131073, 5, 65540, 131073, 5, 65541, 131073, 5, 65542, 131073, 5, 65543, 131073, 5, 65544, 131073, 5, 65545, 131073, 5, 65546, 131073, 5, 1, 1, 4, -65535, 1, 4, -131071, 1, 4, -196607, 1, 4, -262131, 196609, 0, -262130, 196609, 0, -262129, 196609, 0, -262128, 196609, 0, -262127, 196609, 0, -262126, 196609, 0, -262125, 196609, 0, -262124, 196609, 0, -262123, 196609, 0, 65549, 131073, 5, 65550, 131073, 5, 65551, 131073, 5, 65552, 131073, 5, 65553, 131073, 5, 65554, 131073, 5, 65555, 131073, 5, 65556, 131073, 5, 65557, 131073, 5, -262122, 327681, 0, -196586, 327681, 2, -131050, 327681, 2, -65514, 327681, 2, 22, 327681, 2, 65558, 327681, 5, 131073, 1, 0, 196609, 1, 4, 262145, 1, 4, 327681, 1, 4, 393217, 1, 4, 458753, 1, 5, 131074, 196609, 0, 458754, 131073, 5, 131075, 196609, 0, 458755, 131073, 5, 131076, 196609, 0, 458756, 131073, 5, 131077, 196609, 0, 458757, 131073, 5, 131078, 196609, 0, 458758, 131073, 5, 131079, 196609, 0, 458759, 131073, 5, 131080, 196609, 0, 458760, 131073, 5, 131081, 196609, 0, 458761, 131073, 5, 131082, 196609, 0, 458762, 131073, 5, 393227, 327681, 2, 458763, 327681, 5, 131084, 1, 0, 393228, 1, 4, 458764, 1, 5, 131085, 196609, 0, 458765, 131073, 5, 131086, 196609, 0, 458766, 131073, 5, 131087, 196609, 0, 458767, 131073, 5, 131088, 196609, 0, 458768, 131073, 5, 131089, 196609, 0, 458769, 131073, 5, 131090, 196609, 0, 458770, 131073, 5, 131091, 196609, 0, 458771, 131073, 5, 131092, 196609, 0, 458772, 131073, 5, 131093, 196609, 0, 458773, 131073, 5, 393238, 327681, 2, 458774, 327681, 5, 131094, 327681, 0, -262132, 1, 0, -262133, 327681, 0, 196620, 1, 1)
 
 [node name="Player" parent="." instance=ExtResource("20_bw571")]
 position = Vector2(250, 402)
@@ -895,11 +909,11 @@ text = "The Death of Clepatra"
 [node name="GoalIcon" parent="UI" instance=ExtResource("30_l6ddr")]
 visible = false
 layout_mode = 1
-offset_left = 1721.0
-offset_top = 500.0
-offset_right = 1721.0
-offset_bottom = 500.0
-scale = Vector2(-1, 0.75)
+offset_left = 1707.0
+offset_top = 521.0
+offset_right = 1707.0
+offset_bottom = 521.0
+scale = Vector2(-0.75, 0.562)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("27_67w3h")
@@ -922,15 +936,15 @@ position = Vector2(779, 283)
 scale = Vector2(0.5, 0.5)
 
 [node name="untouchablePanle2" parent="." instance=ExtResource("27_iqje3")]
-position = Vector2(1381, 427)
-scale = Vector2(0.305, 0.5)
+position = Vector2(1423, 424)
+scale = Vector2(0.5, 0.5)
 
 [node name="untouchablePanle3" parent="." instance=ExtResource("27_iqje3")]
-position = Vector2(441, 570)
+position = Vector2(407, 604)
 scale = Vector2(0.5, 0.5)
 
 [node name="untouchablePanle4" parent="." instance=ExtResource("27_iqje3")]
-position = Vector2(795, 712)
+position = Vector2(771, 716)
 scale = Vector2(0.5, 0.5)
 
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
@@ -996,19 +1010,84 @@ offset_top = 567.0
 offset_right = 1790.0
 offset_bottom = 705.0
 
+[node name="Glitching16" parent="." instance=ExtResource("35_spjxo")]
+offset_left = 126.0
+offset_top = 125.0
+offset_right = 1560.0
+offset_bottom = 137.0
+
+[node name="Glitching17" parent="." instance=ExtResource("35_spjxo")]
+offset_left = 101.0
+offset_top = 125.0
+offset_right = 133.0
+offset_bottom = 882.0
+
+[node name="Glitching18" parent="." instance=ExtResource("35_spjxo")]
+offset_left = 101.0
+offset_top = 855.0
+offset_right = 813.0
+offset_bottom = 882.0
+
+[node name="Glitching19" parent="." instance=ExtResource("35_spjxo")]
+offset_left = 809.0
+offset_top = 760.0
+offset_right = 1556.0
+offset_bottom = 775.0
+
+[node name="Glitching20" parent="." instance=ExtResource("35_spjxo")]
+offset_left = 479.0
+offset_top = 621.0
+offset_right = 808.0
+offset_bottom = 657.0
+
+[node name="Glitching21" parent="." instance=ExtResource("35_spjxo")]
+offset_left = 121.0
+offset_top = 484.0
+offset_right = 806.0
+offset_bottom = 513.0
+
+[node name="Glitching22" parent="." instance=ExtResource("35_spjxo")]
+offset_left = 767.0
+offset_top = 339.0
+offset_right = 806.0
+offset_bottom = 513.0
+
+[node name="Glitching23" parent="." instance=ExtResource("35_spjxo")]
+offset_left = 767.0
+offset_top = 339.0
+offset_right = 1417.0
+offset_bottom = 377.0
+
+[node name="Glitching24" parent="." instance=ExtResource("35_spjxo")]
+offset_left = 874.0
+offset_top = 472.0
+offset_right = 1594.0
+offset_bottom = 496.0
+
+[node name="Glitching25" parent="." instance=ExtResource("35_spjxo")]
+offset_left = 874.0
+offset_top = 528.0
+offset_right = 1594.0
+offset_bottom = 552.0
+
+[node name="Glitching26" parent="." instance=ExtResource("35_spjxo")]
+offset_left = 1567.0
+offset_top = 121.0
+offset_right = 1593.0
+offset_bottom = 480.0
+
 [node name="Tutorial32" type="RichTextLabel" parent="."]
-offset_left = 115.0
-offset_top = 97.0
-offset_right = 876.0
-offset_bottom = 205.0
+offset_left = 462.0
+offset_top = 138.0
+offset_right = 764.0
+offset_bottom = 257.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("26_rjny8")
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "Don't let the [shake rate=50 level = 50 connected = 1][color=red]PINK DRAGGABLE PANEL[/color][/shake] touch you or the frame/platform/anything that you can touch.
- "
+text = "Drag these Panels away, but don't let them[shake rate=50 level = 50 connected = 1][color=red] touch YOU or the GLITCHY FRAME[/color][/shake]"
 scroll_active = false
 
 [node name="Tutorial33" type="RichTextLabel" parent="."]

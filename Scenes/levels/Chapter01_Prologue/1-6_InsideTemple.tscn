@@ -335,7 +335,7 @@ position = Vector2(507, 579)
 [node name="PlatformPanel" parent="." instance=ExtResource("5_x8ipv")]
 position = Vector2(-575, 104)
 tile_set = SubResource("TileSet_voep8")
-layer_0/tile_data = PackedInt32Array(131081, 65546, 1, 65545, 2, 0, 9, 2, 0, 65542, 2, 0, 6, 2, 0, 131078, 65546, 1, 131079, 65546, 1, 65543, 2, 0, 7, 2, 0, 8, 2, 0, 65544, 2, 0, 131080, 65546, 1, 589838, 65536, 3, 589839, 65536, 3, 589840, 65536, 3, 589841, 65536, 3, 589842, 65536, 3, 589843, 65536, 3, 589844, 65536, 3, 589845, 65536, 3, 589846, 65536, 3, 589847, 65536, 3, 589848, 65536, 3, 589849, 65536, 3, 589850, 65536, 3)
+layer_0/tile_data = PackedInt32Array(131081, 65546, 1, 65545, 2, 0, 9, 2, 0, 65542, 2, 0, 6, 2, 0, 131078, 65546, 1, 131079, 65546, 1, 65543, 2, 0, 7, 2, 0, 8, 2, 0, 65544, 2, 0, 131080, 65546, 1, 589838, 65536, 3, 589839, 65536, 3, 589840, 65536, 3, 589841, 65536, 3, 589842, 65536, 3, 589843, 65536, 3, 589844, 65536, 3, 589845, 65536, 3, 589846, 65536, 3, 589847, 65536, 3, 589848, 65536, 3, 589849, 65536, 3, 589850, 65536, 3, 131077, 10, 0, 131076, 10, 0, 131075, 10, 0, 131074, 10, 0, 131073, 10, 0, 65537, 10, 0, 1, 10, 0, -65535, 10, 0, -131071, 10, 0)
 
 [node name="Outline" parent="PlatformPanel" instance=ExtResource("5_x8ipv")]
 position = Vector2(497, 137)
@@ -506,7 +506,7 @@ position = Vector2(1338, -611.5)
 shape = SubResource("RectangleShape2D_dhksy")
 
 [node name="ChangeSceneDetector" parent="." node_paths=PackedStringArray("portal_visual") instance=ExtResource("22_mtye2")]
-position = Vector2(-88, 128)
+position = Vector2(-234, 128)
 my_scene = "res://Scenes/levels/Chapter01_Prologue/1-7_Flee1.tscn"
 disable_on_default = true
 portal_visual = NodePath("../GoalIcon")
@@ -564,6 +564,21 @@ theme_override_fonts/normal_font = ExtResource("28_b0y6l")
 theme_override_font_sizes/normal_font_size = 84
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1] [color=purple]Oopsie![/color][/wave] Did you just [shake rate=50 level = 50 connected = 1] [color=darkred]STOLE...THAT THING?!"
+scroll_active = false
+
+[node name="Tutorial2" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 486.0
+offset_top = 116.0
+offset_right = 1480.0
+offset_bottom = 193.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("28_b0y6l")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "Interact with all Panels to reveal the way out"
 scroll_active = false
 
 [connection signal="body_entered" from="Jewelry" to="Jewelry" method="_on_body_entered"]

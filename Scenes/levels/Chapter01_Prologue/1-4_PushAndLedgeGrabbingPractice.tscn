@@ -38,14 +38,14 @@ texture = ExtResource("1_adg2g")
 [node name="RespawnDetector" type="Area2D" parent="."]
 position = Vector2(675, 1082)
 script = ExtResource("8_7yqwk")
-respawn_position = Vector2(77, 698)
+respawn_position = Vector2(222, 677)
 
 [node name="Detector01" type="CollisionShape2D" parent="RespawnDetector"]
 position = Vector2(285, 26)
 shape = SubResource("RectangleShape2D_t8bya")
 
 [node name="Detector02" type="CollisionShape2D" parent="RespawnDetector"]
-position = Vector2(-778.25, -511)
+position = Vector2(-830, -511)
 shape = SubResource("RectangleShape2D_dcltj")
 
 [node name="Detector03" type="CollisionShape2D" parent="RespawnDetector"]
@@ -163,15 +163,29 @@ scroll_active = false
 [node name="Tutorial2" type="RichTextLabel" parent="."]
 offset_left = 437.0
 offset_top = 586.0
-offset_right = 1548.0
-offset_bottom = 706.0
+offset_right = 1535.0
+offset_bottom = 647.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("15_ml5d1")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "And you will [wave amp=50.0 freq=5.0 connected=1] [color=purple]SLOW FALL[/color][/wave] when trying to grab the  [shake rate=50 level = 50 connected = 1] [color=darkred]Draggable Panel.[/color][/shake] You can jump again while SLOWFALL or LEDGE GRAB"
+text = "And you will [wave amp=50.0 freq=5.0 connected=1] [color=purple]SLOW FALL[/color][/wave] when trying to grab the  [shake rate=50 level = 50 connected = 1] [color=darkred]Draggable Panel.[/color][/shake]"
+scroll_active = false
+
+[node name="Tutorial3" type="RichTextLabel" parent="."]
+offset_left = 559.0
+offset_top = 666.0
+offset_right = 1458.0
+offset_bottom = 733.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("15_ml5d1")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "Try to [wave amp=50.0 freq=5.0 connected=1] [color=purple]JUMP AGAIN[/color][/wave] while SLOWFALL or LEDGE GRAB"
 scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]

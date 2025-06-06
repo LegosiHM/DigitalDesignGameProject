@@ -833,11 +833,12 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(485, 363)
 texture = ExtResource("26_0xau5")
 
-[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_path")]
+[node name="Medjed" type="Node2D" parent="." node_paths=PackedStringArray("reveal_panel", "reveal_path")]
 script = ExtResource("29_42ow2")
 dialog_lines = Array[String](["I've told you...", "Time travel are not supposed to exist.", "Now that you got caught, time timeline is corrupted...", "But worry not!", "As I, your \"BEST\" friend will help you.", "Now you shall face wrath of the god...", "Start with...", "\"The Plague of Blood\"", "People of egypt will suffer the eternal thristness.", "And you, will lose ENERGY a lot faster...", "Come to me and I'll help you through..."])
 dialog_position_Array = Array[Vector2]([Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200), Vector2(700, 200)])
 will_reveal_object = true
+reveal_panel = NodePath("../draggablePanel")
 reveal_path = NodePath("../ChangeSceneDetector")
 
 [node name="StoryPanelMedjedIntroductionV_01" type="Sprite2D" parent="Medjed"]
@@ -874,7 +875,8 @@ visible = false
 [node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("21_nfiel")]
 
 [node name="draggablePanel" parent="." instance=ExtResource("21_vgul5")]
-position = Vector2(1645, 530)
+visible = false
+position = Vector2(1449, 530)
 
 [node name="PanelCollsionContainer" type="Node2D" parent="."]
 
@@ -905,6 +907,34 @@ offset_left = 623.0
 offset_top = 923.0
 offset_right = 821.0
 offset_bottom = 985.0
+
+[node name="Tutorial33" type="RichTextLabel" parent="."]
+offset_left = 580.0
+offset_top = 480.0
+offset_right = 754.0
+offset_bottom = 528.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_vr8xa")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=red]Talk to me "
+scroll_active = false
+
+[node name="Tutorial34" type="RichTextLabel" parent="."]
+offset_left = 1165.0
+offset_top = 695.0
+offset_right = 1759.0
+offset_bottom = 756.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("26_vr8xa")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[shake rate=50 level = 50 connected = 1][color=red]Talk to Medjed to reveal a hidden Panel"
+scroll_active = false
 
 [connection signal="body_entered" from="RespawnDetector" to="RespawnDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="RespawnDetector" to="RespawnDetector" method="_on_body_exited"]
