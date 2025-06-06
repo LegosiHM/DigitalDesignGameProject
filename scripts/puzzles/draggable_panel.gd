@@ -165,8 +165,13 @@ func respawn_with_effect():
 	effect_running = false
 
 func respawn_timer():
-	await get_tree().create_timer(0.1).timeout
+	# ✅ Only play Game Over sound if not changing scene
+	if not Global.is_changing_scene:
+		player.audio_game_over.play()
+
+	await get_tree().create_timer(0.5).timeout  # Delay actual teleport
 	player.global_position = respawn_position
+	
 
 # ------------------------------------------------------------------------------
 # MOTION HELPER METHODS
