@@ -54,6 +54,7 @@ var SCENE_BGM_MAP: Dictionary = {
 	"Chapter-1_Comic_Cutscene_2": "res://assets/SFX/BGM/BGM_Cutscene_Start_v01.mp3",
 	"Chapter-1_Comic_Cutscene_3": "res://assets/SFX/BGM/BGM_Cutscene_Start_v01.mp3",
 	"Chapter-1_Comic_Cutscene_4": "res://assets/SFX/BGM/BGM_Cutscene_Start_v01.mp3",
+	"Chapter-1_Comic_Cutscene_5": "res://assets/SFX/BGM/BGM_Cutscene_Start_v01.mp3",
 	
 	"Chapter-2_Comic_Cutscene_1": "res://assets/SFX/BGM/BGM_Cutscene_EndPrologue_v01.mp3",
 	"Chapter-2_Comic_Cutscene_2": "res://assets/SFX/BGM/BGM_Cutscene_EndPrologue_v01.mp3",

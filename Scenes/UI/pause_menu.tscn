@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu6446fo7y1t1"]
+[gd_scene load_steps=7 format=3 uid="uid://bu6446fo7y1t1"]
 
 [ext_resource type="Script" uid="uid://djkvpaduvisan" path="res://scripts/UI/pause_menu.gd" id="1_8rf44"]
 [ext_resource type="Shader" uid="uid://cian5q6fubwkx" path="res://scripts/shaders/BlurEffect.gdshader" id="1_rrvs5"]
 [ext_resource type="PackedScene" uid="uid://by0xmffvlcwmo" path="res://Scenes/UI/SoundController.tscn" id="3_r2i2h"]
 [ext_resource type="Texture2D" uid="uid://rabke7vj3qsl" path="res://assets/UI/IMG_6486.png" id="4_kdnb7"]
 [ext_resource type="FontFile" uid="uid://eqv3tw183qnf" path="res://assets/fonts/Baloo-Regular.ttf" id="5_702e2"]
-[ext_resource type="PackedScene" uid="uid://brk8lgbd0qbsc" path="res://Scenes/shaders/Scenes_Transition.tscn" id="6_702e2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8rf44"]
 shader = ExtResource("1_rrvs5")
@@ -136,14 +135,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_702e2")
 theme_override_font_sizes/font_size = 30
 text = "Exit to Main Menu"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Scenes_Transition" parent="CanvasLayer" instance=ExtResource("6_702e2")]
-offset_left = 1.0
-offset_top = 9.0
-offset_right = 1921.0
-offset_bottom = 1089.0
 
 [connection signal="pressed" from="ColorRect/ResumeButton" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="ColorRect/ExitButton" to="." method="_on_exit_pressed"]

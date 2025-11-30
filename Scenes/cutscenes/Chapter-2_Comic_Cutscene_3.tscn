@@ -38,6 +38,7 @@ pivot_offset = Vector2(593, 912)
 texture = ExtResource("3_4ykxc")
 
 [node name="Panel2" type="TextureRect" parent="PanelContainer"]
+layout_mode = 0
 offset_left = 245.0
 offset_right = 730.0
 offset_bottom = 1080.0
@@ -45,6 +46,7 @@ pivot_offset = Vector2(593, 912)
 texture = ExtResource("4_thsdo")
 
 [node name="Panel3" type="TextureRect" parent="PanelContainer"]
+layout_mode = 0
 offset_left = 730.0
 offset_right = 1917.0
 offset_bottom = 1080.0

@@ -980,7 +980,7 @@ z_index = 5
 position = Vector2(2097, 378)
 rotation = -1.5708
 scale = Vector2(5.487, 0.229998)
-my_scene = "res://Scenes/levels/Chapter01_Prologue/1-6_InsideTemple.tscn"
+my_scene = "res://Scenes/cutscenes/Chapter-1_Comic_Cutscene_5.tscn"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("20_6rrga")
